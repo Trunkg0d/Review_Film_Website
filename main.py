@@ -4,7 +4,7 @@ from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from database.connection import Settings
-from routes.events import event_router
+from routes.movies import movie_router
 from routes.users import user_router
 
 app = FastAPI()
@@ -26,7 +26,7 @@ app.add_middleware(
 # Register routes
 
 app.include_router(user_router, prefix="/user")
-app.include_router(event_router, prefix="/event")
+app.include_router(movie_router, prefix="/movie")
 
 
 @app.on_event("startup")

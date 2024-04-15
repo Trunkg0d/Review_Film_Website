@@ -4,7 +4,7 @@ from beanie import Document
 from pydantic import BaseModel
 
 
-class Event(Document):
+class Movie(Document):
     creator: Optional[str]
     title: str
     image: str
@@ -24,10 +24,10 @@ class Event(Document):
         }
 
     class Settings:
-        name = "events"
+        name = "movies"
 
 
-class EventUpdate(BaseModel):
+class MovieUpdate(BaseModel):
     title: Optional[str]
     image: Optional[str]
     description: Optional[str]

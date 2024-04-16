@@ -9,8 +9,10 @@ class Movie(Document):
     title: str
     image: str
     description: str
+    language: str
     tags: List[str]
-    location: str
+    runtime: int # minutes
+    average_rating: float
 
     class Config:
         schema_extra = {
@@ -18,21 +20,24 @@ class Movie(Document):
                 "title": "FastAPI BookLaunch",
                 "image": "https://linktomyimage.com/image.png",
                 "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
-                "tags": ["python", "fastapi", "book", "launch"],
-                "location": "Google Meet"
+                "tags": ["comedy", "korean", "18+"],
+                "language": "Vietnamese",
+                "runtime": 60,
+                "average_rating": 4.5
             }
         }
 
     class Settings:
         name = "movies"
 
-
 class MovieUpdate(BaseModel):
     title: Optional[str]
     image: Optional[str]
     description: Optional[str]
     tags: Optional[List[str]]
-    location: Optional[str]
+    language: Optional[str]
+    runtime: Optional[int]  # minutes
+    average_rating: Optional[float]
 
     class Config:
         schema_extra = {
@@ -40,7 +45,9 @@ class MovieUpdate(BaseModel):
                 "title": "FastAPI BookLaunch",
                 "image": "https://linktomyimage.com/image.png",
                 "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
-                "tags": ["python", "fastapi", "book", "launch"],
-                "location": "Google Meet"
+                "tags": ["comedy", "korean", "18+"],
+                "language": "Vietnamese",
+                "runtime": 60,
+                "average_rating": 4.5
             }
         }

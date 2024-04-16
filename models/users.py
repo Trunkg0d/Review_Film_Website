@@ -23,15 +23,14 @@ class User(Document):
                 "role": 0,
                 "wish_list": [
                                 {
-                                  "_id": "5eb7cf5a86d9755df3a6c593",
-                                  "creator": "string",
-                                  "title": "string",
-                                  "image": "string",
-                                  "description": "string",
-                                  "tags": [
-                                    "string"
-                                  ],
-                                  "location": "string"
+                                "_id": "5eb7cf5a86d9755df3a6c593",
+                                "title": "FastAPI BookLaunch",
+                                "image": "https://linktomyimage.com/image.png",
+                                "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
+                                "tags": ["comedy", "korean", "18+"],
+                                "language": "Vietnamese",
+                                "runtime": 60,
+                                "average_rating": 4.5
                                 }
                               ]
             }

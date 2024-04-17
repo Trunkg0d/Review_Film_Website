@@ -1,5 +1,3 @@
 .env
 
 !.gitignore
-database/connection.py
-database/__init__.py

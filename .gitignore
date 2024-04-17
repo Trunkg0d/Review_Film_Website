@@ -1,5 +1,4 @@
 .env
-database
 
 !.gitignore
 database/connection.py

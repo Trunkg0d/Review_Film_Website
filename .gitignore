@@ -3,5 +3,3 @@
 !.gitignore
 database/connection.py
 database/__init__.py
-
-__pycache__

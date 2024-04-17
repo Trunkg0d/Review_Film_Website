@@ -12,7 +12,6 @@ user_router = APIRouter(
 user_database = Database(User)
 hash_password = HashPassword()
 
-
 @user_router.post("/signup")
 async def sign_user_up(user: User) -> dict:
     user_exist = await User.find_one(User.email == user.email)
@@ -28,7 +27,6 @@ async def sign_user_up(user: User) -> dict:
     return {
         "message": "User created successfully"
     }
-
 
 @user_router.post("/signin", response_model=TokenResponse)
 async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> dict:

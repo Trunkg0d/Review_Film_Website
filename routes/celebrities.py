@@ -1,5 +1,4 @@
 from typing import List
-
 from auth.authenticate import authenticate
 from beanie import PydanticObjectId
 from database.connection import Database
@@ -12,12 +11,10 @@ celebrity_router = APIRouter(
 
 celebrity_database = Database(Celebrity)
 
-
 @celebrity_router.get("/", response_model=List[Celebrity])
 async def retrieve_all_celebrities() -> List[Celebrity]:
     movies = await celebrity_database.get_all()
     return movies
-
 
 @celebrity_router.get("/{id}", response_model=Celebrity)
 async def retrieve_celebrity(id: PydanticObjectId) -> Celebrity:
@@ -29,7 +26,6 @@ async def retrieve_celebrity(id: PydanticObjectId) -> Celebrity:
         )
     return celebrity
 
-
 @celebrity_router.post("/new")
 async def create_celebrity(body: Celebrity, user: str = Depends(authenticate)) -> dict:
     body.creator = user
@@ -37,7 +33,6 @@ async def create_celebrity(body: Celebrity, user: str = Depends(authenticate)) -
     return {
         "message": "Celebrity created successfully"
     }
-
 
 @celebrity_router.put("/{id}", response_model=Celebrity)
 async def update_celebrity(id: PydanticObjectId, body: CelebrityUpdate, user: str = Depends(authenticate)) -> Celebrity:
@@ -54,7 +49,6 @@ async def update_celebrity(id: PydanticObjectId, body: CelebrityUpdate, user: st
             detail="Celebrity with supplied ID does not exist"
         )
     return updated_movie
-
 
 @celebrity_router.delete("/{id}")
 async def delete_celebrity(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:

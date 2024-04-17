@@ -1,5 +1,4 @@
 from typing import List
-
 from auth.authenticate import authenticate
 from beanie import PydanticObjectId
 from database.connection import Database
@@ -12,12 +11,10 @@ movie_router = APIRouter(
 
 movie_database = Database(Movie)
 
-
 @movie_router.get("/", response_model=List[Movie])
 async def retrieve_all_movies() -> List[Movie]:
     movies = await movie_database.get_all()
     return movies
-
 
 @movie_router.get("/{id}", response_model=Movie)
 async def retrieve_movie(id: PydanticObjectId) -> Movie:
@@ -29,7 +26,6 @@ async def retrieve_movie(id: PydanticObjectId) -> Movie:
         )
     return movie
 
-
 @movie_router.post("/new")
 async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
     body.creator = user
@@ -37,7 +33,6 @@ async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
     return {
         "message": "Movie created successfully"
     }
-
 
 @movie_router.put("/{id}", response_model=Movie)
 async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depends(authenticate)) -> Movie:
@@ -54,7 +49,6 @@ async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depe
             detail="Movie with supplied ID does not exist"
         )
     return updated_movie
-
 
 @movie_router.delete("/{id}")
 async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:

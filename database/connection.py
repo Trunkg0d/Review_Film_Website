@@ -1,5 +1,4 @@
 from typing import Optional
-
 from beanie import init_beanie, PydanticObjectId
 from models.movies import Movie
 from models.users import User
@@ -7,7 +6,6 @@ from models.celebrities import Celebrity
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings
 from pydantic import BaseModel
-
 
 class Settings(BaseSettings):
     DATABASE_URL: Optional[str] = None

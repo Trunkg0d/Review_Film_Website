@@ -4,7 +4,6 @@ from pydantic import BaseModel, EmailStr
 from models.movies import Movie
 from datetime import date
 
-
 class Celebrity(Document):
     creator: Optional[str]
     name: str

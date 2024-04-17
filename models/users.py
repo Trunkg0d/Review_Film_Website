@@ -3,7 +3,6 @@ from typing import Optional, List
 from pydantic import BaseModel, EmailStr
 from models.movies import Movie
 
-
 class User(Document):
     email: EmailStr
     password: str

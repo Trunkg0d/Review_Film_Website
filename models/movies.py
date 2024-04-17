@@ -1,8 +1,6 @@
 from typing import Optional, List
-
 from beanie import Document
 from pydantic import BaseModel
-
 
 class Movie(Document):
     creator: Optional[str]

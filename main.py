@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database.connection import Settings
 from routes.movies import movie_router
 from routes.users import user_router
+from routes.celebrities import celebrity_router
 
 app = FastAPI()
 
@@ -27,6 +28,7 @@ app.add_middleware(
 
 app.include_router(user_router, prefix="/user")
 app.include_router(movie_router, prefix="/movie")
+app.include_router(celebrity_router, prefix="/celebrity")
 
 
 @app.on_event("startup")

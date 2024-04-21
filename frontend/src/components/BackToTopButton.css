@@ -1,0 +1,28 @@
+/* BackToTopButton.css */
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background: var(--primary);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+.scroll-to-top ion-icon {
+    font-size: 1.5em;
+    line-height: 0;
+}
+.scroll-to-top:hover {
+    background: var(--primary-dark);
+}
+.scroll-to-top:active {
+    visibility: visible;
+    opacity: 1;
+}

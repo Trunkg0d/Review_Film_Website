@@ -1,0 +1,53 @@
+/* Home.css */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0 auto;
+    border: none;
+}
+
+/*section*/
+section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 100px 20px;
+    width: 100%;
+    transition: ease-in-out 1s;
+    transform-origin: bottom;
+    z-index: 1100;
+}
+section h1 {
+    font-weight: 400;
+    font-size: 4em;
+    letter-spacing: 1px;
+    margin-bottom: 150px;
+    text-align: center;
+    color: #fff;
+}
+section .section-title {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+section .section-title::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -30px;
+    height: 5px;
+    width: 400%;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary),
+        transparent
+    );
+    z-index: 1000;
+}

@@ -1,0 +1,45 @@
+.banner {
+    width: 100vw;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.banner-content {
+    font-size: large;
+    position: absolute;
+    top: 250px;
+    left: 340px; /* Adjust this value to move the content to the first half of the banner */
+    transform: translate(-50%, -50%);
+    margin: auto;
+    max-width: 30%; /* Set the maximum width of the content */
+    text-align: left;
+    z-index: 2;
+}
+
+
+.banner-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+.banner::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    filter: blur(50px);
+}

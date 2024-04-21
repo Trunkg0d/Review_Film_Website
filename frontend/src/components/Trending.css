@@ -1,0 +1,30 @@
+.trending {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.movie {
+  width: 23%; /* Set the width of the movie to fill 1/4 of the row */
+  margin-bottom: 20px; /* Add some space below the movie */
+}
+
+.movie img {
+  width: 100%; /* Set the width of the poster image to fill the movie */
+  height: auto; /* Set the height of the poster image to maintain its aspect ratio */
+}
+
+.movie-release-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: aliceblue;
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: aliceblue;
+}

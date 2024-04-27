@@ -62,7 +62,11 @@ function Header() {
           <ion-icon name="search-outline"></ion-icon>
         </div>
         <div className="signin">
-          <button>Sign In</button>
+          <button type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href='/login';
+            }}>Sign In</button>
         </div>
       </header>
   );

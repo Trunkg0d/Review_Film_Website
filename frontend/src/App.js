@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Movie from './components/Movie';
 import BackToTopButton from './components/BackToTopButton';
 import Footer from './components/Footer';
+import LoginSignup from './components/LoginSignup/LoginSignUp';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/login" element={<LoginSignup />} />
       </Routes>
       <Footer />
       <BackToTopButton />

@@ -1,17 +1,20 @@
 // Banner.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './Banner.css';
 
 function Banner() {
     const [movies, setMovies] = useState([]);
     const [bannerMovieIndex, setBannerMovieIndex] = useState(0);
 
+    const fetchData = () => {
+        fetch('http://localhost:3000/data/movies_data.json')
+        .then(response => response.json())
+        .then(data => setMovies(data))
+        .catch(error => console.log(error.message));
+    };
+
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=062df5711fbb408fac7c50d0c4bed4a7')
-        .then(response => {
-            setMovies(response.data.results);
-        });
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -38,8 +41,8 @@ function Banner() {
     >
         <a href={`/movie/${bannerMovie.id}`} className="banner-link" aria-label="Banner link to movie details"></a>
         <div className="banner-content">
-        <h1 className="banner-title">{bannerMovie.title || bannerMovie.name}</h1>
-        <p className="banner-description">{bannerMovie.overview}</p>
+        <h1 className="banner-title">{bannerMovie.title}</h1>
+        <p className="banner-description">{bannerMovie.description}</p>
         </div>
     </div>)
   );

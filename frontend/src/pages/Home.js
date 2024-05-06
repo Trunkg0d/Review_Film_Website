@@ -2,13 +2,13 @@
 import React from 'react';
 import './Home.css';
 import Banner from '../components/Banner';
-import Trending from '../components/Trending';
+import Popular from '../components/Popular';
 
 function Home() { 
   return (
     <div className="home">
       <Banner />
-      <Trending />
+      <Popular />
     </div>
   );
 }

@@ -14,6 +14,7 @@ function Movie() {
       .then(response => {
         setMovie(response.data);
         setLoading(false);
+        setReviews(response.data.reviews.results)
       });
   }, [id]);
 

@@ -8,7 +8,7 @@ class User(Document):
     password: str
     img: str
     role: int   # 0: normal user, 1: admin
-    wish_list: Optional[List[Movie]]
+    wish_list: Optional[List[Movie]] = None 
 
     class Settings:
         name = "users"

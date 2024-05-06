@@ -1,14 +1,12 @@
 from beanie import Document
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr
-from models.movies import Movie
 from datetime import date
 
 class Celebrity(Document):
     creator: Optional[str]
     name: str
     born: date
-    movie_list: Optional[List[Movie]]
     award_list: Optional[List[str]]
 
     class Settings:
@@ -40,7 +38,6 @@ class Celebrity(Document):
 class CelebrityUpdate(BaseModel):
     name: Optional[str]
     born: Optional[date]
-    movie_list: Optional[List[Movie]]
     award_list: Optional[List[str]]
 
     class Config:

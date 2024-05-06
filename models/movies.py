@@ -1,7 +1,7 @@
 from typing import Optional, List
 from beanie import Document
 from pydantic import BaseModel
-from celebrities import Celebrity
+from models.celebrities import Celebrity
 
 class Movie(Document):
     creator: Optional[str]

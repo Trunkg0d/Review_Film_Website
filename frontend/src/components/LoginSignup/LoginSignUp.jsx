@@ -78,11 +78,11 @@ const LoginSignup = () => {
                 <div className="input">
                     <img src={password_icon} alt="" />
                     <input type="password" placeholder='Your Password' onChange={(e) => setPassword(e.target.value)} />
+
                 </div>
             </div>
             {action === "Sign Up" ? <div></div> : <div className="forgot-password">Forgot Password? <span>Click Here!</span></div>}
             <div className="submit-container">
-                {/* Nguoc vai lon */}
                 <div className={action === "Login" ? "submit gray" : "submit"} onClick={(e) => { handleSignup(e); setAction("Sign Up") }}>Sign Up</div>
                 <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={(e) => { handleSignIn(e); setAction("Login") }}>Login</div>
             </div>

@@ -69,6 +69,89 @@
     margin: 20px 0;
 }
 
+.review__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review__actions button {
+    background-color: var(--primary);
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.review__replies {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reply {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 4px;
+    color: #ddd;
+}
+
+.review__replies input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.review__replies button {
+    background-color: var(--primary);
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.loading, .error, .no-reviews {
+    font-size: 1.2em;
+    color: #fff; /* Màu chữ trắng */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.review__content > span {
+    display: inline;
+}
+
+.review__content > button {
+    margin-left: 5px;
+    background-color: var(--primary);
+    color: #000;
+}
+
+.review__content button {
+    background-color: transparent;
+    color: var(--primary);
+    margin: 10px;
+    border: none;
+}
+
+.review__content button:hover {
+    text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .reviews {

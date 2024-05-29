@@ -1,11 +1,12 @@
-// Reviews.jsx
 import React, { useEffect, useState } from 'react';
 import './Reviews.css';
 
 function Reviews({ id }) {
     const [reviews, setReviews] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [replies, setReplies] = useState({});
+    const [newComments, setNewComments] = useState({});
+    const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
+    const [activeReviewId, setActiveReviewId] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:3000/data/reviews_data.json`)
@@ -17,22 +18,48 @@ function Reviews({ id }) {
                 } else {
                     setReviews([]);
                 }
-                setLoading(false);
             })
-            .catch(error => {
-                console.error(error);
-                setError(error.message);
-                setLoading(false);
-            });
-    }, [id]); // Add id as a dependency
+            .catch(error => console.error(error.message));
+    }, [id]);
 
-    if (loading) {
-        return <div className="loading">Loading reviews...</div>;
-    }
+    const handleLike = (reviewId) => {
+        // Handle like functionality
+    };
 
-    if (error) {
-        return <div className="error">Error: {error}</div>;
-    }
+    const handleReply = (reviewId) => {
+        const newComment = newComments[reviewId] || "";
+        if (newComment.trim() === "") {
+            // Do not add an empty comment
+            return;
+        }
+
+        const currentReplies = replies[reviewId] || [];
+        setReplies({
+            ...replies,
+            [reviewId]: [...currentReplies, newComment]
+        });
+        setNewComments({
+            ...newComments,
+            [reviewId]: ""
+        });
+    };
+
+    const handleInputChange = (reviewId, value) => {
+        setNewComments({
+            ...newComments,
+            [reviewId]: value
+        });
+    };
+
+    const toggleCommentBox = (reviewId) => {
+        if (isCommentBoxVisible && activeReviewId === reviewId) {
+            setIsCommentBoxVisible(false);
+            setActiveReviewId(null);
+        } else {
+            setIsCommentBoxVisible(true);
+            setActiveReviewId(reviewId);
+        }
+    };
 
     return (
         <div className="reviews-container">
@@ -52,8 +79,42 @@ function Reviews({ id }) {
                                         </div>
                                     </div>
                                     <div className="review__content">
-                                        {review.comment}
+                                        {review.comment.length > 200 ? (
+                                            <div>
+                                                {review.comment.substring(0, 200)}
+                                                {activeReviewId === review.review_id && (
+                                                    <span>{review.comment.substring(200)}</span>
+                                                )}
+                                                <button onClick={() => toggleCommentBox(review.review_id)}>
+                                                    {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            review.comment
+                                        )}
                                     </div>
+                                    <div className="review__actions">
+                                        <button onClick={() => handleLike(review.review_id)}>Like</button>
+                                        <button onClick={() => toggleCommentBox(review.review_id)}>Comment</button>
+                                    </div>
+                                    {(isCommentBoxVisible && activeReviewId === review.review_id) && (
+                                        <div className="review__replies">
+                                            {
+                                                (replies[review.review_id] || []).map((reply, j) => (
+                                                    <div key={j} className="reply">
+                                                        {reply}
+                                                    </div>
+                                                ))
+                                            }
+                                            <input
+                                                type="text"
+                                                value={newComments[review.review_id] || ""}
+                                                onChange={(e) => handleInputChange(review.review_id, e.target.value)}
+                                                placeholder="Write a reply..."
+                                            />
+                                            <button onClick={() => handleReply(review.review_id)}>Reply</button>
+                                        </div>
+                                    )}
                                 </div>
                             ))
                         ) : (

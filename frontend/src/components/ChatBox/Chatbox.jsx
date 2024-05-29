@@ -69,6 +69,13 @@ const ChatBox = () => {
             chatboxMessageContent.scrollTop = chatboxMessageContent.scrollHeight;
         }
     }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            writeMessage(e);
+        }
+    };
     
     return (
         <div className={styles.chatboxWrapper}>
@@ -96,7 +103,7 @@ const ChatBox = () => {
                 </div>
                 <div className={styles.chatboxMessageBottom}>
                     <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>
-                        <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef}></textarea>
+                        <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef} onKeyDown={handleKeyDown}></textarea>
                         <button type="submit" className={styles.chatboxMessageSubmit}><i className='bx bxs-send'></i></button>
                     </form>
                 </div>

@@ -186,6 +186,10 @@
     font-size: inherit; /* Inherit the font size from parent */
 }
 
+.reviews .section-title::after {
+    width: 100%;
+    background: var(--primary);
+}
 
 .new-review__submit {
     align-self: flex-end;

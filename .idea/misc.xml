@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="FARM_stack" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="FARM_stack" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="py310env" project-jdk-type="Python SDK" />
 </project>

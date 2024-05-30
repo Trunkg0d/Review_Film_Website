@@ -27,6 +27,11 @@ function Reviews({ id }) {
         // Handle like functionality
     };
 
+    const handleCancel = () => {
+        setNewReviewText('');
+        setIsCommentBoxVisible(false);
+    }
+
     const handleReply = (reviewId) => {
         const newComment = newComments[reviewId] || "";
         if (newComment.trim() === "") {
@@ -62,9 +67,9 @@ function Reviews({ id }) {
         }
     };
 
-    const handleNewReviewChange = (e) => {
-        setNewReviewText(e.target.value);
-    };
+    // const handleNewReviewChange = (e) => {
+    //     setNewReviewText(e.target.value);
+    // };
 
     const handleNewReviewSubmit = () => {
         if (newReviewText.trim() === "") {
@@ -87,6 +92,41 @@ function Reviews({ id }) {
             <section id="reviews" className="reviews">
                 <div className="title-row">
                     <h2 className="section-title">Reviews</h2>
+                </div>
+                {/* <div className="new-review">
+                    <textarea
+                        value={newReviewText}
+                        onChange={handleNewReviewChange}
+                        placeholder="Write a review..."
+                        className="new-review__input"
+                    />
+                    <button onClick={handleNewReviewSubmit} className="new-review__submit">Submit</button>
+                </div> */}
+                <div className="new-review">
+                    <div className="new-review__header">
+                        <img src={'https://kenh14cdn.com/203336854389633024/2023/1/10/photo-1-1673332882261583702192.jpg'} alt="User Avatar" className="new-review__avatar" />
+                        {/* <textarea 
+                            className="new-review__input"
+                            value={newReviewText}
+                            onChange={(e) => setNewReviewText(e.target.value)}
+                            placeholder="Write your review here..."
+                        /> */}
+                        <textarea 
+                            className="new-review__input"
+                            value={newReviewText}
+                            onChange={(e) => setNewReviewText(e.target.value)}
+                            placeholder="Write your review here..."
+                            rows={1}
+                            onInput={(e) => {
+                                e.target.style.height = 'auto';
+                                e.target.style.height = `${e.target.scrollHeight}px`;
+                            }}
+                        />
+                    </div>
+                    <div className="new-review__actions">
+                        <button className="new-review__submit" onClick={handleNewReviewSubmit}>Submit</button>
+                        <button className="new-review__cancel" onClick={handleCancel}>Cancel</button>
+                    </div>
                 </div>
                 <div className="reviews__list">
                     {
@@ -144,19 +184,13 @@ function Reviews({ id }) {
                             </div>
                         )
                     }
+
                 </div>
-                <div className="new-review">
-                    <textarea
-                        value={newReviewText}
-                        onChange={handleNewReviewChange}
-                        placeholder="Write a review..."
-                        className="new-review__input"
-                    />
-                    <button onClick={handleNewReviewSubmit} className="new-review__submit">Submit</button>
-                </div>
+
             </section>
         </div>
     );
 }
 
 export default Reviews;
+

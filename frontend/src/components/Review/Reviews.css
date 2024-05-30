@@ -1,5 +1,4 @@
-/* Reviews.css */
-.review-container {
+.reviews-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +9,7 @@
 
 .reviews {
     display: flex;
+    flex-direction: column;
     padding: 20px;
     margin: 0;
     border-radius: 8px;
@@ -18,7 +18,7 @@
 }
 
 .reviews__list {
-    margin: 100px auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,7 +26,7 @@
 
 .review {
     padding: 15px;
-    background-color: #444; /* Nền tối hơn một chút */
+    background-color: #444;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -46,25 +46,25 @@
 .review__header__user__img {
     width: 40px;
     height: 40px;
-    background-color: #555; /* Màu xám nhạt cho ảnh đại diện */
+    background-color: #555;
     border-radius: 50%;
 }
 
 .review__header__user__name {
     font-size: 1em;
     font-weight: bold;
-    color: #fff; /* Màu chữ trắng */
+    color: #fff;
 }
 
 .review__content {
     font-size: 1em;
-    color: #ddd; /* Màu chữ xám nhạt */
+    color: #ddd;
     line-height: 1.6;
 }
 
 .loading, .error, .no-reviews {
     font-size: 1.2em;
-    color: #fff; /* Màu chữ trắng */
+    color: #fff;
     text-align: center;
     margin: 20px 0;
 }
@@ -124,13 +124,6 @@
     border-radius: 4px;
 }
 
-.loading, .error, .no-reviews {
-    font-size: 1.2em;
-    color: #fff; /* Màu chữ trắng */
-    text-align: center;
-    margin: 20px 0;
-}
-
 .review__content > span {
     display: inline;
 }
@@ -150,6 +143,38 @@
 
 .review__content button:hover {
     text-decoration: underline;
+}
+
+.new-review {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.new-review__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.new-review__submit {
+    align-self: flex-end;
+    background-color: var(--primary);
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
 /* Responsive adjustments */

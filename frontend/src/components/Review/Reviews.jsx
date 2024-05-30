@@ -7,6 +7,7 @@ function Reviews({ id }) {
     const [newComments, setNewComments] = useState({});
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
+    const [newReviewText, setNewReviewText] = useState(""); // State for new comment
 
     useEffect(() => {
         fetch(`http://localhost:3000/data/reviews_data.json`)
@@ -59,6 +60,26 @@ function Reviews({ id }) {
             setIsCommentBoxVisible(true);
             setActiveReviewId(reviewId);
         }
+    };
+
+    const handleNewReviewChange = (e) => {
+        setNewReviewText(e.target.value);
+    };
+
+    const handleNewReviewSubmit = () => {
+        if (newReviewText.trim() === "") {
+            // Do not add an empty comment
+            return;
+        }
+
+        const newReview = {
+            author: { username: "Current User" }, // Replace with actual user data
+            comment: newReviewText,
+            review_id: reviews.length + 1 // Generate a new ID for the review
+        };
+
+        setReviews([...reviews, newReview]);
+        setNewReviewText(""); // Clear the input box
     };
 
     return (
@@ -123,6 +144,15 @@ function Reviews({ id }) {
                             </div>
                         )
                     }
+                </div>
+                <div className="new-review">
+                    <textarea
+                        value={newReviewText}
+                        onChange={handleNewReviewChange}
+                        placeholder="Write a review..."
+                        className="new-review__input"
+                    />
+                    <button onClick={handleNewReviewSubmit} className="new-review__submit">Submit</button>
                 </div>
             </section>
         </div>

@@ -1,0 +1,114 @@
+.movie-banner {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+.movie-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.movie-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, #000, rgba(0, 0 , 0, 0));
+}
+
+.movie-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -200px;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.movie-content__poster {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .movie-content__poster {
+        display: none;
+    }
+}
+
+.movie-content__poster__img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    padding-top: 165%;
+}
+
+.movie-content__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative
+}
+
+@media (max-width: 768px) {
+    .movie-content__info {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+.moive-content__info > * {
+    margin-bottom: 2rem;
+
+}
+
+.movie-content__info .title {
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.movie-content__info .genres > * ~ * {
+    margin-left: .5rem;
+}
+
+.movie-content__info .genres__item {
+    padding: .5rem 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: var(--primary);
+}
+
+.movie-content__info .genres__item:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.movie-content__info .overview {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+    margin-top: 1rem;
+}

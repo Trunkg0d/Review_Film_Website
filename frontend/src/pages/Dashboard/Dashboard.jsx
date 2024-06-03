@@ -8,7 +8,6 @@ function Dashboard() {
     const test_user = {
             "name": "Robayusi",
             "email": "fastapi@packt.com",
-            "password": "strong!!!",
             "img": "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg",
             "role": 0,
             "wish_list": [

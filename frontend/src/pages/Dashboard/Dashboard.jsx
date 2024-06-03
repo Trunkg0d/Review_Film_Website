@@ -5,26 +5,6 @@ import './Dashboard.css';
 
 function Dashboard() {
 
-    const test_user = {
-            "name": "Robayusi",
-            "email": "f****pi@packt.com",
-            "password": '********',
-            "img": "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg",
-            "role": 0,
-            "wish_list": [
-                            {
-                            "_id": "5eb7cf5a86d9755df3a6c593",
-                            "title": "FastAPI BookLaunch",
-                            "image": "https://linktomyimage.com/image.png",
-                            "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
-                            "tags": ["comedy", "korean", "18+"],
-                            "language": "Vietnamese",
-                            "runtime": 60,
-                            "average_rating": 4.5
-                            }
-                          ]
-    }
-
     return (
         <div class="wrapper">
             <div className="sidebar">
@@ -49,20 +29,20 @@ function Dashboard() {
                     <div className="sub-title">Thông tin cơ bản</div>
                     <div className="account-content-container">
                         <div className="account-avatar-container">
-                            <img src={test_user['img']} alt="" className="account-avatar-profile" />
+                            <img src='https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg' alt="" className="account-avatar-profile" />
                         </div>
                         <div className="account-info-container">
                             <div className="account-info-item">
                                 <span className="account-info-label">Tên người dùng</span>
-                                <span className="account-info-value">{test_user['name']}</span>
+                                <span className="account-info-value">Robayusi</span>
                             </div>
                             <div className="account-info-item">
                                 <span className="account-info-label">Email</span>
-                                <span className="account-info-value">{test_user['email']}</span>
+                                <span className="account-info-value">something@gmail.com</span>
                             </div>
                             <div className="account-info-item">
                                 <span className="account-info-label">Vai trò</span>
-                                {test_user['role'] === 0 ? (
+                                {0 === 0 ? (
                                 <span className="account-info-value">Người dùng</span>
                                 ) : (
                                 <span className="account-info-value">Admin</span>

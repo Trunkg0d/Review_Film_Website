@@ -41,10 +41,11 @@
 
 .input{
     display: flex;
+    position: relative;
     align-items: center;
     margin: auto;
-    width: 480px;
-    height: 80px;
+    width: 80%;
+    height: 100%;
     background: #eaeaea;
     border-radius: 6px;
 }
@@ -88,8 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 40px;
+    width: 150%;
     color: #fff;
     background: rgb(155, 101, 1);
     border-radius: 50px;

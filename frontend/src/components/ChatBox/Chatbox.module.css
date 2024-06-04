@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.chatboxWrapper body {
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, var(--white) 31px, transparent 1px) 50%, linear-gradient(100deg, var(--white) 31px, var(--blue) 1px) 50%;
+    background-size: 32px 32px;
+}
+
+/* Inherit fonts for inputs and buttons */
+.chatboxWrapper input, .chatboxWrapper button,
+.chatboxWrapper textarea, .chatboxWrapper select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+.chatboxWrapper textarea:not([rows]) {
+    min-height: 10em;
+}
+
+:root {
+    --yellow: #f3a50ac7;
+    --white: #FFF;
+    --dark: #222;
+    --grey: #f5f5f5;
+}
+
+/* CHATBOX */
+.chatboxWrapper {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.chatboxToggle{
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+.chatboxToggle:active {
+    transform: scale(.85);
+}
+
+.chatboxMessageWrapper {
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    right: 60px;
+    width: 350px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .5);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: .2s;
+}
+
+.chatboxMessageWrapper.show {
+    transform: scale(1);
+}
+
+.chatboxMessageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary);
+    padding: .75rem 1.5rem;
+}
+
+.chatboxMessageProfile {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+.chatboxMessageImage{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chatboxMessageName{
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: 'Racing Sans One', sans-serif;
+}
+
+.chatboxMessageStatus {
+    font-size: 0.875rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.chatboxMessageContent {
+    background-color: var(--grey);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chatboxMessageItem {
+    width: 90%;
+    padding: 1rem;
+}
+
+.chatboxMessageItem.sent {
+    align-self: flex-end;
+    background-color: var(--yellow);
+    color: var(--white);
+    border-radius: .75rem 0 .75rem .75rem;
+}
+
+.chatboxMessageItem.receive {
+    background-color: var(--white);
+    border-radius: 0 .75rem .75rem .75rem;
+    box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .2);
+}
+
+.chatboxMessageItemTime {
+    float: right;
+    font-size: .75rem;
+    margin-top: .6rem;
+}
+
+.chatboxMessageBottom {
+    background: var(--white);
+    padding: .75rem .75rem;
+}
+
+.chatboxMessageForm {
+    display: flex;
+    align-items: center;
+    background-color: var(--grey);
+    border-radius: .5rem;
+    padding: .5rem 1.25rem;
+}
+
+.chatboxMessageInput {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    scrollbar-width: none;
+}
+
+.chatboxMessageInput::-webkit-scrollbar {
+    display: none;
+}
+
+.chatboxMessageSubmit {
+    color: var(--primary);
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.chatboxMessageSubmit i {
+    font-size: 1.5rem;
+}
+/* CHATBOX */
+
+
+/* BREAKPOINTS */
+@media screen and (max-width: 576px) {
+    .chatboxMessageWrapper {
+        width: calc(100vw - 2rem); 
+    }
+
+    .chatboxWrapper {
+        bottom: 25px;
+        right: 25px;
+        z-index: 9999;
+    }
+}
+/* BREAKPOINTS */

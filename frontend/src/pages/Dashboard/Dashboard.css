@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #4ea4dc;
+}
+
+:root {
+    --lowgray: #73737359;
+    --gray: #737373;
+    --lightblue: #4ea4dc;
+    --hardblue: #079cff;
+}
+
+* {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.wrapper {
+    display: flex;
+    padding-top: 8rem;
+    width: 90%;
+    height: 35rem;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 17rem;
+    height: 25rem;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    padding: .1rem 0 .2rem;
+    background: transparent;
+    margin-bottom: auto;
+}
+
+.sidebar .sidebar-container {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, .2);
+}
+
+.sidebar .sidebar-title{
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 2rem 1.5rem;
+}
+
+.sidebar .menu-list {
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.sidebar .menu-list .menu-item {
+    position: relative;
+    color: var(--gray);
+}
+
+.sidebar .menu-list .menu-item .menu-active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: .2rem;
+    height: 100%;
+    background-color: var(--lightblue);
+}
+
+.sidebar .menu-list .menu-item .link{
+    color: inherit;
+    display: block;
+    padding: 1rem 0 1rem 2rem;
+    word-break: break-word;
+}
+
+.sidebar .menu-list .menu-item.menu-active .link {
+    color: var(--primary);
+}
+
+.sidebar .menu-list .menu-item:hover {
+    background-color: var(--lowgray);
+}
+
+.sidebar .menu-list .menu-item .menu-active {
+    color: var(--hardblue);
+}
+
+.wrapper .content-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0 0 auto .3rem;
+    background: transparent;
+    border: none;
+    padding: 0 .4rem .4rem;
+    overflow-x: hidden;
+}
+
+.wrapper .content-container .content-title {
+    padding: 1rem 2rem;
+    line-height: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 1rem;
+    color: var(--white);
+}
+
+.account-info .sub-title {
+    margin-top: .75rem;
+    padding: 0 1.5rem .5rem;
+    color: var(--gray);
+    font-size: 1.5rem;
+}
+
+.account-content-container {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 2rem 1.5rem;
+    color: var(--white);
+    border-top: 1px solid var(--primary);
+    border-radius: 1rem;
+}
+
+.account-info .account-info-container {
+    padding: 0 1rem;
+    color: var(--gray);
+}
+
+.account-info .account-info-item {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.account-info .account-info-label {
+    width: 12rem;
+    padding-right: .5rem;
+    color: var(--primary);
+}
+
+.account-info .account-avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: .75rem 5rem;
+    flex-direction: column;
+}
+
+.account-info .account-avatar-container .account-avatar-profile {
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--white);
+    border-radius: 100%;
+    border: 3px solid var(--primary);
+}
+
+.account-info {
+    font-size: 1.225rem;
+}

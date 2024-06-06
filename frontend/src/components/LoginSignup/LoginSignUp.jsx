@@ -4,12 +4,15 @@ import axios from "axios";
 import user_icon from './assets/user.png'
 import email_icon from './assets/email.png'
 import password_icon from './assets/password.png'
+import { useNavigate } from 'react-router-dom'
 
 const LoginSignup = () => {
+
     const [action, setAction] = useState("Login");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
     const handleSignup = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
         // You can now use 'email' and 'password' state variables here
@@ -25,12 +28,16 @@ const LoginSignup = () => {
             });
             // Handle the response from the backend as needed
             console.log("Response from FastAPI backend:", response.data);
+            navigate('/');
         } catch (error) {
             // Handle any errors that occur during the request
             console.error("Error:", error);
+
         }
     };
 
+
+    // Add for me an output of front end, show "Email or password is incorrect, please try again" when the Login catch error, and If login ok redirect to home page link please
     const handleSignIn = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
         // You can now use 'email' and 'password' state variables here
@@ -56,8 +63,10 @@ const LoginSignup = () => {
             console.log("Response from API:", response.data);
             const accessToken = response.data.access_token;
             localStorage.setItem("accessToken", accessToken);
+            navigate('/');
         } catch (error) {
             console.error("Error:", error);
+            setErrorMessage("Email or Password is incorrect, please try again!")
         }
     };
     return (
@@ -82,6 +91,8 @@ const LoginSignup = () => {
                 </div>
             </div>
             {action === "Sign Up" ? <div></div> : <div className="forgot-password">Forgot Password? <span>Click Here!</span></div>}
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+
             <div className="submit-container">
                 <div className={action === "Login" ? "submit gray" : "submit"} onClick={(e) => { handleSignup(e); setAction("Sign Up") }}>Sign Up</div>
                 <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={(e) => { handleSignIn(e); setAction("Login") }}>Login</div>

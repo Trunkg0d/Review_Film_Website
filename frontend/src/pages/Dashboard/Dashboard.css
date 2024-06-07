@@ -110,6 +110,15 @@ div {
     color: var(--hardblue);
 }
 
+.sidebar .menu-list .menu-item.menu-active .link {
+    color: var(--primary);
+}
+
+.sidebar .menu-list .menu-item.logout .link {
+  color: rgb(211, 78, 78);
+}
+
+
 .wrapper .content-container {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -184,3 +193,4 @@ div {
 .account-info {
     font-size: 1.225rem;
 }
+

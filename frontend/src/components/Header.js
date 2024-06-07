@@ -1,5 +1,5 @@
 // Header.js
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 function Header() {
@@ -28,21 +28,24 @@ function Header() {
       name: 'blog',
       active: false
     }
-  ]
+  ];
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     const onScroll = () => {
       const scrollPos = window.scrollY;
-      if (scrollPos > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(scrollPos > 0);
     };
 
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    setIsLoggedIn(!!token); // !! converts the token to a boolean
   }, []);
 
   return (
@@ -50,25 +53,41 @@ function Header() {
       <div className="logo">
         <a href="/">Morevie <i className="fa-solid fa-film"></i></a>
       </div>
-        <ul className="nav">
-          {navListData.map(({ _id, link, name, active }) => (
-            <li key={_id}>
-              <a href={link} className={active ? 'active' : ''}>{name}</a>
-            </li>
-          ))}
-        </ul>
-        <div className="search">
-          <input type="text" placeholder="Search..." />
-          <ion-icon name="search-outline"></ion-icon>
-        </div>
-        <div className="signin">
-          <button type="button"
+      <ul className="nav">
+        {navListData.map(({ _id, link, name, active }) => (
+          <li key={_id}>
+            <a href={link} className={active ? 'active' : ''}>{name}</a>
+          </li>
+        ))}
+      </ul>
+      <div className="search">
+        <input type="text" placeholder="Search..." />
+        <ion-icon name="search-outline"></ion-icon>
+      </div>
+      <div className="signin">
+        {isLoggedIn ? (
+          <button 
+            type="button"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href='/login';
-            }}>Sign In</button>
-        </div>
-      </header>
+              window.location.href = '/user/dashboard';
+            }}
+          >
+            <img src="https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg" alt="User Avatar" className="avatar" />
+          </button>
+        ) : (
+          <button 
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/login';
+            }}
+          >
+            Sign In
+          </button>
+        )}
+      </div>
+    </header>
   );
 }
 

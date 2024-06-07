@@ -6,7 +6,6 @@ import email_icon from './assets/email.png'
 import password_icon from './assets/password.png'
 import error_icon from './assets/error.png'; 
 import success_icon from './assets/success.png'; 
-import { useNavigate } from 'react-router-dom'
 
 const LoginSignup = () => {
     const [action, setAction] = useState("Login");
@@ -17,13 +16,13 @@ const LoginSignup = () => {
     const [isError, setIsError] = useState(false); 
     const [isSuccess, setIsSuccess] = useState(false); 
     const [loadingKey, setLoadingKey] = useState(0);
-    const navigate = useNavigate();
+    const timedelay = 2000; 
 
     useEffect(() => {
         if (isModalVisible) {
             setTimeout(() => {
                 setIsModalVisible(false);
-            }, 2000);
+            }, timedelay);
         }
     }, [isModalVisible]);
 
@@ -47,8 +46,8 @@ const LoginSignup = () => {
             setLoadingKey(prevKey => prevKey + 1);
             setIsModalVisible(true);
             setTimeout(() => {
-                navigate('/');
-            }, 2000);
+                window.location.href = '/login';
+            }, timedelay);
         } catch (error) {
             console.error("Error:", error);
             setModalMessage("Sign Up Failed. Please try again!");
@@ -58,7 +57,7 @@ const LoginSignup = () => {
             setIsModalVisible(true);
             setTimeout(() => {
                 setIsModalVisible(false);
-            }, 2000);
+            }, timedelay);
         }
     };
 
@@ -91,8 +90,8 @@ const LoginSignup = () => {
             setLoadingKey(prevKey => prevKey + 1);
             setIsModalVisible(true);
             setTimeout(() => {
-                navigate('/');
-            }, 2000);
+                window.location.href = '/'
+            }, timedelay);
         } catch (error) {
             console.error("Error:", error);
             setModalMessage("Email or Password is incorrect, please try again!");
@@ -102,7 +101,7 @@ const LoginSignup = () => {
             setIsModalVisible(true);
             setTimeout(() => {
                 setIsModalVisible(false);
-            }, 2000);
+            }, timedelay);
         }
     };
 

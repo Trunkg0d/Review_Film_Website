@@ -108,3 +108,43 @@
 .signin button:hover {
   background-color: rgb(108, 71, 1);
 }
+
+
+/* .header .signin .signinbutton button {
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 30px;
+  color: var(--primary);
+  backdrop-filter: blur(10px);
+}
+
+.header .signin .signinbutton button:hover {
+  background-color: rgb(108, 71, 1);
+}
+  */
+
+.header .signin .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff; /* Optional: add a white border */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: add a slight shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header .signin .avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} */
+
+/* Header.css */
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

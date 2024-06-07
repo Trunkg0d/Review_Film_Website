@@ -3,6 +3,7 @@ from beanie import init_beanie, PydanticObjectId
 from models.movies import Movie
 from models.users import User
 from models.celebrities import Celebrity
+from models.reviews import Review
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings
 from pydantic import BaseModel
@@ -14,8 +15,7 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[Movie, User, Celebrity])
-
+                          document_models=[Movie, User, Celebrity,Review])
     class Config:
         env_file = ".env"
 

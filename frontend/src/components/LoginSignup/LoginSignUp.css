@@ -1,4 +1,4 @@
-.container-login{
+.container-login {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -9,7 +9,7 @@
     width: 40%;
 }
 
-.header-login{
+.header-login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,20 +18,20 @@
     margin-top: 30px;
 }
 
-.text{
+.text {
     color: rgb(155, 101, 1);
     font-size: 48px;
     font-weight: 700;
 }
 
-.underline{
+.underline {
     width: 61px;
     height: 6px;
     background: rgb(155, 101, 1);
     border-radius: 9px;
 }
 
-.inputs{
+.inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@
     gap: 15px;
 }
 
-.input{
+.input {
     display: flex;
     position: relative;
     align-items: center;
@@ -50,14 +50,14 @@
     border-radius: 6px;
 }
 
-.input img{
+.input img {
     margin: 0px 30px;
     height: 30px;
     width: 30px;
-    gap: 15px
+    gap: 15px;
 }
 
-.input input{
+.input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -67,25 +67,25 @@
     font-size: 19px;
 }
 
-.forgot-password{
+.forgot-password {
     padding-left: 90px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
 }
 
-.forgot-password span{
+.forgot-password span {
     color: rgb(155, 101, 1);
     cursor: pointer;
 }
 
-.submit-container{
+.submit-container {
     display: flex;
     gap: 30px;
     margin: 40px auto;
 }
 
-.submit{
+.submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +98,7 @@
     cursor: pointer;
 }
 
-.gray{
+.gray {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,9 +112,75 @@
     cursor: pointer;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
 
-.error-message {
-    color: red;
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 7px;
     text-align: center;
-    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.modal-overlay.show .modal {
+    transform: scale(1);
+}
+
+.modal-message {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 10px; /* Adjusted height to hide 50% vertically */
+    background-color: #fec760;
+    border-radius: 7px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: loading 2s linear forwards;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+
+
+.error-icon {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+
+.success-icon {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
 }

@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginSignUp.css';
 import axios from "axios";
 import user_icon from './assets/user.png'
 import email_icon from './assets/email.png'
 import password_icon from './assets/password.png'
+import error_icon from './assets/error.png'; 
+import success_icon from './assets/success.png'; 
 import { useNavigate } from 'react-router-dom'
 
 const LoginSignup = () => {
-
     const [action, setAction] = useState("Login");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
+    const [isError, setIsError] = useState(false); 
+    const [isSuccess, setIsSuccess] = useState(false); 
+    const [loadingKey, setLoadingKey] = useState(0);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isModalVisible) {
+            setTimeout(() => {
+                setIsModalVisible(false);
+            }, 2000);
+        }
+    }, [isModalVisible]);
+
     const handleSignup = async (event) => {
+        
         event.preventDefault(); // Prevent default form submission behavior
-        // You can now use 'email' and 'password' state variables here
         console.log("Email:", email);
         console.log("Password:", password);
 
@@ -26,21 +40,30 @@ const LoginSignup = () => {
                 img: "string",
                 role: 0
             });
-            // Handle the response from the backend as needed
             console.log("Response from FastAPI backend:", response.data);
-            navigate('/');
+            setModalMessage("Sign Up Successful");
+            setIsError(false);
+            setIsSuccess(true);
+            setLoadingKey(prevKey => prevKey + 1);
+            setIsModalVisible(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         } catch (error) {
-            // Handle any errors that occur during the request
             console.error("Error:", error);
-
+            setModalMessage("Sign Up Failed. Please try again!");
+            setIsError(true);
+            setIsSuccess(false);
+            setLoadingKey(prevKey => prevKey + 1);
+            setIsModalVisible(true);
+            setTimeout(() => {
+                setIsModalVisible(false);
+            }, 2000);
         }
     };
 
-
-    // Add for me an output of front end, show "Email or password is incorrect, please try again" when the Login catch error, and If login ok redirect to home page link please
     const handleSignIn = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
-        // You can now use 'email' and 'password' state variables here
         console.log("Email:", email);
         console.log("Password:", password);
 
@@ -59,18 +82,41 @@ const LoginSignup = () => {
                 }
             );
 
-            // Handle the response from the backend as neede
             console.log("Response from API:", response.data);
             const accessToken = response.data.access_token;
             localStorage.setItem("accessToken", accessToken);
-            navigate('/');
+            setModalMessage("Login Successful! Your home page will be loading shortly!");
+            setIsError(false);
+            setIsSuccess(true);
+            setLoadingKey(prevKey => prevKey + 1);
+            setIsModalVisible(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         } catch (error) {
             console.error("Error:", error);
-            setErrorMessage("Email or Password is incorrect, please try again!")
+            setModalMessage("Email or Password is incorrect, please try again!");
+            setIsError(true);
+            setIsSuccess(false);
+            setLoadingKey(prevKey => prevKey + 1);
+            setIsModalVisible(true);
+            setTimeout(() => {
+                setIsModalVisible(false);
+            }, 2000);
         }
     };
+
+
     return (
         <div className='container-login'>
+            <div className={`modal-overlay ${isModalVisible ? 'show' : ''}`}>
+                <div className='modal'>
+                    {isError && <img src={error_icon} alt="Error" className='error-icon' />} 
+                    {isSuccess && <img src={success_icon} alt="Success" className='success-icon' />} 
+                    <div className='modal-message'>{modalMessage}</div>
+                    <div className='loading-bar' key={loadingKey}></div>
+                </div>
+            </div>
             <div className='header-login'>
                 <div className="text">{action}</div>
                 <div className="underline"></div>
@@ -87,16 +133,33 @@ const LoginSignup = () => {
                 <div className="input">
                     <img src={password_icon} alt="" />
                     <input type="password" placeholder='Your Password' onChange={(e) => setPassword(e.target.value)} />
-
                 </div>
             </div>
             {action === "Sign Up" ? <div></div> : <div className="forgot-password">Forgot Password? <span>Click Here!</span></div>}
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            {/* {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} */}
 
             <div className="submit-container">
-                <div className={action === "Login" ? "submit gray" : "submit"} onClick={(e) => { handleSignup(e); setAction("Sign Up") }}>Sign Up</div>
-                <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={(e) => { handleSignIn(e); setAction("Login") }}>Login</div>
-            </div>
+                <div className={action === "Login" ? "submit gray" : "submit"} 
+                    onClick={(e) => {
+                        if (action === "Sign Up") {
+                            handleSignup(e);
+                        } else {
+                            setAction("Sign Up");
+                        }
+                    }}>
+                    Sign Up
+                </div>
+                <div className={action === "Sign Up" ? "submit gray" : "submit"} 
+                    onClick={(e) => {
+                        if (action === "Login") {
+                            handleSignIn(e);
+                        } else {
+                            setAction("Login");
+                        }
+                    }}>
+                    Login
+                </div>
+</div>
         </div>
     );
 };

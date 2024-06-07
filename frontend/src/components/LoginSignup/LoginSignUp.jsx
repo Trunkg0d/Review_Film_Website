@@ -85,7 +85,7 @@ const LoginSignup = () => {
             console.log("Response from API:", response.data);
             const accessToken = response.data.access_token;
             localStorage.setItem("accessToken", accessToken);
-            setModalMessage("Login Successful! Your home page will be loading shortly!");
+            setModalMessage("Login Successful! Your home page will be loading shortly.");
             setIsError(false);
             setIsSuccess(true);
             setLoadingKey(prevKey => prevKey + 1);

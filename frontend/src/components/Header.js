@@ -1,4 +1,3 @@
-// Header.js
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
@@ -78,6 +77,7 @@ function Header() {
         ) : (
           <button 
             type="button"
+            className="signin-btn"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = '/login';

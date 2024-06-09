@@ -180,6 +180,16 @@
     margin-bottom: 20px; /* Adjust as needed */
 }
 
+.input-error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
 @keyframes loading {
     0% { width: 0; }
     100% { width: 100%; }

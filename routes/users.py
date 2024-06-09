@@ -4,6 +4,7 @@ from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from models.users import User, TokenResponse
+from pydantic import EmailStr
 
 user_router = APIRouter(
     tags=["User"],
@@ -12,15 +13,42 @@ user_router = APIRouter(
 user_database = Database(User)
 hash_password = HashPassword()
 
+
+@user_router.post("/signup/checkEmail")
+async def check_email_is_valid(input : dict) -> dict:
+    user_email_exist = await User.find_one(User.email == input["email"])
+    if user_email_exist:
+        return {"message": "Existed"}
+    else:
+        return {"message": "Not exist"}
+
+
+@user_router.post("/signup/checkUsername")
+async def check_username_is_valid(input : dict) -> dict:
+    user_username_exist = await User.find_one(User.username == input["username"])
+    if user_username_exist:
+        return {"message": "Existed"}
+    else:
+        return {"message": "Not exist"}
+
+
 @user_router.post("/signup")
 async def sign_user_up(user: User) -> dict:
-    user_exist = await User.find_one(User.email == user.email)
+    userEmail_exist = await User.find_one(User.email == user.email)
 
-    if user_exist:
+    if userEmail_exist:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail="User with email provided exists already."
+            detail="Email existed."
         )
+
+    userName_exist = await User.find_one(User.username == user.username)
+    if userName_exist:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Username existed."
+        )
+
     hashed_password = hash_password.create_hash(user.password)
     user.password = hashed_password
     await user_database.save(user)
@@ -31,6 +59,10 @@ async def sign_user_up(user: User) -> dict:
 @user_router.post("/signin", response_model=TokenResponse)
 async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> dict:
     user_exist = await User.find_one(User.email == user.username)
+
+    if not user_exist:
+        user_exist = await User.find_one(User.username == user.username)
+
     if not user_exist:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

@@ -1,20 +1,35 @@
 from auth.hash_password import HashPassword
 from auth.jwt_handler import create_access_token
+from auth.authenticate import authenticate
 from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from models.users import User, TokenResponse
 from pydantic import EmailStr
+from pydantic import BaseModel, EmailStr
+from typing import Optional, List
+from models.movies import Movie
+
+
+
 
 user_router = APIRouter(
     tags=["User"],
 )
 
+class UserInfo(BaseModel):
+    fullname: str
+    username: str
+    email: EmailStr
+    img: str
+    role: int
+    wish_list: Optional[List[Movie]]
+
 user_database = Database(User)
 hash_password = HashPassword()
 
 
-@user_router.post("/signup/checkEmail")
+@user_router.post("/checkEmail")
 async def check_email_is_valid(input : dict) -> dict:
     user_email_exist = await User.find_one(User.email == input["email"])
     if user_email_exist:
@@ -23,7 +38,7 @@ async def check_email_is_valid(input : dict) -> dict:
         return {"message": "Not exist"}
 
 
-@user_router.post("/signup/checkUsername")
+@user_router.post("/checkUsername")
 async def check_username_is_valid(input : dict) -> dict:
     user_username_exist = await User.find_one(User.username == input["username"])
     if user_username_exist:
@@ -79,3 +94,42 @@ async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> dict:
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Invalid details passed."
     )
+
+
+
+# @user_router.get("/profile")
+# async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
+#     user_info = await User.find_one(User.email == current_user)
+#     if user_info:
+#         return UserInfo(
+#             fullname=user_info.fullname, 
+#             username=user_info.username, 
+#             email=user_info.email,
+#             img=user_info.img,
+#             role=user_info.role,
+#             wish_list=user_info.wish_list
+#             )
+#     else:
+#         raise HTTPException(
+#             status_code=status.HTTP_404_NOT_FOUND,
+#             detail="User not found"
+#         )
+
+
+@user_router.get("/profile")
+async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
+    user_info = await User.find_one(User.email == current_user)
+    if user_info:
+        return {
+            "fullname": user_info.fullname,
+            "username": user_info.username,
+            "email": user_info.email,
+            "img": user_info.img,
+            "role": user_info.role,
+            "wish_list": user_info.wish_list
+        }
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )

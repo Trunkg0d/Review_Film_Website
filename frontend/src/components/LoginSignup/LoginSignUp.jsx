@@ -57,7 +57,7 @@ const LoginSignup = () => {
         
         
         try {
-            const usernameCheck = await axios.post("http://127.0.0.1:8000/user/signup/checkUsername", {
+            const usernameCheck = await axios.post("http://127.0.0.1:8000/user/checkUsername", {
                 "username": username
             });
 
@@ -66,7 +66,7 @@ const LoginSignup = () => {
                 return;
             }
 
-            const emailCheck = await axios.post("http://127.0.0.1:8000/user/signup/checkEmail", {
+            const emailCheck = await axios.post("http://127.0.0.1:8000/user/checkEmail", {
                 "email": email
             });
 
@@ -74,6 +74,7 @@ const LoginSignup = () => {
                 setformError("Email already exists.");
                 return;
             }
+
 
             const response = await axios.post("http://127.0.0.1:8000/user/signup", {
                 fullname: fullname,

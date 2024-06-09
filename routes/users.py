@@ -9,6 +9,8 @@ from pydantic import EmailStr
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from models.movies import Movie
+from jose import jwt, JWTError
+
 
 
 
@@ -96,27 +98,7 @@ async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> dict:
     )
 
 
-
-# @user_router.get("/profile")
-# async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
-#     user_info = await User.find_one(User.email == current_user)
-#     if user_info:
-#         return UserInfo(
-#             fullname=user_info.fullname, 
-#             username=user_info.username, 
-#             email=user_info.email,
-#             img=user_info.img,
-#             role=user_info.role,
-#             wish_list=user_info.wish_list
-#             )
-#     else:
-#         raise HTTPException(
-#             status_code=status.HTTP_404_NOT_FOUND,
-#             detail="User not found"
-#         )
-
-
-@user_router.get("/profile")
+@user_router.post("/profile")
 async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
     user_info = await User.find_one(User.email == current_user)
     if user_info:
@@ -133,3 +115,4 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found"
         )
+

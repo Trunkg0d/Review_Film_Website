@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Dashboard.css';
 
-
-
-
-
 function Dashboard() {
+  const [userInfo, setUserInfo] = useState({
+    fullname: '',
+    username: '',
+    email: '',
+    img: '',
+    role: 0,
+    wish_list: []
+  });
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        const response = await axios.post('http://localhost:8000/user/profile', {}, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        setUserInfo(response.data);
+      } catch (error) {
+        console.error('Error fetching user info:', error);
+        // Handle error, e.g., redirect to login if unauthorized
+        if (error.response && error.response.status === 401) {
+          window.location.href = '/';
+        }
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem('accessToken');
@@ -39,20 +67,24 @@ function Dashboard() {
           <div className="sub-title">Thông tin cơ bản</div>
           <div className="account-content-container">
             <div className="account-avatar-container">
-              <img src='https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg' alt="" className="account-avatar-profile" />
+              <img src={userInfo.img || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile" />
             </div>
             <div className="account-info-container">
               <div className="account-info-item">
                 <span className="account-info-label">Tên người dùng</span>
-                <span className="account-info-value">Robayusi</span>
+                <span className="account-info-value">{userInfo.fullname}</span>
+              </div>
+              <div className="account-info-item">
+                <span className="account-info-label">Username</span>
+                <span className="account-info-value">{userInfo.username}</span>
               </div>
               <div className="account-info-item">
                 <span className="account-info-label">Email</span>
-                <span className="account-info-value">something@gmail.com</span>
+                <span className="account-info-value">{userInfo.email}</span>
               </div>
               <div className="account-info-item">
                 <span className="account-info-label">Vai trò</span>
-                {0 === 0 ? (
+                {userInfo.role === 0 ? (
                   <span className="account-info-value">Người dùng</span>
                 ) : (
                   <span className="account-info-value">Admin</span>
@@ -64,6 +96,6 @@ function Dashboard() {
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

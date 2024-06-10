@@ -4,6 +4,8 @@ from pydantic import BaseModel, EmailStr
 from models.movies import Movie
 
 class User(Document):
+    fullname: str
+    username: str
     email: EmailStr
     password: str
     img: str
@@ -16,6 +18,8 @@ class User(Document):
     class Config:
         schema_extra = {
             "example": {
+                "fullname": "Hitori Gotoh",
+                "username": "bocchitherock",
                 "email": "fastapi@packt.com",
                 "password": "strong!!!",
                 "img": "/static/img.png",
@@ -34,7 +38,7 @@ class User(Document):
                               ]
             }
         }
-
+    
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str

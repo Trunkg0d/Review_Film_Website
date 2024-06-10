@@ -19,6 +19,7 @@ function Reviews({ id }) {
                 } else {
                     setReviews([]);
                 }
+                console.log(foundReview);
             })
             .catch(error => console.error(error.message));
     }, [id]);

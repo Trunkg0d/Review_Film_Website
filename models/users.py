@@ -42,3 +42,35 @@ class User(Document):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
+
+class UserUpdate(BaseModel):
+    fullname: Optional[str]
+    username: Optional[str]
+    email: Optional[str]
+    password: Optional[str]
+    img: Optional[str]
+    wish_list: Optional[List[Movie]] = None
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "fullname": "Hitori Gotoh",
+                "username": "bocchitherock",
+                "email": "fastapi@packt.com",
+                "password": "strong!!!",
+                "img": "/static/img.png",
+                "role": 0,
+                "wish_list": [
+                    {
+                        "_id": "5eb7cf5a86d9755df3a6c593",
+                        "title": "FastAPI BookLaunch",
+                        "image": "https://linktomyimage.com/image.png",
+                        "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
+                        "tags": ["comedy", "korean", "18+"],
+                        "language": "Vietnamese",
+                        "runtime": 60,
+                        "average_rating": 4.5
+                    }
+                ]
+            }
+        }

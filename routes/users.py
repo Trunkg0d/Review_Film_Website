@@ -5,15 +5,9 @@ from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from models.users import User, TokenResponse
-from pydantic import EmailStr
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from models.movies import Movie
-from jose import jwt, JWTError
-
-
-
-
 
 user_router = APIRouter(
     tags=["User"],
@@ -26,6 +20,12 @@ class UserInfo(BaseModel):
     img: str
     role: int
     wish_list: Optional[List[Movie]]
+
+class CheckEmailRequest(BaseModel):
+    email: EmailStr
+
+class CheckUsernameRequest(BaseModel):
+    username: str
 
 user_database = Database(User)
 hash_password = HashPassword()
@@ -56,14 +56,14 @@ async def sign_user_up(user: User) -> dict:
     if userEmail_exist:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail="Email existed."
+            detail="Email already exists."
         )
 
     userName_exist = await User.find_one(User.username == user.username)
     if userName_exist:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail="Username existed."
+            detail="Username already exists."
         )
 
     hashed_password = hash_password.create_hash(user.password)

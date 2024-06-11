@@ -19,7 +19,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
-
 class Database:
     def __init__(self, model):
         self.model = model

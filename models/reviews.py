@@ -52,22 +52,3 @@ class Review(Document):
 
     class Settings:
         name = "reviews"
-
-# class ReviewUpdateContent (BaseModel):
-#     content : Optional[str] 
-    
-#     class Config:
-#         schema_extra = {
-#             "example": {
-#                 "title": "FastAPI BookLaunch",
-#                 "backdrop_path": "https://linktomyimage.com/image.png",
-#                 "poster_path": "https://linktomyimage.com/image.png",
-#                 "description": "We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
-#                 "tags": ["comedy", "korean", "18+"],
-#                 "language": "Vietnamese",
-#                 "runtime": 60,
-#                 "average_rating": 4.5
-#             }
-#         }
-        
-# class ReviewUpdateHelpful (BaseModel):

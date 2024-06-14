@@ -1,34 +1,3 @@
-// // Pagination.js
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import './Pagination.css';
-
-// function Pagination({ currentPage, numofpage }) {
-//     const pages = [];
-
-//     for (let i = 1; i <= numofpage; i++) {
-//         pages.push(i);
-//     }
-
-//     return (
-//         <div className="pagination">
-//             <Link to={`/page/1`} className="page-link">Home</Link>
-//             {pages.map(page => (
-//                 <Link 
-//                     key={page} 
-//                     to={`/page/${page}`} 
-//                     className={`page-link ${page === parseInt(currentPage) ? 'active' : ''}`}
-//                 >
-//                     {page}
-//                 </Link>
-//             ))}
-//             <Link to={`/page/${numofpage}`} className="page-link">End</Link>
-//         </div>
-//     );
-// }
-
-// export default Pagination;
-
 // Pagination.js
 import React from 'react';
 import { Link } from 'react-router-dom';

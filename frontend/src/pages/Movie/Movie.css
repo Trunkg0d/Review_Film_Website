@@ -112,3 +112,167 @@
     line-height: 1.5;
     margin-top: 1rem;
 }
+
+
+
+
+/* .cast {
+  margin-top: 20px;
+}
+
+.section_header h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+}
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cast-item {
+  width: 18%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cast-item__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+} */
+
+
+
+/* Movie.css
+.movie-banner {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.movie-content__poster {
+  flex: 1;
+}
+
+.movie-content__poster__img {
+  width: 100%;
+  padding-top: 150%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.movie-content__info {
+  flex: 2;
+  margin-left: 20px;
+}
+
+
+.genres {
+  margin-top: 10px;
+}
+
+
+.overview {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+} */
+
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section_header {
+  margin-bottom: 10px;
+}
+
+.cast {
+  margin-top: 20px;
+  color: #fff;
+}
+
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cast-item {
+  flex: 1 1 30%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.cast-item__img {
+  width: 50px;
+  height: 75px; /* Ratio of the image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.cast-item__info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.cast-item__name {
+  font-weight: bold;
+}
+
+.cast-item__character {
+  color: #777;
+  display: flex;
+}
+
+.director {
+  margin-top: 20px;
+  color: #fff;
+}
+
+
+.director-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.director-item {
+  flex: 1 1 30%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.director-item__img {
+  width: 50px;
+  height: 75px; /* 3:2 aspect ratio */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.director-item__info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.director-item__name {
+  font-weight: bold;
+}
+
+.director-item__character {
+  color: #777;
+  display: flex;
+}

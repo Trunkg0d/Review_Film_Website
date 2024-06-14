@@ -1,14 +1,14 @@
 // Popular.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import './Popular.css';
 import Pagination from './Pagination';
 
 function Popular() {
-    const { pagenumber } = useParams();
     const [movies, setMovies] = useState([]);
     const [numofpage, setNumOfPage] = useState(1);
+
+    const editIconPath = '/data/edit_icon.png'
 
     const fetchData = () => {
         axios.get('http://localhost:8000/movie/page/0')  // Adjust the URL to your FastAPI endpoint
@@ -46,7 +46,7 @@ function Popular() {
                 {movies.slice(0, 12).map(movie => (
                 <div key={movie.id} className="movie">
                     <a href={`/movie/${movie.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }} />
+                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }} />
                     </a>
                     {(movie.release_date) && <p className="movie-release-date">{movie.release_date}</p>}
                     {(movie.title) && <p className="movie-title">{movie.title}</p>}

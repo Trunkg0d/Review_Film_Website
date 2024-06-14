@@ -42,13 +42,17 @@ async def retrieve_subset_movies() -> int:
     return len(movies)
 
 @movie_router.get("/{id}", response_model=Movie)
-async def retrieve_movie(id: PydanticObjectId) -> Movie:
+async def retrieve_movie(id: str) -> Movie:
+    id = PydanticObjectId(id)
     movie = await movie_database.get(id)
     if not movie:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Movie with supplied ID does not exist"
         )
+    movie.director = await get_celebrities_by_ids(movie.director)
+    if movie.actors:
+        movie.actors = await get_celebrities_by_ids(movie.actors)
     return movie
 
 @movie_router.post("/new")

@@ -28,6 +28,19 @@ async def retrieve_all_movies() -> List[Movie]:
     # print(movies)
     return movies
 
+
+@movie_router.get('/page/{pagenumber}', response_model=List[Movie])
+async def retrieve_subset_movies(pagenumber : int) -> List[Movie]:
+    movies = await retrieve_all_movies()
+    start_idx = 12 * pagenumber
+    return movies[start_idx : start_idx + 12]
+
+
+@movie_router.get('/numberOfMovies')
+async def retrieve_subset_movies() -> int:
+    movies = await retrieve_all_movies()
+    return len(movies)
+
 @movie_router.get("/{id}", response_model=Movie)
 async def retrieve_movie(id: PydanticObjectId) -> Movie:
     movie = await movie_database.get(id)

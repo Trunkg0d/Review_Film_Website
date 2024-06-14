@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import LoginSignup from './components/LoginSignup/LoginSignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ChatBox from './components/ChatBox/Chatbox';
+import Page from './components/Page';
 
 function App() {
   return (
@@ -19,10 +20,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/login" element={<LoginSignup />} />
-        <Route path="/user/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/user/dashboard" element={<Dashboard />} />
+        <Route path="/page/:pagenumber" element={<Page />} />
       </Routes>
       <Footer />
-      <ChatBox/>
+      <ChatBox />
       <BackToTopButton />
     </Router>
   );

@@ -1,13 +1,17 @@
 // Popular.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import './Popular.css';
+import Pagination from './Pagination';
 
 function Popular() {
+    const { pagenumber } = useParams();
     const [movies, setMovies] = useState([]);
+    const [numofpage, setNumOfPage] = useState(1);
 
     const fetchData = () => {
-        axios.get('http://localhost:8000/movie')  // Adjust the URL to your FastAPI endpoint
+        axios.get('http://localhost:8000/movie/page/0')  // Adjust the URL to your FastAPI endpoint
         .then(response => {
             const formattedData = response.data.map(movie => ({
                 id: movie._id,
@@ -24,13 +28,22 @@ function Popular() {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        axios.get('http://localhost:8000/movie/numberOfMovies')
+            .then(response => {
+                const totalMovies = response.data; // Adjust this according to your API response
+                setNumOfPage(Math.ceil(totalMovies / 5));
+            })
+            .catch(error => console.log(error.message));
+    }, []);
+
     return (
         <section id="popular" className="popular">
             <div className="title-row">
                 <h2 className="section-title">Popular</h2>
             </div>
             <div className="popular">
-                {movies.slice(0, 20).map(movie => (
+                {movies.slice(0, 12).map(movie => (
                 <div key={movie.id} className="movie">
                     <a href={`/movie/${movie.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }} />
@@ -40,6 +53,7 @@ function Popular() {
                 </div>
                 ))}
             </div>
+            <Pagination currentPage={1} numofpage={numofpage}/>
         </section>
     );
 }

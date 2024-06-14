@@ -1,14 +1,22 @@
 // Popular.js
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Popular.css';
 
 function Popular() {
     const [movies, setMovies] = useState([]);
 
     const fetchData = () => {
-        fetch('http://localhost:3000/data/movies_data.json')
-        .then(response => response.json())
-        .then(data => setMovies(data))
+        axios.get('http://localhost:8000/movie')  // Adjust the URL to your FastAPI endpoint
+        .then(response => {
+            const formattedData = response.data.map(movie => ({
+                id: movie._id,
+                title: movie.title,
+                poster_path: movie.poster_path,
+                release_date: movie.release_date ? movie.release_date.split('T')[0] : ''
+            }));
+            setMovies(formattedData);
+        })
         .catch(error => console.log(error.message));
     };
 

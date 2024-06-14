@@ -129,6 +129,25 @@ const LoginSignup = () => {
             console.log("Response from API:", response.data);
             const accessToken = response.data.access_token;
             localStorage.setItem("accessToken", accessToken);
+            const fetchRole = async () => {
+                try {
+                    const token = localStorage.getItem('accessToken');
+                    const response_role = await axios.post('http://localhost:8000/user/profile', {}, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                    });
+                    // setUserInfo(response.data);
+                    localStorage.setItem("role", response_role.data.role)
+                } catch (error) {
+                    console.error('Error fetching user role:', error);
+                    // Handle error, e.g., redirect to login if unauthorized
+                    if (error.response_role && error.response_role.status === 401) {
+                    window.location.href = '/';
+                    }
+                }
+            }
+            fetchRole();
             setModalMessage("Login Successful! Your home page will be loading shortly.");
             setIsError(false);
             setIsSuccess(true);

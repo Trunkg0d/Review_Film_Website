@@ -3,17 +3,29 @@ from auth.authenticate import authenticate
 from beanie import PydanticObjectId
 from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
-from models.movies import Movie, MovieUpdate
+from models.movies import Movie, MovieUpdate, MovieResponse
+from models.celebrities import Celebrity
 
 movie_router = APIRouter(
     tags=["Movies"]
 )
 
-movie_database = Database(Movie)
+movie_database = Database(MovieResponse)
+celebrity_database =  Database(Celebrity)
+
+async def get_celebrities_by_ids(ids: List[PydanticObjectId]) -> List[Celebrity]:
+    # Truy vấn để lấy danh sách các Celebrity theo ObjectId
+    celebrities = await celebrity_database.model.find({"_id": {"$in": ids}}).to_list()
+    return celebrities
 
 @movie_router.get("/", response_model=List[Movie])
 async def retrieve_all_movies() -> List[Movie]:
     movies = await movie_database.get_all()
+    for movie in movies:
+        movie.director = await get_celebrities_by_ids(movie.director)
+        if movie.actors:
+            movie.actors = await get_celebrities_by_ids(movie.actors)
+    # print(movies)
     return movies
 
 @movie_router.get("/{id}", response_model=Movie)

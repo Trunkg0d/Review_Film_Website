@@ -112,3 +112,146 @@
     line-height: 1.5;
     margin-top: 1rem;
 }
+
+.movie-content__info .about-cast-container {
+    padding: .5rem 25% 0;
+}
+
+.movie-content__info .about-cast-container .about-cast {
+    text-align: center;
+    padding: .5rem;
+    border-top: 2px solid var(--primary);
+    color: var(--white);
+    font-size: 120%;
+}
+
+.movie-content__info .cast .cast-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.movie-content__info .cast .cast-container::-webkit-scrollbar-track {
+    background: #535353;
+    border-radius: 10px;
+}
+  
+.movie-content__info .cast .cast-container::-webkit-scrollbar-thumb {
+    background: #fefefe;
+    border-radius: 10px;
+}
+
+.movie-content__info .cast .cast-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+.movie-content__info .cast .cast-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.movie-content__info .cast .cast-item {
+    width: 7rem;
+    margin: 10px;
+    text-align: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.movie-content__info .cast .cast-image {
+    width: 100%;
+    height: 7rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.movie-content__info .cast .cast-image:hover {
+    border: 10px solid var(--primary);
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+.movie-content__info .cast .cast-name {
+    color: var(--primary);
+    margin-top: 8px;
+    text-align: center;
+}
+
+.cast-detail{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    z-index: 1101;
+    width: 25%;
+    height: 25%;
+    border-radius: 20px;
+    cursor: default;
+    font-family: "Quicksand", sans-serif;
+}
+
+.cast-detail .avatar {
+    position: absolute;
+    align-items: flex-start;
+    top: 2%;
+    left: 1%;
+    width: 35%;
+    height: 96%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    background-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap');
+
+.cast-detail .info-container {
+    position: absolute; 
+    top: 5%;
+    width: 65%;
+    right: 0%;
+    align-items: center;
+}
+
+.cast-detail .info-container .name{
+    font-family: "Dancing Script", cursive;
+    font-size: 250%;
+    text-align: center;
+    color: rgb(190, 123, 0);
+}
+
+.cast-detail .info-container .other-container{
+    padding-top: 5%;
+    flex-direction: column;
+}
+
+.cast-detail .info-container .other-container .dob{
+    font-size: 150%;
+    text-align: center;
+    color: rgb(190, 123, 0);
+}
+
+.cast-detail .info-container .other-container .icon img{
+    padding-top: 5%;
+    width: 10%;
+    color: var(--primary);
+}
+
+.cast-detail .info-container .other-container .job{
+    padding-top: 5%;
+    font-size: 150%;
+    text-align: center;
+    color: rgb(190, 123, 0);
+}

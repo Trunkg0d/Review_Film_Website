@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --lowgray: #73737359;
+    --gray: #737373;
+    --lightblue: #4ea4dc;
+    --hardblue: #079cff;
+}
+
+.account-content-container {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 2rem 1.5rem;
+    color: var(--white);
+    border-top: 1px solid var(--primary);
+    border-radius: 1rem;
+}
+
+.account-info .account-info-container {
+    width: 100%;
+    padding: 0 1rem;
+    color: var(--gray);
+}
+
+.account-info .account-info-item {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.account-info .account-info-value-container {
+    display: flex;
+    width: 100%;
+    padding-right: 10%;
+    flex-direction: row-reverse;
+}
+
+.account-info .account-info-value-container .account-info-value{
+    width: 90%;
+    left: 0%;
+}
+
+.account-info .account-info-value-container img{
+    position: relative;
+    right: 0%;
+    width: 25px;
+    height: 25px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.account-info .account-info-value-container input{
+    position: relative;
+    right: 20%;
+    width: 70%;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 0px 10px;
+    color: var(--gray);
+}
+
+.account-info .account-info-value-container img:hover{
+    background-color: var(--lightblue);
+}
+
+.account-info .account-info-label {
+    width: 30%;
+    padding-right: .5rem;
+    color: var(--primary);
+}
+
+.account-info .account-avatar-container{
+    font-size: 85%;
+    font-style: italic;
+    row-gap: 10px;
+}
+
+.account-info .account-avatar-container .account-avatar-profile-change {
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--white);
+    border-radius: 100%;
+    border: 3px solid var(--primary);
+}
+
+.account-info .account-avatar-container .account-avatar-profile-change:hover {
+    border: 3px solid var(--gray);
+    cursor: pointer;
+}
+
+

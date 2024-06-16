@@ -9,6 +9,7 @@ import BackToTopButton from './components/BackToTopButton';
 import Footer from './components/Footer';
 import LoginSignup from './components/LoginSignup/LoginSignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
+import SafetySetting from './pages/Dashboard/SafetySettings/safetySetting';
 import ChatBox from './components/ChatBox/Chatbox';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/login" element={<LoginSignup />} />
         <Route path="/user/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
       <ChatBox/>

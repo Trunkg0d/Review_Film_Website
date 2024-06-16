@@ -168,7 +168,7 @@ div {
 }
 
 .account-info .account-info-label {
-    width: 12rem;
+    width: 10%;
     padding-right: .5rem;
     color: var(--primary);
 }
@@ -178,7 +178,8 @@ div {
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    padding: .75rem 5rem;
+    padding: .75rem 2rem;
+    width: 40%;
     flex-direction: column;
 }
 

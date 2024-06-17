@@ -178,7 +178,7 @@ function Movie() {
             <div className="mb-3 movie-content container">
               <div className="movie-content__poster">
                 <div className="movie-content__poster__img"
-                  style={{ backgroundImage: `url(${getImageUrl(movie.poster_path, defaultAvatar)})` }}>
+                  style={{ backgroundImage: `url(${getImageUrl(movie.poster_path)})` }}>
                 </div>
               </div>
               <div className="movie-content__info">

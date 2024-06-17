@@ -8,6 +8,8 @@ function Reviews({ id }) {
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
     const [newReviewText, setNewReviewText] = useState(""); // State for new comment
+    const [editReviewId, setEditReviewId] = useState(null); // State for editing review
+    const [editReviewText, setEditReviewText] = useState(""); // State for the text being edited
 
     useEffect(() => {
         fetch(`http://localhost:3000/data/reviews_data.json`)
@@ -31,7 +33,7 @@ function Reviews({ id }) {
     const handleCancel = () => {
         setNewReviewText('');
         setIsCommentBoxVisible(false);
-    }
+    };
 
     const handleReply = (reviewId) => {
         const newComment = newComments[reviewId] || "";
@@ -68,10 +70,6 @@ function Reviews({ id }) {
         }
     };
 
-    // const handleNewReviewChange = (e) => {
-    //     setNewReviewText(e.target.value);
-    // };
-
     const handleNewReviewSubmit = () => {
         if (newReviewText.trim() === "") {
             // Do not add an empty comment
@@ -88,30 +86,45 @@ function Reviews({ id }) {
         setNewReviewText(""); // Clear the input box
     };
 
+    const handleEditReview = (reviewId) => {
+        const review = reviews.find(review => review.review_id === reviewId);
+        if (review) {
+            setEditReviewId(reviewId);
+            setEditReviewText(review.comment);
+        }
+    };
+
+    const handleEditReviewChange = (e) => {
+        setEditReviewText(e.target.value);
+    };
+
+    const handleEditReviewSubmit = () => {
+        if (editReviewText.trim() === "") {
+            // Do not update with an empty comment
+            return;
+        }
+
+        const updatedReviews = reviews.map(review => {
+            if (review.review_id === editReviewId) {
+                return { ...review, comment: editReviewText };
+            }
+            return review;
+        });
+
+        setReviews(updatedReviews);
+        setEditReviewId(null); // Exit edit mode
+        setEditReviewText(""); // Clear the input box
+    };
+
     return (
         <div className="reviews-container">
             <section id="reviews" className="reviews">
                 <div className="title-row">
                     <h2 className="section-title">Reviews</h2>
                 </div>
-                {/* <div className="new-review">
-                    <textarea
-                        value={newReviewText}
-                        onChange={handleNewReviewChange}
-                        placeholder="Write a review..."
-                        className="new-review__input"
-                    />
-                    <button onClick={handleNewReviewSubmit} className="new-review__submit">Submit</button>
-                </div> */}
                 <div className="new-review">
                     <div className="new-review__header">
                         <img src={'https://kenh14cdn.com/203336854389633024/2023/1/10/photo-1-1673332882261583702192.jpg'} alt="User Avatar" className="new-review__avatar" />
-                        {/* <textarea 
-                            className="new-review__input"
-                            value={newReviewText}
-                            onChange={(e) => setNewReviewText(e.target.value)}
-                            placeholder="Write your review here..."
-                        /> */}
                         <textarea 
                             className="new-review__input"
                             value={newReviewText}
@@ -141,23 +154,35 @@ function Reviews({ id }) {
                                         </div>
                                     </div>
                                     <div className="review__content">
-                                        {review.comment.length > 200 ? (
-                                            <div>
-                                                {review.comment.substring(0, 200)}
-                                                {activeReviewId === review.review_id && (
-                                                    <span>{review.comment.substring(200)}</span>
-                                                )}
-                                                <button onClick={() => toggleCommentBox(review.review_id)}>
-                                                    {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
-                                                </button>
-                                            </div>
+                                        {editReviewId === review.review_id ? (
+                                            <textarea 
+                                                value={editReviewText}
+                                                onChange={handleEditReviewChange}
+                                            />
                                         ) : (
-                                            review.comment
+                                            review.comment.length > 200 ? (
+                                                <div>
+                                                    {review.comment.substring(0, 200)}
+                                                    {activeReviewId === review.review_id && (
+                                                        <span>{review.comment.substring(200)}</span>
+                                                    )}
+                                                    <button onClick={() => toggleCommentBox(review.review_id)}>
+                                                        {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                review.comment
+                                            )
                                         )}
                                     </div>
                                     <div className="review__actions">
                                         <button onClick={() => handleLike(review.review_id)}>Like</button>
                                         <button onClick={() => toggleCommentBox(review.review_id)}>Comment</button>
+                                        {editReviewId === review.review_id ? (
+                                            <button onClick={handleEditReviewSubmit}>Save</button>
+                                        ) : (
+                                            <button onClick={() => handleEditReview(review.review_id)}>Edit</button>
+                                        )}
                                     </div>
                                     {(isCommentBoxVisible && activeReviewId === review.review_id) && (
                                         <div className="review__replies">
@@ -185,13 +210,10 @@ function Reviews({ id }) {
                             </div>
                         )
                     }
-
                 </div>
-
             </section>
         </div>
     );
 }
 
 export default Reviews;
-

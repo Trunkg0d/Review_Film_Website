@@ -11,64 +11,81 @@ review_router = APIRouter(
 
 review_database = Database(Review)
 
-# Get all review
+# Get all reviews
 @review_router.get("/", response_model=List[Review])
 async def retrieve_all_reviews() -> List[Review]:
     reviews = await review_database.get_all()
     return reviews
 
-# Get review of a movie , movie id retreive from Movie model
-@review_router.get("/{movie_id}", response_model=List[Review])
-async def retrieve_review(movie_id: PydanticObjectId) -> List[Review]:
-    review = await review_database.get(movie_id)
+# Get reviews of a movie by movie_id
+@review_router.get("/movie/{movie_id}", response_model=List[Review])
+async def retrieve_reviews_by_movie(movie_id: PydanticObjectId) -> List[Review]:
+    reviews = await review_database.get_all({"movie_id": movie_id})
+    if not reviews:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="This movie still does not have any reviews. Be the first to review!"
+        )
+    return reviews
+
+# Get a single review by review_id
+@review_router.get("/{id}", response_model=Review)
+async def retrieve_review(id: PydanticObjectId) -> Review:
+    review = await review_database.get(id)
     if not review:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="This movie still not have any review. Be the first to review !!!"
+            detail="Review not found"
         )
     return review
-# Get only one review
 
-@review_router.post("/new")
+# Create a new review
+@review_router.post("/new", response_model=dict)
 async def create_review(body: Review, user: str = Depends(authenticate)) -> dict:
     body.creator = user
     await review_database.save(body)
     return {
-        "message": "Reviews created successfully"
+        "message": "Review created successfully"
     }
 
+# Update a review by review_id
 @review_router.put("/content/{id}", response_model=Review)
 async def update_review(id: PydanticObjectId, new_review: str, user: str = Depends(authenticate)) -> Review:
-    reviews = await review_database.get(id)
-    if reviews.creator != user:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Operation not allowed"
-        )
-    reviews.content = new_review
-    updated_reviews = await review_database.update(id, reviews)
-    if not updated_reviews:
+    review = await review_database.get(id)
+    if not review:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Review with supplied ID does not exist"
         )
-    return updated_reviews
-
-@review_router.delete("/{id}")
-async def delete_review(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
-    reviews = await review_database.get(id)
-    if not reviews:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Reviews not found"
-        )
-    if reviews.creator != user:
+    if review.creator != user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Operation not allowed"
         )
-    reviews = await review_database.delete(id)
+    review.content = new_review
+    updated_review = await review_database.update(id, review)
+    if not updated_review:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Review with supplied ID does not exist"
+        )
+    return updated_review
 
+# Delete a review by review_id
+@review_router.delete("/{id}", response_model=dict)
+async def delete_review(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
+    review = await review_database.get(id)
+    if not review:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Review not found"
+        )
+    if review.creator != user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Operation not allowed"
+        )
+    await review_database.delete(id)
     return {
-        "message": "reviews deleted successfully."
+        "message": "Review deleted successfully."
     }

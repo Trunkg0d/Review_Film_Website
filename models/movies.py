@@ -78,7 +78,7 @@ class MovieUpdate(BaseModel):
     language: Optional[str]
     runtime: Optional[int]  # minutes
     average_rating: Optional[float]
-    casts: Optional[List[Celebrity]]
+    actors: Optional[List[Celebrity]]
 
     class Config:
         schema_extra = {

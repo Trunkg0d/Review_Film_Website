@@ -5,16 +5,17 @@ from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from models.movies import Movie, MovieUpdate, MovieResponse
 from models.celebrities import Celebrity
+from models.users import User
 
 movie_router = APIRouter(
     tags=["Movies"]
 )
 
 movie_database = Database(MovieResponse)
+user_database = Database(User)
 celebrity_database =  Database(Celebrity)
 
 async def get_celebrities_by_ids(ids: List[PydanticObjectId]) -> List[Celebrity]:
-    # Truy vấn để lấy danh sách các Celebrity theo ObjectId
     celebrities = await celebrity_database.model.find({"_id": {"$in": ids}}).to_list()
     return celebrities
 
@@ -25,7 +26,6 @@ async def retrieve_all_movies() -> List[Movie]:
         movie.director = await get_celebrities_by_ids(movie.director)
         if movie.actors:
             movie.actors = await get_celebrities_by_ids(movie.actors)
-    # print(movies)
     return movies
 
 
@@ -42,8 +42,7 @@ async def retrieve_subset_movies() -> int:
     return len(movies)
 
 @movie_router.get("/{id}", response_model=Movie)
-async def retrieve_movie(id: str) -> Movie:
-    id = PydanticObjectId(id)
+async def retrieve_movie(id: PydanticObjectId) -> Movie:
     movie = await movie_database.get(id)
     if not movie:
         raise HTTPException(
@@ -63,15 +62,37 @@ async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
         "message": "Movie created successfully"
     }
 
-@movie_router.put("/{id}", response_model=Movie)
+@movie_router.put("/{id}")
 async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depends(authenticate)) -> Movie:
-    movie = await movie_database.get(id)
-    if movie.creator != user:
+    user_info = await User.find_one(User.email == user)
+    # movie = await movie_database.get(id)
+    if user_info.role != 1:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Operation not allowed"
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Forbidden"
         )
-    updated_movie = await movie_database.update(id, body)
+    
+    new_movie = Movie(
+    title=body.title,
+    backdrop_path=body.backdrop_path,
+    poster_path=body.poster_path,
+    description=body.description,
+    release_date=body.release_date,
+    tags=body.tags,
+    director=['666b130500105718d9a4b3a2'],
+    language=body.language,
+    runtime=body.runtime,
+    average_rating=body.average_rating,
+    actors=['666b130500105718d9a4b3a2'],
+)
+
+
+    # if movie.creator != user:
+    #     raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail="Operation not allowed"
+    #     )
+    updated_movie = await movie_database.update(id, new_movie)
     if not updated_movie:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

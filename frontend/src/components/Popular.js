@@ -1,4 +1,3 @@
-// Popular.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Popular.css';
@@ -8,7 +7,7 @@ function Popular() {
     const [movies, setMovies] = useState([]);
     const [numofpage, setNumOfPage] = useState(1);
 
-    const editIconPath = '/data/edit_icon.png'
+    const editIconPath = '/data/edit_icon.png';
 
     const fetchData = () => {
         axios.get('http://localhost:8000/movie/page/0')  // Adjust the URL to your FastAPI endpoint
@@ -37,6 +36,13 @@ function Popular() {
             .catch(error => console.log(error.message));
     }, []);
 
+    const handleEditClick = (id) => {
+        window.location.href = `http://localhost:3000/admin_filmconfig/${id}`;
+    };
+
+    // Get the role from localStorage
+    const role = localStorage.getItem('role');
+
     return (
         <section id="popular" className="popular">
             <div className="title-row">
@@ -44,13 +50,18 @@ function Popular() {
             </div>
             <div className="popular">
                 {movies.slice(0, 12).map(movie => (
-                <div key={movie.id} className="movie">
-                    <a href={`/movie/${movie.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }} />
-                    </a>
-                    {(movie.release_date) && <p className="movie-release-date">{movie.release_date}</p>}
-                    {(movie.title) && <p className="movie-title">{movie.title}</p>}
-                </div>
+                    <div key={movie.id} className="movie">
+                        <a href={`/movie/${movie.id}`}>
+                            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }} />
+                        </a>
+                        {(movie.release_date) && <p className="movie-release-date">{movie.release_date}</p>}
+                        {(movie.title) && <p className="movie-title">{movie.title}</p>}
+                        {role === '1' && (
+                            <button className="edit-button" onClick={() => handleEditClick(movie.id)}>
+                                <img src={editIconPath} alt="Edit" />
+                            </button>
+                        )}
+                    </div>
                 ))}
             </div>
             <Pagination currentPage={1} numofpage={numofpage}/>

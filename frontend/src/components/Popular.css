@@ -1,3 +1,4 @@
+/* Popular.css */
 .popular {
   display: flex;
   flex-wrap: wrap;
@@ -6,13 +7,14 @@
 }
 
 .movie {
-  width: 23%; /* Set the width of the movie to fill 1/4 of the row */
-  margin-bottom: 20px; /* Add some space below the movie */
+  width: 23%;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .movie img {
-  width: 100%; /* Set the width of the poster image to fill the movie */
-  height: auto; /* Set the height of the poster image to maintain its aspect ratio */
+  width: 100%; 
+  height: auto; 
 }
 
 .movie-release-date {
@@ -28,3 +30,25 @@
   margin-top: 10px;
   color: aliceblue;
 }
+
+.edit-button {
+  position: absolute;
+  width: 10%;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.edit-button:hover img {
+  filter: brightness(150%);
+  transform: scale(1.2);
+}
+

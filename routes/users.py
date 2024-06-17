@@ -30,7 +30,6 @@ class CheckUsernameRequest(BaseModel):
 user_database = Database(User)
 hash_password = HashPassword()
 
-
 @user_router.post("/checkEmail")
 async def check_email_is_valid(input : dict) -> dict:
     user_email_exist = await User.find_one(User.email == input["email"])
@@ -38,7 +37,6 @@ async def check_email_is_valid(input : dict) -> dict:
         return {"message": "Existed"}
     else:
         return {"message": "Not exist"}
-
 
 @user_router.post("/checkUsername")
 async def check_username_is_valid(input : dict) -> dict:
@@ -97,7 +95,6 @@ async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> dict:
         detail="Invalid details passed."
     )
 
-
 @user_router.post("/profile")
 async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
     user_info = await User.find_one(User.email == current_user)
@@ -115,4 +112,3 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> dict:
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found"
         )
-

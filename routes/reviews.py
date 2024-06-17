@@ -13,13 +13,13 @@ review_database = Database(Review)
 
 # Get all review
 @review_router.get("/", response_model=List[Review])
-async def retrieve_all_movies() -> List[Review]:
+async def retrieve_all_reviews() -> List[Review]:
     reviews = await review_database.get_all()
     return reviews
 
 # Get review of a movie , movie id retreive from Movie model
 @review_router.get("/{movie_id}", response_model=List[Review])
-async def retrieve_movie(movie_id: PydanticObjectId) -> List[Review]:
+async def retrieve_review(movie_id: PydanticObjectId) -> List[Review]:
     review = await review_database.get(movie_id)
     if not review:
         raise HTTPException(
@@ -30,7 +30,7 @@ async def retrieve_movie(movie_id: PydanticObjectId) -> List[Review]:
 # Get only one review
 
 @review_router.post("/new")
-async def create_movie(body: Review, user: str = Depends(authenticate)) -> dict:
+async def create_review(body: Review, user: str = Depends(authenticate)) -> dict:
     body.creator = user
     await review_database.save(body)
     return {
@@ -38,17 +38,14 @@ async def create_movie(body: Review, user: str = Depends(authenticate)) -> dict:
     }
 
 @review_router.put("/content/{id}", response_model=Review)
-async def update_movie(id: PydanticObjectId, new_review: str, user: str = Depends(authenticate)) -> Review:
+async def update_review(id: PydanticObjectId, new_review: str, user: str = Depends(authenticate)) -> Review:
     reviews = await review_database.get(id)
-    print ("dsafk")
     if reviews.creator != user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Operation not allowed"
         )
-    print ("dsafk")
     reviews.content = new_review
-    print ("dsafk")
     updated_reviews = await review_database.update(id, reviews)
     if not updated_reviews:
         raise HTTPException(
@@ -58,7 +55,7 @@ async def update_movie(id: PydanticObjectId, new_review: str, user: str = Depend
     return updated_reviews
 
 @review_router.delete("/{id}")
-async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
+async def delete_review(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
     reviews = await review_database.get(id)
     if not reviews:
         raise HTTPException(

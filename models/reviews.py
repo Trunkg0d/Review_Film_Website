@@ -12,8 +12,7 @@ class Review(Document):
     review_date : datetime
     helpful : List[User]  = []
     not_helpful : List[User] = []
-    
-    
+
     class Config:
         schema_extra = {
             "example": {

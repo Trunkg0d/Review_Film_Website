@@ -8,9 +8,9 @@
 } */
 
 .reviews-container {
-    max-width: 1000px; /* Adjust as needed */
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0; /* already set */
+    padding: 0;
 }
 
 .reviews {
@@ -23,16 +23,16 @@
     width: 100%;
 }
 
-
-
 .reviews__list {
+    width: 100%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.review {
+.reviews .review {
+    width: 100%;
     padding: 15px;
     background-color: #444;
     border-radius: 8px;

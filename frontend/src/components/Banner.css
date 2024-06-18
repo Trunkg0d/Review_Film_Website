@@ -8,8 +8,8 @@
     margin: 0;
     box-sizing: border-box;
     position: relative;
+    background-image: var(--white);
 }
-
 
 .banner-content {
     font-size: large;
@@ -19,8 +19,11 @@
     transform: translate(-50%, -50%);
     margin: auto;
     max-width: 30%; /* Set the maximum width of the content */
-    text-align: left;
     z-index: 2;
+}
+
+.banner-content .banner-description{
+    text-align: justify;
 }
 
 

@@ -184,6 +184,9 @@ async def upvote_review(id: PydanticObjectId, user: str = Depends(authenticate))
         review.not_helpful.remove(user_info.id)
     if user_info.id not in review.helpful:
         review.helpful.append(user_info.id)
+    elif user_info.id in review.helpful:
+        review.helpful.remove(user_info.id)
+
     updated_review = await review_database.update(id, review)
     updated_review = await fill_userinfo(updated_review)
     return updated_review
@@ -215,6 +218,9 @@ async def downvote_review(id: PydanticObjectId, user: str = Depends(authenticate
         review.helpful.remove(user_info.id)
     if user_info.id not in review.not_helpful:
         review.not_helpful.append(user_info.id)
+    elif user_info.id in review.not_helpful:
+        review.not_helpful.remove(user_info.id)
+
     updated_review = await review_database.update(id, review)
     updated_review= await fill_userinfo(updated_review)
     return updated_review

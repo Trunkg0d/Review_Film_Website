@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Reviews.css';
 
 function Reviews({ id }) {
@@ -7,21 +8,14 @@ function Reviews({ id }) {
     const [newComments, setNewComments] = useState({});
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
-    const [newReviewText, setNewReviewText] = useState(""); // State for new comment
-    const [editReviewId, setEditReviewId] = useState(null); // State for editing review
-    const [editReviewText, setEditReviewText] = useState(""); // State for the text being edited
+    const [newReviewText, setNewReviewText] = useState("");
+    const [editReviewId, setEditReviewId] = useState(null);
+    const [editReviewText, setEditReviewText] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:3000/data/reviews_data.json`)
-            .then(response => response.json())
-            .then(data => {
-                const foundReview = data.find(review => review.movie_id === parseInt(id));
-                if (foundReview) {
-                    setReviews(foundReview.reviews);
-                } else {
-                    setReviews([]);
-                }
-                console.log(foundReview);
+        axios.get(`http://localhost:8000/review/movie/${id}`)
+            .then(response => {
+                setReviews(response.data);
             })
             .catch(error => console.error(error.message));
     }, [id]);
@@ -38,7 +32,6 @@ function Reviews({ id }) {
     const handleReply = (reviewId) => {
         const newComment = newComments[reviewId] || "";
         if (newComment.trim() === "") {
-            // Do not add an empty comment
             return;
         }
 
@@ -72,25 +65,33 @@ function Reviews({ id }) {
 
     const handleNewReviewSubmit = () => {
         if (newReviewText.trim() === "") {
-            // Do not add an empty comment
             return;
         }
 
         const newReview = {
-            author: { username: "Current User" }, // Replace with actual user data
-            comment: newReviewText,
-            review_id: reviews.length + 1 // Generate a new ID for the review
+            content: newReviewText,
+            movie_id: id,
+            // Include additional necessary fields and user information
         };
 
-        setReviews([...reviews, newReview]);
-        setNewReviewText(""); // Clear the input box
+        const token = localStorage.getItem('accessToken');
+        axios.post('http://localhost:8000/review/new', newReview, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setReviews([...reviews, newReview]);
+                setNewReviewText("");
+            })
+            .catch(error => console.error(error.message));
     };
 
     const handleEditReview = (reviewId) => {
-        const review = reviews.find(review => review.review_id === reviewId);
+        const review = reviews.find(review => review.id === reviewId);
         if (review) {
             setEditReviewId(reviewId);
-            setEditReviewText(review.comment);
+            setEditReviewText(review.content);
         }
     };
 
@@ -100,20 +101,30 @@ function Reviews({ id }) {
 
     const handleEditReviewSubmit = () => {
         if (editReviewText.trim() === "") {
-            // Do not update with an empty comment
             return;
         }
 
-        const updatedReviews = reviews.map(review => {
-            if (review.review_id === editReviewId) {
-                return { ...review, comment: editReviewText };
-            }
-            return review;
-        });
+        const updatedReview = {
+            content: editReviewText,
+        };
 
-        setReviews(updatedReviews);
-        setEditReviewId(null); // Exit edit mode
-        setEditReviewText(""); // Clear the input box
+        const token = localStorage.getItem('accessToken');
+        axios.put(`http://localhost:8000/review/content/${editReviewId}`, updatedReview, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }})
+            .then(response => {
+                const updatedReviews = reviews.map(review => {
+                    if (review.id === editReviewId) {
+                        return { ...review, content: editReviewText };
+                    }
+                    return review;
+                });
+                setReviews(updatedReviews);
+                setEditReviewId(null);
+                setEditReviewText("");
+            })
+            .catch(error => console.error(error.message));
     };
 
     return (
@@ -150,58 +161,40 @@ function Reviews({ id }) {
                                     <div className="review__header">
                                         <div className="review__header__user">
                                             <div className="review__header__user__img"></div>
-                                            <div className="review__header__user__name">{review.author.username}</div>
+                                            <div className="review__header__user__name">{review.user_info.username}</div>
                                         </div>
                                     </div>
                                     <div className="review__content">
-                                        {editReviewId === review.review_id ? (
+                                        {editReviewId === review.id ? (
                                             <textarea 
                                                 value={editReviewText}
                                                 onChange={handleEditReviewChange}
                                             />
                                         ) : (
-                                            review.comment.length > 200 ? (
+                                            review.content.length > 200 ? (
                                                 <div>
-                                                    {review.comment.substring(0, 200)}
-                                                    {activeReviewId === review.review_id && (
-                                                        <span>{review.comment.substring(200)}</span>
+                                                    {review.content.substring(0, 200)}
+                                                    {activeReviewId === review.id && (
+                                                        <span>{review.content.substring(200)}</span>
                                                     )}
-                                                    <button onClick={() => toggleCommentBox(review.review_id)}>
-                                                        {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
+                                                    <button onClick={() => toggleCommentBox(review.id)}>
+                                                        {activeReviewId === review.id && isCommentBoxVisible ? 'Hide' : 'Show More'}
                                                     </button>
                                                 </div>
                                             ) : (
-                                                review.comment
+                                                review.content
                                             )
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.review_id)}>Like</button>
-                                        <button onClick={() => toggleCommentBox(review.review_id)}>Comment</button>
-                                        {editReviewId === review.review_id ? (
+                                        <button onClick={() => handleLike(review.id)}>Upvote</button>
+                                        <button onClick={() => handleLike(review.id)}>Downvote</button>
+                                        {editReviewId === review.id ? (
                                             <button onClick={handleEditReviewSubmit}>Save</button>
                                         ) : (
-                                            <button onClick={() => handleEditReview(review.review_id)}>Edit</button>
+                                            <button onClick={() => handleEditReview(review.id)}>Edit</button>
                                         )}
                                     </div>
-                                    {(isCommentBoxVisible && activeReviewId === review.review_id) && (
-                                        <div className="review__replies">
-                                            {
-                                                (replies[review.review_id] || []).map((reply, j) => (
-                                                    <div key={j} className="reply">
-                                                        {reply}
-                                                    </div>
-                                                ))
-                                            }
-                                            <input
-                                                type="text"
-                                                value={newComments[review.review_id] || ""}
-                                                onChange={(e) => handleInputChange(review.review_id, e.target.value)}
-                                                placeholder="Write a reply..."
-                                            />
-                                            <button onClick={() => handleReply(review.review_id)}>Reply</button>
-                                        </div>
-                                    )}
                                 </div>
                             ))
                         ) : (

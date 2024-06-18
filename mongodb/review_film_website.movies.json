@@ -1,0 +1,6954 @@
+[{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa04d"
+  },
+  "title": "Dune: Part Two",
+  "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+  "poster_path": "/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+  "description": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+  "release_date": {
+    "$date": "2024-02-27T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3a2"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a3"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a4"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a5"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a6"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a7"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3a8"
+    }
+  ],
+  "runtime": 167,
+  "average_rating": 8.233,
+  "actors": [
+    {
+      "$oid": "666b0c2500105718d9a4ad0c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad0d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad0e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad0f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad10"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad11"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad12"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad13"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad14"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad15"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad16"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad17"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad18"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad19"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad1f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad20"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad21"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad22"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad23"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad24"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad25"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad26"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad27"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad28"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad29"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad2f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad30"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad31"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad32"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad33"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad34"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad35"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad36"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad37"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad38"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad39"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad3f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad40"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad41"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad42"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad43"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad44"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad45"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad46"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad47"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad48"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad49"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad4f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad50"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad51"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad52"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad53"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad54"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad55"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad56"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad57"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad58"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad59"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad5f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad60"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad61"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad62"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad63"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad64"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad65"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad66"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad67"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad68"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad69"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad6a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad6b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad6c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa04e"
+  },
+  "title": "Godzilla x Kong: The New Empire",
+  "backdrop_path": "/qrGtVFxaD8c7et0jUtaYhyTzzPg.jpg",
+  "poster_path": "/nVOZuxRiBygJ3VmXc9QcDGZfHzD.jpg",
+  "description": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
+  "release_date": {
+    "$date": "2024-03-27T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Science Fiction",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3a9"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3aa"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ab"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ac"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ad"
+    }
+  ],
+  "runtime": 115,
+  "average_rating": 6.514,
+  "actors": [
+    {
+      "$oid": "666b0c2500105718d9a4ad6d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad6e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad6f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad70"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad71"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad72"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad73"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad74"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad75"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad76"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad77"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad78"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad79"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad7f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad80"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad81"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad82"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa04f"
+  },
+  "title": "Kung Fu Panda 4",
+  "backdrop_path": "/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+  "poster_path": "/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg",
+  "description": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+  "release_date": {
+    "$date": "2024-03-02T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Animation",
+    "Action",
+    "Family",
+    "Comedy",
+    "Fantasy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3ae"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3af"
+    }
+  ],
+  "runtime": 94,
+  "average_rating": 7.123,
+  "actors": [
+    {
+      "$oid": "666b0c2500105718d9a4ad83"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad84"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad85"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad86"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad87"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad88"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad89"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad8f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad90"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad91"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad92"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad93"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad94"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad95"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad96"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad97"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad98"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad99"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9a"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9b"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9c"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9d"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9e"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ad9f"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada0"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada1"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada2"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada3"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada4"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada5"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada6"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa050"
+  },
+  "title": "Breathe",
+  "backdrop_path": "/9wJO4MBzkqgUZemLTGEsgUbYyP6.jpg",
+  "poster_path": "/wTW2t8ocWDlHns8I7vQxuqkyK58.jpg",
+  "description": "Air-supply is scarce in the near future, forcing a mother and daughter to fight for survival when two strangers arrive desperate for an oxygenated haven.",
+  "release_date": {
+    "$date": "2024-04-04T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Mystery",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3b0"
+    }
+  ],
+  "runtime": 93,
+  "average_rating": 5.024,
+  "actors": [
+    {
+      "$oid": "666b0c2500105718d9a4ada8"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4ada9"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adaa"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adab"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adac"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adad"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adae"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adaf"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb0"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa051"
+  },
+  "title": "Woody Woodpecker Goes to Camp",
+  "backdrop_path": "/cIztAxDn3H8JylRaJwiHHpkGe53.jpg",
+  "poster_path": "/mMnzNYvpqLLLdgF5TMmXfuy6wzx.jpg",
+  "description": "After getting kicked out of the forest, Woody thinks he's found a forever home at Camp Woo Hoo — until an inspector threatens to shut down the camp.",
+  "release_date": {
+    "$date": "2024-04-12T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Family",
+    "Comedy",
+    "Animation"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3b1"
+    }
+  ],
+  "runtime": 101,
+  "average_rating": 6.854,
+  "actors": [
+    {
+      "$oid": "666b0c2500105718d9a4adb1"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb2"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb3"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb4"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb5"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb6"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb7"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb8"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adb9"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adba"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adbb"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adbc"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adbd"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adbe"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adbf"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adc0"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adc1"
+    },
+    {
+      "$oid": "666b0c2500105718d9a4adc2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa052"
+  },
+  "title": "Alienoid",
+  "backdrop_path": "/7ZP8HtgOIDaBs12krXgUIygqEsy.jpg",
+  "poster_path": "/8QVDXDiOGHRcAD4oM6MXjE0osSj.jpg",
+  "description": "Gurus in the late Goryeo dynasty try to obtain a fabled, holy sword, and humans in 2022 hunt down an alien prisoner that is locked in a human's body. The two parties cross paths when a time-traveling portal opens up.",
+  "release_date": {
+    "$date": "2022-07-20T00:00:00.000Z"
+  },
+  "language": "ko",
+  "tags": [
+    "Science Fiction",
+    "Action",
+    "Fantasy",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3b2"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b3"
+    }
+  ],
+  "runtime": 142,
+  "average_rating": 6.821,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4adc3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adc9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adca"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adcb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adcc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adcd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adce"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adcf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4add9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adda"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4addb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4addc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4addd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adde"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4addf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade3"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa053"
+  },
+  "title": "Road House",
+  "backdrop_path": "/oe7mWkvYhK4PLRNAVSvonzyUXNy.jpg",
+  "poster_path": "/bXi6IQiQDHD00JFio5ZSZOeRSBh.jpg",
+  "description": "Ex-UFC fighter Dalton takes a job as a bouncer at a Florida Keys roadhouse, only to discover that this paradise is not all it seems.",
+  "release_date": {
+    "$date": "2024-03-08T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3b4"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b5"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b6"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b7"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b8"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3b9"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ba"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3bb"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3bc"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3bd"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3be"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3bf"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c0"
+    }
+  ],
+  "runtime": 121,
+  "average_rating": 7.009,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ade4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ade9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adea"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adeb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adec"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aded"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adee"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adef"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adf9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adfa"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adfb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adfc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adfd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adfe"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4adff"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae00"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae01"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae02"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae03"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae04"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae05"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae06"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae07"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae08"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae09"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae0f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae10"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae11"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae12"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae13"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae14"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae15"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae16"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa054"
+  },
+  "title": "Migration",
+  "backdrop_path": "/2KGxQFV9Wp1MshPBf8BuqWUgVAz.jpg",
+  "poster_path": "/ldfCF9RhR40mppkzmftxapaHeTo.jpg",
+  "description": "After a migrating duck family alights on their pond with thrilling tales of far-flung places, the Mallard family embarks on a family road trip, from New England, to New York City, to tropical Jamaica.",
+  "release_date": {
+    "$date": "2023-12-06T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Animation",
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Family"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3c1"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c2"
+    }
+  ],
+  "runtime": 83,
+  "average_rating": 7.479,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ae17"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae18"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae19"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae1f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae20"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae21"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae22"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae23"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae24"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae25"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae26"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae27"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae28"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae29"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae2f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae30"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae31"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae32"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae33"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae34"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae35"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae36"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae37"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae38"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa055"
+  },
+  "title": "Civil War",
+  "backdrop_path": "/uv2twFGMk2qBdyJBJAVcrpRtSa9.jpg",
+  "poster_path": "/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg",
+  "description": "In the near future, a group of war journalists attempt to survive while reporting the truth as the United States stands on the brink of civil war.",
+  "release_date": {
+    "$date": "2024-04-10T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "War",
+    "Action",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3c3"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c4"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c5"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c6"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c7"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3c8"
+    }
+  ],
+  "runtime": 109,
+  "average_rating": 7.4,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ae39"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae3f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae40"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae41"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae42"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae43"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae44"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae45"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae46"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae47"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae48"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae49"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae4f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae50"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae51"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae52"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae53"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae54"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae55"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae56"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae57"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae58"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae59"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae5f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae60"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae61"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae62"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae63"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae64"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae65"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae66"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae67"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa056"
+  },
+  "title": "Hard Hit",
+  "backdrop_path": "/atPlFdUrQl2U9MtUwujrrjnQHBA.jpg",
+  "poster_path": "/y2Aimt8isimtigec3e4kB2G9FMR.jpg",
+  "description": "On his way to work, a bank manager receives an anonymous call claiming there's a bomb under his car seat, and if anyone exits the car, it will explode unless he can pay a ransom.",
+  "release_date": {
+    "$date": "2021-06-23T00:00:00.000Z"
+  },
+  "language": "ko",
+  "tags": [
+    "Action",
+    "Crime",
+    "Drama",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3c9"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ca"
+    }
+  ],
+  "runtime": 94,
+  "average_rating": 7.677,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ae68"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae69"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae6f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae70"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae71"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae72"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae73"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae74"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae75"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae76"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa057"
+  },
+  "title": "The Wages of Fear",
+  "backdrop_path": "/qekky2LbtT1wtbD5MDgQvjfZQ24.jpg",
+  "poster_path": "/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg",
+  "description": "When an explosion at an oil well threatens hundreds of lives, a crack team is called upon to make a deadly desert crossing with nitroglycerine in tow.",
+  "release_date": {
+    "$date": "2024-03-28T00:00:00.000Z"
+  },
+  "language": "fr",
+  "tags": [
+    "Action",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3cb"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3cc"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3cd"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ce"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3cf"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d0"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d1"
+    }
+  ],
+  "runtime": 107,
+  "average_rating": 5.736,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ae77"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae78"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae79"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae7f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae80"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae81"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae82"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa058"
+  },
+  "title": "Madame Web",
+  "backdrop_path": "/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg",
+  "poster_path": "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
+  "description": "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
+  "release_date": {
+    "$date": "2024-02-14T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Fantasy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3d2"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d3"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d4"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d5"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3d6"
+    }
+  ],
+  "runtime": 116,
+  "average_rating": 5.613,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4ae83"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae84"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae85"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae86"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae87"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae88"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae89"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae8f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae90"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae91"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae92"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae93"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae94"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae95"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae96"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae97"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae98"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae99"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4ae9f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea1"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa059"
+  },
+  "title": "No Way Up",
+  "backdrop_path": "/4woSOUD0equAYzvwhWBHIJDCM88.jpg",
+  "poster_path": "/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg",
+  "description": "Characters from different backgrounds are thrown together when the plane they're travelling on crashes into the Pacific Ocean. A nightmare fight for survival ensues with the air supply running out and dangers creeping in from all sides.",
+  "release_date": {
+    "$date": "2024-01-18T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Horror",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3d7"
+    }
+  ],
+  "runtime": 90,
+  "average_rating": 6.383,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aea2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aea9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeaa"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeab"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeac"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aead"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05a"
+  },
+  "title": "Demon Slayer: Kimetsu no Yaiba -To the Hashira Training-",
+  "backdrop_path": "/9mrSx9MVmNOOlvcPxDTdf1APzud.jpg",
+  "poster_path": "/3daOEMQCOGU2n9EbUC0PICnUCek.jpg",
+  "description": "A compilation film featuring the eleventh episode of the Swordsmith Village Arc and the first episode of the Hashira Training Arc.",
+  "release_date": {
+    "$date": "2024-02-02T00:00:00.000Z"
+  },
+  "language": "ja",
+  "tags": [
+    "Animation",
+    "Action",
+    "Fantasy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3d8"
+    }
+  ],
+  "runtime": 103,
+  "average_rating": 6.3,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aeae"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeaf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeb9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeba"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aebb"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05b"
+  },
+  "title": "Outsource",
+  "backdrop_path": "/dcnSWFCtk4b2aIzkhq6IDbzoIf1.jpg",
+  "poster_path": "/zIAF0UXtCJTJOYNYWiBfyifaaOi.jpg",
+  "description": "A police chief hires an old friend, who is an international spy, to help him search for a wanted suspect in the Philippines. When the chief dies, all evidence points towards the spy, and he must go to extremes to defend himself.",
+  "release_date": {
+    "$date": "2022-01-18T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3d9"
+    }
+  ],
+  "runtime": 102,
+  "average_rating": 2.3,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aebc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aebd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aebe"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05c"
+  },
+  "title": "After the Pandemic",
+  "backdrop_path": "/9c0lHTXRqDBxeOToVzRu0GArSne.jpg",
+  "poster_path": "/p1LbrdJ53dGfEhRopG71akfzOVu.jpg",
+  "description": "Set in a post-apocalyptic world where a global airborne pandemic has wiped out 90% of the Earth's population and only the young and immune have endured as scavengers. For Ellie and Quinn, the daily challenges to stay alive are compounded when they become hunted by the merciless Stalkers.",
+  "release_date": {
+    "$date": "2022-03-01T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Action"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3da"
+    }
+  ],
+  "runtime": 84,
+  "average_rating": 4.8,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aebf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05d"
+  },
+  "title": "The Tearsmith",
+  "backdrop_path": "/e3gVl1gnxEFKLTF6pn6KRqUPi9K.jpg",
+  "poster_path": "/uoBHsxSgfc3PQsSn98RfnbePHOy.jpg",
+  "description": "Adopted together after a tough childhood in an orphanage, Nica and Rigel realize that unexpected but irresistible feelings pull them together.",
+  "release_date": {
+    "$date": "2024-04-03T00:00:00.000Z"
+  },
+  "language": "it",
+  "tags": [
+    "Romance",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3db"
+    }
+  ],
+  "runtime": 106,
+  "average_rating": 6.5,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aec8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aec9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeca"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aecb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aecc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aecd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aece"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aecf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aed9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeda"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05e"
+  },
+  "title": "Dune",
+  "backdrop_path": "/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg",
+  "poster_path": "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+  "description": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+  "release_date": {
+    "$date": "2021-09-15T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3dc"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3dd"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3de"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3df"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e0"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e1"
+    }
+  ],
+  "runtime": 155,
+  "average_rating": 7.784,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4aedb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aedc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aedd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aede"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aedf"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aee9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeea"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeeb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeec"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeed"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeee"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeef"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef0"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef1"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef2"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef3"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef4"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef5"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef6"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef7"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef8"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aef9"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aefa"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aefb"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aefc"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aefd"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aefe"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4aeff"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af00"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af01"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa05f"
+  },
+  "title": "Ghostbusters: Frozen Empire",
+  "backdrop_path": "/5cCfqeUH2f5Gnu7Lh9xepY9TB6x.jpg",
+  "poster_path": "/6faYaQyiBPhqAizldJKq21mIVaE.jpg",
+  "description": "The Spengler family returns to where it all started – the iconic New York City firehouse – to team up with the original Ghostbusters, who've developed a top-secret research lab to take busting ghosts to the next level. But when the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second Ice Age.",
+  "release_date": {
+    "$date": "2024-03-20T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Fantasy",
+    "Adventure",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3e2"
+    }
+  ],
+  "runtime": 115,
+  "average_rating": 6.408,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4af02"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af03"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af04"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af05"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af06"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af07"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af08"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af09"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af0f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af10"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af11"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af12"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af13"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af14"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af15"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af16"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af17"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af18"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af19"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af1f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af20"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af21"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af22"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af23"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af24"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af25"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af26"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af27"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af28"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af29"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af2f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af30"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af31"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af32"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af33"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af34"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af35"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af36"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa060"
+  },
+  "title": "Creation of the Gods I: Kingdom of Storms",
+  "backdrop_path": "/2C3CdVzINUm5Cm1lrbT2uiRstwX.jpg",
+  "poster_path": "/ccJpK0rqzhQeP7Mrs2uKqObFY4L.jpg",
+  "description": "Based on the most well-known classical fantasy novel of China, Fengshenyanyi, the trilogy is a magnificent eastern high fantasy epic that recreates the prolonged mythical wars between humans, immortals and monsters, which happened more than three thousand years ago.",
+  "release_date": {
+    "$date": "2023-07-20T00:00:00.000Z"
+  },
+  "language": "zh",
+  "tags": [
+    "Action",
+    "Fantasy",
+    "War"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3e3"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e4"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e5"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e6"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3e7"
+    }
+  ],
+  "runtime": 148,
+  "average_rating": 7.1,
+  "actors": [
+    {
+      "$oid": "666b0c2600105718d9a4af37"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af38"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af39"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af3f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af40"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af41"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af42"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af43"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af44"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af45"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af46"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af47"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af48"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af49"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4a"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4b"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4c"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4d"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4e"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af4f"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af50"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af51"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af52"
+    },
+    {
+      "$oid": "666b0c2600105718d9a4af53"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af54"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af55"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af56"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af57"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af58"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af59"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af5f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af60"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af61"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af62"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af63"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af64"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af65"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af66"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af67"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af68"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af69"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af6f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af70"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af71"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af72"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af73"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af74"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af75"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af76"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af77"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af78"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af79"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af7f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af80"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa061"
+  },
+  "title": "The Roommate",
+  "backdrop_path": "/wxYBMcxFIJai9AaZr6XAOKZTfxY.jpg",
+  "poster_path": "/zaRzz2BxjxIVb7ja0gSedj1Hn1E.jpg",
+  "description": "Vivi is a young writer who is forced to find a roommate to pay the mortgage on her apartment. What she does not suspect is that Roy, the supposed perfect partner she found, has a peculiar lifestyle: he never pays rent.",
+  "release_date": {
+    "$date": "2024-01-18T00:00:00.000Z"
+  },
+  "language": "es",
+  "tags": [
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3e8"
+    }
+  ],
+  "runtime": 99,
+  "average_rating": 7.445,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4af81"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af82"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af83"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af84"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af85"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af86"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af87"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af88"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af89"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af8a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af8b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af8c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af8d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af8e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa062"
+  },
+  "title": "Damaged",
+  "backdrop_path": "/fUC5VsQcU3m6zmYMD96R7RqPuMn.jpg",
+  "poster_path": "/eacWm6jPrjkpqhi4VzwqYeJWL6k.jpg",
+  "description": "A Chicago detective travels to Scotland after an emerging serial killer’s crimes match those that he investigated five years earlier, one of which was the crime scene of his murdered girlfriend.",
+  "release_date": {
+    "$date": "2024-04-12T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Crime",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3e9"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ea"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3eb"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ec"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ed"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ee"
+    }
+  ],
+  "runtime": 98,
+  "average_rating": 4.849,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4af8f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af90"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af91"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af92"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af93"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af94"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af95"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af96"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af97"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af98"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af99"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af9a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af9b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa063"
+  },
+  "title": "Carmen 1945",
+  "backdrop_path": "/lP0G6f00CjOKdRECyGrT0kaMSrL.jpg",
+  "poster_path": "/raNbLci95MJ3L3dMnG7L7bD37lY.jpg",
+  "description": "Prostitutes in burnt out Tokyo ghetto of post-WWII Japan peddle their flesh and save one-third of their money for a proposed dancehall to be named Paradise. The hookers live in a bombed-out building, but they accept the precarious situation with typical resolve.",
+  "release_date": {
+    "$date": "1988-04-09T00:00:00.000Z"
+  },
+  "language": "ja",
+  "tags": [
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3ef"
+    }
+  ],
+  "runtime": 119,
+  "average_rating": 3,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4af9c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af9d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af9e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4af9f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa064"
+  },
+  "title": "Heart of the Hunter",
+  "backdrop_path": "/wUp0bUXaveR40ikBhDgWwNTijuD.jpg",
+  "poster_path": "/n726fdyL1dGwt15bY7Nj3XOXc4Q.jpg",
+  "description": "A retired assassin is pulled back into action when his friend uncovers a dangerous conspiracy at the heart of the South African government.",
+  "release_date": {
+    "$date": "2024-03-28T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Mystery",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3f0"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f1"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f2"
+    }
+  ],
+  "runtime": 108,
+  "average_rating": 5.9,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4afa3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afa9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afaa"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afab"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afac"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afad"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afae"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa065"
+  },
+  "title": "Land of Bad",
+  "backdrop_path": "/oBIQDKcqNxKckjugtmzpIIOgoc4.jpg",
+  "poster_path": "/h3jYanWMEJq6JJsCopy1h7cT2Hs.jpg",
+  "description": "When a Delta Force special ops mission goes terribly wrong, Air Force drone pilot Reaper has 48 hours to remedy what has devolved into a wild rescue operation. With no weapons and no communication other than the drone above, the ground mission suddenly becomes a full-scale battle when the team is discovered by the enemy.",
+  "release_date": {
+    "$date": "2024-01-25T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Thriller",
+    "War"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3f3"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f4"
+    }
+  ],
+  "runtime": 113,
+  "average_rating": 7.255,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4afaf"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb2"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afb9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afba"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afbb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afbc"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afbd"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afbe"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afbf"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc2"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afc9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afca"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afcb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afcc"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa066"
+  },
+  "title": "Jade",
+  "backdrop_path": "/xThuEoirx0vXismkVbnMQqkMkHK.jpg",
+  "poster_path": "/pqotEkHRbhUPUuX9Gq4U6aJzK55.jpg",
+  "description": "Jade presents the story of a woman who comes between a powerful businessman and a gang leader in their search for a hard drive that could damage the operations of Interpol. Despite grieving for the brother she accidentally killed, the woman is required to use her unique set of skills to retrieve the drive and protect her brother's unborn child being carried by another woman.",
+  "release_date": {
+    "$date": "2024-02-16T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3f5"
+    }
+  ],
+  "runtime": 0,
+  "average_rating": 5.842,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4afcd"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afce"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afcf"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd2"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afd8"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa067"
+  },
+  "title": "Baghead",
+  "backdrop_path": "/b4xaqpUZFUkgyJ1VcFEPXmDML34.jpg",
+  "poster_path": "/lbOyeiiRYAE6Nm2e7xiNAAaRwZB.jpg",
+  "description": "Following the death of her estranged father, Iris learns she has inherited a run-down, centuries-old pub. She travels to Berlin to identify her father’s body and meet with The Solicitor to discuss the estate. Little does she know, when the deed is signed she will become inextricably tied to an unspeakable entity that resides in the pub’s basement – Baghead – a shape-shifting creature that can transform into the dead.",
+  "release_date": {
+    "$date": "2023-12-28T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Horror"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3f6"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f7"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f8"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3f9"
+    }
+  ],
+  "runtime": 95,
+  "average_rating": 6.777,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4afd9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afda"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afdb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afdc"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afdd"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afde"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afdf"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa068"
+  },
+  "title": "Oppenheimer",
+  "backdrop_path": "/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+  "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+  "description": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+  "release_date": {
+    "$date": "2023-07-19T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Drama",
+    "History"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b3fa"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3fb"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3fc"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3fd"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3fe"
+    },
+    {
+      "$oid": "666b130500105718d9a4b3ff"
+    },
+    {
+      "$oid": "666b130500105718d9a4b400"
+    }
+  ],
+  "runtime": 181,
+  "average_rating": 8.103,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4afe3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afe9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afea"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afeb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afec"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afed"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afee"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afef"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff2"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4aff9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4affa"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4affb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4affc"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4affd"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4affe"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4afff"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b000"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b001"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b002"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b003"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b004"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b005"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b006"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b007"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b008"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b009"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b00f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b010"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b011"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b012"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b013"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b014"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b015"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b016"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b017"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b018"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b019"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b01f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b020"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b021"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b022"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b023"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b024"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b025"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b026"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b027"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b028"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b029"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b02f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b030"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b031"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b032"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa069"
+  },
+  "title": "Abigail",
+  "backdrop_path": "/ySgY4jBvZ6qchrxKnBg4M8tZp8V.jpg",
+  "poster_path": "/5Uq8P6MPj9Ppsns5t82AiCiUaWE.jpg",
+  "description": "After a group of would-be criminals kidnap the 12 year old ballerina daughter of a powerful underworld figure, all they have to do to collect a $50 million ransom is watch the girl overnight. In an isolated mansion, the captors start to dwindle, one by one, and they discover, to their mounting horror, that they’re locked inside with no normal little girl.",
+  "release_date": {
+    "$date": "2024-04-18T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Horror",
+    "Thriller",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b401"
+    },
+    {
+      "$oid": "666b130500105718d9a4b402"
+    },
+    {
+      "$oid": "666b130500105718d9a4b403"
+    },
+    {
+      "$oid": "666b130500105718d9a4b404"
+    },
+    {
+      "$oid": "666b130500105718d9a4b405"
+    },
+    {
+      "$oid": "666b130500105718d9a4b406"
+    },
+    {
+      "$oid": "666b130500105718d9a4b407"
+    },
+    {
+      "$oid": "666b130500105718d9a4b408"
+    },
+    {
+      "$oid": "666b130500105718d9a4b409"
+    },
+    {
+      "$oid": "666b130500105718d9a4b40a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b40b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b40c"
+    }
+  ],
+  "runtime": 109,
+  "average_rating": 6.904,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4b033"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b034"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b035"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b036"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b037"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b038"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b039"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b03a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b03b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06a"
+  },
+  "title": "Damsel",
+  "backdrop_path": "/deLWkOLZmBNkm8p16igfapQyqeq.jpg",
+  "poster_path": "/AgHbB9DCE9aE57zkHjSmseszh6e.jpg",
+  "description": "A young woman's marriage to a charming prince turns into a fierce fight for survival when she's offered up as a sacrifice to a fire-breathing dragon.",
+  "release_date": {
+    "$date": "2024-03-07T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Fantasy",
+    "Action",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b40d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b40e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b40f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b410"
+    }
+  ],
+  "runtime": 110,
+  "average_rating": 7.131,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4b03c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b03d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b03e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b03f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b040"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b041"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b042"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b043"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b044"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b045"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b046"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b047"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b048"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b049"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b04f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b050"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b051"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b052"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b053"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06b"
+  },
+  "title": "Wonka",
+  "backdrop_path": "/yyFc8Iclt2jxPmLztbP617xXllT.jpg",
+  "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+  "description": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+  "release_date": {
+    "$date": "2023-12-06T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Comedy",
+    "Family",
+    "Fantasy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b411"
+    },
+    {
+      "$oid": "666b130500105718d9a4b412"
+    },
+    {
+      "$oid": "666b130500105718d9a4b413"
+    },
+    {
+      "$oid": "666b130500105718d9a4b414"
+    },
+    {
+      "$oid": "666b130500105718d9a4b415"
+    },
+    {
+      "$oid": "666b130500105718d9a4b416"
+    },
+    {
+      "$oid": "666b130500105718d9a4b417"
+    },
+    {
+      "$oid": "666b130500105718d9a4b418"
+    },
+    {
+      "$oid": "666b130500105718d9a4b419"
+    },
+    {
+      "$oid": "666b130500105718d9a4b41a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b41b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b41c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b41d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b41e"
+    }
+  ],
+  "runtime": 117,
+  "average_rating": 7.188,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4b054"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b055"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b056"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b057"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b058"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b059"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b05f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b060"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b061"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b062"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b063"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b064"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b065"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b066"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b067"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b068"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b069"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b06f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b070"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b071"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b072"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b073"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b074"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b075"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b076"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b077"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b078"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b079"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b07f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b080"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b081"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b082"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b083"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06c"
+  },
+  "title": "The First Omen",
+  "backdrop_path": "/mIBG74mhGEJnBubhYLkCtvplcNr.jpg",
+  "poster_path": "/cIzk6GhxEZuweekGFXWEoAyuaMX.jpg",
+  "description": "When a young American woman is sent to Rome to begin a life of service to the church, she encounters a darkness that causes her to question her own faith and uncovers a terrifying conspiracy that hopes to bring about the birth of evil incarnate.",
+  "release_date": {
+    "$date": "2024-04-03T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Horror"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b41f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b420"
+    },
+    {
+      "$oid": "666b130500105718d9a4b421"
+    },
+    {
+      "$oid": "666b130500105718d9a4b422"
+    },
+    {
+      "$oid": "666b130500105718d9a4b423"
+    },
+    {
+      "$oid": "666b130500105718d9a4b424"
+    },
+    {
+      "$oid": "666b130500105718d9a4b425"
+    },
+    {
+      "$oid": "666b130500105718d9a4b426"
+    },
+    {
+      "$oid": "666b130500105718d9a4b427"
+    },
+    {
+      "$oid": "666b130500105718d9a4b428"
+    },
+    {
+      "$oid": "666b130500105718d9a4b429"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b42f"
+    }
+  ],
+  "runtime": 119,
+  "average_rating": 6.637,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4b084"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b085"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b086"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b087"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b088"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b089"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b08f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b090"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b091"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b092"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b093"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b094"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b095"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b096"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b097"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b098"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b099"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09a"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09b"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09c"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09d"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09e"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b09f"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a2"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0a9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0aa"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0ab"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0ac"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0ad"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0ae"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0af"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b0"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b1"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06d"
+  },
+  "title": "Imaginary",
+  "backdrop_path": "/TGsfNWkASegCfAn6ED1b08a9O6.jpg",
+  "poster_path": "/9u6HEtZJdZDjPGGJq6YEuhPnoan.jpg",
+  "description": "When Jessica moves back into her childhood home with her family, her youngest stepdaughter Alice develops an eerie attachment to a stuffed bear named Chauncey she finds in the basement. Alice starts playing games with Chauncey that begin playful and become increasingly sinister. As Alice’s behavior becomes more and more concerning, Jessica intervenes only to realize Chauncey is much more than the stuffed toy bear she believed him to be.",
+  "release_date": {
+    "$date": "2024-03-06T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Horror",
+    "Mystery",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b430"
+    }
+  ],
+  "runtime": 104,
+  "average_rating": 6.27,
+  "actors": [
+    {
+      "$oid": "666b0c2700105718d9a4b0b3"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b4"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b5"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b6"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b7"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b8"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0b9"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0ba"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0bb"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0bc"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0bd"
+    },
+    {
+      "$oid": "666b0c2700105718d9a4b0be"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0bf"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0c9"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06e"
+  },
+  "title": "Kingdom of the Planet of the Apes",
+  "backdrop_path": "/fypydCipcWDKDTTCoPucBsdGYXW.jpg",
+  "poster_path": "/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
+  "description": "Several generations in the future following Caesar's reign, apes are now the dominant species and live harmoniously while humans have been reduced to living in the shadows. As a new tyrannical ape leader builds his empire, one young ape undertakes a harrowing journey that will cause him to question all that he has known about the past and to make choices that will define a future for apes and humans alike.",
+  "release_date": {
+    "$date": "2024-05-08T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Adventure",
+    "Action"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b431"
+    }
+  ],
+  "runtime": 145,
+  "average_rating": 6.5,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b0ca"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0cb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0cc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0cd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ce"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0cf"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa06f"
+  },
+  "title": "Love, Divided",
+  "backdrop_path": "/ugnzz1A9mjJUgnFwVqEUsUNt7t6.jpg",
+  "poster_path": "/zvrkAXaFFPpJCFcus18qlsGfOrz.jpg",
+  "description": "She’s a young pianist preparing for an audition. He is a games inventor who can only concentrate in complete silence. Separated by only a paper-thin wall in conjoined apartments, will they learn to live in harmony with one another? Will romance blossom through the wall?",
+  "release_date": {
+    "$date": "2024-04-12T00:00:00.000Z"
+  },
+  "language": "es",
+  "tags": [
+    "Romance",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b432"
+    }
+  ],
+  "runtime": 98,
+  "average_rating": 6.689,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b0d6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0d9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0da"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0db"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0dc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0dd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0de"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0df"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e4"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa070"
+  },
+  "title": "Argylle",
+  "backdrop_path": "/xvk5AhfhgQcTuaCQyq3XqAnhEma.jpg",
+  "poster_path": "/siduVKgOnABO4WH4lOwPQwaGwJp.jpg",
+  "description": "When the plots of reclusive author Elly Conway's fictional espionage novels begin to mirror the covert actions of a real-life spy organization, quiet evenings at home become a thing of the past. Accompanied by her cat Alfie and Aiden, a cat-allergic spy, Elly races across the world to stay one step ahead of the killers as the line between Conway's fictional world and her real one begins to blur.",
+  "release_date": {
+    "$date": "2024-01-31T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Adventure",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b433"
+    },
+    {
+      "$oid": "666b130500105718d9a4b434"
+    },
+    {
+      "$oid": "666b130500105718d9a4b435"
+    },
+    {
+      "$oid": "666b130500105718d9a4b436"
+    },
+    {
+      "$oid": "666b130500105718d9a4b437"
+    },
+    {
+      "$oid": "666b130500105718d9a4b438"
+    },
+    {
+      "$oid": "666b130500105718d9a4b439"
+    }
+  ],
+  "runtime": 139,
+  "average_rating": 6.147,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b0e5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0e9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ea"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0eb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ec"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ed"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ee"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ef"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0f9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0fa"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0fb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0fc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0fd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0fe"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b0ff"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b100"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b101"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b102"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b103"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b104"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b105"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b106"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b107"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b108"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b109"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b10a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b10b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b10c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa071"
+  },
+  "title": "The Adventures of Maid Marian",
+  "backdrop_path": "/2c2Osibm2Q1eEJCW8jc98GQhGdc.jpg",
+  "poster_path": "/oPXzCV01ysDmnmpJOkiVqaZQ5QR.jpg",
+  "description": "Everyone knows the stories of Robin Hood and Maid Marian, but this the story of what happens next. Out of the shadows, a legend returns to save her people from the tyranny of the disgraced Sheriff of Nottingham. Robin Hood remains at war and Marian must put her own combat skills to the test, creating a new tale that will be heralded throughout the ages.",
+  "release_date": {
+    "$date": "2022-05-09T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Adventure",
+    "Action"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b43a"
+    }
+  ],
+  "runtime": 82,
+  "average_rating": 5.2,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b10d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b10e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b10f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b110"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b111"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b112"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b113"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa072"
+  },
+  "title": "Anyone But You",
+  "backdrop_path": "/j9eOeLlTGoHoM8BNUJVNyWmIvCi.jpg",
+  "poster_path": "/yRt7MGBElkLQOYRvLTT1b3B1rcp.jpg",
+  "description": "After an amazing first date, Bea and Ben’s fiery attraction turns ice cold — until they find themselves unexpectedly reunited at a destination wedding in Australia. So they do what any two mature adults would do: pretend to be a couple.",
+  "release_date": {
+    "$date": "2023-12-21T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Romance",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b43b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b43c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b43d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b43e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b43f"
+    }
+  ],
+  "runtime": 104,
+  "average_rating": 7.084,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b114"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b115"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b116"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b117"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b118"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b119"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b11f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b120"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b121"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b122"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b123"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b124"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b125"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b126"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b127"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b128"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b129"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b12a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b12b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b12c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b12d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b12e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa073"
+  },
+  "title": "Fast X",
+  "backdrop_path": "/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
+  "poster_path": "/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+  "description": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
+  "release_date": {
+    "$date": "2023-05-17T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Crime",
+    "Thriller"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b440"
+    },
+    {
+      "$oid": "666b130500105718d9a4b441"
+    },
+    {
+      "$oid": "666b130500105718d9a4b442"
+    },
+    {
+      "$oid": "666b130500105718d9a4b443"
+    },
+    {
+      "$oid": "666b130500105718d9a4b444"
+    },
+    {
+      "$oid": "666b130500105718d9a4b445"
+    },
+    {
+      "$oid": "666b130500105718d9a4b446"
+    },
+    {
+      "$oid": "666b130500105718d9a4b447"
+    },
+    {
+      "$oid": "666b130500105718d9a4b448"
+    },
+    {
+      "$oid": "666b130500105718d9a4b449"
+    }
+  ],
+  "runtime": 142,
+  "average_rating": 7.126,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b12f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b130"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b131"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b132"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b133"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b134"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b135"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b136"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b137"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b138"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b139"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b13f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b140"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b141"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b142"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b143"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b144"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b145"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b146"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b147"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b148"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b149"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b14f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b150"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b151"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b152"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b153"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b154"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa074"
+  },
+  "title": "The Three Musketeers: Milady",
+  "backdrop_path": "/qGJASuD3fs9ZBxuEZoxCLVidVq8.jpg",
+  "poster_path": "/3biswIjw14uDVil12nMOxcTAfmH.jpg",
+  "description": "D'Artagnan, on a quest to rescue the abducted Constance, runs into the mysterious Milady de Winter again. The tension between the Catholics and the Protestants finally escalates, as the king declares war — forcing the now four musketeers into battle. But as the war goes on, they are tested physically, mentally and emotionally.",
+  "release_date": {
+    "$date": "2023-12-13T00:00:00.000Z"
+  },
+  "language": "fr",
+  "tags": [
+    "Adventure",
+    "Action",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b44a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b44b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b44c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b44d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b44e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b44f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b450"
+    },
+    {
+      "$oid": "666b130500105718d9a4b451"
+    },
+    {
+      "$oid": "666b130500105718d9a4b452"
+    },
+    {
+      "$oid": "666b130500105718d9a4b453"
+    },
+    {
+      "$oid": "666b130500105718d9a4b454"
+    },
+    {
+      "$oid": "666b130500105718d9a4b455"
+    },
+    {
+      "$oid": "666b130500105718d9a4b456"
+    },
+    {
+      "$oid": "666b130500105718d9a4b457"
+    },
+    {
+      "$oid": "666b130500105718d9a4b458"
+    },
+    {
+      "$oid": "666b130500105718d9a4b459"
+    }
+  ],
+  "runtime": 121,
+  "average_rating": 6.5,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b155"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b156"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b157"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b158"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b159"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b15f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b160"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b161"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b162"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b163"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b164"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b165"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b166"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa075"
+  },
+  "title": "Poor Things",
+  "backdrop_path": "/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg",
+  "poster_path": "/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg",
+  "description": "An account of the fantastical evolution of Bella Baxter, a young woman brought back to life by the brilliant and unorthodox scientist Dr. Godwin Baxter.",
+  "release_date": {
+    "$date": "2023-12-07T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Romance",
+    "Comedy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b45a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b45b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b45c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b45d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b45e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b45f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b460"
+    },
+    {
+      "$oid": "666b130500105718d9a4b461"
+    }
+  ],
+  "runtime": 142,
+  "average_rating": 7.788,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b167"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b168"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b169"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b16f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b170"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b171"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b172"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b173"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b174"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b175"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b176"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b177"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b178"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b179"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b17f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b180"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b181"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b182"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b183"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b184"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b185"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b186"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b187"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b188"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b189"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b18f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b190"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b191"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b192"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b193"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b194"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b195"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b196"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b197"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b198"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b199"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b19a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b19b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa076"
+  },
+  "title": "Wish",
+  "backdrop_path": "/ehumsuIBbgAe1hg343oszCLrAfI.jpg",
+  "poster_path": "/vgJZSqKMXWDDx09iSIStGKfHMku.jpg",
+  "description": "Asha, a sharp-witted idealist, makes a wish so powerful that it is answered by a cosmic force – a little ball of boundless energy called Star. Together, Asha and Star confront a most formidable foe - the ruler of Rosas, King Magnifico - to save her community and prove that when the will of one courageous human connects with the magic of the stars, wondrous things can happen.",
+  "release_date": {
+    "$date": "2023-11-13T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Animation",
+    "Family",
+    "Fantasy",
+    "Adventure"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b462"
+    },
+    {
+      "$oid": "666b130500105718d9a4b463"
+    }
+  ],
+  "runtime": 95,
+  "average_rating": 6.463,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b19c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b19d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b19e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b19f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1a9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1aa"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ab"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ac"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ad"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ae"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1af"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b3"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa077"
+  },
+  "title": "Godzilla Minus One",
+  "backdrop_path": "/bWIIWhnaoWx3FTVXv6GkYDv3djL.jpg",
+  "poster_path": "/hkxxMIGaiCTmrEArK7J56JTKUlB.jpg",
+  "description": "Postwar Japan is at its lowest point when a new crisis emerges in the form of a giant monster, baptized in the horrific power of the atomic bomb.",
+  "release_date": {
+    "$date": "2023-11-03T00:00:00.000Z"
+  },
+  "language": "ja",
+  "tags": [
+    "Science Fiction",
+    "Horror",
+    "Action"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b464"
+    },
+    {
+      "$oid": "666b130500105718d9a4b465"
+    },
+    {
+      "$oid": "666b130500105718d9a4b466"
+    }
+  ],
+  "runtime": 125,
+  "average_rating": 7.9,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b1b4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1b9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ba"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1bb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1bc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1bd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1be"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1bf"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1c9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ca"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1cb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1cc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1cd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ce"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1cf"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1d9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1da"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1db"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1dc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1dd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1de"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1df"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1e9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ea"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1eb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ec"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ed"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ee"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ef"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f0"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f1"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f2"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f3"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f4"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f5"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f6"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f7"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f8"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1f9"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1fa"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1fb"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1fc"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1fd"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1fe"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b1ff"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b200"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b201"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b202"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b203"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b204"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b205"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b206"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b207"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b208"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b209"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b20f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b210"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b211"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b212"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b213"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b214"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b215"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b216"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b217"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b218"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa078"
+  },
+  "title": "Penoza: The Final Chapter",
+  "backdrop_path": "/iqqMJwvPlovftBfdHVrpP2B1IxE.jpg",
+  "poster_path": "/ba1NlageLgbxOPLXjX0qX7HDBTc.jpg",
+  "description": "The Black Widow is not dead ... Drug Queen Carmen van Walraven is hiding in Canada and leads an anonymous life there. One evening a colleague is harassed and Carmen helps her. In self-defense, she kills the perpetrator, is arrested and extradited to the Netherlands. While her children are in shock that their mother is still alive, there are also some people who still have to settle something with Carmen. Everyone is again dragged into an emotional rollercoaster. Carmen will now have deal with her past to save her family.",
+  "release_date": {
+    "$date": "2019-11-28T00:00:00.000Z"
+  },
+  "language": "nl",
+  "tags": [
+    "Action",
+    "Crime",
+    "Thriller",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b467"
+    },
+    {
+      "$oid": "666b130500105718d9a4b468"
+    }
+  ],
+  "runtime": 116,
+  "average_rating": 7.356,
+  "actors": [
+    {
+      "$oid": "666b0c2800105718d9a4b219"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21a"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21b"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21c"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21d"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21e"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b21f"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b220"
+    },
+    {
+      "$oid": "666b0c2800105718d9a4b221"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b222"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b223"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b224"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b225"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b226"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b227"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b228"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b229"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b22f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b230"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b231"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b232"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b233"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b234"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b235"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b236"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b237"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b238"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa079"
+  },
+  "title": "Sri Asih",
+  "backdrop_path": "/oFAukXiMPrwLpbulGmB5suEZlrm.jpg",
+  "poster_path": "/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg",
+  "description": "Alana discover the truth about her origin: she’s not an ordinary human being. She may be the gift for humanity and become its protector as Sri Asih. Or a destruction, if she can’t control her anger.",
+  "release_date": {
+    "$date": "2022-11-17T00:00:00.000Z"
+  },
+  "language": "id",
+  "tags": [
+    "Action",
+    "Adventure",
+    "Science Fiction",
+    "Fantasy",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b469"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46c"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46d"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b46f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b470"
+    }
+  ],
+  "runtime": 134,
+  "average_rating": 6.2,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b239"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b23f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b240"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b241"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b242"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b243"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b244"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b245"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b246"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b247"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b248"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b249"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b24f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b250"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b251"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b252"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b253"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b254"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b255"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b256"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b257"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b258"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b259"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b25f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b260"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b261"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b262"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b263"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b264"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b265"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b266"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b267"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b268"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b269"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b26f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b270"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b271"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b272"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b273"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b274"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b275"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b276"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b277"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b278"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b279"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b27f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b280"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b281"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b282"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b283"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b284"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b285"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b286"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b287"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b288"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b289"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b28f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b290"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b291"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b292"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b293"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b294"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b295"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b296"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b297"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b298"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b299"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b29f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a2"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2a9"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa07a"
+  },
+  "title": "Rebel Moon - Part Two: The Scargiver",
+  "backdrop_path": "/tpiqEVTLRz2Mq7eLq5DT8jSrp71.jpg",
+  "poster_path": "/cxevDYdeFkiixRShbObdwAHBZry.jpg",
+  "description": "The rebels gear up for battle against the ruthless forces of the Motherworld as unbreakable bonds are forged, heroes emerge — and legends are made.",
+  "release_date": {
+    "$date": "2024-04-19T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Science Fiction",
+    "Action",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b471"
+    },
+    {
+      "$oid": "666b130500105718d9a4b472"
+    },
+    {
+      "$oid": "666b130500105718d9a4b473"
+    },
+    {
+      "$oid": "666b130500105718d9a4b474"
+    },
+    {
+      "$oid": "666b130500105718d9a4b475"
+    },
+    {
+      "$oid": "666b130500105718d9a4b476"
+    }
+  ],
+  "runtime": 123,
+  "average_rating": 6.114,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b2aa"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ab"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ac"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ad"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ae"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2af"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b2"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2b9"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ba"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2bb"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2bc"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2bd"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2be"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2bf"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c2"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2c9"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ca"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2cb"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2cc"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2cd"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ce"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2cf"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d2"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2d9"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2da"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2db"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2dc"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2dd"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2de"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2df"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa07b"
+  },
+  "title": "Godzilla vs. Kong",
+  "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
+  "poster_path": "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+  "description": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+  "release_date": {
+    "$date": "2021-03-24T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Science Fiction",
+    "Thriller",
+    "Adventure",
+    "Fantasy"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b477"
+    },
+    {
+      "$oid": "666b130500105718d9a4b478"
+    },
+    {
+      "$oid": "666b130500105718d9a4b479"
+    },
+    {
+      "$oid": "666b130500105718d9a4b47a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b47b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b47c"
+    }
+  ],
+  "runtime": 114,
+  "average_rating": 7.619,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b2e3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2e9"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ea"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2eb"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ec"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ed"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ee"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ef"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f1"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f2"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f3"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f4"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f5"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f6"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f7"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f8"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2f9"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2fa"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2fb"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2fc"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2fd"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2fe"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b2ff"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b300"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b301"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b302"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b303"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b304"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b305"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b306"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b307"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b308"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b309"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b30f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b310"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b311"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa07c"
+  },
+  "title": "Megamind vs. the Doom Syndicate",
+  "backdrop_path": "/3Kzc6V4MWs3RXCmE5DhAYnfWL8F.jpg",
+  "poster_path": "/1N7terrMeZPwK5qq31MUD0HQ3IG.jpg",
+  "description": "Megamind's former villain team, The Doom Syndicate, has returned. Our newly crowned blue hero must now keep up evil appearances until he can assemble his friends (Roxanne, Ol' Chum and Keiko) to stop his former evil teammates from launching Metro City to the Moon.",
+  "release_date": {
+    "$date": "2024-03-29T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Animation",
+    "Comedy",
+    "Science Fiction"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b47d"
+    }
+  ],
+  "runtime": 85,
+  "average_rating": 4.966,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b312"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b313"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b314"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b315"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b316"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b317"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b318"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b319"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b31f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b320"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b321"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b322"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b323"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b324"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b325"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa07d"
+  },
+  "title": "The Beekeeper",
+  "backdrop_path": "/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg",
+  "poster_path": "/A7EByudX0eOzlkQ2FIbogzyazm2.jpg",
+  "description": "One man's campaign for vengeance takes on national stakes after he is revealed to be a former operative of a powerful and clandestine organization known as Beekeepers.",
+  "release_date": {
+    "$date": "2024-01-08T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Action",
+    "Thriller",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b47e"
+    },
+    {
+      "$oid": "666b130500105718d9a4b47f"
+    },
+    {
+      "$oid": "666b130500105718d9a4b480"
+    },
+    {
+      "$oid": "666b130500105718d9a4b481"
+    },
+    {
+      "$oid": "666b130500105718d9a4b482"
+    },
+    {
+      "$oid": "666b130500105718d9a4b483"
+    },
+    {
+      "$oid": "666b130500105718d9a4b484"
+    },
+    {
+      "$oid": "666b130500105718d9a4b485"
+    },
+    {
+      "$oid": "666b130500105718d9a4b486"
+    }
+  ],
+  "runtime": 105,
+  "average_rating": 7.436,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b326"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b327"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b328"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b329"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b32f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b330"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b331"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b332"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b333"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b334"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b335"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b336"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b337"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b338"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b339"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b33f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b340"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b341"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b342"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b343"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b344"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b345"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b346"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b347"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b348"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b349"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b34f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b350"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b351"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b352"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "666b0bcbff071d36d47fa07e"
+  },
+  "title": "Joker",
+  "backdrop_path": "/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
+  "poster_path": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+  "description": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+  "release_date": {
+    "$date": "2019-10-01T00:00:00.000Z"
+  },
+  "language": "en",
+  "tags": [
+    "Crime",
+    "Thriller",
+    "Drama"
+  ],
+  "director": [
+    {
+      "$oid": "666b130500105718d9a4b487"
+    },
+    {
+      "$oid": "666b130500105718d9a4b488"
+    },
+    {
+      "$oid": "666b130500105718d9a4b489"
+    },
+    {
+      "$oid": "666b130500105718d9a4b48a"
+    },
+    {
+      "$oid": "666b130500105718d9a4b48b"
+    },
+    {
+      "$oid": "666b130500105718d9a4b48c"
+    }
+  ],
+  "runtime": 122,
+  "average_rating": 8.162,
+  "actors": [
+    {
+      "$oid": "666b0c2900105718d9a4b353"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b354"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b355"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b356"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b357"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b358"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b359"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b35f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b360"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b361"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b362"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b363"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b364"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b365"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b366"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b367"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b368"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b369"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b36f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b370"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b371"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b372"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b373"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b374"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b375"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b376"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b377"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b378"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b379"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b37f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b380"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b381"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b382"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b383"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b384"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b385"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b386"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b387"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b388"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b389"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b38f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b390"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b391"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b392"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b393"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b394"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b395"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b396"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b397"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b398"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b399"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39a"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39b"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39c"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39d"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39e"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b39f"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b3a0"
+    },
+    {
+      "$oid": "666b0c2900105718d9a4b3a1"
+    }
+  ]
+}]

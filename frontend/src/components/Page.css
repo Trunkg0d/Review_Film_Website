@@ -1,15 +1,14 @@
-/* Popular.css */
-.popular {
+.page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 100px;
   padding: 20px;
 }
 
 .movie {
-  width: 23%;
+  width: 23%; 
   margin-bottom: 20px;
-  position: relative;
 }
 
 .movie img {
@@ -31,24 +30,7 @@
   color: aliceblue;
 }
 
-.edit-button {
-  position: absolute;
-  width: 10%;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+.pagination-container {
+    display: flex;
+    justify-content: center;
 }
-
-.edit-button img {
-  width: 20px;
-  height: 20px;
-}
-
-.edit-button:hover img {
-  filter: brightness(150%);
-  transform: scale(1.2);
-}
-

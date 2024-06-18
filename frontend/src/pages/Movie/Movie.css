@@ -109,8 +109,9 @@
 .movie-content__info .overview {
     font-size: 1rem;
     color: #fff;
-    line-height: 1.5;
+    line-height: 2;
     margin-top: 1rem;
+    text-align: justify;
 }
 
 .movie-content__info .about-cast-container {
@@ -126,7 +127,7 @@
 }
 
 .movie-content__info .cast .cast-container::-webkit-scrollbar {
-    height: 5px;
+    height: 10px;
 }
 
 .movie-content__info .cast .cast-container::-webkit-scrollbar-track {
@@ -148,6 +149,8 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 10px;
+    background-color: var(--lowgray);
+    border-radius: 50px 50px 0 0;
 }
 
 .movie-content__info .cast .cast-item {
@@ -194,8 +197,8 @@
     transform: translate(-50%, -50%);
     background-color: var(--white);
     z-index: 1101;
-    width: 25%;
-    height: 25%;
+    width: 30rem;
+    height: 15rem;
     border-radius: 20px;
     cursor: default;
     font-family: "Quicksand", sans-serif;
@@ -213,10 +216,6 @@
     border-radius: 16px;
     background-color: transparent;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap');
-
 .cast-detail .info-container {
     position: absolute; 
     top: 5%;
@@ -226,8 +225,8 @@
 }
 
 .cast-detail .info-container .name{
-    font-family: "Dancing Script", cursive;
-    font-size: 250%;
+    padding: 0 1rem;
+    font-size: 200%;
     text-align: center;
     color: rgb(190, 123, 0);
 }

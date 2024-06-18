@@ -1,11 +1,10 @@
 /*Footer*/
 .footer {
   background: transparent;
-  padding: 0 0 30px 0;
   font-size: 14px;
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .footer .footer-top {
@@ -13,7 +12,7 @@
   background-size: contain;
   border-top: 1px solid var(--primary);
   /* border-bottom: 1px solid var(--primary); */
-  padding: 60px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 .footer .footer-top .footer-info {
@@ -100,7 +99,7 @@
 }
 
 .footer .footer-top .footer-links ul li {
-  padding: 10px 0;
+  padding: 3px 0;
   display: block;
   align-items: center;
 }

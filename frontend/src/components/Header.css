@@ -10,6 +10,7 @@
   padding: 30px 100px;
   transition: 0.5s;
   z-index: 10000;
+  text-shadow: 0 0 5px #000000, 0 0 5px #000000;
 }
 
 .header.scrolled {
@@ -19,11 +20,12 @@
   backdrop-filter: blur(20px);
   padding: 10px 100px;
 }
+
 /*logo*/
 .logo {
   font-family: 'Racing Sans One', sans-serif;
   font-size: 35px;
-  color: #fff;
+  color: var(--white);
   letter-spacing: 2px;
   font-weight: 800;
   text-decoration: none;
@@ -79,9 +81,8 @@
   outline: none;
   color: var(--primary);
 }
-
 .search input::placeholder{
-  color: #fff;
+  color: var(--primary);
 }
 
 .search ion-icon {

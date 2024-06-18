@@ -201,13 +201,12 @@ function Movie() {
                   </div>
                   <div className="cast-container">
                     {cast.map((member, index) => (
-                      <div key={member._id.$oid} className="cast-item">
-                        <div className="cast-image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w200${member.profile_image})` }} 
-                            onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                      <div key={member._id.$oid} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                        <div className="cast-image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w200${member.profile_image})` }}>
                         </div>
                         <div className="cast-name">{member.name}</div>
                         {selectedCast && selectedCast._id.$oid === member._id.$oid && (
-                          <CastDetailModal castMember={member} />
+                          <CastDetailModal castMember={member}/>
                         )}
                       </div>
                     ))}
@@ -228,20 +227,14 @@ function CastDetailModal(props) {
   const castMember = props.castMember;
   
   const parseDate = (date) => {
-    if (date.$date) {
-      const d = new Date(date.$date);
-      const day = String(d.getDate()).padStart(2, '0');
-      const month = String(d.getMonth() + 1).padStart(2, '0');
-      const year = d.getFullYear();
+    const d = new Date(date.$date);
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = d.getFullYear();
+    if (day === 'NaN')
+      return `unknown`;
+    else
       return `${day}/${month}/${year}`;
-    } else if (date.$numberLong) {
-      const d = new Date(parseInt(date.$numberLong, 10));
-      const day = String(d.getDate()).padStart(2, '0');
-      const month = String(d.getMonth() + 1).padStart(2, '0');
-      const year = d.getFullYear();
-      return `${day}/${month}/${year}`;
-    }
-    return '';
   };
 
   const getGender = (gender) => {

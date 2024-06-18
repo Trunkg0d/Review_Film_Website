@@ -8,18 +8,19 @@
     margin: 0;
     box-sizing: border-box;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    overflow: hidden;
+    background-image: var(--white);
 }
 
 .banner-content {
     font-size: calc(0.5em + 1vw); /* Responsive font size */
     max-width: 80%; /* Adjust maximum width */
     margin: auto;
+    max-width: 30%; /* Set the maximum width of the content */
     z-index: 2;
+}
+
+.banner-content .banner-description{
+    text-align: justify;
 }
 
 .banner-link {

@@ -16,11 +16,20 @@ user_database = Database(User)
 celebrity_database =  Database(Celebrity)
 
 
+
+
 async def get_celebrities_by_ids(ids: List[PydanticObjectId]) -> List[Celebrity]:
     celebrities = await celebrity_database.model.find({"_id": {"$in": ids}}).to_list()
     return celebrities
 
 
+async def retrieve_celebrity_by_movieid(id: PydanticObjectId) -> List[Celebrity]:
+    all_celebs = await retrieve_all_movies()
+    res = []
+    for celebrity in all_celebs:
+        if celebrity.id == id:
+            res.append(celebrity)
+    return res
 
 
 @movie_router.get("/", response_model=List[Movie])

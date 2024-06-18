@@ -63,29 +63,38 @@ function Reviews({ id }) {
         }
     };
 
+
     const handleNewReviewSubmit = () => {
         if (newReviewText.trim() === "") {
             return;
         }
 
+        const token = localStorage.getItem('accessToken');
         const newReview = {
             content: newReviewText,
             movie_id: id,
+            user_info: {  // Add user info here
+                username: 'currentUsername'  // Replace with the actual current username
+            }
             // Include additional necessary fields and user information
         };
 
-        const token = localStorage.getItem('accessToken');
         axios.post('http://localhost:8000/review/new', newReview, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                setReviews([...reviews, newReview]);
+                // Refetch reviews from the server to ensure they include all necessary properties
+                return axios.get(`http://localhost:8000/review/movie/${id}`);
+            })
+            .then(response => {
+                setReviews(response.data);
                 setNewReviewText("");
             })
             .catch(error => console.error(error.message));
     };
+
 
     const handleEditReview = (reviewId) => {
         const review = reviews.find(review => review.id === reviewId);

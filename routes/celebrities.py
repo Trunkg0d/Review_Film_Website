@@ -26,6 +26,16 @@ async def retrieve_celebrity(id: PydanticObjectId) -> Celebrity:
         )
     return celebrity
 
+@celebrity_router.get("/{id}", response_model=Celebrity)
+async def retrieve_celebrity(id: PydanticObjectId) -> Celebrity:
+    celebrity = await celebrity_database.get(id)
+    if not celebrity:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Celebrity with supplied ID does not exist"
+        )
+    return celebrity
+
 @celebrity_router.post("/new")
 async def create_celebrity(body: Celebrity, user: str = Depends(authenticate)) -> dict:
     body.creator = user

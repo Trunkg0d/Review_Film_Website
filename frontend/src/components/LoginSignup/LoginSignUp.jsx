@@ -139,6 +139,7 @@ const LoginSignup = () => {
                     });
                     // setUserInfo(response.data);
                     localStorage.setItem("role", response_role.data.role)
+                    localStorage.setItem("username", response_role.data.username)
                 } catch (error) {
                     console.error('Error fetching user role:', error);
                     // Handle error, e.g., redirect to login if unauthorized

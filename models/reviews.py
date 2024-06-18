@@ -1,20 +1,39 @@
-from typing import Optional
-from pydantic import BaseModel, HttpUrl, Field
+from typing import Optional, List
+from beanie import Document
+from pydantic import BaseModel
+from models.movies import Movie
+from beanie import PydanticObjectId
+from models.users import User
 from datetime import datetime
-from beanie import Document, PydanticObjectId
+
+
+# Example UserInfo and ReviewResponse models
+class UserInfo(BaseModel):
+    user_id: PydanticObjectId
+    username: str
+    fullname: str
+    img: Optional[str]
+
+class ReviewResponse(BaseModel):
+    id: PydanticObjectId
+    movie_id: PydanticObjectId
+    user_info: UserInfo
+    content: str
+    created_at: datetime
+    updated_at: datetime
+    helpful: Optional[List[PydanticObjectId]]
+    not_helpful: Optional[List[PydanticObjectId]]
 
 class Review(Document):
-    movie_id: PydanticObjectId
-    user_id: PydanticObjectId
-    content: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
-    helpful: Optional[int] = None
-    not_helpful: Optional[int] = None
-
-    class Settings:
-        name = "reviews"
-
+    movie_id : PydanticObjectId
+    user_id : PydanticObjectId
+    content : str 
+    updated_at : datetime
+    created_at : datetime
+    helpful : Optional[List[PydanticObjectId]]
+    not_helpful : Optional[List[PydanticObjectId]]   
+    
+    
     class Config:
         schema_extra = {
             "example": {
@@ -33,3 +52,6 @@ class Review(Document):
                 "not_helpful": None
             }
         }
+
+    class Settings:
+        name = "reviews"

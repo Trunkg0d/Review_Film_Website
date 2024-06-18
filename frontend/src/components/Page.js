@@ -9,6 +9,7 @@ function Page() {
     const { pagenumber } = useParams();
     const [movies, setMovies] = useState([]);
     const [numofpage, setNumOfPage] = useState(1);
+    const editIconPath = '/data/edit_icon.png';
 
     const fetchData = useCallback(() => {
         axios.get(`http://localhost:8000/movie/page/${pagenumber - 1}`)
@@ -37,6 +38,11 @@ function Page() {
             .catch(error => console.log(error.message));
     }, []);
 
+    const handleEditClick = (id) => {
+        window.location.href = `http://localhost:3000/admin_filmconfig/${id}`;
+    };
+    const role = localStorage.getItem('role');
+
     return (
         <section id="page" className="page">
             {/* {pagenumber === '1' && <Header />} */}
@@ -51,6 +57,11 @@ function Page() {
                         </a>
                         {movie.release_date && <p className="movie-release-date">{movie.release_date}</p>}
                         {movie.title && <p className="movie-title">{movie.title}</p>}
+                        {role === '1' && (
+                            <button className="edit-button" onClick={() => handleEditClick(movie.id)}>
+                                <img src={editIconPath} alt="Edit" />
+                            </button>
+                        )}
                     </div>
                 ))}
             </div>

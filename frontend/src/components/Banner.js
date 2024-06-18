@@ -1,17 +1,27 @@
 // Banner.js
-import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import React, { useCallback, useEffect, useState } from 'react';
 import './Banner.css';
 
 function Banner() {
     const [movies, setMovies] = useState([]);
     const [bannerMovieIndex, setBannerMovieIndex] = useState(0);
-
-    const fetchData = () => {
-        fetch('http://localhost:3000/data/movies_data.json')
-        .then(response => response.json())
-        .then(data => setMovies(data))
-        .catch(error => console.log(error.message));
-    };
+    
+    const fetchData = useCallback(() => {
+        axios.get(`http://localhost:8000/movie`)
+            .then(response => {
+                const formattedData = response.data.map(movie => ({
+                    id: movie._id,
+                    title: movie.title,
+                    poster_path: movie.poster_path,
+                    description: movie.description,
+                    backdrop_path: movie.backdrop_path,
+                    release_date: movie.release_date ? movie.release_date.split('T')[0] : ''
+                }));
+                setMovies(formattedData);
+            })
+            .catch(error => console.log(error.message));
+    })
 
     useEffect(() => {
         fetchData();
@@ -31,7 +41,7 @@ function Banner() {
     <div 
         className="banner"
         style={{
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path}")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original${bannerMovie.backdrop_path}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '500px',

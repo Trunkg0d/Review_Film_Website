@@ -1,6 +1,6 @@
 from typing import Optional
 from beanie import init_beanie, PydanticObjectId
-from models.movies import Movie
+from models.movies import Movie, MovieResponse
 from models.users import User
 from models.celebrities import Celebrity
 from models.reviews import Review
@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[Movie, User, Celebrity,Review])
+                          document_models=[MovieResponse, User, Celebrity,Review])
     class Config:
         env_file = ".env"
 

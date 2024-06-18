@@ -1,6 +1,6 @@
 .banner {
     width: 100vw;
-    height: 800px;
+    /* height: 100vh; Adjust height as necessary */
     background-size: cover;
     background-position: center;
     color: white;
@@ -8,29 +8,26 @@
     margin: 0;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
 }
 
-
 .banner-content {
-    font-size: large;
-    position: absolute;
-    top: 250px;
-    left: 340px; /* Adjust this value to move the content to the first half of the banner */
-    transform: translate(-50%, -50%);
+    font-size: calc(0.5em + 1vw); /* Responsive font size */
+    max-width: 80%; /* Adjust maximum width */
     margin: auto;
-    max-width: 30%; /* Set the maximum width of the content */
-    text-align: left;
     z-index: 2;
 }
 
-
 .banner-link {
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
-
 
 .banner::after {
     content: '';
@@ -42,4 +39,34 @@
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
     filter: blur(50px);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .banner-content {
+        font-size: calc(1em + 0.8vw);
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+    .banner-content {
+        font-size: calc(1em + 0.6vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        font-size: calc(1em + 0.4vw);
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-content {
+        font-size: calc(1em + 0.2vw);
+        max-width: 95%;
+    }
 }

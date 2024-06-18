@@ -17,7 +17,7 @@ class UserInfo(BaseModel):
     fullname: str
     username: str
     email: EmailStr
-    img: str
+    img: Optional[str]
     role: int
     wish_list: Optional[List[Movie]]
 

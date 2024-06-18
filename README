@@ -1,0 +1,22 @@
+
+**Some note about MongoDB Database**
+
+- Hello, I'm ntphong, now I'm going to upload some database file. These .json file can be upload to your MongoDB to testing the web (frontend and backend connecting processs will slowly upload, so you can base on my work, to code continuously)
+- Yep, I'm partly ok, so i'm sorry, and thank you.
+---
+
+`.env` file:
+DATABASE_URL=mongodb://localhost:27017/review_film_website
+SECRET_KEY=UGhvbmdkZXB0cmFpUGhvbmdkZXB0cmFp
+
+---
+4 json file, in `mongodb`, which collection name in sequence is: celebrities, movies, reviews, users:
+- review_film_website.celebrities.json
+- review_film_website.movies.json
+- review_film_website.reviews.json
+- review_film_website.users.json
+
+Database structure is:
+- Database name: review_film_website
+- Collection name: celebrities, movies, reviews, users
+

@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[MovieResponse, User, Celebrity,Review])
+                          document_models=[MovieResponse, User, Celebrity, Review])
     class Config:
         env_file = ".env"
 

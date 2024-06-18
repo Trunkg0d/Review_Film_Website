@@ -86,7 +86,7 @@ async def sign_user_in(user: OAuth2PasswordRequestForm = Depends()) -> TokenResp
         detail="Invalid details provided."
     )
 
-@user_router.get("/profile", response_model=UserInfo)
+@user_router.post("/profile", response_model=UserInfo)
 async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
     user_info = await User.find_one(User.email == current_user)
     if user_info:

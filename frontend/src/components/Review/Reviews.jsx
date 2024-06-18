@@ -187,32 +187,14 @@ function Reviews({ id }) {
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.id)}>Like</button>
-                                        <button onClick={() => toggleCommentBox(review.id)}>Comment</button>
+                                        <button onClick={() => handleLike(review.id)}>Upvote</button>
+                                        <button onClick={() => handleLike(review.id)}>Downvote</button>
                                         {editReviewId === review.id ? (
                                             <button onClick={handleEditReviewSubmit}>Save</button>
                                         ) : (
                                             <button onClick={() => handleEditReview(review.id)}>Edit</button>
                                         )}
                                     </div>
-                                    {(isCommentBoxVisible && activeReviewId === review.id) && (
-                                        <div className="review__replies">
-                                            {
-                                                (replies[review.id] || []).map((reply, j) => (
-                                                    <div key={j} className="reply">
-                                                        {reply}
-                                                    </div>
-                                                ))
-                                            }
-                                            <input
-                                                type="text"
-                                                value={newComments[review.id] || ""}
-                                                onChange={(e) => handleInputChange(review.id, e.target.value)}
-                                                placeholder="Write a reply..."
-                                            />
-                                            <button onClick={() => handleReply(review.id)}>Reply</button>
-                                        </div>
-                                    )}
                                 </div>
                             ))
                         ) : (

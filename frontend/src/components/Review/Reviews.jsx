@@ -13,7 +13,7 @@ function Reviews({ id }) {
     const [editReviewText, setEditReviewText] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/review/movie/${id}`)
+        axios.get(http://localhost:8000/review/movie/${id})
             .then(response => {
                 setReviews(response.data);
             })
@@ -77,7 +77,7 @@ function Reviews({ id }) {
         const token = localStorage.getItem('accessToken');
         axios.post('http://localhost:8000/review/new', newReview, {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: Bearer ${token}
             }
         })
             .then(response => {
@@ -109,9 +109,9 @@ function Reviews({ id }) {
         };
 
         const token = localStorage.getItem('accessToken');
-        axios.put(`http://localhost:8000/review/content/${editReviewId}`, updatedReview, {
+        axios.put(http://localhost:8000/review/content/${editReviewId}, updatedReview, {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: Bearer ${token}
             }})
             .then(response => {
                 const updatedReviews = reviews.map(review => {
@@ -144,7 +144,7 @@ function Reviews({ id }) {
                             rows={1}
                             onInput={(e) => {
                                 e.target.style.height = 'auto';
-                                e.target.style.height = `${e.target.scrollHeight}px`;
+                                e.target.style.height = ${e.target.scrollHeight}px;
                             }}
                         />
                     </div>

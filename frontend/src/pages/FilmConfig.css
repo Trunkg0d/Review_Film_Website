@@ -1,0 +1,125 @@
+.film-config {
+    margin: 100px auto;
+    padding: 20px;
+    color: gold;
+    background-color: black;
+    max-width: 1200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.config-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.image-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.movie-info {
+    text-align: left;
+    color: white ;
+    margin-top: 20px;
+}
+
+.movie-info h2 {
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    margin: 5px 0;
+}
+
+.info-section {
+    flex: 2;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: black;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-button,
+.reset-button,
+.delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.submit-button {
+    background-color: gold;
+    color: black;
+}
+
+.submit-button:hover {
+    background-color: darkgoldenrod;
+}
+
+.reset-button {
+    background-color: gray;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: darkgray;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+@media (max-width: 768px) {
+    .config-container {
+        flex-direction: column;
+    }
+
+    .info-section {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}

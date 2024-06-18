@@ -8,7 +8,7 @@ class User(Document):
     username: str
     email: EmailStr
     password: str
-    img: str
+    img: Optional[str]
     role: int   # 0: normal user, 1: admin
     wish_list: Optional[List[Movie]] = None 
 

@@ -37,6 +37,7 @@ function Dashboard() {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem('accessToken');
+    localStorage.removeItem('role');
     window.location.href = '/'
   };
 

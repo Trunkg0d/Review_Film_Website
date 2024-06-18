@@ -11,6 +11,9 @@ import LoginSignup from './components/LoginSignup/LoginSignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import SafetySetting from './pages/Dashboard/SafetySettings/safetySetting';
 import ChatBox from './components/ChatBox/Chatbox';
+import Page from './components/Page';
+import FilmConfig from './pages/FilmConfig';
+import NotFound from './pages/Errors/NotFound';
 
 function App() {
   return (
@@ -20,11 +23,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/login" element={<LoginSignup />} />
-        <Route path="/user/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/user/dashboard" element={<Dashboard />} />
+        <Route path="/page/:pagenumber" element={<Page />} />
+        <Route path="/admin_filmconfig/:id" element={<FilmConfig />} />
+        <Route path='*' element={<NotFound />} />
         <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
-      <ChatBox/>
+      <ChatBox />
       <BackToTopButton />
     </Router>
   );

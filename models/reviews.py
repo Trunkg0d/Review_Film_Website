@@ -28,19 +28,12 @@ class Review(Document):
     movie_id : PydanticObjectId
     user_id : PydanticObjectId
     content : str 
-<<<<<<< HEAD
-    review_date : datetime
-    helpful : List[User]  = []
-    not_helpful : List[User] = []
-
-=======
     updated_at : datetime
     created_at : datetime
     helpful : Optional[List[PydanticObjectId]]
     not_helpful : Optional[List[PydanticObjectId]]   
     
     
->>>>>>> 8e22e5b30b73deff3d216ce8d8c6cefe551c315c
     class Config:
         schema_extra = {
             "example": {

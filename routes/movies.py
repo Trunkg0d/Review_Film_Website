@@ -11,13 +11,17 @@ movie_router = APIRouter(
     tags=["Movies"]
 )
 
-movie_database = Database(MovieResponse)
+movie_database = Database(Movie)
 user_database = Database(User)
 celebrity_database =  Database(Celebrity)
+
 
 async def get_celebrities_by_ids(ids: List[PydanticObjectId]) -> List[Celebrity]:
     celebrities = await celebrity_database.model.find({"_id": {"$in": ids}}).to_list()
     return celebrities
+
+
+
 
 @movie_router.get("/", response_model=List[Movie])
 async def retrieve_all_movies() -> List[Movie]:
@@ -54,7 +58,8 @@ async def retrieve_movie(id: PydanticObjectId) -> Movie:
         movie.actors = await get_celebrities_by_ids(movie.actors)
     return movie
 
-@movie_router.post("/new")
+# Create a new movie
+@movie_router.post("/new", response_model=dict)
 async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
     body.creator = user
     await movie_database.save(body)
@@ -62,10 +67,15 @@ async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
         "message": "Movie created successfully"
     }
 
-@movie_router.put("/{id}")
+@movie_router.put("/{id}", response_model=Movie)
 async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depends(authenticate)) -> Movie:
     user_info = await User.find_one(User.email == user)
     # movie = await movie_database.get(id)
+    # if not movie:
+    #     raise HTTPException(
+    #         status_code=status.HTTP_404_NOT_FOUND,
+    #         detail="Movie with supplied ID does not exist"
+    #     )
     if user_info.role != 1:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
@@ -100,7 +110,8 @@ async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depe
         )
     return updated_movie
 
-@movie_router.delete("/{id}")
+# Delete a movie by ID
+@movie_router.delete("/{id}", response_model=dict)
 async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
     movie = await movie_database.get(id)
     if not movie:
@@ -113,8 +124,7 @@ async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) 
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Operation not allowed"
         )
-    movie = await movie_database.delete(id)
-
+    await movie_database.delete(id)
     return {
         "message": "Movie deleted successfully."
     }

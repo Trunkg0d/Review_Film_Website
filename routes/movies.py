@@ -11,7 +11,7 @@ movie_router = APIRouter(
     tags=["Movies"]
 )
 
-movie_database = Database(Movie)
+movie_database = Database(MovieResponse)
 user_database = Database(User)
 celebrity_database =  Database(Celebrity)
 

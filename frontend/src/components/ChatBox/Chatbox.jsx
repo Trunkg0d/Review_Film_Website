@@ -40,7 +40,7 @@ const ChatBox = () => {
         setNewMessageAdded(true);
 
         textareaRef.current.value = '';
-        textareaRef.current.focus();
+        textareaRef.current.style.height = 'auto';
         textareaRef.current.rows = 1;
     }
 

@@ -60,6 +60,7 @@
     border: 1px solid #ccc;
     padding: 0px 10px;
     color: var(--gray);
+    font-size: 90%;
 }
 
 .account-info .account-info-value-container img:hover{
@@ -73,6 +74,7 @@
 }
 
 .account-info .account-avatar-container{
+    text-align: center;
     font-size: 85%;
     font-style: italic;
     row-gap: 10px;

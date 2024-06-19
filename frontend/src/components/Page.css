@@ -23,6 +23,11 @@
   color: aliceblue;
 }
 
+.popular .add-watchlist{
+  width: 10rem;
+  background-color: var(--white);
+}
+
 .movie-title {
   font-size: 20px;
   font-weight: bold;

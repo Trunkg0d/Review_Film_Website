@@ -1,26 +1,25 @@
 .banner {
-    width: 100vw;
-    /* height: 100vh; Adjust height as necessary */
-    background-size: cover;
-    background-position: center;
     color: white;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     position: relative;
-    background-image: var(--white);
+    text-wrap: wrap;
 }
 
 .banner-content {
-    font-size: calc(0.5em + 1vw); /* Responsive font size */
-    max-width: 80%; /* Adjust maximum width */
-    margin: auto;
-    max-width: 30%; /* Set the maximum width of the content */
+    position: relative;
+    font-size: calc(0.3em + 1vw);
+    margin: 120px 120px;
+    max-width: 30%;
+    max-height: 400px;
     z-index: 2;
 }
 
-.banner-content .banner-description{
+.banner-content .banner-description {
     text-align: justify;
+    max-height: 120px;
+    position: relative;
 }
 
 .banner-link {

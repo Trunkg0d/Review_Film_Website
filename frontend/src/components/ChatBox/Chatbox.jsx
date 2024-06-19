@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
+import {HfInference} from '@huggingface/inference';
+
+const api_key = 'YOUR HUGGINGFACE API KEY HERE';
+const hf = new HfInference(api_key);
+const model_id = 'meta-llama/Meta-Llama-3-8B-Instruct';
 
 function addZero(num) {
     return num < 10 ? '0'+num : num
@@ -44,24 +49,44 @@ const ChatBox = () => {
         textareaRef.current.rows = 1;
     }
 
+    const Reply = (messages, out) => {
+        const nowDay = new Date();
+        const newMessage = {
+            text: out,
+            time: `${addZero(nowDay.getHours())}:${addZero(nowDay.getMinutes())}`,
+            type: "receive"
+        };
+
+        setMessages(prevMessages => [...prevMessages, newMessage]);
+        setTimeout(scrollBottom, 50);
+    };
+
     useEffect(() => {
         if (newMessageAdded) {
-            const autoReply = () => {
-                const nowDay = new Date();
-                const newMessage = {
-                    text: 'Thank you for your question! I am now thinking of an answer, please wait... :(',
-                    time: `${addZero(nowDay.getHours())}:${addZero(nowDay.getMinutes())}`,
-                    type: "receive"
-                };
-
-                setMessages(prevMessages => [...prevMessages, newMessage]);
-                setTimeout(scrollBottom, 50);
+            let out = "";
+            const processChunks = async() => {
+                for await (const chunk of hf.chatCompletionStream({
+                    model: model_id,
+                    messages: [
+                    { role: "user", content: messages[messages.length - 1].text},
+                    ],
+                    max_tokens: 500,
+                    temperature: 0.1,
+                    seed: 0,
+                })) {
+                    if (chunk.choices && chunk.choices.length > 0) {
+                        out += chunk.choices[0].delta.content;
+                    }
+                }
+                return out;
             };
+            processChunks().then((out) => {
+                setTimeout(() => Reply(messages, out), 2000);
+            });
             
-            setTimeout(autoReply, 2000);
             setNewMessageAdded(false);
         }
-    }, [newMessageAdded]);
+    }, [newMessageAdded, messages]);
 
     function scrollBottom() {
         const chatboxMessageContent = chatboxMessageContentRef.current;

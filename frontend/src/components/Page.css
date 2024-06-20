@@ -13,7 +13,7 @@
 
 .movie img {
   width: 100%; 
-  height: auto; 
+  height: 85%;
 }
 
 .movie-release-date {
@@ -21,11 +21,6 @@
   font-weight: bold;
   margin-top: 10px;
   color: aliceblue;
-}
-
-.popular .add-watchlist{
-  width: 10rem;
-  background-color: var(--white);
 }
 
 .movie-title {
@@ -58,6 +53,34 @@
 
 .edit-button:hover img {
   filter: brightness(150%);
+  transform: scale(1.2);
+}
+
+.add-watchlist {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.add-watchlist:hover img {
+  filter: brightness(120%);
+  transform: scale(1.2);
+}
+
+.watchlist-added {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.watchlist-added:hover img {
+  filter: brightness(70%);
   transform: scale(1.2);
 }
 

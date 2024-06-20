@@ -4,3 +4,5 @@ __pycache__
 
 !.gitignore
 database/pymongo_processing.ipynb
+frontend\yarn.lock
+frontend\package-lock.json

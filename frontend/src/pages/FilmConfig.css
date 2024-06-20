@@ -123,3 +123,127 @@
         margin-top: 20px;
     }
 }
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.selected-actors,
+.selected-directors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.selected-actor,
+.selected-director {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.selected-actor .actor-image,
+.selected-director .director-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.selected-actor button,
+.selected-director button {
+    background: none;
+    border: none;
+    color: #f44336;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-result:hover {
+    background-color: #e0e0e0;
+}
+
+.search-result img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.search-result span {
+    font-weight: bold;
+}
+
+button.submit-button,
+button.reset-button,
+button.delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button.submit-button {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+button.reset-button {
+    background-color: #fbc02d;
+    color: #ffffff;
+}
+
+button.delete-button {
+    background-color: #f44336;
+    color: #ffffff;
+}
+
+.film-config span {
+    color: black;
+}

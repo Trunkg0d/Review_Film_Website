@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, json } from 'react-router-dom';
 import axios from 'axios';
 import './FilmConfig.css';
 
@@ -20,12 +20,20 @@ function FilmConfig() {
         director: []
     });
     const [originalMovie, setOriginalMovie] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [selectedActors, setSelectedActors] = useState([]);
+    const [directorSearchQuery, setDirectorSearchQuery] = useState('');
+    const [directorSearchResults, setDirectorSearchResults] = useState([]);
+    const [selectedDirectors, setSelectedDirectors] = useState([]);
 
     const fetchData = useCallback(() => {
         axios.get(`http://localhost:8000/movie/${id}`)
             .then(response => {
                 setMovie(response.data);
                 setOriginalMovie(response.data);
+                setSelectedActors(response.data.actors || []);
+                setSelectedDirectors(response.data.director || []);
             })
             .catch(error => console.log(error.message));
     }, [id]);
@@ -45,10 +53,10 @@ function FilmConfig() {
     const token = localStorage.getItem('accessToken');
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/movie/${id}`, movie, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+        axios.put(`http://localhost:8000/movie/${id}`, { ...movie, actors: selectedActors, director: selectedDirectors }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         })
             .then(response => {
                 alert('Movie updated successfully!');
@@ -58,6 +66,8 @@ function FilmConfig() {
 
     const handleReset = () => {
         setMovie(originalMovie);
+        setSelectedActors(originalMovie.actors || []);
+        setSelectedDirectors(originalMovie.director || []);
     };
 
     const handleDelete = () => {
@@ -67,6 +77,48 @@ function FilmConfig() {
                 navigate('/movies'); // Redirect to movies list after deletion
             })
             .catch(error => console.log(error.message));
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+        if (e.target.value.trim()) {
+            axios.get(`http://localhost:8000/celebrity/search/${e.target.value.trim()}`)
+                .then(response => {
+                    setSearchResults(response.data);
+                })
+                .catch(error => console.log(error.message));
+        } else {
+            setSearchResults([]);
+        }
+    };
+
+    const handleDirectorSearchChange = (e) => {
+        setDirectorSearchQuery(e.target.value);
+        if (e.target.value.trim()) {
+            axios.get(`http://localhost:8000/celebrity/search/${e.target.value.trim()}`)
+                .then(response => {
+                    setDirectorSearchResults(response.data);
+                })
+                .catch(error => console.log(error.message));
+        } else {
+            setDirectorSearchResults([]);
+        }
+    };
+
+    const handleAddActor = (actor) => {
+        setSelectedActors(prevActors => [...prevActors, actor]);
+    };
+
+    const handleRemoveActor = (actorId) => {
+        setSelectedActors(prevActors => prevActors.filter(actor => actor._id !== actorId));
+    };
+
+    const handleAddDirector = (director) => {
+        setSelectedDirectors(prevDirectors => [...prevDirectors, director]);
+    };
+
+    const handleRemoveDirector = (directorId) => {
+        setSelectedDirectors(prevDirectors => prevDirectors.filter(director => director._id !== directorId));
     };
 
     return (
@@ -79,8 +131,8 @@ function FilmConfig() {
                         <p><strong>Description:</strong> {movie.description}</p>
                         <p><strong>Release Date:</strong> {movie.release_date}</p>
                         <p><strong>Language:</strong> {movie.language}</p>
-                        <p><strong>Actors:</strong> {movie.actors.map(actor => actor.name).join(', ')}</p>
-                        <p><strong>Directors:</strong> {movie.director.map(director => director.name).join(', ')}</p>
+                        <p><strong>Actors:</strong> {selectedActors.map(actor => actor.name).join(', ')}</p>
+                        <p><strong>Directors:</strong> {selectedDirectors.map(director => director.name).join(', ')}</p>
                     </div>
                 </div>
                 <div className="info-section">
@@ -118,13 +170,65 @@ function FilmConfig() {
                             <input type="number" name="runtime" value={movie.runtime} onChange={handleChange} />
                         </div>
                         <div className="form-group">
-                            <label>Director</label>
-                            <input type="text" name="runtime" value={movie.director} onChange={handleChange} />
+                            <label>Actors:</label>
+                            <div className="selected-actors">
+                                {selectedActors.map(actor => (
+                                    <div key={actor._id} className="selected-actor">
+                                        <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_image}`} alt={actor.name} className="actor-image" />
+                                        <span>{actor.name}</span>
+                                        <button type="button" onClick={() => handleRemoveActor(actor._id)}>x</button>
+                                    </div>
+                                ))}
+                            </div>
+                            <input
+                                type="text"
+                                name="search"
+                                value={searchQuery}
+                                onChange={handleSearchChange}
+                                placeholder="Search for actors..."
+                            />
+                            {searchResults.length > 0 && (
+                                <div className="search-results">
+                                    {searchResults.map(result => (
+                                        <div key={result._id} className="search-result" onClick={() => handleAddActor(result)}>
+                                            <img src={`https://image.tmdb.org/t/p/w500/${result.profile_image}`} alt={result.name} className="result-image" />
+                                            <span>{result.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
+
                         <div className="form-group">
-                            <label>Actors</label>
-                            <input type="text" name="runtime" value={movie.actors} onChange={handleChange} />
+                            <label>Directors:</label>
+                            <div className="selected-directors">
+                                {selectedDirectors.map(director => (
+                                    <div key={director._id} className="selected-director">
+                                        <img src={`https://image.tmdb.org/t/p/w500/${director.profile_image}`} alt={director.name} className="director-image" />
+                                        <span>{director.name}</span>
+                                        <button type="button" onClick={() => handleRemoveDirector(director._id)}>x</button>
+                                    </div>
+                                ))}
+                            </div>
+                            <input
+                                type="text"
+                                name="directorSearch"
+                                value={directorSearchQuery}
+                                onChange={handleDirectorSearchChange}
+                                placeholder="Search for directors..."
+                            />
+                            {directorSearchResults.length > 0 && (
+                                <div className="search-results">
+                                    {directorSearchResults.map(result => (
+                                        <div key={result._id} className="search-result" onClick={() => handleAddDirector(result)}>
+                                            <img src={`https://image.tmdb.org/t/p/w500/${result.profile_image}`} alt={result.name} className="result-image" />
+                                            <span>{result.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
+
                         <div className="form-group">
                             <label>Average Rating:</label>
                             <input type="number" step="0.1" name="average_rating" value={movie.average_rating} onChange={handleChange} />

@@ -11,12 +11,26 @@ movie_router = APIRouter(
     tags=["Movies"]
 )
 
-movie_database = Database(MovieResponse)
+movie_database = Database(Movie)
 user_database = Database(User)
 celebrity_database =  Database(Celebrity)
 
 
-
+def convert_to_response(item : Movie) -> MovieResponse:
+    return MovieResponse(
+        movie_id=item.id,
+        title=item.title,
+        backdrop_path=item.backdrop_path,
+        poster_path=item.poster_path,
+        description=item.description,
+        release_date=item.release_date,
+        language=item.language,
+        tags=item.tags,
+        director=item.director,
+        runtime=item.runtime,
+        average_rating=item.average_rating,
+        actors=item.actors
+    )
 
 async def get_celebrities_by_ids(ids: List[PydanticObjectId]) -> List[Celebrity]:
     celebrities = await celebrity_database.model.find({"_id": {"$in": ids}}).to_list()
@@ -32,21 +46,25 @@ async def retrieve_celebrity_by_movieid(id: PydanticObjectId) -> List[Celebrity]
     return res
 
 
-@movie_router.get("/", response_model=List[Movie])
-async def retrieve_all_movies() -> List[Movie]:
+@movie_router.get("/", response_model=List[MovieResponse])
+async def retrieve_all_movies() -> List[MovieResponse]:
     movies = await movie_database.get_all()
     for movie in movies:
         movie.director = await get_celebrities_by_ids(movie.director)
         if movie.actors:
             movie.actors = await get_celebrities_by_ids(movie.actors)
-    return movies
+    res = []
+    for item in movies:
+        res.append(convert_to_response(item))
+    return res
 
 
-@movie_router.get('/page/{pagenumber}', response_model=List[Movie])
-async def retrieve_subset_movies(pagenumber : int) -> List[Movie]:
+@movie_router.get('/page/{pagenumber}', response_model=List[MovieResponse])
+async def retrieve_subset_movies(pagenumber : int) -> List[MovieResponse]:
     movies = await retrieve_all_movies()
     start_idx = 12 * pagenumber
-    return movies[start_idx : start_idx + 12]
+    res = movies[start_idx : start_idx + 12]
+    return res
 
 
 @movie_router.get('/numberOfMovies')
@@ -54,8 +72,8 @@ async def retrieve_num_movies() -> int:
     movies = await retrieve_all_movies()
     return len(movies)
 
-@movie_router.get("/{id}", response_model=Movie)
-async def retrieve_movie(id: PydanticObjectId) -> Movie:
+@movie_router.get("/{id}", response_model=MovieResponse)
+async def retrieve_movie(id: PydanticObjectId) -> MovieResponse:
     movie = await movie_database.get(id)
     if not movie:
         raise HTTPException(
@@ -65,7 +83,7 @@ async def retrieve_movie(id: PydanticObjectId) -> Movie:
     movie.director = await get_celebrities_by_ids(movie.director)
     if movie.actors:
         movie.actors = await get_celebrities_by_ids(movie.actors)
-    return movie
+    return convert_to_response(movie)
 
 # Create a new movie
 @movie_router.post("/new", response_model=dict)
@@ -76,21 +94,17 @@ async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
         "message": "Movie created successfully"
     }
 
-@movie_router.put("/{id}", response_model=Movie)
-async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depends(authenticate)) -> Movie:
+@movie_router.put("/{id}", response_model=MovieResponse)
+async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depends(authenticate)) -> MovieResponse:
     user_info = await User.find_one(User.email == user)
-    # movie = await movie_database.get(id)
-    # if not movie:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_404_NOT_FOUND,
-    #         detail="Movie with supplied ID does not exist"
-    #     )
     if user_info.role != 1:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Forbidden"
         )
-    
+    director_id = [item.id for item in body.director]
+    actors_id = [item.id for item in body.actors]
+
     new_movie = Movie(
     title=body.title,
     backdrop_path=body.backdrop_path,
@@ -98,26 +112,34 @@ async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depe
     description=body.description,
     release_date=body.release_date,
     tags=body.tags,
-    director=['666b130500105718d9a4b3a2'],
+    director=director_id,
     language=body.language,
     runtime=body.runtime,
     average_rating=body.average_rating,
-    actors=['666b130500105718d9a4b3a2'],
-)
+    actors=actors_id)
 
 
-    # if movie.creator != user:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_400_BAD_REQUEST,
-    #         detail="Operation not allowed"
-    #     )
     updated_movie = await movie_database.update(id, new_movie)
     if not updated_movie:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Movie with supplied ID does not exist"
         )
-    return updated_movie
+
+    return MovieResponse(
+        movie_id=id,
+        title=body.title,
+        backdrop_path=body.backdrop_path,
+        poster_path=body.poster_path,
+        description=body.description,
+        release_date=body.release_date,
+        tags=body.tags,
+        director=body.director,
+        language=body.language,
+        runtime=body.runtime,
+        average_rating=body.average_rating,
+        actors=body.actors)
+    
 
 # Delete a movie by ID
 @movie_router.delete("/{id}", response_model=dict)

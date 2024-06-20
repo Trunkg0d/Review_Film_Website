@@ -38,7 +38,7 @@ async def fill_userinfo(review_data: Review) -> ReviewResponse:
         )
 
     return ReviewResponse(
-        id=review_data.id,  # Populate the ID field here
+        review_id=review_data.id,  # Populate the ID field here
         movie_id=review_data.movie_id,
         user_info={
             "user_id": user_id,

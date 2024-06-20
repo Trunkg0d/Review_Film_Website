@@ -31,7 +31,7 @@ function Reviews({ id }) {
             .then(response => {
                 console.log('Response:', response.data);  // Debugging line
                 setReviews(reviews.map(review => {
-                    if (review.id === reviewId) {
+                    if (review.review_id === reviewId) {
                         return response.data;
                     }
                     return review;
@@ -104,7 +104,7 @@ function Reviews({ id }) {
     };
 
     const handleEditReview = (reviewId) => {
-        const review = reviews.find(review => review.id === reviewId);
+        const review = reviews.find(review => review.review_id === reviewId);
         if (review) {
             setEditReviewId(reviewId);
             setEditReviewText(review.content);
@@ -131,7 +131,7 @@ function Reviews({ id }) {
             }})
             .then(response => {
                 const updatedReviews = reviews.map(review => {
-                    if (review.id === editReviewId) {
+                    if (review.review_id === editReviewId) {
                         return { ...review, content: editReviewText };
                     }
                     return review;
@@ -183,7 +183,7 @@ function Reviews({ id }) {
                                         </div>
                                     </div>
                                     <div className="review__content">
-                                        {editReviewId === review.id ? (
+                                        {editReviewId === review.review_id ? (
                                             <textarea 
                                                 value={editReviewText}
                                                 onChange={handleEditReviewChange}
@@ -192,11 +192,11 @@ function Reviews({ id }) {
                                             review.content.length > 200 ? (
                                                 <div>
                                                     {review.content.substring(0, 200)}
-                                                    {activeReviewId === review.id && (
+                                                    {activeReviewId === review.review_id && (
                                                         <span>{review.content.substring(200)}</span>
                                                     )}
-                                                    <button onClick={() => toggleCommentBox(review.id)}>
-                                                        {activeReviewId === review.id && isCommentBoxVisible ? 'Hide' : 'Show More'}
+                                                    <button onClick={() => toggleCommentBox(review.review_id)}>
+                                                        {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
                                                     </button>
                                                 </div>
                                             ) : (
@@ -205,12 +205,12 @@ function Reviews({ id }) {
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.id, true)}>Helpful ({review.helpful?.length || 0})</button>
-                                        <button onClick={() => handleLike(review.id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
-                                        {editReviewId === review.id ? (
+                                        <button onClick={() => handleLike(review.review_id, true)}>Helpful ({review.helpful?.length || 0})</button>
+                                        <button onClick={() => handleLike(review.review_id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
+                                        {editReviewId === review.review_id ? (
                                             <button onClick={handleEditReviewSubmit}>Save</button>
                                         ) : (
-                                            <button onClick={() => handleEditReview(review.id)}>Edit</button>
+                                            <button onClick={() => handleEditReview(review.review_id)}>Edit</button>
                                         )}
                                     </div>
                                 </div>

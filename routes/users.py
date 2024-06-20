@@ -7,7 +7,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from models.users import User, TokenResponse
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
-from models.movies import Movie
+from models.movies import MovieResponse
 
 user_router = APIRouter(
     tags=["User"],
@@ -19,7 +19,7 @@ class UserInfo(BaseModel):
     email: EmailStr
     img: Optional[str]
     role: int
-    wish_list: Optional[List[Movie]]
+    wish_list: Optional[List[MovieResponse]]
 
 class CheckEmailRequest(BaseModel):
     email: EmailStr

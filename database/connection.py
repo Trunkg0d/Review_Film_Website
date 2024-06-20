@@ -7,6 +7,7 @@ from models.reviews import Review
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings
 from pydantic import BaseModel
+from typing import List
 
 class Settings(BaseSettings):
     DATABASE_URL: Optional[str] = None
@@ -15,7 +16,7 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[MovieResponse, User, Celebrity, Review])
+                          document_models=[Movie, User, Celebrity, Review])
     class Config:
         env_file = ".env"
 
@@ -58,3 +59,7 @@ class Database:
             return False
         await doc.delete()
         return True
+
+    async def search(self, query: str, property : str):
+        docs = await self.model.find({property: {"$regex": query, "$options": "ix"}}).to_list()
+        return docs

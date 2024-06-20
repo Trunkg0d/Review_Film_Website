@@ -15,7 +15,7 @@ class UserInfo(BaseModel):
     img: Optional[str]
 
 class ReviewResponse(BaseModel):
-    id: PydanticObjectId
+    review_id: PydanticObjectId
     movie_id: PydanticObjectId
     user_info: UserInfo
     content: str

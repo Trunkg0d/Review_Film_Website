@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate, json } from 'react-router-dom';
 import axios from 'axios';
+import UploadModal from '../components/Upload/Upload'; 
 import './FilmConfig.css';
+
 
 function FilmConfig() {
     const { id } = useParams();
@@ -26,6 +28,8 @@ function FilmConfig() {
     const [directorSearchQuery, setDirectorSearchQuery] = useState('');
     const [directorSearchResults, setDirectorSearchResults] = useState([]);
     const [selectedDirectors, setSelectedDirectors] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
     const fetchData = useCallback(() => {
         axios.get(`http://localhost:8000/movie/${id}`)
@@ -121,11 +125,29 @@ function FilmConfig() {
         setSelectedDirectors(prevDirectors => prevDirectors.filter(director => director._id !== directorId));
     };
 
+    
+  // UploadModal function
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+
     return (
         <section id="film-config" className="film-config">
-            <div className="config-container">
+            <div className="backdrop-container">
+                {/* <h2>{"Movie Backdrop"}</h2> */}
+                <img src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} alt={movie.title} className="movie-backdrop" />
+            </div>
+            <div className="config-container">            
                 <div className="image-section">
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="movie-poster" />
+                    <button onClick={openModal}>Open Upload Modal</button>
+                    {isModalOpen && <UploadModal onClose={closeModal} />}
                     <div className="movie-info">
                         <h2>{movie.title}</h2>
                         <p><strong>Description:</strong> {movie.description}</p>

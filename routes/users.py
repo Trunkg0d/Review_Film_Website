@@ -1,18 +1,28 @@
 from auth.hash_password import HashPassword
 from auth.jwt_handler import create_access_token
 from auth.authenticate import authenticate
+from fastapi.responses import JSONResponse, FileResponse
 from database.connection import Database
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from fastapi.security import OAuth2PasswordRequestForm
-from models.users import User, TokenResponse
+from models.users import User, TokenResponse, UserUpdate
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from models.movies import MovieResponse
+import aiofiles
+from pathlib import Path
+import string
+import logging
+import random
+import datetime
 
 user_router = APIRouter(
     tags=["User"],
 )
 
+UPLOAD_DIR = Path() / 'uploads' # Avatar image store path
+
+logger = logging.getLogger('uvicorn.error')
 class UserInfo(BaseModel):
     fullname: str
     username: str
@@ -102,3 +112,68 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
         status_code=status.HTTP_404_NOT_FOUND,
         detail="User not found"
     )
+
+@user_router.put("/profile", response_model=User)
+async def update_user(request: UserUpdate, user: str = Depends(authenticate)) -> User:
+    user_info = await User.find_one(User.email == user)
+    if not user_info:
+        raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="User not found"
+        )
+    new_info = UserUpdate(
+        fullname=request.fullname,
+        username=request.username,
+        email=request.email,
+        img=request.img,
+        role=request.role,
+        wish_list=request.wish_list
+    )
+    updated_user = await user_database.update(user_info.id, new_info)
+    return updated_user
+
+def generate_random_name():
+    characters = string.ascii_letters + string.digits
+    random_name = ''.join(random.choice(characters) for _ in range(16))
+    datetime_str = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    return f"{datetime_str}_{random_name}"
+
+@user_router.post("/image")    
+async def update_profile_image(file: UploadFile = File(...), user: str = Depends(authenticate)):
+    user_info = await User.find_one(User.email == user)
+
+    file_extension = file.filename.split('.')[-1]
+    if not file_extension:
+        return JSONResponse({"error": "File does not have an extension"}, status_code=400)
+    filename = f"{generate_random_name()}.{file_extension}"
+    file_location = UPLOAD_DIR / filename
+    async with aiofiles.open(file_location, 'wb') as out_file:
+        content = await file.read()
+        await out_file.write(content)
+
+    if user_info is None:
+        raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="User not found"
+        )
+    new_info = UserUpdate(
+        fullname=user_info.fullname,
+        username=user_info.username,
+        password=user_info.password,
+        email=user_info.email,
+        img=filename,
+        role=user_info.role,
+        wish_list=user_info.wish_list
+    )
+    updated_user = await user_database.update(user_info.id, new_info)
+    return updated_user
+    
+@user_router.get("/image/{filename}")
+async def get_image(filename: str):
+    file_location = UPLOAD_DIR / filename
+    if not file_location.exists():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="File not found"
+        )
+    return FileResponse(file_location)

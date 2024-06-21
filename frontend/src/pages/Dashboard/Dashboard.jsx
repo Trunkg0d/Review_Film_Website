@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
+import UploadModal from '../../components/Upload/Upload';
 
 function Dashboard() {
   const [userInfo, setUserInfo] = useState({
@@ -11,12 +12,13 @@ function Dashboard() {
     role: 0,
     wish_list: []
   });
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const response = await axios.post('http://localhost:8000/user/profile', {}, {
+        const response =await axios.post('http://localhost:8000/user/profile', {}, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -39,6 +41,29 @@ function Dashboard() {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('role');
     window.location.href = '/'
+  };
+
+  const openUploadModal = () => {
+    setIsUploadModalOpen(true);
+  };
+
+  const closeUploadModal = () => {
+    setIsUploadModalOpen(false);
+  };
+
+  const handleUploadSuccess = async () => {
+    setIsUploadModalOpen(false);
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.post('http://localhost:8000/user/profile', {}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserInfo(response.data);
+    } catch (error) {
+      console.error('Error fetching updated user info:', error);
+    }
   };
 
   return (
@@ -68,7 +93,14 @@ function Dashboard() {
           <div className="sub-title">Thông tin cơ bản</div>
           <div className="account-content-container">
             <div className="account-avatar-container">
-              <img src={userInfo.img || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile" />
+              <img
+                src={`http://localhost:8000/user/image/${userInfo.img}` || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'}
+                alt=""
+                className="account-avatar-profile"
+              />
+              <button className="upload-button" onClick={openUploadModal}>
+                Change Avatar
+              </button>
             </div>
             <div className="account-info-container">
               <div className="account-info-item">
@@ -95,6 +127,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      {isUploadModalOpen && <UploadModal onClose={closeUploadModal} onSuccess={handleUploadSuccess} />}
     </div>
   );
 }

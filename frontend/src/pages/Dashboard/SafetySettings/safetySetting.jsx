@@ -91,7 +91,7 @@ function SafetySetting() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               Chọn để thay đổi ảnh đại diện!
-              <img src={userInfo.img || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile-change" 
+              <img src={`http://localhost:8000/user/image/${userInfo.img}` || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile-change" 
                 onClick={ChangeAvatar(userInfo.img)}/>
             </div>
             <div className="account-info-container">

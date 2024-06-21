@@ -8,7 +8,6 @@ from routes.movies import movie_router
 from routes.users import user_router
 from routes.celebrities import celebrity_router
 from routes.reviews import review_router
-from routes.uploads import upload_router
 
 app = FastAPI()
 
@@ -32,7 +31,6 @@ app.include_router(user_router, prefix="/user")
 app.include_router(movie_router, prefix="/movie")
 app.include_router(celebrity_router, prefix="/celebrity")
 app.include_router(review_router, prefix="/review")
-app.include_router(upload_router, prefix='/upload')
 
 #/reviews/movie_id
 @app.on_event("startup")

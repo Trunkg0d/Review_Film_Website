@@ -15,6 +15,8 @@ import string
 import logging
 import random
 import datetime
+from io import BytesIO
+from PIL import Image
 
 user_router = APIRouter(
     tags=["User"],
@@ -116,6 +118,10 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
 @user_router.put("/profile", response_model=User)
 async def update_user(request: UserUpdate, user: str = Depends(authenticate)) -> User:
     user_info = await User.find_one(User.email == user)
+    # check if confirm password is the same
+
+    # if request.confirm
+    
     if not user_info:
         raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND,
@@ -138,19 +144,33 @@ def generate_random_name():
     datetime_str = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     return f"{datetime_str}_{random_name}"
 
+def crop_to_square(image: Image.Image) -> Image.Image:
+    width, height = image.size
+    min_dimension = min(width, height)
+    left = (width - min_dimension) / 2
+    top = (height - min_dimension) / 2
+    right = (width + min_dimension) / 2
+    bottom = (height + min_dimension) / 2
+    return image.crop((left, top, right, bottom))
+
 @user_router.post("/image")    
 async def update_profile_image(file: UploadFile = File(...), user: str = Depends(authenticate)):
     user_info = await User.find_one(User.email == user)
-
     file_extension = file.filename.split('.')[-1]
     if not file_extension:
         return JSONResponse({"error": "File does not have an extension"}, status_code=400)
     filename = f"{generate_random_name()}.{file_extension}"
     file_location = UPLOAD_DIR / filename
-    async with aiofiles.open(file_location, 'wb') as out_file:
-        content = await file.read()
-        await out_file.write(content)
 
+    content = await file.read()
+    image = Image.open(BytesIO(content))
+    cropped_image = crop_to_square(image)
+    
+
+    async with aiofiles.open(file_location, 'wb') as out_file:
+        cropped_image_bytes = BytesIO()
+        cropped_image.save(cropped_image_bytes, format=image.format)
+        await out_file.write(cropped_image_bytes.getvalue())
     if user_info is None:
         raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND,
@@ -162,8 +182,7 @@ async def update_profile_image(file: UploadFile = File(...), user: str = Depends
         password=user_info.password,
         email=user_info.email,
         img=filename,
-        role=user_info.role,
-        wish_list=user_info.wish_list
+        role=user_info.role
     )
     updated_user = await user_database.update(user_info.id, new_info)
     return updated_user

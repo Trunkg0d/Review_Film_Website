@@ -5,7 +5,7 @@ import './Upload.css';
 
 export default function UploadModal({ onClose, onSuccess }) {
   const [file, setFile] = useState(null);
-  const [dragActive, setDragActive] = useState(false);
+  // const [dragActive, setDragActive] = useState(false);
   const [msg, setMsg] = useState("");
   const [uploading, setUploading] = useState(false);
 
@@ -59,17 +59,17 @@ export default function UploadModal({ onClose, onSuccess }) {
   const handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
-    } else if (e.type === "dragleave") {
-      setDragActive(false);
-    }
+    // if (e.type === "dragenter" || e.type === "dragover") {
+    //   setDragActive(true);
+    // } else if (e.type === "dragleave") {
+    //   setDragActive(false);
+    // }
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setDragActive(false);
+    // setDragActive(false);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       checkSize(e, "drop");
       uploadFile(e.dataTransfer.files[0]);
@@ -82,9 +82,12 @@ export default function UploadModal({ onClose, onSuccess }) {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/upload/image', formData, {
+
+      const token = localStorage.getItem('accessToken');
+      await axios.post('http://localhost:8000/user/profile', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`
         },
       });
       setMsg('File uploaded successfully');

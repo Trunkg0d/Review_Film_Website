@@ -63,3 +63,7 @@ class Database:
     async def search(self, query: str, property : str):
         docs = await self.model.find({property: {"$regex": query, "$options": "ix"}}).to_list()
         return docs
+
+    async def len(self):
+        count = await self.model.find_all().count()
+        return count

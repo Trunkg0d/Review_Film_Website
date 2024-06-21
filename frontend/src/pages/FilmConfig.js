@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, useNavigate, json } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import UploadModal from '../components/Upload/Upload'; 
 import './FilmConfig.css';
@@ -135,7 +135,6 @@ function FilmConfig() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
 
     return (
         <section id="film-config" className="film-config">

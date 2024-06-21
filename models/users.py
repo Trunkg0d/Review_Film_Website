@@ -50,8 +50,8 @@ class UserUpdate(BaseModel):
     email: Optional[EmailStr]
     password: Optional[str]
     img: Optional[str]
-    role: Optional[int]
-    wish_list: Optional[List[PydanticObjectId]] = None
+    role: int
+    # wish_list: Optional[List[PydanticObjectId]] = None
 
     class Config:
         schema_extra = {

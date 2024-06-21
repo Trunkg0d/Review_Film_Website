@@ -84,7 +84,7 @@ export default function UploadModal({ onClose, onSuccess }) {
     try {
 
       const token = localStorage.getItem('accessToken');
-      await axios.post('http://localhost:8000/user/profile', formData, {
+      await axios.post('http://localhost:8000/user/image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`

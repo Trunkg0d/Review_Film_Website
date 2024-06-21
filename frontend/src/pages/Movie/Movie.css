@@ -170,18 +170,8 @@
 }
 
 .movie-content__info .cast .cast-image:hover {
-    border: 10px solid var(--primary);
-    animation: spin 10s linear infinite;
+    box-shadow: 0 0 10px var(--primary), 0 0 10px var(--primary);
 }
-
-@keyframes spin {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
 
 .movie-content__info .cast .cast-name {
     color: var(--primary);
@@ -192,16 +182,13 @@
 .cast-detail{
     display: flex;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: var(--white);
     z-index: 1101;
-    width: 30rem;
-    height: 15rem;
+    width: 26rem;
+    height: 13rem;
     border-radius: 20px;
     cursor: default;
-    font-family: "Quicksand", sans-serif;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 1);
 }
 
 .cast-detail .avatar {
@@ -226,7 +213,7 @@
 
 .cast-detail .info-container .name{
     padding: 0 1rem;
-    font-size: 200%;
+    font-size: 150%;
     text-align: center;
     color: rgb(190, 123, 0);
 }
@@ -237,7 +224,7 @@
 }
 
 .cast-detail .info-container .other-container .dob{
-    font-size: 150%;
+    font-size: 120%;
     text-align: center;
     color: rgb(190, 123, 0);
 }
@@ -250,7 +237,7 @@
 
 .cast-detail .info-container .other-container .job{
     padding-top: 5%;
-    font-size: 150%;
+    font-size: 120%;
     text-align: center;
     color: rgb(190, 123, 0);
 }

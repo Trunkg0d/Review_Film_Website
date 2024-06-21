@@ -142,15 +142,32 @@ async def delete_review(id: PydanticObjectId, user: str = Depends(authenticate))
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Review not found"
         )
-    if review.creator != user:
+
+    user_info = await user_database.get(review.user_id)
+    if not user_info:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+
+    current_user = await User.find_one(User.email == user)
+    if not current_user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Authenticated user not found"
+        )
+
+    if review.user_id != current_user.id and current_user.role != 1:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
             detail="Operation not allowed"
         )
+
     await review_database.delete(id)
     return {
         "message": "Review deleted successfully."
     }
+
 
 
 # helpful a review

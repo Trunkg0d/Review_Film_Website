@@ -75,12 +75,16 @@ function FilmConfig() {
     };
 
     const handleDelete = () => {
-        axios.delete(`http://localhost:8000/movie/${id}`)
-            .then(response => {
-                alert('Movie deleted successfully!');
-                navigate('/movies'); // Redirect to movies list after deletion
-            })
-            .catch(error => console.log(error.message));
+        axios.delete(`http://localhost:8000/movie/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            alert('Movie deleted successfully!');
+            navigate('/'); // Redirect to movies list after deletion
+        })
+        .catch(error => console.log(error.message));
     };
 
     const handleSearchChange = (e) => {

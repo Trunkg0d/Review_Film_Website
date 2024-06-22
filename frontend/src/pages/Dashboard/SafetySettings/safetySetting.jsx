@@ -20,6 +20,11 @@ function SafetySetting() {
     email: false
   });
 
+  const [modalVisible, setModalVisible] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [pendingField, setPendingField] = useState(null);
+  const [newValues, setNewValues] = useState({});
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
@@ -32,7 +37,6 @@ function SafetySetting() {
         setUserInfo(response.data);
       } catch (error) {
         console.error('Error fetching user info:', error);
-        // Handle error, e.g., redirect to login if unauthorized
         if (error.response && error.response.status === 401) {
           window.location.href = '/';
         }
@@ -57,11 +61,33 @@ function SafetySetting() {
   };
 
   const handleInputChange = (e, field) => {
-
+    setNewValues({ ...newValues, [field]: e.target.value });
   };
 
   const saveChanges = (field) => {
-    setIsEditing({ ...isEditing, [field]: false });
+    setPendingField(field);
+    setModalVisible(true);
+  };
+
+  const confirmAndSave = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await axios.put('http://localhost:8000/user/profile', {
+        ...newValues,
+        confirm_password: confirmPassword
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserInfo({ ...userInfo, ...newValues });
+      setModalVisible(false);
+      setConfirmPassword('');
+      setIsEditing({ ...isEditing, [pendingField]: false });
+    } catch (error) {
+      console.error('Error saving changes:', error);
+      // Handle error appropriately
+    }
   };
 
   return (
@@ -95,7 +121,7 @@ function SafetySetting() {
                 onClick={ChangeAvatar(userInfo.img)}/>
             </div>
             <div className="account-info-container">
-              {['fullname', 'username', 'email', 'mật khẩu'].map((field) => (
+              {['fullname', 'username', 'email', 'password'].map((field) => (
                 <div key={field} className="account-info-item">
                   <span className="account-info-label">{field.charAt(0).toUpperCase() + field.slice(1)}</span>
                   <span className="account-info-value-container">
@@ -122,6 +148,21 @@ function SafetySetting() {
           </div>
         </div>
       </div>
+      {modalVisible && (
+        <div className="modal">
+          <div className="modal-content">
+            <h4>Enter your password to process the change</h4>
+            <input 
+              type="password" 
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Enter your password"
+            />
+            <button onClick={confirmAndSave}>Confirm</button>
+            <button onClick={() => setModalVisible(false)}>Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

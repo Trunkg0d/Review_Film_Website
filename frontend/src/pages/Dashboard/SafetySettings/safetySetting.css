@@ -94,3 +94,34 @@
 }
 
 
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+}
+
+.modal-button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

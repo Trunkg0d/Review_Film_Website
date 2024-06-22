@@ -88,8 +88,8 @@ async def retrieve_review(id: PydanticObjectId) -> Review:
 
 
 # Create a new review
-@review_router.post("/new", response_model=dict)
-async def create_review(body: dict, user: str = Depends(authenticate)) -> dict:
+@review_router.post("/new", response_model=ReviewResponse)
+async def create_review(body: dict, user: str = Depends(authenticate)) -> ReviewResponse:
     # body.creator = user
     user_info = await User.find_one(User.email == user)
     new_review = Review(
@@ -100,10 +100,9 @@ async def create_review(body: dict, user: str = Depends(authenticate)) -> dict:
         updated_at=datetime.now(),
         helpful=None,
         not_helpful=None)
-    await review_database.save(new_review)
-    return {
-        "message": "Review created successfully"
-    }
+    new_review_data = await review_database.save(new_review)
+    res= await fill_userinfo(new_review)
+    return res
 
 
 

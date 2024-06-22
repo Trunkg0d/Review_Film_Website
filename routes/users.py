@@ -116,26 +116,43 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
     )
 
 @user_router.put("/profile", response_model=User)
-async def update_user(request: UserUpdate, user: str = Depends(authenticate)) -> User:
-    user_info = await User.find_one(User.email == user)
-    # check if confirm password is the same
-
-    # if request.confirm
+async def update_user(request: dict, user: str = Depends(authenticate)) -> User:
+    valid_keys = ["fullname", "username", "password", "email", "confirm_password"]
+    filtered_request =  {key:value for key, value in request.items() if key in valid_keys}
     
+    user_info = await User.find_one(User.email == user)
     if not user_info:
         raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND,
         detail="User not found"
         )
-    new_info = UserUpdate(
-        fullname=request.fullname,
-        username=request.username,
-        email=request.email,
-        img=request.img,
-        role=request.role,
-        wish_list=request.wish_list
-    )
-    updated_user = await user_database.update(user_info.id, new_info)
+
+    # hashed_CP = hash_password.create_hash(filtered_request.get("confirm_password"))
+    if not hash_password.verify_hash(filtered_request.get("confirm_password"), user_info.password):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Confirm password is incorrect"
+        )
+    
+    # check if password change
+    if "password" in filtered_request.keys():
+        filtered_request["password"] = hash_password.create_hash(filtered_request.password)
+
+    current_info = {
+        "fullname":user_info.fullname,
+        "username":user_info.username,
+        "email":user_info.email,
+        "password":user_info.password,
+        "img":user_info.img,
+        "role":user_info.role
+    }
+
+    for key, value in filtered_request.items():
+        current_info[key] = value
+
+    update_info = UserUpdate(**current_info)
+    # update_info = UserUpdate(**filtered_request)
+    updated_user = await user_database.update(user_info.id, update_info)
     return updated_user
 
 def generate_random_name():

@@ -4,8 +4,8 @@ import './Reviews.css';
 
 function Reviews({ id }) {
     const [reviews, setReviews] = useState([]);
-    const [replies, setReplies] = useState({});
-    const [newComments, setNewComments] = useState({});
+    // const [replies, setReplies] = useState({});
+    // const [newComments, setNewComments] = useState({});
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
     const [newReviewText, setNewReviewText] = useState("");
@@ -45,29 +45,29 @@ function Reviews({ id }) {
         setIsCommentBoxVisible(false);
     };
 
-    const handleReply = (reviewId) => {
-        const newComment = newComments[reviewId] || "";
-        if (newComment.trim() === "") {
-            return;
-        }
+    // const handleReply = (reviewId) => {
+    //     const newComment = newComments[reviewId] || "";
+    //     if (newComment.trim() === "") {
+    //         return;
+    //     }
 
-        const currentReplies = replies[reviewId] || [];
-        setReplies({
-            ...replies,
-            [reviewId]: [...currentReplies, newComment]
-        });
-        setNewComments({
-            ...newComments,
-            [reviewId]: ""
-        });
-    };
+    //     const currentReplies = replies[reviewId] || [];
+    //     setReplies({
+    //         ...replies,
+    //         [reviewId]: [...currentReplies, newComment]
+    //     });
+    //     setNewComments({
+    //         ...newComments,
+    //         [reviewId]: ""
+    //     });
+    // };
 
-    const handleInputChange = (reviewId, value) => {
-        setNewComments({
-            ...newComments,
-            [reviewId]: value
-        });
-    };
+    // const handleInputChange = (reviewId, value) => {
+    //     setNewComments({
+    //         ...newComments,
+    //         [reviewId]: value
+    //     });
+    // };
 
     const toggleCommentBox = (reviewId) => {
         if (isCommentBoxVisible && activeReviewId === reviewId) {
@@ -86,8 +86,7 @@ function Reviews({ id }) {
 
         const newReview = {
             content: newReviewText,
-            movie_id: id,
-            // Include additional necessary fields and user information
+            movie_id: id
         };
 
         const token = localStorage.getItem('accessToken');

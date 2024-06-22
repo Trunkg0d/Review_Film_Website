@@ -40,6 +40,8 @@ function Dashboard() {
     e.preventDefault();
     localStorage.removeItem('accessToken');
     localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    localStorage.removeItem('tokenExpireTime');
     window.location.href = '/'
   };
 

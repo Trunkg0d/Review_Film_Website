@@ -3,7 +3,7 @@ import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
 import {HfInference} from '@huggingface/inference';
 
-const api_key = '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';
+const api_key = 'YOUR HUGGINGFACE API KEY HERE';
 const hf = new HfInference(api_key);
 const model_id = 'meta-llama/Meta-Llama-3-8B-Instruct';
 

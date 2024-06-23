@@ -140,6 +140,12 @@ function FilmConfig() {
     setIsModalOpen(false);
   };
 
+  const handleCastImg = (profile_image, gender) => {
+    return profile_image ? `https://image.tmdb.org/t/p/w200${profile_image}` : 
+    ((gender === 'Male') ? `https://i.pinimg.com/564x/47/3e/84/473e84e35274f087695236414ff8df3b.jpg` : 
+    `https://i.pinimg.com/564x/1b/2e/31/1b2e314e767a957a44ed8f992c6d9098.jpg`);
+  }
+
     return (
         <section id="film-config" className="film-config">
             <div className="backdrop-container">
@@ -199,7 +205,7 @@ function FilmConfig() {
                             <div className="selected-actors">
                                 {selectedActors.map(actor => (
                                     <div key={actor._id} className="selected-actor">
-                                        <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_image}`} alt={actor.name} className="actor-image" />
+                                        <img src={handleCastImg(actor.profile_image)} alt={actor.name} className="actor-image" />
                                         <span>{actor.name}</span>
                                         <button type="button" onClick={() => handleRemoveActor(actor._id)}>x</button>
                                     </div>
@@ -216,7 +222,7 @@ function FilmConfig() {
                                 <div className="search-results">
                                     {searchResults.map(result => (
                                         <div key={result._id} className="search-result" onClick={() => handleAddActor(result)}>
-                                            <img src={`https://image.tmdb.org/t/p/w500/${result.profile_image}`} alt={result.name} className="result-image" />
+                                            <img src={handleCastImg(result.profile_image)} alt={result.name} className="result-image" />
                                             <span>{result.name}</span>
                                         </div>
                                     ))}
@@ -229,7 +235,7 @@ function FilmConfig() {
                             <div className="selected-directors">
                                 {selectedDirectors.map(director => (
                                     <div key={director._id} className="selected-director">
-                                        <img src={`https://image.tmdb.org/t/p/w500/${director.profile_image}`} alt={director.name} className="director-image" />
+                                        <img src={handleCastImg(director.profile_image)} alt={director.name} className="director-image" />
                                         <span>{director.name}</span>
                                         <button type="button" onClick={() => handleRemoveDirector(director._id)}>x</button>
                                     </div>
@@ -246,7 +252,7 @@ function FilmConfig() {
                                 <div className="search-results">
                                     {directorSearchResults.map(result => (
                                         <div key={result._id} className="search-result" onClick={() => handleAddDirector(result)}>
-                                            <img src={`https://image.tmdb.org/t/p/w500/${result.profile_image}`} alt={result.name} className="result-image" />
+                                            <img src={handleCastImg(result.profile_image)} alt={result.name} className="result-image" />
                                             <span>{result.name}</span>
                                         </div>
                                     ))}

@@ -111,6 +111,10 @@ function SafetySetting() {
     }
   };
 
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
+
   return (
     <div className="wrapper">
       <div className="sidebar">
@@ -138,7 +142,7 @@ function SafetySetting() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               Chọn để thay đổi ảnh đại diện!
-              <img src={`http://localhost:8000/user/image/${userInfo.img}` || {user_icon}} alt="" className="account-avatar-profile-change" 
+              <img src={handleImageUser(userInfo.img)} alt="" className="account-avatar-profile-change" 
                 onClick={openUploadModal}/>
             </div>
             <div className="account-info-container">
@@ -173,7 +177,7 @@ function SafetySetting() {
         <div className="SSmodal">
           <div className="SSmodal-content">
             <h4>Enter your password to process the change</h4>
-            <input 
+            <input
               type="password" 
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}

@@ -101,7 +101,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,18 +110,29 @@
 .SSmodal-content {
   background: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 0 10px var(--white);
 }
 
 .SSmodal-content input {
+  border: 2px solid;
+  border-radius: 15px;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 10px;
   width: 80%;
 }
 
 .SSmodal-content button {
-  margin: 5px;
+  margin: 5px 40px;
   padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+}
+
+.SSmodal-content button:hover {
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--lowgray);
 }

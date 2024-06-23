@@ -5,6 +5,7 @@ import user_icon from './assets/user.png';
 
 function Dashboard() {
   const [userInfo, setUserInfo] = useState({
+    user_id: '',
     fullname: '',
     username: '',
     email: '',
@@ -25,7 +26,6 @@ function Dashboard() {
         setUserInfo(response.data);
       } catch (error) {
         console.error('Error fetching user info:', error);
-        // Handle error, e.g., redirect to login if unauthorized
         if (error.response && error.response.status === 401) {
           window.location.href = '/';
         }
@@ -44,9 +44,9 @@ function Dashboard() {
     window.location.href = '/'
   };
 
-  const avatarUrl = userInfo.img 
-    ? `http://localhost:8000/user/image/${userInfo.img}`
-    : {user_icon};
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
 
   return (
     <div className="wrapper">
@@ -61,7 +61,7 @@ function Dashboard() {
               <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
             </li>
             <li className="menu-item">
-              <a href="personalReviews" className="link">Các bài review phim</a>
+              <a href='roba' className="link">Trang cá nhân</a>
             </li>
             <li className="menu-item logout">
               <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>
@@ -76,14 +76,14 @@ function Dashboard() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               <img
-                src={avatarUrl}
+                src={handleImageUser(userInfo.img)}
                 alt=""
                 className="account-avatar-profile"
               />
             </div>
             <div className="account-info-container">
               <div className="account-info-item">
-                <span className="account-info-label">Tên người dùng</span>
+                <span className="account-info-label">Fullname</span>
                 <span className="account-info-value">{userInfo.fullname}</span>
               </div>
               <div className="account-info-item">

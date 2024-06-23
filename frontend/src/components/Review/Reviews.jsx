@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Reviews.css';
+import user_icon from '../LoginSignup/assets/user.png';
+import delete_icon from './assets/bin.png';
+import like_icon from './assets/like.png';
+import unlike_icon from './assets/unlike.png';
+import edit_icon from './assets/edit.png';
+import save_icon from './assets/check.png';
 
 function Reviews({ id }) {
     const [reviews, setReviews] = useState([]);
@@ -9,6 +15,33 @@ function Reviews({ id }) {
     const [newReviewText, setNewReviewText] = useState("");
     const [editReviewId, setEditReviewId] = useState(null);
     const [editReviewText, setEditReviewText] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userInfo, setUserInfo] = useState({
+        img: '',
+        role: 0
+    });
+
+    useEffect(() => {
+        const fetchUserInfo = async () => {
+          try {
+            const token = localStorage.getItem('accessToken');
+            setIsLoggedIn(!!token);
+            const response = await axios.post('http://localhost:8000/user/profile', {}, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            });
+            setUserInfo(response.data);
+          } catch (error) {
+            console.error('Error fetching user info:', error);
+            if (error.response && error.response.status === 401) {
+              window.location.href = '/';
+            }
+          }
+        };
+    
+        fetchUserInfo();
+    }, []);
 
     useEffect(() => {
         axios.get(`http://localhost:8000/review/movie/${id}`)
@@ -128,15 +161,19 @@ function Reviews({ id }) {
             .catch(error => console.error(error.message));
     };
 
+    const handleImageUser = (imgPath) => {
+        return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+    }
+
     return (
         <div className="reviews-container">
             <section id="reviews" className="reviews">
                 <div className="title-row">
                     <h2 className="section-title">Reviews</h2>
-                </div>
+                </div>{isLoggedIn && (
                 <div className="new-review">
                     <div className="new-review__header">
-                        <img src={'https://kenh14cdn.com/203336854389633024/2023/1/10/photo-1-1673332882261583702192.jpg'} alt="User Avatar" className="new-review__avatar" />
+                        <img src={handleImageUser(userInfo.img)} alt='' className="new-review__avatar" />
                         <textarea 
                             className="new-review__input"
                             value={newReviewText}
@@ -153,7 +190,7 @@ function Reviews({ id }) {
                         <button className="new-review__submit" onClick={handleNewReviewSubmit}>Submit</button>
                         <button className="new-review__cancel" onClick={handleCancel}>Cancel</button>
                     </div>
-                </div>
+                </div>)}
                 <div className="reviews__list">
                     {
                         reviews.length > 0 ? (
@@ -161,12 +198,16 @@ function Reviews({ id }) {
                                 <div key={i} className="review">
                                     <div className="review__header">
                                         <div className="review__header__user">
-                                            <div className="review__header__user__img"></div>
+                                            <div className="review__header__user__img">
+                                                <img src={handleImageUser(review.user_info.img)} alt="" className='user-icon-avatar'/>
+                                            </div>
                                             <div className="review__header__user__name">
                                                 {review.user_info ? review.user_info.username : 'Anonymous'}
                                             </div>
                                         </div>
-                                        <button className="review__delete" onClick={() => handleDeleteReview(review.review_id)}>Delete</button>
+                                        {userInfo.role && (<img src={delete_icon} alt =''
+                                        className="review__delete" 
+                                        onClick={() => handleDeleteReview(review.review_id)}/>)}
                                     </div>
                                     <div className="review__content">
                                         {editReviewId === review.review_id ? (
@@ -191,12 +232,22 @@ function Reviews({ id }) {
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.review_id, true)}>Helpful ({review.helpful?.length || 0})</button>
-                                        <button onClick={() => handleLike(review.review_id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
+                                        <div className="action-button">
+                                            <div className="action-container" onClick={() => handleLike(review.review_id, true)}>
+                                                <img src={like_icon} alt='' className='review-action-icon'/>
+                                                <span className='review-count'>({review.helpful?.length || 0})</span>
+                                            </div>
+                                            <div className="action-container" onClick={() => handleLike(review.review_id, false)}>
+                                                <img src={unlike_icon} alt='' className='review-action-icon'/>
+                                                <span className='review-count'>({review.not_helpful?.length || 0})</span>
+                                            </div>
+                                        </div>
                                         {editReviewId === review.review_id ? (
-                                            <button onClick={handleEditReviewSubmit}>Save</button>
+                                            <img src={save_icon} alt='' className='edit-save' onClick={handleEditReviewSubmit}/>
                                         ) : (
-                                            <button onClick={() => handleEditReview(review.review_id)}>Edit</button>
+                                            userInfo.role && (<img src={edit_icon} alt=''
+                                            className='edit-save' 
+                                            onClick={() => handleEditReview(review.review_id)}/>)
                                         )}
                                     </div>
                                 </div>

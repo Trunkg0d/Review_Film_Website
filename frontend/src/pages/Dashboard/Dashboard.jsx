@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
-import UploadModal from '../../components/Upload/Upload';
+import user_icon from './assets/user.png';
 
 function Dashboard() {
   const [userInfo, setUserInfo] = useState({
@@ -12,7 +12,6 @@ function Dashboard() {
     role: 0,
     wish_list: []
   });
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -45,31 +44,9 @@ function Dashboard() {
     window.location.href = '/'
   };
 
-  const openUploadModal = () => {
-    setIsUploadModalOpen(true);
-  };
-
-  const closeUploadModal = () => {
-    setIsUploadModalOpen(false);
-  };
-
-  const handleUploadSuccess = async () => {
-    setIsUploadModalOpen(false);
-    try {
-      const token = localStorage.getItem('accessToken');
-      const response = await axios.post('http://localhost:8000/user/profile', {}, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      setUserInfo(response.data);
-    } catch (error) {
-      console.error('Error fetching updated user info:', error);
-    }
-  };
   const avatarUrl = userInfo.img 
     ? `http://localhost:8000/user/image/${userInfo.img}`
-    : "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg";
+    : {user_icon};
 
   return (
     <div className="wrapper">
@@ -103,9 +80,6 @@ function Dashboard() {
                 alt=""
                 className="account-avatar-profile"
               />
-              <button className="upload-button" onClick={openUploadModal}>
-                Change Avatar
-              </button>
             </div>
             <div className="account-info-container">
               <div className="account-info-item">
@@ -132,7 +106,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      {isUploadModalOpen && <UploadModal onClose={closeUploadModal} onSuccess={handleUploadSuccess} />}
     </div>
   );
 }

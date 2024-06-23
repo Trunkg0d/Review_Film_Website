@@ -3,8 +3,11 @@ import axios from 'axios';
 import './safetySetting.css';
 import change_icon from '../assets/pen.png';
 import save_icon from '../assets/save.png';
+import user_icon from '../assets/user.png';
+import UploadModal from '../../../components/Upload/Upload';
 
 function SafetySetting() {
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     fullname: 'Test fullname',
     username: 'Test username',
@@ -52,8 +55,27 @@ function SafetySetting() {
     window.location.href = '/'
   };
 
-  const ChangeAvatar = (img) => {
-    /*Mở cửa sổ chọn avatar và thay đổi*/
+  const openUploadModal = () => {
+    setIsUploadModalOpen(true);
+  };
+
+  const closeUploadModal = () => {
+    setIsUploadModalOpen(false);
+  };
+
+  const handleUploadSuccess = async () => {
+    setIsUploadModalOpen(false);
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.post('http://localhost:8000/user/profile', {}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserInfo(response.data);
+    } catch (error) {
+      console.error('Error fetching updated user info:', error);
+    }
   };
 
   const startEditing = (field) => {
@@ -86,7 +108,6 @@ function SafetySetting() {
       setIsEditing({ ...isEditing, [pendingField]: false });
     } catch (error) {
       console.error('Error saving changes:', error);
-      // Handle error appropriately
     }
   };
 
@@ -117,8 +138,8 @@ function SafetySetting() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               Chọn để thay đổi ảnh đại diện!
-              <img src={`http://localhost:8000/user/image/${userInfo.img}` || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile-change" 
-                onClick={ChangeAvatar(userInfo.img)}/>
+              <img src={`http://localhost:8000/user/image/${userInfo.img}` || {user_icon}} alt="" className="account-avatar-profile-change" 
+                onClick={openUploadModal}/>
             </div>
             <div className="account-info-container">
               {['fullname', 'username', 'email', 'password'].map((field) => (
@@ -163,6 +184,7 @@ function SafetySetting() {
           </div>
         </div>
       )}
+      {isUploadModalOpen && <UploadModal onClose={closeUploadModal} onSuccess={handleUploadSuccess} />}
     </div>
   );
 }

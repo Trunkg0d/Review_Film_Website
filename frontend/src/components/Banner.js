@@ -52,8 +52,8 @@ function Banner() {
     >
         <a href={`/movie/${bannerMovie.id}`} className="banner-link" aria-label="Banner link to movie details"></a>
         <div className="banner-content">
-        <h1 className="banner-title">{bannerMovie.title}</h1>
-        <p className="banner-description">{bannerMovie.description}</p>
+            <h1 className="banner-title">{bannerMovie.title}</h1>
+            <p className="banner-description">{bannerMovie.description}</p>
         </div>
     </div>)
   );

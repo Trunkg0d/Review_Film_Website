@@ -3,7 +3,7 @@ import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
 import {HfInference} from '@huggingface/inference';
 
-const api_key = 'YOUR HUGGINGFACE API KEY HERE';
+const api_key = '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';
 const hf = new HfInference(api_key);
 const model_id = 'meta-llama/Meta-Llama-3-8B-Instruct';
 
@@ -13,23 +13,32 @@ function addZero(num) {
 
 const ChatBox = () => {
     const { isChatboxVisible, toggleChatbox, textareaRef} = useChatbox();
-    const today = new Date()
-    const chatboxMessageContentRef = useRef(null)
+    const chatboxMessageContentRef = useRef(null);
+    const [messages, setMessages] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [messages, setMessages] = useState([
-        {
-            text: `I am Morevie bot, I am here to assist you. Feel free to send me question ^^!`,
+    useEffect(() => {
+        const today = new Date();
+        const token = localStorage.getItem('accessToken');
+        setIsLoggedIn(!!token);
+        const addZero = (num) => (num < 10 ? '0' + num : num);
+
+        const initialMessage = !!token 
+            ? 'I am Morevie bot, I am here to assist you. Feel free to send me question ^^!'
+            : 'I cannot assist you right now, please log in with your account or create a new one!';
+
+        setMessages([{
+            text: initialMessage,
             time: `${addZero(today.getHours())}:${addZero(today.getMinutes())}`,
             type: "receive"
-        }
-    ]);
+        }]);
+    }, []);
 
     const [newMessageAdded, setNewMessageAdded] = useState(false);
 
     function writeMessage(e) {
         e.preventDefault();
-
-        const nowDay = new Date()
+        const nowDay = new Date();
 
         const messageText = textareaRef.current.value.trim().replace(/\n/g, '<br>\n');
         if (!messageText) return;
@@ -43,7 +52,7 @@ const ChatBox = () => {
         setMessages(prevMessages => [...prevMessages, newMessage]);
         setTimeout(scrollBottom, 50);
         setNewMessageAdded(true);
-
+        
         textareaRef.current.value = '';
         textareaRef.current.style.height = 'auto';
         textareaRef.current.rows = 1;
@@ -62,7 +71,7 @@ const ChatBox = () => {
     };
 
     useEffect(() => {
-        if (newMessageAdded) {
+        if (newMessageAdded && isLoggedIn) {
             let out = "";
             const processChunks = async() => {
                 for await (const chunk of hf.chatCompletionStream({
@@ -85,8 +94,12 @@ const ChatBox = () => {
             });
             
             setNewMessageAdded(false);
+        } else if (newMessageAdded && !isLoggedIn) {
+            const defaultReply = 'I cannot assist you right now :((, please log in with your account or create a new one!';
+            setTimeout(() => Reply(messages, defaultReply), 500);
+            setNewMessageAdded(false);
         }
-    }, [newMessageAdded, messages]);
+    }, [newMessageAdded, messages, isLoggedIn]);
 
     function scrollBottom() {
         const chatboxMessageContent = chatboxMessageContentRef.current;
@@ -127,10 +140,12 @@ const ChatBox = () => {
                     ))}
                 </div>
                 <div className={styles.chatboxMessageBottom}>
-                    <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>
-                        <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef} onKeyDown={handleKeyDown}></textarea>
-                        <button type="submit" className={styles.chatboxMessageSubmit}><i className='bx bxs-send'></i></button>
-                    </form>
+                    {
+                        <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>
+                            <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef} onKeyDown={handleKeyDown}></textarea>
+                            <button type="submit" className={styles.chatboxMessageSubmit}><i className='bx bxs-send'></i></button>
+                        </form>
+                    }
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ class User(Document):
     password: str
     img: Optional[str]
     role: int   # 0: normal user, 1: admin
-    wish_list: Optional[List[PydanticObjectId]] = None 
+    wish_list: Optional[List[PydanticObjectId]] = []
 
     class Settings:
         name = "users"

@@ -1,7 +1,7 @@
 // App.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Movie from './pages/Movie/Movie';
@@ -18,14 +18,6 @@ import { checkAndRemoveExpiredToken } from './utils.js';
 
 
 function App() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    setIsLoggedIn(!!token);
-  }, []);
-
   return (
     <Router>
       <Header />
@@ -40,10 +32,22 @@ function App() {
         <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
-      {isLoggedIn && <ChatBox />}
+      <ChatBoxConditional />
       <BackToTopButton />
     </Router>
   );
-}
+};
+
+const ChatBoxConditional = () => {
+  const location = useLocation();
+
+  const excludePaths = ['/login', '/user/dashboard', '/user/safetySettings'];
+
+  if (excludePaths.includes(location.pathname)) {
+    return null;
+  }
+
+  return <ChatBox />;
+};
 
 export default App;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Header.css';
 
 function Header() {
@@ -31,6 +32,7 @@ function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userAvatar, setUserAvatar] = useState('');
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,8 +47,27 @@ function Header() {
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     setIsLoggedIn(!!token); // !! converts the token to a boolean
-  }, []);
 
+    if (token) {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axios.post('http://localhost:8000/user/profile', {}, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          setUserAvatar(response.data.img);
+        } catch (error) {
+          console.error('Error fetching user profile', error);
+        }
+      };
+
+      fetchUserProfile();
+    }
+  }, []);
+  const avatarUrl = userAvatar 
+    ? `http://localhost:8000/user/image/${userAvatar}`
+    : "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg";
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
@@ -72,7 +93,7 @@ function Header() {
               window.location.href = '/user/dashboard';
             }}
           >
-            <img src="https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg" alt="User Avatar" className="avatar" />
+            <img src={avatarUrl} alt="User Avatar" className="avatar" />
           </button>
         ) : (
           <button 

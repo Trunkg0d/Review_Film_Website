@@ -20,7 +20,7 @@ function SafetySetting() {
     email: false
   });
 
-  const [modalVisible, setModalVisible] = useState(false);
+  const [SSModalVisible, setSSModalVisible] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
   const [pendingField, setPendingField] = useState(null);
   const [newValues, setNewValues] = useState({});
@@ -66,7 +66,7 @@ function SafetySetting() {
 
   const saveChanges = (field) => {
     setPendingField(field);
-    setModalVisible(true);
+    setSSModalVisible(true);
   };
 
   const confirmAndSave = async () => {
@@ -81,7 +81,7 @@ function SafetySetting() {
         }
       });
       setUserInfo({ ...userInfo, ...newValues });
-      setModalVisible(false);
+      setSSModalVisible(false);
       setConfirmPassword('');
       setIsEditing({ ...isEditing, [pendingField]: false });
     } catch (error) {
@@ -148,9 +148,9 @@ function SafetySetting() {
           </div>
         </div>
       </div>
-      {modalVisible && (
-        <div className="modal">
-          <div className="modal-content">
+      {SSModalVisible && (
+        <div className="SSmodal">
+          <div className="SSmodal-content">
             <h4>Enter your password to process the change</h4>
             <input 
               type="password" 
@@ -159,7 +159,7 @@ function SafetySetting() {
               placeholder="Enter your password"
             />
             <button onClick={confirmAndSave}>Confirm</button>
-            <button onClick={() => setModalVisible(false)}>Cancel</button>
+            <button onClick={() => setSSModalVisible(false)}>Cancel</button>
           </div>
         </div>
       )}

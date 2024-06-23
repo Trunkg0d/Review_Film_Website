@@ -4,8 +4,6 @@ import './Reviews.css';
 
 function Reviews({ id }) {
     const [reviews, setReviews] = useState([]);
-    // const [replies, setReplies] = useState({});
-    // const [newComments, setNewComments] = useState({});
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
     const [newReviewText, setNewReviewText] = useState("");
@@ -22,14 +20,12 @@ function Reviews({ id }) {
 
     const handleLike = (reviewId, isHelpful) => {
         const token = localStorage.getItem('accessToken');
-        console.log(`Review ID: ${reviewId}, Is Helpful: ${isHelpful}`);  // Debugging line
         axios.post(`http://localhost:8000/review/${reviewId}/${isHelpful ? 'helpful' : 'not_helpful'}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                console.log('Response:', response.data);  // Debugging line
                 setReviews(reviews.map(review => {
                     if (review.review_id === reviewId) {
                         return response.data;
@@ -44,30 +40,6 @@ function Reviews({ id }) {
         setNewReviewText('');
         setIsCommentBoxVisible(false);
     };
-
-    // const handleReply = (reviewId) => {
-    //     const newComment = newComments[reviewId] || "";
-    //     if (newComment.trim() === "") {
-    //         return;
-    //     }
-
-    //     const currentReplies = replies[reviewId] || [];
-    //     setReplies({
-    //         ...replies,
-    //         [reviewId]: [...currentReplies, newComment]
-    //     });
-    //     setNewComments({
-    //         ...newComments,
-    //         [reviewId]: ""
-    //     });
-    // };
-
-    // const handleInputChange = (reviewId, value) => {
-    //     setNewComments({
-    //         ...newComments,
-    //         [reviewId]: value
-    //     });
-    // };
 
     const toggleCommentBox = (reviewId) => {
         if (isCommentBoxVisible && activeReviewId === reviewId) {
@@ -127,7 +99,8 @@ function Reviews({ id }) {
         axios.put(`http://localhost:8000/review/content/${editReviewId}`, updatedReview, {
             headers: {
                 Authorization: `Bearer ${token}`
-            }})
+            }
+        })
             .then(response => {
                 const updatedReviews = reviews.map(review => {
                     if (review.review_id === editReviewId) {
@@ -138,6 +111,19 @@ function Reviews({ id }) {
                 setReviews(updatedReviews);
                 setEditReviewId(null);
                 setEditReviewText("");
+            })
+            .catch(error => console.error(error.message));
+    };
+
+    const handleDeleteReview = (reviewId) => {
+        const token = localStorage.getItem('accessToken');
+        axios.delete(`http://localhost:8000/review/delete/${reviewId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(() => {
+                setReviews(reviews.filter(review => review.review_id !== reviewId));
             })
             .catch(error => console.error(error.message));
     };
@@ -180,6 +166,7 @@ function Reviews({ id }) {
                                                 {review.user_info ? review.user_info.username : 'Anonymous'}
                                             </div>
                                         </div>
+                                        <button className="review__delete" onClick={() => handleDeleteReview(review.review_id)}>Delete</button>
                                     </div>
                                     <div className="review__content">
                                         {editReviewId === review.review_id ? (

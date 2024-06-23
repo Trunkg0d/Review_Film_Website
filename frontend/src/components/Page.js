@@ -50,6 +50,7 @@ function Page() {
             .catch(error => console.log(error.message));
     }, [pagenumber]);
 
+
     useEffect(() => {
         fetchData();
     }, [fetchData]);

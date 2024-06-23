@@ -67,6 +67,9 @@ function Dashboard() {
       console.error('Error fetching updated user info:', error);
     }
   };
+  const avatarUrl = userInfo.img 
+    ? `http://localhost:8000/user/image/${userInfo.img}`
+    : "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg";
 
   return (
     <div className="wrapper">
@@ -96,7 +99,7 @@ function Dashboard() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               <img
-                src={`http://localhost:8000/user/image/${userInfo.img}` || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'}
+                src={avatarUrl}
                 alt=""
                 className="account-avatar-profile"
               />

@@ -34,3 +34,53 @@
     display: flex;
     justify-content: center;
 }
+
+.edit-button {
+  position: absolute;
+  width: 10%;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.edit-button:hover img {
+  filter: brightness(150%);
+  transform: scale(1.2);
+}
+
+.add-watchlist {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.add-watchlist:hover img {
+  filter: brightness(120%);
+  transform: scale(1.2);
+}
+
+.watchlist-added {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.watchlist-added:hover img {
+  filter: brightness(70%);
+  transform: scale(1.2);
+}
+

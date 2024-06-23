@@ -20,8 +20,24 @@ function Reviews({ id }) {
             .catch(error => console.error(error.message));
     }, [id]);
 
-    const handleLike = (reviewId) => {
-        // Handle like functionality
+    const handleLike = (reviewId, isHelpful) => {
+        const token = localStorage.getItem('accessToken');
+        console.log(`Review ID: ${reviewId}, Is Helpful: ${isHelpful}`);  // Debugging line
+        axios.post(`http://localhost:8000/review/${reviewId}/${isHelpful ? 'helpful' : 'not_helpful'}`, {}, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                console.log('Response:', response.data);  // Debugging line
+                setReviews(reviews.map(review => {
+                    if (review.id === reviewId) {
+                        return response.data;
+                    }
+                    return review;
+                }));
+            })
+            .catch(error => console.error(error.message));
     };
 
     const handleCancel = () => {
@@ -81,7 +97,7 @@ function Reviews({ id }) {
             }
         })
             .then(response => {
-                setReviews([...reviews, newReview]);
+                setReviews([...reviews, response.data]);
                 setNewReviewText("");
             })
             .catch(error => console.error(error.message));
@@ -161,7 +177,9 @@ function Reviews({ id }) {
                                     <div className="review__header">
                                         <div className="review__header__user">
                                             <div className="review__header__user__img"></div>
-                                            <div className="review__header__user__name">{review.user_info.username}</div>
+                                            <div className="review__header__user__name">
+                                                {review.user_info ? review.user_info.username : 'Anonymous'}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="review__content">
@@ -187,8 +205,8 @@ function Reviews({ id }) {
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.id)}>Upvote</button>
-                                        <button onClick={() => handleLike(review.id)}>Downvote</button>
+                                        <button onClick={() => handleLike(review.id, true)}>Helpful ({review.helpful?.length || 0})</button>
+                                        <button onClick={() => handleLike(review.id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
                                         {editReviewId === review.id ? (
                                             <button onClick={handleEditReviewSubmit}>Save</button>
                                         ) : (

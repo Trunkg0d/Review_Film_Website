@@ -14,6 +14,8 @@ import ChatBox from './components/ChatBox/Chatbox';
 import Page from './components/Page';
 import FilmConfig from './pages/FilmConfig';
 import NotFound from './pages/Errors/NotFound';
+import { checkAndRemoveExpiredToken } from './utils.js';
+
 
 function App() {
 

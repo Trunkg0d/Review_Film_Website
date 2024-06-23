@@ -4,8 +4,6 @@ import './Reviews.css';
 
 function Reviews({ id }) {
     const [reviews, setReviews] = useState([]);
-    const [replies, setReplies] = useState({});
-    const [newComments, setNewComments] = useState({});
     const [isCommentBoxVisible, setIsCommentBoxVisible] = useState(false);
     const [activeReviewId, setActiveReviewId] = useState(null);
     const [newReviewText, setNewReviewText] = useState("");
@@ -22,16 +20,14 @@ function Reviews({ id }) {
 
     const handleLike = (reviewId, isHelpful) => {
         const token = localStorage.getItem('accessToken');
-        console.log(`Review ID: ${reviewId}, Is Helpful: ${isHelpful}`);  // Debugging line
         axios.post(`http://localhost:8000/review/${reviewId}/${isHelpful ? 'helpful' : 'not_helpful'}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                console.log('Response:', response.data);  // Debugging line
                 setReviews(reviews.map(review => {
-                    if (review.id === reviewId) {
+                    if (review.review_id === reviewId) {
                         return response.data;
                     }
                     return review;
@@ -43,30 +39,6 @@ function Reviews({ id }) {
     const handleCancel = () => {
         setNewReviewText('');
         setIsCommentBoxVisible(false);
-    };
-
-    const handleReply = (reviewId) => {
-        const newComment = newComments[reviewId] || "";
-        if (newComment.trim() === "") {
-            return;
-        }
-
-        const currentReplies = replies[reviewId] || [];
-        setReplies({
-            ...replies,
-            [reviewId]: [...currentReplies, newComment]
-        });
-        setNewComments({
-            ...newComments,
-            [reviewId]: ""
-        });
-    };
-
-    const handleInputChange = (reviewId, value) => {
-        setNewComments({
-            ...newComments,
-            [reviewId]: value
-        });
     };
 
     const toggleCommentBox = (reviewId) => {
@@ -86,8 +58,7 @@ function Reviews({ id }) {
 
         const newReview = {
             content: newReviewText,
-            movie_id: id,
-            // Include additional necessary fields and user information
+            movie_id: id
         };
 
         const token = localStorage.getItem('accessToken');
@@ -104,7 +75,7 @@ function Reviews({ id }) {
     };
 
     const handleEditReview = (reviewId) => {
-        const review = reviews.find(review => review.id === reviewId);
+        const review = reviews.find(review => review.review_id === reviewId);
         if (review) {
             setEditReviewId(reviewId);
             setEditReviewText(review.content);
@@ -128,10 +99,11 @@ function Reviews({ id }) {
         axios.put(`http://localhost:8000/review/content/${editReviewId}`, updatedReview, {
             headers: {
                 Authorization: `Bearer ${token}`
-            }})
+            }
+        })
             .then(response => {
                 const updatedReviews = reviews.map(review => {
-                    if (review.id === editReviewId) {
+                    if (review.review_id === editReviewId) {
                         return { ...review, content: editReviewText };
                     }
                     return review;
@@ -139,6 +111,19 @@ function Reviews({ id }) {
                 setReviews(updatedReviews);
                 setEditReviewId(null);
                 setEditReviewText("");
+            })
+            .catch(error => console.error(error.message));
+    };
+
+    const handleDeleteReview = (reviewId) => {
+        const token = localStorage.getItem('accessToken');
+        axios.delete(`http://localhost:8000/review/delete/${reviewId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(() => {
+                setReviews(reviews.filter(review => review.review_id !== reviewId));
             })
             .catch(error => console.error(error.message));
     };
@@ -181,9 +166,10 @@ function Reviews({ id }) {
                                                 {review.user_info ? review.user_info.username : 'Anonymous'}
                                             </div>
                                         </div>
+                                        <button className="review__delete" onClick={() => handleDeleteReview(review.review_id)}>Delete</button>
                                     </div>
                                     <div className="review__content">
-                                        {editReviewId === review.id ? (
+                                        {editReviewId === review.review_id ? (
                                             <textarea 
                                                 value={editReviewText}
                                                 onChange={handleEditReviewChange}
@@ -192,11 +178,11 @@ function Reviews({ id }) {
                                             review.content.length > 200 ? (
                                                 <div>
                                                     {review.content.substring(0, 200)}
-                                                    {activeReviewId === review.id && (
+                                                    {activeReviewId === review.review_id && (
                                                         <span>{review.content.substring(200)}</span>
                                                     )}
-                                                    <button onClick={() => toggleCommentBox(review.id)}>
-                                                        {activeReviewId === review.id && isCommentBoxVisible ? 'Hide' : 'Show More'}
+                                                    <button onClick={() => toggleCommentBox(review.review_id)}>
+                                                        {activeReviewId === review.review_id && isCommentBoxVisible ? 'Hide' : 'Show More'}
                                                     </button>
                                                 </div>
                                             ) : (
@@ -205,12 +191,12 @@ function Reviews({ id }) {
                                         )}
                                     </div>
                                     <div className="review__actions">
-                                        <button onClick={() => handleLike(review.id, true)}>Helpful ({review.helpful?.length || 0})</button>
-                                        <button onClick={() => handleLike(review.id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
-                                        {editReviewId === review.id ? (
+                                        <button onClick={() => handleLike(review.review_id, true)}>Helpful ({review.helpful?.length || 0})</button>
+                                        <button onClick={() => handleLike(review.review_id, false)}>Not Helpful ({review.not_helpful?.length || 0})</button>
+                                        {editReviewId === review.review_id ? (
                                             <button onClick={handleEditReviewSubmit}>Save</button>
                                         ) : (
-                                            <button onClick={() => handleEditReview(review.id)}>Edit</button>
+                                            <button onClick={() => handleEditReview(review.review_id)}>Edit</button>
                                         )}
                                     </div>
                                 </div>

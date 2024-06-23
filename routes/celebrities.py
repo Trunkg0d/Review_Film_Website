@@ -78,3 +78,8 @@ async def delete_celebrity(id: PydanticObjectId, user: str = Depends(authenticat
     return {
         "message": "Celebrity deleted successfully."
     }
+
+@celebrity_router.get("/search/{query}", response_model=List[Celebrity])
+async def search_celebrities(query: str) -> List[Celebrity]:
+    celebrities = await celebrity_database.search(query, "name")
+    return celebrities

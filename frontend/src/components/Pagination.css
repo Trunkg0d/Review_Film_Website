@@ -9,7 +9,7 @@
 .page-link {
     margin: 0 5px;
     padding: 10px 15px;
-    background-color: #FFD700;
+    background-color: var(--primary);
     color: #000;
     border-radius: 5px;
     text-decoration: none;
@@ -17,9 +17,10 @@
 
 .page-link.active {
     font-weight: bold;
+    font-size: 1.2em;
     border: 2px solid #000;
 }
 
 .page-link:hover {
-    background-color: #FFC107;
+    background-color: #ffffff;
 }

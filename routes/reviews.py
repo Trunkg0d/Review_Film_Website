@@ -255,3 +255,5 @@ async def downvote_review(id: PydanticObjectId, user: str = Depends(authenticate
     updated_review = await review_database.update(id, new_review)
     updated_review= await fill_userinfo(updated_review)
     return updated_review
+
+# @review_router.get("user", response_model=ReviewResponse)

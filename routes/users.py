@@ -28,6 +28,7 @@ UPLOAD_DIR = Path() / 'uploads' # Avatar image store path
 
 logger = logging.getLogger('uvicorn.error')
 class UserInfo(BaseModel):
+    user_id: PydanticObjectId
     fullname: str
     username: str
     email: EmailStr
@@ -107,6 +108,7 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
     user_info = await User.find_one(User.email == current_user)
     if user_info:
         return UserInfo(
+            user_id=user_info.id,
             fullname=user_info.fullname,
             username=user_info.username,
             email=user_info.email,

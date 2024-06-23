@@ -40,7 +40,7 @@ function Page() {
         axios.get(`http://localhost:8000/movie/page/${pagenumber - 1}`)
             .then(response => {
                 const formattedData = response.data.map(movie => ({
-                    id: movie._id,
+                    movie_id: movie.movie_id,
                     title: movie.title,
                     poster_path: movie.poster_path,
                     release_date: movie.release_date ? movie.release_date.split('T')[0] : ''
@@ -49,6 +49,7 @@ function Page() {
             })
             .catch(error => console.log(error.message));
     }, [pagenumber]);
+
 
     useEffect(() => {
         fetchData();
@@ -75,7 +76,6 @@ function Page() {
     const handleRemoveWishlist = (movieId) => {
         setUserWishlist(prevWishlist => prevWishlist.filter(id => id !== movieId));
     };
-
     const showWatchlistIcon = (movieId) => {
         const isInWishlist = userWishlist.includes(movieId);
         return isInWishlist ? (
@@ -97,15 +97,15 @@ function Page() {
             </div>
             <div className="popular">
                 {movies.map(movie => (
-                    <div key={movie.id} className="movie">
-                        <a href={`/movie/${movie.id}`}>
+                    <div key={movie.movie_id} className="movie">
+                        <a href={`/movie/${movie.movie_id}`}>
                             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }}/>
                         </a>
-                        {showWatchlistIcon(movie.id)}
+                        {showWatchlistIcon(movie.movie_id)}
                         {movie.release_date && <p className="movie-release-date">{movie.release_date}</p>}
                         {movie.title && <p className="movie-title">{movie.title}</p>}
                         {role === '1' && (
-                            <button className="edit-button" onClick={() => handleEditClick(movie.id)}>
+                            <button className="edit-button" onClick={() => handleEditClick(movie.movie_id)}>
                                 <img src={editIconPath} alt="Edit" />
                             </button>
                         )}

@@ -11,7 +11,6 @@ function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
-
   const [selectedCast, setSelectedCast] = useState(null);
 
   const handleMouseEnter = (castMember) => {

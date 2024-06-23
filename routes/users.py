@@ -1,25 +1,37 @@
 from auth.hash_password import HashPassword
 from auth.jwt_handler import create_access_token
 from auth.authenticate import authenticate
+from fastapi.responses import JSONResponse, FileResponse
 from database.connection import Database
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from fastapi.security import OAuth2PasswordRequestForm
-from models.users import User, TokenResponse
+from models.users import User, TokenResponse, UserUpdate
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
-from models.movies import Movie
+from models.movies import MovieResponse
+import aiofiles
+from pathlib import Path
+import string
+import logging
+import random
+import datetime
+from io import BytesIO
+from PIL import Image
 
 user_router = APIRouter(
     tags=["User"],
 )
 
+UPLOAD_DIR = Path() / 'uploads' # Avatar image store path
+
+logger = logging.getLogger('uvicorn.error')
 class UserInfo(BaseModel):
     fullname: str
     username: str
     email: EmailStr
     img: Optional[str]
     role: int
-    wish_list: Optional[List[Movie]]
+    wish_list: Optional[List[MovieResponse]]
 
 class CheckEmailRequest(BaseModel):
     email: EmailStr
@@ -102,3 +114,102 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
         status_code=status.HTTP_404_NOT_FOUND,
         detail="User not found"
     )
+
+@user_router.put("/profile", response_model=User)
+async def update_user(request: dict, user: str = Depends(authenticate)) -> User:
+    valid_keys = ["fullname", "username", "password", "email", "confirm_password"]
+    filtered_request =  {key:value for key, value in request.items() if key in valid_keys}
+    
+    user_info = await User.find_one(User.email == user)
+    if not user_info:
+        raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="User not found"
+        )
+
+    # hashed_CP = hash_password.create_hash(filtered_request.get("confirm_password"))
+    if not hash_password.verify_hash(filtered_request.get("confirm_password"), user_info.password):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Confirm password is incorrect"
+        )
+    
+    # check if password change
+    if "password" in filtered_request.keys():
+        filtered_request["password"] = hash_password.create_hash(filtered_request.password)
+
+    current_info = {
+        "fullname":user_info.fullname,
+        "username":user_info.username,
+        "email":user_info.email,
+        "password":user_info.password,
+        "img":user_info.img,
+        "role":user_info.role
+    }
+
+    for key, value in filtered_request.items():
+        current_info[key] = value
+
+    update_info = UserUpdate(**current_info)
+    # update_info = UserUpdate(**filtered_request)
+    updated_user = await user_database.update(user_info.id, update_info)
+    return updated_user
+
+def generate_random_name():
+    characters = string.ascii_letters + string.digits
+    random_name = ''.join(random.choice(characters) for _ in range(16))
+    datetime_str = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    return f"{datetime_str}_{random_name}"
+
+def crop_to_square(image: Image.Image) -> Image.Image:
+    width, height = image.size
+    min_dimension = min(width, height)
+    left = (width - min_dimension) / 2
+    top = (height - min_dimension) / 2
+    right = (width + min_dimension) / 2
+    bottom = (height + min_dimension) / 2
+    return image.crop((left, top, right, bottom))
+
+@user_router.post("/image")    
+async def update_profile_image(file: UploadFile = File(...), user: str = Depends(authenticate)):
+    user_info = await User.find_one(User.email == user)
+    file_extension = file.filename.split('.')[-1]
+    if not file_extension:
+        return JSONResponse({"error": "File does not have an extension"}, status_code=400)
+    filename = f"{generate_random_name()}.{file_extension}"
+    file_location = UPLOAD_DIR / filename
+
+    content = await file.read()
+    image = Image.open(BytesIO(content))
+    cropped_image = crop_to_square(image)
+    
+
+    async with aiofiles.open(file_location, 'wb') as out_file:
+        cropped_image_bytes = BytesIO()
+        cropped_image.save(cropped_image_bytes, format=image.format)
+        await out_file.write(cropped_image_bytes.getvalue())
+    if user_info is None:
+        raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="User not found"
+        )
+    new_info = UserUpdate(
+        fullname=user_info.fullname,
+        username=user_info.username,
+        password=user_info.password,
+        email=user_info.email,
+        img=filename,
+        role=user_info.role
+    )
+    updated_user = await user_database.update(user_info.id, new_info)
+    return updated_user
+    
+@user_router.get("/image/{filename}")
+async def get_image(filename: str):
+    file_location = UPLOAD_DIR / filename
+    if not file_location.exists():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="File not found"
+        )
+    return FileResponse(file_location)

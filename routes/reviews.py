@@ -5,8 +5,8 @@ from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from models.reviews import Review, ReviewResponse
 from models.users import User
-from bson import objectid
 from datetime import datetime
+from pydantic import BaseModel
 
 import logging
 
@@ -38,7 +38,7 @@ async def fill_userinfo(review_data: Review) -> ReviewResponse:
         )
 
     return ReviewResponse(
-        id=review_data.id,  # Populate the ID field here
+        review_id=review_data.id,  # Populate the ID field here
         movie_id=review_data.movie_id,
         user_info={
             "user_id": user_id,
@@ -88,8 +88,8 @@ async def retrieve_review(id: PydanticObjectId) -> Review:
 
 
 # Create a new review
-@review_router.post("/new", response_model=dict)
-async def create_review(body: dict, user: str = Depends(authenticate)) -> dict:
+@review_router.post("/new", response_model=ReviewResponse)
+async def create_review(body: dict, user: str = Depends(authenticate)) -> ReviewResponse:
     # body.creator = user
     user_info = await User.find_one(User.email == user)
     new_review = Review(
@@ -100,13 +100,11 @@ async def create_review(body: dict, user: str = Depends(authenticate)) -> dict:
         updated_at=datetime.now(),
         helpful=None,
         not_helpful=None)
-    await review_database.save(new_review)
-    return {
-        "message": "Review created successfully"
-    }
+    new_review_data = await review_database.save(new_review)
+    res= await fill_userinfo(new_review)
+    return res
 
 
-from pydantic import BaseModel
 
 
 class UpdateReviewRequest(BaseModel):
@@ -123,12 +121,8 @@ async def update_review(id: PydanticObjectId, request: UpdateReviewRequest,
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Review with supplied ID does not exist"
         )
-    # if review.creator != user:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_400_BAD_REQUEST,
-    #         detail="Operation not allowed"
-    #     )
     review.content = new_content
+    review.updated_at = datetime.now()
     updated_review = await review_database.update(id, review)
     if not updated_review:
         raise HTTPException(
@@ -204,8 +198,18 @@ async def upvote_review(id: PydanticObjectId, user: str = Depends(authenticate))
     elif user_info.id in review.helpful:
         review.helpful.remove(user_info.id)
 
-    updated_review = await review_database.update(id, review)
-    updated_review = await fill_userinfo(updated_review)
+    new_review = Review(
+        movie_id=review.movie_id,
+        user_id=review.user_id,
+        content=review.content,
+        created_at=review.created_at,
+        updated_at=review.updated_at,
+        helpful=review.helpful,
+        not_helpful=review.not_helpful
+    )
+
+    updated_review = await review_database.update(id, new_review)
+    updated_review= await fill_userinfo(updated_review)
     return updated_review
 
 
@@ -237,7 +241,17 @@ async def downvote_review(id: PydanticObjectId, user: str = Depends(authenticate
         review.not_helpful.append(user_info.id)
     elif user_info.id in review.not_helpful:
         review.not_helpful.remove(user_info.id)
+    
+    new_review = Review(
+        movie_id=review.movie_id,
+        user_id=review.user_id,
+        content=review.content,
+        created_at=review.created_at,
+        updated_at=review.updated_at,
+        helpful=review.helpful,
+        not_helpful=review.not_helpful
+    )
 
-    updated_review = await review_database.update(id, review)
+    updated_review = await review_database.update(id, new_review)
     updated_review= await fill_userinfo(updated_review)
     return updated_review

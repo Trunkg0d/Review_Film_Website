@@ -1,11 +1,11 @@
 from typing import Optional, List
 from beanie import Document, PydanticObjectId
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from models.celebrities import Celebrity
 from datetime import datetime
 
 
-class MovieResponse(Document):
+class Movie(Document):
     # creator: Optional[str]
     title: str
     backdrop_path: str
@@ -36,8 +36,9 @@ class MovieResponse(Document):
     class Settings:
         name = "movies"
 
-class Movie(Document):
+class MovieResponse(BaseModel):
     # creator: Optional[str]
+    movie_id: PydanticObjectId
     title: str
     backdrop_path: str
     poster_path: str
@@ -74,7 +75,7 @@ class MovieUpdate(BaseModel):
     description: Optional[str]
     release_date: datetime
     tags: Optional[List[str]]
-    director: List[Celebrity]
+    director: Optional[List[Celebrity]]
     language: Optional[str]
     runtime: Optional[int]  # minutes
     average_rating: Optional[float]

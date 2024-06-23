@@ -231,7 +231,15 @@ async def add_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticat
         )
     if id not in user_info.wish_list:
         user_info.wish_list.append(id)
-    update_user = await user_database.update(user_info.id, user_info)
+    new_info = UserUpdate(
+        fullname=user_info.fullname,
+        username=user_info.username,
+        password=user_info.password,
+        email=user_info.email,
+        img=user_info,
+        role=user_info.role
+    )
+    update_user = await user_database.update(user_info.id, new_info)
     return update_user
         
 
@@ -246,7 +254,15 @@ async def remove_to_wishlist(id: PydanticObjectId, user : str = Depends(authenti
         )
     if id in user_info.wish_list:
         user_info.wish_list.remove(id)
-    update_user = await user_database.update(user_info.id, user_info)
+    new_info = UserUpdate(
+        fullname=user_info.fullname,
+        username=user_info.username,
+        password=user_info.password,
+        email=user_info.email,
+        img=user_info,
+        role=user_info.role
+    )
+    update_user = await user_database.update(user_info.id, new_info)
     return update_user
 
     

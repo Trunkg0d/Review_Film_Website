@@ -14,7 +14,7 @@ export const SearchBar = ({ setResults }) => {
             );
 
             const formattedData = filteredData.map(movie => ({
-                id: movie._id,
+                id: movie.movie_id,
                 title: movie.title,
             }));
             setResults(formattedData);

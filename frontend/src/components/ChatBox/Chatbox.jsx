@@ -18,7 +18,7 @@ const ChatBox = () => {
 
     const [messages, setMessages] = useState([
         {
-            text: "I am Morevie bot, I am here to assist you! Feel free to send me questions ^^!",
+            text: `I am Morevie bot, I am here to assist you. Feel free to send me question ^^!`,
             time: `${addZero(today.getHours())}:${addZero(today.getMinutes())}`,
             type: "receive"
         }

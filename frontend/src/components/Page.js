@@ -32,7 +32,7 @@ function Page() {
         axios.get('http://localhost:8000/movie/numberOfMovies')
             .then(response => {
                 const totalMovies = response.data; // Adjust this according to your API response
-                setNumOfPage(Math.ceil(totalMovies / 12));
+                setNumOfPage(Math.floor(totalMovies / 12));
             })
             .catch(error => console.log(error.message));
     }, []);

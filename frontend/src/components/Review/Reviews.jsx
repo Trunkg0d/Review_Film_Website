@@ -117,7 +117,7 @@ function Reviews({ id }) {
 
     const handleDeleteReview = (reviewId) => {
         const token = localStorage.getItem('accessToken');
-        axios.delete(`http://localhost:8000/review/delete/${reviewId}`, {
+        axios.delete(`http://localhost:8000/review/${reviewId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

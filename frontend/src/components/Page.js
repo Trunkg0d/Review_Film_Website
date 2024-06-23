@@ -13,6 +13,12 @@ function Page() {
     const [numofpage, setNumOfPage] = useState(1);
     const editIconPath = '/data/edit_icon.png';
     const [userWishlist, setUserWishlist] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+      const token = localStorage.getItem('accessToken');
+      setIsLoggedIn(!!token);
+    }, []);
 
     useEffect(() => {
         const fetchUserInfo = async () => {
@@ -26,7 +32,6 @@ function Page() {
             setUserWishlist(response.data.wish_list);
           } catch (error) {
             console.error('Error fetching user info:', error);
-            // Handle error, e.g., redirect to login if unauthorized
             if (error.response && error.response.status === 401) {
               window.location.href = '/';
             }
@@ -57,7 +62,7 @@ function Page() {
     useEffect(() => {
         axios.get('http://localhost:8000/movie/numberOfMovies')
             .then(response => {
-                const totalMovies = response.data; // Adjust this according to your API response
+                const totalMovies = response.data; 
                 setNumOfPage(Math.ceil(totalMovies / 12));
             })
             .catch(error => console.log(error.message));
@@ -101,7 +106,7 @@ function Page() {
                         <a href={`/movie/${movie.id}`}>
                             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }}/>
                         </a>
-                        {showWatchlistIcon(movie.id)}
+                        {isLoggedIn && showWatchlistIcon(movie.id)}
                         {movie.release_date && <p className="movie-release-date">{movie.release_date}</p>}
                         {movie.title && <p className="movie-title">{movie.title}</p>}
                         {role === '1' && (

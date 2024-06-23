@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
@@ -16,6 +16,14 @@ import FilmConfig from './pages/FilmConfig';
 import NotFound from './pages/Errors/NotFound';
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    setIsLoggedIn(!!token);
+  }, []);
+
   return (
     <Router>
       <Header />
@@ -30,7 +38,7 @@ function App() {
         <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
-      <ChatBox />
+      {isLoggedIn && <ChatBox />}
       <BackToTopButton />
     </Router>
   );

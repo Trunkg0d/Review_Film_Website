@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { SearchBar } from './Search/SearchBar';
+import { SearchResultsList } from './Search/SearchResultsList';
 
 function Header() {
   const navListData = [
@@ -31,6 +33,7 @@ function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [results, setResults] = useState([])
 
   useEffect(() => {
     const onScroll = () => {
@@ -59,9 +62,9 @@ function Header() {
           </li>
         ))}
       </ul>
-      <div className="search">
-        <input type="text" placeholder="Search..." />
-        <ion-icon name="search-outline"></ion-icon>
+      <div className='search-container'>
+        <SearchBar setResults={setResults} />
+        <SearchResultsList results={results}/>
       </div>
       <div className="signin">
         {isLoggedIn ? (

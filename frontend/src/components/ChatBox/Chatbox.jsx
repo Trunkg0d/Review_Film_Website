@@ -3,7 +3,7 @@ import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
 import {HfInference} from '@huggingface/inference';
 
-const api_key = 'YOUR HUGGINGFACE API KEY HERE';
+const api_key = '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';
 const hf = new HfInference(api_key);
 const model_id = 'meta-llama/Meta-Llama-3-8B-Instruct';
 
@@ -18,7 +18,7 @@ const ChatBox = () => {
 
     const [messages, setMessages] = useState([
         {
-            text: "I am Morevie bot, I am here to assist you! Feel free to send me questions ^^!",
+            text: `I am Morevie bot, I am here to assist you. Feel free to send me question ^^!`,
             time: `${addZero(today.getHours())}:${addZero(today.getMinutes())}`,
             type: "receive"
         }

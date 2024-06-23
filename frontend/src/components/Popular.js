@@ -10,7 +10,7 @@ function Popular() {
     const editIconPath = '/data/edit_icon.png';
 
     const fetchData = () => {
-        axios.get('http://localhost:8000/movie/page/0')  // Adjust the URL to your FastAPI endpoint
+        axios.get('http://localhost:8000/movie/page/0')
         .then(response => {
             const formattedData = response.data.map(movie => ({
                 id: movie._id,

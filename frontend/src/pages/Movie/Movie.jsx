@@ -11,6 +11,7 @@ function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
+  const [direct, setDirect] = useState([]);
   const [selectedCast, setSelectedCast] = useState(null);
 
   const handleMouseEnter = (castMember) => {
@@ -32,7 +33,8 @@ function Movie() {
     axios.get(`http://localhost:8000/movie/${id}`)
       .then(response => {
         setMovie(response.data);
-        setCast(response.data.actors)
+        setCast(response.data.actors);
+        setDirect(response.data.director)
       })
       .catch(error => console.log(error.message));
   }, [id]); // Add id as a dependency
@@ -69,21 +71,36 @@ function Movie() {
                 <p className="overview">{movie.description}</p>
                 <div className="cast">
                   <div className="about-cast-container">
-                    <div className="about-cast">
-                      Diễn viên
-                    </div>
-                  </div>
-                  <div className="cast-container">
-                    {cast.map((member, index) => (
-                      <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
-                        <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
-                        </div>
-                        <div className="cast-name">{member.name}</div>
-                        {selectedCast && selectedCast._id === member._id && (
-                          <CastDetailModal castMember={member}/>
-                        )}
+                    <div className="cast-wrapper">
+                      <div className="about-cast">Starring</div>
+                      <div className="cast-container">
+                        {cast.map((member, index) => (
+                          <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                            <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
+                            </div>
+                            <div className="cast-name">{member.name}</div>
+                            {selectedCast && selectedCast._id === member._id && (
+                              <CastDetailModal castMember={member}/>
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    <div className="direct-wrapper">
+                      <div className="about-direct">Directors</div>
+                      <div className="direct-container">
+                        {direct.map((member, index) => (
+                          <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                            <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
+                            </div>
+                            <div className="cast-name">{member.name}</div>
+                            {selectedCast && selectedCast._id === member._id && (
+                              <CastDetailModal castMember={member}/>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,8 @@ from fastapi.security import OAuth2PasswordRequestForm
 from models.users import User, TokenResponse, UserUpdate
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
-from models.movies import MovieResponse
+from beanie import PydanticObjectId
+from models.movies import MovieResponse, Movie
 import aiofiles
 from pathlib import Path
 import string
@@ -31,7 +32,7 @@ class UserInfo(BaseModel):
     email: EmailStr
     img: Optional[str]
     role: int
-    wish_list: Optional[List[MovieResponse]]
+    wish_list: Optional[List[PydanticObjectId]]
 
 class CheckEmailRequest(BaseModel):
     email: EmailStr
@@ -40,7 +41,9 @@ class CheckUsernameRequest(BaseModel):
     username: str
 
 user_database = Database(User)
+movie_database = Database(Movie)
 hash_password = HashPassword()
+
 
 @user_router.post("/checkEmail")
 async def check_email_is_valid(input: CheckEmailRequest) -> dict:
@@ -213,3 +216,37 @@ async def get_image(filename: str):
             detail="File not found"
         )
     return FileResponse(file_location)
+
+    
+    
+@user_router.post("/wish_list/{id}/add")
+async def add_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticate)):
+    user_info = await User.find_one(User.email == user)
+    # check if id is valid
+    movie_info = await movie_database.get(id)   
+    if not movie_info:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="MovieID not found"
+        )
+    if id not in user_info.wish_list:
+        user_info.wish_list.append(id)
+    update_user = await user_database.update(user_info.id, user_info)
+    return update_user
+        
+
+@user_router.post("/wish_list/{id}/remove")
+async def remove_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticate)):
+    user_info = await User.find_one(User.email == user)
+    movie_info = await movie_database.get(id)   
+    if not movie_info:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="MovieID not found"
+        )
+    if id in user_info.wish_list:
+        user_info.wish_list.remove(id)
+    update_user = await user_database.update(user_info.id, user_info)
+    return update_user
+
+    

@@ -160,3 +160,5 @@ async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) 
     return {
         "message": "Movie deleted successfully."
     }
+
+

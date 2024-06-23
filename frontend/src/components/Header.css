@@ -110,13 +110,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #fff; /* Optional: add a white border */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: add a slight shadow */
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--white);
 }
-
-
-
 
 .header .signin .avatar:hover {
   transform: scale(1.1);
@@ -129,6 +127,7 @@
   height: 30px;
   border-radius: 50%;
 }
+
 .signin {
   display: flex;
   align-items: center;

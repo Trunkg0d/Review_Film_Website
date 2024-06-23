@@ -232,6 +232,9 @@
     color: var(--primary);
     margin-top: 8px;
     text-align: center;
+    max-height: 40px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .cast-detail{
@@ -296,4 +299,38 @@
     font-size: 120%;
     text-align: center;
     color: rgb(190, 123, 0);
+}
+
+.movie-content__poster .add-watchlist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.movie-content__poster .add-watchlist img{
+    width: 150%;
+}
+
+.add-watchlist:hover img {
+    transition: .5s;
+    filter: brightness(120%);
+    transform: scale(1.2);
+}
+
+.movie-content__poster .watchlist-added {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.movie-content__poster .watchlist-added img {
+    width: 150%;
+}
+
+.watchlist-added:hover img {
+    transition: .5s;
+    filter: brightness(70%);
+    transform: scale(1.2);
 }

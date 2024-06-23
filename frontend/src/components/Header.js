@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Header.css';
 import { SearchBar } from './Search/SearchBar';
 import { SearchResultsList } from './Search/SearchResultsList';
+import user_icon from './LoginSignup/assets/user.png';
 
 function Header() {
   const navListData = [
@@ -68,9 +69,11 @@ function Header() {
       fetchUserProfile();
     }
   }, []);
-  const avatarUrl = userAvatar 
-    ? `http://localhost:8000/user/image/${userAvatar}`
-    : "https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg";
+
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
@@ -96,7 +99,7 @@ function Header() {
               window.location.href = '/user/dashboard';
             }}
           >
-            <img src={avatarUrl} alt="User Avatar" className="avatar" />
+            <img src={handleImageUser(userAvatar)} alt="User Avatar" className="avatar" />
           </button>
         ) : (
           <button 

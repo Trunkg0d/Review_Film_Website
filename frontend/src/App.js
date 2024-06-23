@@ -25,11 +25,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/login" element={<LoginSignup />} />
-        <Route path="/user/dashboard" element={<Dashboard />} />
+        <Route path="/user/dashboard" element={<Dashboard />}/>
+        <Route path="/user/safetySettings" element={<SafetySetting/>}/>
+        <Route path="/user/:id" element={<Movie />} />
         <Route path="/page/:pagenumber" element={<Page />} />
-        <Route path="/admin_filmconfig/:id" element={<FilmConfig />} />
+        <Route path="/admin_filmconfig/:id" element={<FilmConfig />}/>
         <Route path='*' element={<NotFound />} />
-        <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
       <ChatBoxConditional />

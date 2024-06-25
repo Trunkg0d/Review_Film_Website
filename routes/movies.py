@@ -161,8 +161,7 @@ async def delete_movie(id: PydanticObjectId, user: str = Depends(authenticate)) 
         "message": "Movie deleted successfully."
     }
 
-# Delete a movie by ID
-async def retrieve_movie_for_wishlist(id: PydanticObjectId, user: str = Depends(authenticate)) -> dict:
+async def retrieve_movie_for_wishlist(id: PydanticObjectId) -> dict:
     movie = await movie_database.get(id)
     if not movie:
         raise HTTPException(

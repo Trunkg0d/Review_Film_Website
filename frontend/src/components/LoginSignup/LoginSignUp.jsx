@@ -81,7 +81,7 @@ const LoginSignup = () => {
                 username: username,
                 email: email,
                 password: password,
-                img: "string",
+                img: null,
                 role: 0
             });
             console.log("Response from FastAPI backend:", response.data);

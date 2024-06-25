@@ -2,7 +2,8 @@ from beanie import Document
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr
 from beanie import PydanticObjectId
-from models.movies import Movie
+from models.movies import Movie, MovieResponse
+
 
 class User(Document):
     fullname: str
@@ -45,6 +46,14 @@ class User(Document):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
+
+class UserResponse(BaseModel):
+    fullname: Optional[str]
+    username: Optional[str]
+    email: Optional[EmailStr]
+    img: Optional[str]
+    role: int
+    wish_list: Optional[List[MovieResponse]]
 
 class UserUpdate(BaseModel):
     fullname: Optional[str]

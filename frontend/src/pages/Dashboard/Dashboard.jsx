@@ -61,7 +61,7 @@ function Dashboard() {
               <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
             </li>
             <li className="menu-item">
-              <a href='roba' className="link">Trang cá nhân</a>
+              <a href={`profile/${userInfo.user_id}`} className="link">Trang cá nhân</a>
             </li>
             <li className="menu-item logout">
               <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>

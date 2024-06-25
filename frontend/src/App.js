@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import LoginSignup from './components/LoginSignup/LoginSignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import SafetySetting from './pages/Dashboard/SafetySettings/safetySetting';
+import PPage from './pages/Dashboard/PersonalPage/personalPage';
 import ChatBox from './components/ChatBox/Chatbox';
 import Page from './components/Page';
 import FilmConfig from './pages/FilmConfig';
@@ -27,7 +28,7 @@ function App() {
         <Route path="/login" element={<LoginSignup />} />
         <Route path="/user/dashboard" element={<Dashboard />}/>
         <Route path="/user/safetySettings" element={<SafetySetting/>}/>
-        <Route path="/user/:id" element={<Movie />} />
+        <Route path="/user/profile/:user_id" element={<PPage />} />
         <Route path="/page/:pagenumber" element={<Page />} />
         <Route path="/admin_filmconfig/:id" element={<FilmConfig />}/>
         <Route path='*' element={<NotFound />} />

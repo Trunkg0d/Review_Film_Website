@@ -9,6 +9,7 @@ import UploadModal from '../../../components/Upload/Upload';
 function SafetySetting() {
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
+    user_id: 'roba',
     fullname: 'Test fullname',
     username: 'Test username',
     email: 'Test email',
@@ -128,7 +129,7 @@ function SafetySetting() {
               <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
             </li>
             <li className="menu-item">
-              <a href="personalReviews" className="link">Các bài review phim</a>
+              <a href={`profile/${userInfo.user_id}`} className="link">Trang cá nhân</a>
             </li>
             <li className="menu-item logout">
               <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>

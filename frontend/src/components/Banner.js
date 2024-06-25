@@ -11,7 +11,7 @@ function Banner() {
         axios.get(`http://localhost:8000/movie`)
             .then(response => {
                 const formattedData = response.data.map(movie => ({
-                    id: movie._id,
+                    id: movie.movie_id,
                     title: movie.title,
                     poster_path: movie.poster_path,
                     description: movie.description,

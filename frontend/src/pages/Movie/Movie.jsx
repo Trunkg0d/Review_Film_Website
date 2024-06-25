@@ -1,5 +1,5 @@
 // Movie.jsx
-import React, { useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Movie.css';

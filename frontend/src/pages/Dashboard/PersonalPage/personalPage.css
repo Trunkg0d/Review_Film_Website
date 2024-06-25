@@ -1,0 +1,143 @@
+.wrapper-ppage{
+    position: relative;
+    display: flex;
+    padding-top: 7rem;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.cover-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cover-container .avatar-img {
+    position: relative;
+    margin: 2% 6%;
+    width: 15%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: white;
+}
+.cover-container .avatar-img:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.basic-info-container {
+    position: relative;
+    display: flex;
+    width: 70%;
+    padding: 3% 5% 5% 0;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: 120%;
+}
+
+.basic-info-container h1{
+    color: white;
+}
+.basic-info-container h1:hover{
+    border-left: 2px solid var(--primary);
+    padding-left: 20px;
+}
+
+.basic-info-container text:hover{
+    border-left: 2px solid var(--primary);
+    padding-left: 20px;
+}
+
+.basic-info-container .email-contact{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.basic-info-container .email-contact img{
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.basic-info-container .email-contact:hover img{
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.user-database {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-height: 700px;
+    border-top: 5px solid var(--primary);
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.user-watchlist {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 25%;
+    max-height: 600px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+.user-watchlist::-webkit-scrollbar {
+    width: 7px;
+}
+.user-watchlist::-webkit-scrollbar-track {
+    background: var(--lowgray);
+    border-radius: 15px;
+}
+.user-watchlist::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 15px;
+}
+.user-watchlist::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+.user-watchlist .movie {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    width: 95%;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.user-watchlist .movie:hover{
+    background-color: var(--lowgray);
+    border-radius: 10px;
+}
+
+.user-watchlist .movie .movie-poster {
+    width: 33%;
+    height: 100%;
+}
+
+.user-watchlist .movie .movie-name {
+    align-self: center;
+    padding: 5%;
+    color: white;
+    font-size: 100%;
+}
+
+.user-watchlist .no-movie-added {
+    padding: 5%;
+    color: white;
+    font-style: italic;
+}
+
+.user-database .border-splitter {
+    margin: 10px 20px;
+    width: 3.5px;
+    min-height: 100px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}

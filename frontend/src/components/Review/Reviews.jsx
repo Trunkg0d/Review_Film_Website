@@ -197,14 +197,14 @@ function Reviews({ id }) {
                             reviews.map((review, i) => (
                                 <div key={i} className="review">
                                     <div className="review__header">
-                                        <div className="review__header__user">
+                                        <a href={`/user/profile/${review.user_info.user_id}`} className="review__header__user">
                                             <div className="review__header__user__img">
                                                 <img src={handleImageUser(review.user_info.img)} alt="" className='user-icon-avatar'/>
                                             </div>
                                             <div className="review__header__user__name">
                                                 {review.user_info ? review.user_info.username : 'Anonymous'}
                                             </div>
-                                        </div>
+                                        </a>
                                         {userInfo.role && (<img src={delete_icon} alt =''
                                         className="review__delete" 
                                         onClick={() => handleDeleteReview(review.review_id)}/>)}

@@ -239,7 +239,7 @@ async def add_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticat
         username=user_info.username,
         password=user_info.password,
         email=user_info.email,
-        img=user_info,
+        img=user_info.img,
         role=user_info.role
     )
     update_user = await user_database.update(user_info.id, new_info)
@@ -262,7 +262,7 @@ async def remove_to_wishlist(id: PydanticObjectId, user : str = Depends(authenti
         username=user_info.username,
         password=user_info.password,
         email=user_info.email,
-        img=user_info,
+        img=user_info.img,
         role=user_info.role
     )
     update_user = await user_database.update(user_info.id, new_info)

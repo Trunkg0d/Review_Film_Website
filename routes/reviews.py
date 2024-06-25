@@ -255,3 +255,13 @@ async def downvote_review(id: PydanticObjectId, user: str = Depends(authenticate
     updated_review = await review_database.update(id, new_review)
     updated_review= await fill_userinfo(updated_review)
     return updated_review
+
+@review_router.get("/user/{id}", response_model=List[dict])
+async def get_review_of_user(id: PydanticObjectId)->List[dict]:
+    all_review = await review_database.get_all()
+    res = []
+    for review in all_review:
+        if review.id == id:
+            res.append(review)
+    
+    return res

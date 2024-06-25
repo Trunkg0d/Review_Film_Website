@@ -5,11 +5,12 @@ from fastapi.responses import JSONResponse, FileResponse
 from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from fastapi.security import OAuth2PasswordRequestForm
-from models.users import User, TokenResponse, UserUpdate
+from models.users import User, TokenResponse, UserUpdate, UserResponse
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from beanie import PydanticObjectId
 from models.movies import MovieResponse, Movie
+from routes.movies import retrieve_movie_for_wishlist
 import aiofiles
 from pathlib import Path
 import string
@@ -27,6 +28,7 @@ UPLOAD_DIR = Path() / 'uploads' # Avatar image store path
 
 logger = logging.getLogger('uvicorn.error')
 class UserInfo(BaseModel):
+    user_id: PydanticObjectId
     fullname: str
     username: str
     email: EmailStr
@@ -106,6 +108,7 @@ async def get_user_info(current_user: str = Depends(authenticate)) -> UserInfo:
     user_info = await User.find_one(User.email == current_user)
     if user_info:
         return UserInfo(
+            user_id=user_info.id,
             fullname=user_info.fullname,
             username=user_info.username,
             email=user_info.email,
@@ -265,4 +268,35 @@ async def remove_to_wishlist(id: PydanticObjectId, user : str = Depends(authenti
     update_user = await user_database.update(user_info.id, new_info)
     return update_user
 
+@user_router.get("/profile/{id}", response_model=dict)
+async def get_user_info(id: PydanticObjectId) -> dict:
+    user_info = await user_database.get(id) 
+    if not user_info:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="UserID not found"
+        )
+    
+    # res = UserResponse(
+    #         fullname=user_info.fullname,
+    #         username=user_info.username,
+    #         email=user_info.email,
+    #         img=user_info.img,
+    #         role=user_info.role,
+    #         wish_list=[]
+    #     )
+    res = {
+            "fullname":user_info.fullname,
+            "username":user_info.username,
+            "email":user_info.email,
+            "img":user_info.img,
+            "role":user_info.role,
+            "wish_list":[]
+    }
+    if user_info.wish_list:
+        for item in user_info.wish_list:
+            data = await retrieve_movie_for_wishlist(item)
+            res["wish_list"].append(data)
+    return res
+    
     

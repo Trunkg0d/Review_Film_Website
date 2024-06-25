@@ -10,10 +10,10 @@ function Popular() {
     const editIconPath = '/data/edit_icon.png';
 
     const fetchData = () => {
-        axios.get('http://localhost:8000/movie/page/0')  // Adjust the URL to your FastAPI endpoint
+        axios.get('http://localhost:8000/movie/page/0')
         .then(response => {
             const formattedData = response.data.map(movie => ({
-                id: movie._id,
+                id: movie.movie_id,
                 title: movie.title,
                 poster_path: movie.poster_path,
                 release_date: movie.release_date ? movie.release_date.split('T')[0] : ''

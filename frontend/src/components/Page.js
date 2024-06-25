@@ -13,34 +13,39 @@ function Page() {
     const [numofpage, setNumOfPage] = useState(1);
     const editIconPath = '/data/edit_icon.png';
     const [userWishlist, setUserWishlist] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem('accessToken');
+        setIsLoggedIn(!!token);
+    }, []);
 
     useEffect(() => {
         const fetchUserInfo = async () => {
-          try {
-            const token = localStorage.getItem('accessToken');
-            const response = await axios.post('http://localhost:8000/user/profile', {}, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            });
-            setUserWishlist(response.data.wish_list);
-          } catch (error) {
-            console.error('Error fetching user info:', error);
-            // Handle error, e.g., redirect to login if unauthorized
-            if (error.response && error.response.status === 401) {
-              window.location.href = '/';
+            try {
+                const token = localStorage.getItem('accessToken');
+                const response = await axios.post('http://localhost:8000/user/profile', {}, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setUserWishlist(response.data.wish_list);
+            } catch (error) {
+                console.error('Error fetching user info:', error);
+                if (error.response && error.response.status === 401) {
+                    window.location.href = '/';
+                }
             }
-          }
         };
-    
+
         fetchUserInfo();
-      }, []);
+    }, []);
 
     const fetchData = useCallback(() => {
         axios.get(`http://localhost:8000/movie/page/${pagenumber - 1}`)
             .then(response => {
                 const formattedData = response.data.map(movie => ({
-                    id: movie._id,
+                    movie_id: movie.movie_id,
                     title: movie.title,
                     poster_path: movie.poster_path,
                     release_date: movie.release_date ? movie.release_date.split('T')[0] : ''
@@ -57,8 +62,8 @@ function Page() {
     useEffect(() => {
         axios.get('http://localhost:8000/movie/numberOfMovies')
             .then(response => {
-                const totalMovies = response.data; // Adjust this according to your API response
-                setNumOfPage(Math.floor(totalMovies / 12));
+                const totalMovies = response.data; 
+                setNumOfPage(Math.ceil(totalMovies / 12));
             })
             .catch(error => console.log(error.message));
     }, []);
@@ -68,12 +73,32 @@ function Page() {
     };
     const role = localStorage.getItem('role');
 
-    const handleAddWishlist = (movieId) => {
-        setUserWishlist(prevWishlist => [...prevWishlist, movieId]);
+    const handleAddWishlist = async (movieId) => {
+        try {
+            const token = localStorage.getItem('accessToken');
+            await axios.post(`http://localhost:8000/user/wish_list/${movieId}/add`, {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setUserWishlist(prevWishlist => [...prevWishlist, movieId]);
+        } catch (error) {
+            console.error('Error adding to wishlist:', error);
+        }
     };
 
-    const handleRemoveWishlist = (movieId) => {
-        setUserWishlist(prevWishlist => prevWishlist.filter(id => id !== movieId));
+    const handleRemoveWishlist = async (movieId) => {
+        try {
+            const token = localStorage.getItem('accessToken');
+            await axios.post(`http://localhost:8000/user/wish_list/${movieId}/remove`, {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setUserWishlist(prevWishlist => prevWishlist.filter(id => id !== movieId));
+        } catch (error) {
+            console.error('Error removing from wishlist:', error);
+        }
     };
 
     const showWatchlistIcon = (movieId) => {
@@ -91,21 +116,20 @@ function Page() {
 
     return (
         <section id="page" className="page">
-            {/* {pagenumber === '1' && <Header />} */}
             <div className="title-row">
                 <h2 className="section-title">Newly updated movie page {pagenumber}</h2>
             </div>
             <div className="popular">
                 {movies.map(movie => (
-                    <div key={movie.id} className="movie">
-                        <a href={`/movie/${movie.id}`}>
+                    <div key={movie.movie_id} className="movie">
+                        <a href={`/movie/${movie.movie_id}`}>
                             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '100%' }}/>
                         </a>
-                        {showWatchlistIcon(movie.id)}
+                        {isLoggedIn && showWatchlistIcon(movie.movie_id)}
                         {movie.release_date && <p className="movie-release-date">{movie.release_date}</p>}
                         {movie.title && <p className="movie-title">{movie.title}</p>}
                         {role === '1' && (
-                            <button className="edit-button" onClick={() => handleEditClick(movie.id)}>
+                            <button className="edit-button" onClick={() => handleEditClick(movie.movie_id)}>
                                 <img src={editIconPath} alt="Edit" />
                             </button>
                         )}

@@ -1,6 +1,7 @@
 from beanie import Document
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr
+from beanie import PydanticObjectId
 from models.movies import Movie
 
 class User(Document):
@@ -10,7 +11,7 @@ class User(Document):
     password: str
     img: Optional[str]
     role: int   # 0: normal user, 1: admin
-    wish_list: Optional[List[Movie]] = None 
+    wish_list: Optional[List[PydanticObjectId]] = []
 
     class Settings:
         name = "users"
@@ -39,6 +40,8 @@ class User(Document):
             }
         }
     
+
+    
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
@@ -46,10 +49,11 @@ class TokenResponse(BaseModel):
 class UserUpdate(BaseModel):
     fullname: Optional[str]
     username: Optional[str]
-    email: Optional[str]
+    email: Optional[EmailStr]
     password: Optional[str]
     img: Optional[str]
-    wish_list: Optional[List[Movie]] = None
+    role: int
+    # wish_list: Optional[List[PydanticObjectId]] = None
 
     class Config:
         schema_extra = {

@@ -3,8 +3,11 @@ import axios from 'axios';
 import './safetySetting.css';
 import change_icon from '../assets/pen.png';
 import save_icon from '../assets/save.png';
+import user_icon from '../assets/user.png';
+import UploadModal from '../../../components/Upload/Upload';
 
 function SafetySetting() {
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     fullname: 'Test fullname',
     username: 'Test username',
@@ -20,6 +23,11 @@ function SafetySetting() {
     email: false
   });
 
+  const [SSModalVisible, setSSModalVisible] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [pendingField, setPendingField] = useState(null);
+  const [newValues, setNewValues] = useState({});
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
@@ -32,7 +40,6 @@ function SafetySetting() {
         setUserInfo(response.data);
       } catch (error) {
         console.error('Error fetching user info:', error);
-        // Handle error, e.g., redirect to login if unauthorized
         if (error.response && error.response.status === 401) {
           window.location.href = '/';
         }
@@ -48,8 +55,27 @@ function SafetySetting() {
     window.location.href = '/'
   };
 
-  const ChangeAvatar = (img) => {
-    /*Mở cửa sổ chọn avatar và thay đổi*/
+  const openUploadModal = () => {
+    setIsUploadModalOpen(true);
+  };
+
+  const closeUploadModal = () => {
+    setIsUploadModalOpen(false);
+  };
+
+  const handleUploadSuccess = async () => {
+    setIsUploadModalOpen(false);
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.post('http://localhost:8000/user/profile', {}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserInfo(response.data);
+    } catch (error) {
+      console.error('Error fetching updated user info:', error);
+    }
   };
 
   const startEditing = (field) => {
@@ -57,12 +83,37 @@ function SafetySetting() {
   };
 
   const handleInputChange = (e, field) => {
-
+    setNewValues({ ...newValues, [field]: e.target.value });
   };
 
   const saveChanges = (field) => {
-    setIsEditing({ ...isEditing, [field]: false });
+    setPendingField(field);
+    setSSModalVisible(true);
   };
+
+  const confirmAndSave = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await axios.put('http://localhost:8000/user/profile', {
+        ...newValues,
+        confirm_password: confirmPassword
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserInfo({ ...userInfo, ...newValues });
+      setSSModalVisible(false);
+      setConfirmPassword('');
+      setIsEditing({ ...isEditing, [pendingField]: false });
+    } catch (error) {
+      console.error('Error saving changes:', error);
+    }
+  };
+
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
 
   return (
     <div className="wrapper">
@@ -91,11 +142,11 @@ function SafetySetting() {
           <div className="account-content-container">
             <div className="account-avatar-container">
               Chọn để thay đổi ảnh đại diện!
-              <img src={userInfo.img || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile-change" 
-                onClick={ChangeAvatar(userInfo.img)}/>
+              <img src={handleImageUser(userInfo.img)} alt="" className="account-avatar-profile-change" 
+                onClick={openUploadModal}/>
             </div>
             <div className="account-info-container">
-              {['fullname', 'username', 'email', 'mật khẩu'].map((field) => (
+              {['fullname', 'username', 'email', 'password'].map((field) => (
                 <div key={field} className="account-info-item">
                   <span className="account-info-label">{field.charAt(0).toUpperCase() + field.slice(1)}</span>
                   <span className="account-info-value-container">
@@ -122,6 +173,22 @@ function SafetySetting() {
           </div>
         </div>
       </div>
+      {SSModalVisible && (
+        <div className="SSmodal">
+          <div className="SSmodal-content">
+            <h4>Enter your password to process the change</h4>
+            <input
+              type="password" 
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Enter your password"
+            />
+            <button onClick={confirmAndSave}>Confirm</button>
+            <button onClick={() => setSSModalVisible(false)}>Cancel</button>
+          </div>
+        </div>
+      )}
+      {isUploadModalOpen && <UploadModal onClose={closeUploadModal} onSuccess={handleUploadSuccess} />}
     </div>
   );
 }

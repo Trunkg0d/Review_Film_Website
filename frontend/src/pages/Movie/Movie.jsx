@@ -6,17 +6,47 @@ import './Movie.css';
 import Reviews from '../../components/Review/Reviews';
 import male from './assets/man.png';
 import female from './assets/woman.png';
+import watchlist_icon from './assets/bookmark.png';
+import added_icon from './assets/bookmark-added.png';
 
 function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
-
+  const [direct, setDirect] = useState([]);
   const [selectedCast, setSelectedCast] = useState(null);
+  const [userWishlist, setUserWishlist] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    setIsLoggedIn(!!token);
+  }, []);
 
   const handleMouseEnter = (castMember) => {
     setSelectedCast(castMember);
   };
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        const response = await axios.post('http://localhost:8000/user/profile', {}, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        setUserWishlist(response.data.wish_list);
+      } catch (error) {
+        console.error('Error fetching user info:', error);
+        if (error.response && error.response.status === 401) {
+            window.location.href = '/';
+        }
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
 
   const handleMouseLeave = () => {
     setSelectedCast(null);
@@ -28,12 +58,12 @@ function Movie() {
     `url(https://i.pinimg.com/564x/1b/2e/31/1b2e314e767a957a44ed8f992c6d9098.jpg)`);
   }
 
-
   useEffect(() => {
     axios.get(`http://localhost:8000/movie/${id}`)
       .then(response => {
         setMovie(response.data);
-        setCast(response.data.actors)
+        setCast(response.data.actors);
+        setDirect(response.data.director)
       })
       .catch(error => console.log(error.message));
   }, [id]); // Add id as a dependency
@@ -41,6 +71,47 @@ function Movie() {
   const getImageUrl = (path, defaultImage) => {
     return path ? `https://image.tmdb.org/t/p/w500/${path}` : defaultImage;
   };
+
+  const handleAddWishlist = async (movieId) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await axios.post(`http://localhost:8000/user/wish_list/${movieId}/add`, {}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUserWishlist(prevWishlist => [...prevWishlist, movieId]);
+    } catch (error) {
+      console.error('Error adding to wishlist:', error);
+    }
+};
+
+const handleRemoveWishlist = async (movieId) => {
+  try {
+    const token = localStorage.getItem('accessToken');
+    await axios.post(`http://localhost:8000/user/wish_list/${movieId}/remove`, {}, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    setUserWishlist(prevWishlist => prevWishlist.filter(id => id !== movieId));
+  } catch (error) {
+    console.error('Error removing from wishlist:', error);
+  }
+};
+
+const showWatchlistIcon = (movieId) => {
+  const isInWishlist = userWishlist.includes(movieId);
+  return isInWishlist ? (
+    <div className='watchlist-added' onClick={() => handleRemoveWishlist(movieId)}>
+        <img src={added_icon} alt='Remove from Watchlist'/> 
+    </div>
+  ) : (
+    <div className='add-watchlist' onClick={() => handleAddWishlist(movieId)}>
+        <img src={watchlist_icon} alt='Add to Watchlist'/> 
+    </div>
+  );
+};
 
   return (
     <>
@@ -54,6 +125,7 @@ function Movie() {
               <div className="movie-content__poster">
                 <div className="movie-content__poster__img"
                   style={{ backgroundImage: `url(${getImageUrl(movie.poster_path)})` }}>
+                  {isLoggedIn && showWatchlistIcon(id)}
                 </div>
               </div>
               <div className="movie-content__info">
@@ -70,21 +142,36 @@ function Movie() {
                 <p className="overview">{movie.description}</p>
                 <div className="cast">
                   <div className="about-cast-container">
-                    <div className="about-cast">
-                      Diễn viên
-                    </div>
-                  </div>
-                  <div className="cast-container">
-                    {cast.map((member, index) => (
-                      <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
-                        <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
-                        </div>
-                        <div className="cast-name">{member.name}</div>
-                        {selectedCast && selectedCast._id === member._id && (
-                          <CastDetailModal castMember={member}/>
-                        )}
+                    <div className="cast-wrapper">
+                      <div className="about-cast">Starring</div>
+                      <div className="cast-container">
+                        {cast.map((member, index) => (
+                          <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                            <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
+                            </div>
+                            <div className="cast-name">{member.name}</div>
+                            {selectedCast && selectedCast._id === member._id && (
+                              <CastDetailModal castMember={member}/>
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    {(direct.length > 0) && (<div className="direct-wrapper">
+                      <div className="about-direct">Directors</div>
+                      <div className="direct-container">
+                        {direct.map((member, index) => (
+                          <div key={member._id} className="cast-item" onMouseEnter={() => handleMouseEnter(member)} onMouseLeave={handleMouseLeave}>
+                            <div className="cast-image" style={{ backgroundImage: handleCastImg(member.profile_image, member.gender) }}>
+                            </div>
+                            <div className="cast-name">{member.name}</div>
+                            {selectedCast && selectedCast._id === member._id && (
+                              <CastDetailModal castMember={member}/>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>)}
                   </div>
                 </div>
               </div>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
+import user_icon from './assets/user.png';
 
 function Dashboard() {
   const [userInfo, setUserInfo] = useState({
+    user_id: '',
     fullname: '',
     username: '',
     email: '',
@@ -16,7 +18,7 @@ function Dashboard() {
     const fetchUserInfo = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const response = await axios.post('http://localhost:8000/user/profile', {}, {
+        const response =await axios.post('http://localhost:8000/user/profile', {}, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -24,7 +26,6 @@ function Dashboard() {
         setUserInfo(response.data);
       } catch (error) {
         console.error('Error fetching user info:', error);
-        // Handle error, e.g., redirect to login if unauthorized
         if (error.response && error.response.status === 401) {
           window.location.href = '/';
         }
@@ -38,8 +39,14 @@ function Dashboard() {
     e.preventDefault();
     localStorage.removeItem('accessToken');
     localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    localStorage.removeItem('tokenExpireTime');
     window.location.href = '/'
   };
+
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
 
   return (
     <div className="wrapper">
@@ -54,7 +61,7 @@ function Dashboard() {
               <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
             </li>
             <li className="menu-item">
-              <a href="personalReviews" className="link">Các bài review phim</a>
+              <a href='roba' className="link">Trang cá nhân</a>
             </li>
             <li className="menu-item logout">
               <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>
@@ -68,11 +75,15 @@ function Dashboard() {
           <div className="sub-title">Thông tin cơ bản</div>
           <div className="account-content-container">
             <div className="account-avatar-container">
-              <img src={userInfo.img || 'https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg'} alt="" className="account-avatar-profile" />
+              <img
+                src={handleImageUser(userInfo.img)}
+                alt=""
+                className="account-avatar-profile"
+              />
             </div>
             <div className="account-info-container">
               <div className="account-info-item">
-                <span className="account-info-label">Tên người dùng</span>
+                <span className="account-info-label">Fullname</span>
                 <span className="account-info-value">{userInfo.fullname}</span>
               </div>
               <div className="account-info-item">

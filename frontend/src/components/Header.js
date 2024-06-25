@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Header.css';
+import { SearchBar } from './Search/SearchBar';
+import { SearchResultsList } from './Search/SearchResultsList';
+import user_icon from './LoginSignup/assets/user.png';
 
 function Header() {
   const navListData = [
@@ -31,6 +35,8 @@ function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [results, setResults] = useState([])
+  const [userAvatar, setUserAvatar] = useState('');
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,7 +51,28 @@ function Header() {
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     setIsLoggedIn(!!token); // !! converts the token to a boolean
+
+    if (token) {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axios.post('http://localhost:8000/user/profile', {}, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          setUserAvatar(response.data.img);
+        } catch (error) {
+          console.error('Error fetching user profile', error);
+        }
+      };
+
+      fetchUserProfile();
+    }
   }, []);
+
+  const handleImageUser = (imgPath) => {
+    return (imgPath === null || imgPath === 'string') ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
+  }
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -59,9 +86,9 @@ function Header() {
           </li>
         ))}
       </ul>
-      <div className="search">
-        <input type="text" placeholder="Search..." />
-        <ion-icon name="search-outline"></ion-icon>
+      <div className='search-container'>
+        <SearchBar setResults={setResults} />
+        <SearchResultsList results={results}/>
       </div>
       <div className="signin">
         {isLoggedIn ? (
@@ -72,7 +99,7 @@ function Header() {
               window.location.href = '/user/dashboard';
             }}
           >
-            <img src="https://i.pinimg.com/736x/2d/4c/fc/2d4cfc053778ae0de8e8cc853f3abec5.jpg" alt="User Avatar" className="avatar" />
+            <img src={handleImageUser(userAvatar)} alt="User Avatar" className="avatar" />
           </button>
         ) : (
           <button 

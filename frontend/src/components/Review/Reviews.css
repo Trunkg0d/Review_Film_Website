@@ -37,12 +37,25 @@
     background-color: #444;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: transparent;
 }
 
 .review__header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+}
+
+.review__header .review__delete{
+    width: 3.5%;
+    position: relative;
+    right: 1%;
+    cursor: pointer;
+}
+.review__header .review__delete:hover{
+    border-radius: 50%;
+    box-shadow: 0 0px 15px #F34235;
 }
 
 .review__header__user {
@@ -58,6 +71,13 @@
     border-radius: 50%;
 }
 
+.review__header__user__img .user-icon-avatar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
 .review__header__user__name {
     font-size: 1em;
     font-weight: bold;
@@ -69,6 +89,16 @@
     color: #ddd;
     line-height: 1.6;
 }
+.review__content textarea {
+    width: 100%;
+    min-height: 120px;
+    max-height: 200px;
+    resize: vertical;
+    overflow: auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
 .loading, .error, .no-reviews {
     font-size: 1.2em;
@@ -79,22 +109,45 @@
 
 .review__actions {
     display: flex;
-    gap: 10px;
     margin-top: 10px;
+    justify-content: space-between;
 }
 
-.review__actions button {
+.review__actions .action-button{
+    display: flex;
+    gap: 2%;
+    justify-content: flex-start;
+}
+
+.review__actions .action-container{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 5px;
     background-color: var(--primary);
-    color: #000;
-    border: none;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    margin: 2px;
     cursor: pointer;
-    border-radius: 4px;
+    width: 8%;
+    color: black;
+}
+
+.review__actions .review-action-icon{
+    width: 55%;
+    margin-right: 4px;
+}
+.review__actions .review-action-icon:hover{
+    transition: .3s;
+    transform: scale(1.1);
+}
+
+.review__actions .edit-save{
+    cursor: pointer;
+    width: 4.4%;
+    height: 100%;
+    border: none;
+}
+.review__actions .edit-save:hover{
+    border-radius: 50%;
+    box-shadow: 0 0px 15px #26A1F4;
 }
 
 .review__replies {
@@ -159,6 +212,10 @@
     margin-top: 5px;
     margin-bottom: 10px;
     width: 100%;
+}
+
+.new-review  .new-review__avatar{
+    background-color: var(--white);
 }
 
 /* .new-review__input {
@@ -279,3 +336,4 @@
         font-size: 0.9em; /* already set */
     }
 }
+

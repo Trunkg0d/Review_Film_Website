@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Movie from './pages/Movie/Movie';
@@ -14,6 +14,8 @@ import ChatBox from './components/ChatBox/Chatbox';
 import Page from './components/Page';
 import FilmConfig from './pages/FilmConfig';
 import NotFound from './pages/Errors/NotFound';
+import { checkAndRemoveExpiredToken } from './utils.js';
+
 
 function App() {
   return (
@@ -23,17 +25,30 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/login" element={<LoginSignup />} />
-        <Route path="/user/dashboard" element={<Dashboard />} />
+        <Route path="/user/dashboard" element={<Dashboard />}/>
+        <Route path="/user/safetySettings" element={<SafetySetting/>}/>
+        <Route path="/user/:id" element={<Movie />} />
         <Route path="/page/:pagenumber" element={<Page />} />
-        <Route path="/admin_filmconfig/:id" element={<FilmConfig />} />
+        <Route path="/admin_filmconfig/:id" element={<FilmConfig />}/>
         <Route path='*' element={<NotFound />} />
-        <Route path="/user/safetySettings" element={<SafetySetting/>}></Route>
       </Routes>
       <Footer />
-      <ChatBox />
+      <ChatBoxConditional />
       <BackToTopButton />
     </Router>
   );
-}
+};
+
+const ChatBoxConditional = () => {
+  const location = useLocation();
+
+  const excludePaths = ['/login', '/user/dashboard', '/user/safetySettings'];
+
+  if (excludePaths.includes(location.pathname)) {
+    return null;
+  }
+
+  return <ChatBox />;
+};
 
 export default App;

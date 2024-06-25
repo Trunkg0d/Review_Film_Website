@@ -128,7 +128,9 @@ const LoginSignup = () => {
 
             console.log("Response from API:", response.data);
             const accessToken = response.data.access_token;
+            const expireTime = new Date().getTime() + 3600 * 1000;
             localStorage.setItem("accessToken", accessToken);
+            localStorage.setItem("tokenExpireTime", expireTime);
             const fetchRole = async () => {
                 try {
                     const token = localStorage.getItem('accessToken');

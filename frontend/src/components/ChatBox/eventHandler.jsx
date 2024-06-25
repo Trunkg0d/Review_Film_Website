@@ -10,15 +10,7 @@ const useChatbox = () => {
         textarea.rows = 1;
 
         const handleInput = () => {
-            // const lineCount = textarea.value.split('\n').length;
-            // if (textarea.value === '') {
-            //     textarea.rows = 1;
-            // } else if (textarea.rows < 3) {
-            //     textarea.rows = lineCount;
-            // }
-
             textarea.style.height = 'auto';
-            // Set the height according to the scrollHeight
             textarea.style.height = textarea.scrollHeight + 'px';
         };
 

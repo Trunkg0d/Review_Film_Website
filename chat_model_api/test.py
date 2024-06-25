@@ -36,9 +36,9 @@ from langchain_huggingface import HuggingFaceEndpoint
 # def read_config(parser: ConfigParser, location: str) -> None:
 #     assert parser.read(location), f"Could not read config {location}"
     
-access_token_write = "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"
+access_token_write = "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"
 login(token = access_token_write)
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = access_token_write
 # Set your OpenAI API key here
 # file_path='response_1719112149903.json'
 # data = json.loads(Path(file_path).read_text(encoding= 'utf-8'))
@@ -161,3 +161,7 @@ async def chat(input: str = Body(..., embed=True), session_id: str = Body(defaul
     except Exception as e:
         # Handle errors gracefully
         raise HTTPException(status_code=500, detail=str(e))
+
+
+if __name__ == "__main__":
+    uvicorn.run("test:app", port=8005, log_level="info")

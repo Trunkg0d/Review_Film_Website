@@ -1,21 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
-import {HfInference} from '@huggingface/inference';
-
-const api_key = 'YOUR HUGGINGFACE API KEY HERE';
-const hf = new HfInference(api_key);
-const model_id = 'meta-llama/Meta-Llama-3-8B-Instruct';
-
-function addZero(num) {
-    return num < 10 ? '0'+num : num
-}
 
 const ChatBox = () => {
-    const { isChatboxVisible, toggleChatbox, textareaRef} = useChatbox();
+    const { isChatboxVisible, toggleChatbox, textareaRef } = useChatbox();
     const chatboxMessageContentRef = useRef(null);
     const [messages, setMessages] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [newMessage, setNewMessage] = useState(null);
 
     useEffect(() => {
         const today = new Date();
@@ -24,7 +17,7 @@ const ChatBox = () => {
         const addZero = (num) => (num < 10 ? '0' + num : num);
 
         const initialMessage = !!token 
-            ? 'I am Morevie bot, I am here to assist you. Feel free to send me question ^^!'
+            ? 'I am Morevie bot, I am here to assist you. Feel free to send me questions ^^!'
             : 'I cannot assist you right now, please log in with your account or create a new one!';
 
         setMessages([{
@@ -34,7 +27,9 @@ const ChatBox = () => {
         }]);
     }, []);
 
-    const [newMessageAdded, setNewMessageAdded] = useState(false);
+    function addZero(num) {
+        return num < 10 ? '0' + num : num;
+    }
 
     function writeMessage(e) {
         e.preventDefault();
@@ -50,15 +45,14 @@ const ChatBox = () => {
         };
 
         setMessages(prevMessages => [...prevMessages, newMessage]);
-        setTimeout(scrollBottom, 50);
-        setNewMessageAdded(true);
+        setNewMessage(newMessage);
         
         textareaRef.current.value = '';
         textareaRef.current.style.height = 'auto';
         textareaRef.current.rows = 1;
     }
 
-    const Reply = (messages, out) => {
+    const addReplyMessage = (out) => {
         const nowDay = new Date();
         const newMessage = {
             text: out,
@@ -71,35 +65,30 @@ const ChatBox = () => {
     };
 
     useEffect(() => {
-        if (newMessageAdded && isLoggedIn) {
-            let out = "";
-            const processChunks = async() => {
-                for await (const chunk of hf.chatCompletionStream({
-                    model: model_id,
-                    messages: [
-                    { role: "user", content: messages[messages.length - 1].text},
-                    ],
-                    max_tokens: 500,
-                    temperature: 0.1,
-                    seed: 0,
-                })) {
-                    if (chunk.choices && chunk.choices.length > 0) {
-                        out += chunk.choices[0].delta.content;
-                    }
+        if (newMessage && isLoggedIn) {
+            const token = localStorage.getItem('accessToken');
+            const lastMessage = newMessage.text;
+
+            axios.post('http://localhost:8000/chatbot/chat', {
+                content: lastMessage
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-                return out;
-            };
-            processChunks().then((out) => {
-                setTimeout(() => Reply(messages, out), 2000);
+            }).then(response => {
+                const out = response.data.answer;
+                setTimeout(() => addReplyMessage(out), 30000);
+            }).catch(error => {
+                console.error('Error while fetching response:', error);
             });
-            
-            setNewMessageAdded(false);
-        } else if (newMessageAdded && !isLoggedIn) {
+
+            setNewMessage(null);
+        } else if (newMessage && !isLoggedIn) {
             const defaultReply = 'I cannot assist you right now :((, please log in with your account or create a new one!';
-            setTimeout(() => Reply(messages, defaultReply), 500);
-            setNewMessageAdded(false);
+            setTimeout(() => addReplyMessage(defaultReply), 500);
+            setNewMessage(null);
         }
-    }, [newMessageAdded, messages, isLoggedIn]);
+    }, [newMessage, isLoggedIn]);
 
     function scrollBottom() {
         const chatboxMessageContent = chatboxMessageContentRef.current;
@@ -140,12 +129,10 @@ const ChatBox = () => {
                     ))}
                 </div>
                 <div className={styles.chatboxMessageBottom}>
-                    {
-                        <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>
-                            <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef} onKeyDown={handleKeyDown}></textarea>
-                            <button type="submit" className={styles.chatboxMessageSubmit}><i className='bx bxs-send'></i></button>
-                        </form>
-                    }
+                    <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>
+                        <textarea rows="1" placeholder='Type message...' className={styles.chatboxMessageInput} ref={textareaRef} onKeyDown={handleKeyDown}></textarea>
+                        <button type="submit" className={styles.chatboxMessageSubmit}><i className='bx bxs-send'></i></button>
+                    </form>
                 </div>
             </div>
         </div>

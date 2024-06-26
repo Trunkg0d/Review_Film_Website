@@ -93,6 +93,7 @@
 }
 
 .movie-content__info .genres__item {
+    color: black;
     padding: .5rem 1.5rem;
     border: 2px solid var(--primary);
     border-radius: 5px;

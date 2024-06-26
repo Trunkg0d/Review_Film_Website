@@ -9,6 +9,7 @@ const ChatBox = () => {
     const [messages, setMessages] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [newMessage, setNewMessage] = useState(null);
+    const [isTyping, setIsTyping] = useState(false);  // State for typing indicator
 
     useEffect(() => {
         const today = new Date();
@@ -61,6 +62,7 @@ const ChatBox = () => {
         };
 
         setMessages(prevMessages => [...prevMessages, newMessage]);
+        setIsTyping(false);  // Reset typing indicator
         setTimeout(scrollBottom, 50);
     };
 
@@ -68,6 +70,8 @@ const ChatBox = () => {
         if (newMessage && isLoggedIn) {
             const token = localStorage.getItem('accessToken');
             const lastMessage = newMessage.text;
+
+            setIsTyping(true);  // Show typing indicator
 
             axios.post('http://localhost:8000/chatbot/chat', {
                 content: lastMessage
@@ -77,9 +81,10 @@ const ChatBox = () => {
                 }
             }).then(response => {
                 const out = response.data.answer;
-                setTimeout(() => addReplyMessage(out), 30000);
+                setTimeout(() => addReplyMessage(out), 3000);  // Reduced for demo purposes
             }).catch(error => {
                 console.error('Error while fetching response:', error);
+                setIsTyping(false);  // Reset typing indicator on error
             });
 
             setNewMessage(null);
@@ -127,6 +132,11 @@ const ChatBox = () => {
                             <span className={styles.chatboxMessageItemTime}>{message.time}</span>
                         </div>
                     ))}
+                    {isTyping && (
+                        <div className={`${styles.chatboxMessageItem} ${styles.receive}`}>
+                            <span className={styles.chatboxMessageItemText}>...</span>
+                        </div>
+                    )}
                 </div>
                 <div className={styles.chatboxMessageBottom}>
                     <form className={styles.chatboxMessageForm} onSubmit={writeMessage}>

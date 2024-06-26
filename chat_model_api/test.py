@@ -26,36 +26,34 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.embeddings.sentence_transformer import (
     SentenceTransformerEmbeddings,
 )
+from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEndpoint
-# os.environ["LANGCHAIN_TRACING_V2"] = "true"
-# if not os.environ.get("LANGCHAIN_API_KEY"):
-#     os.environ["LANGCHAIN_API_KEY"] = getpass.getpass()
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+login(token=os.environ["HUGGINGFACE_TOKEN"])
 
-# Retrieve the cohere api key from the environmental variables
-# def read_config(parser: ConfigParser, location: str) -> None:
-#     assert parser.read(location), f"Could not read config {location}"
-    
-access_token_write = "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"
-login(token = access_token_write)
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = access_token_write
-# Set your OpenAI API key here
-# file_path='response_1719112149903.json'
-# data = json.loads(Path(file_path).read_text(encoding= 'utf-8'))
-# print (data)
-# docs = data
-    # Define file path and template
-file = 'Mental_Health_FAQ.csv'
-loader = CSVLoader(
-        file_path=file,
-       encoding = 'utf-8')
+# Define file path and template
+file_path = 'data.json'
+with open(file_path, "r", encoding="utf-8") as f:
+    data = json.load(f, )
 
-docs = loader.load()
+docs = []
+for example in data:
+    docs.append(Document(page_content=str(example),
+                        metadata={"source": file_path}))
+
 # Initialize embeddings, loader, and prompt
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=2000,
+    chunk_overlap=200,
+    add_start_index=True,
+    separators=["\n\n", "\n", ".", " ", ""],
+)
+
 splits = text_splitter.split_documents(docs)
 embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-
 vectorstore = Chroma.from_documents(documents=splits, embedding=embedding_function)
 retriever = vectorstore.as_retriever()
 
@@ -69,77 +67,64 @@ contextualize_q_system_prompt = (
 )
 
 contextualize_q_prompt = ChatPromptTemplate.from_messages(
-[
-    ("system", contextualize_q_system_prompt),
-    MessagesPlaceholder("chat_history"),
-    ("human", "{input}"),
-]
+    [
+        ("system", contextualize_q_system_prompt),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{input}")
+    ]
 )
 repo_id = 'mistralai/Mistral-7B-Instruct-v0.3'
-llm = HuggingFaceEndpoint(repo_id=repo_id , temperature =  0.1, max_length = 4096)
-
+llm = HuggingFaceEndpoint(repo_id=repo_id , temperature= 0.1, max_length=4096)
 
 history_aware_retriever = create_history_aware_retriever(
-llm, retriever, contextualize_q_prompt
+    llm,
+    retriever,
+    contextualize_q_prompt
 )
+
 ### Answer question ###
 # Define the prompt for the QA system
 system_prompt = (
     "You are an assistant for question-answering tasks. "
     "Use the following pieces of retrieved context to answer "
     "the question. If you don't know the answer, say that you "
-    "don't know. Use three sentences maximum and keep the "
-    "answer concise."
+    "don't know. Use one sentence maximum and combine all relevant information into a single concise answer."
     "\n\n"
     "{context}"
 )
 # Define the prompt template
 qa_prompt = ChatPromptTemplate.from_messages(
-[
-    ("system", system_prompt),
-    MessagesPlaceholder("chat_history"),
-    ("human", "{input}"),
-]
+    [
+        ("system", system_prompt),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{input}")
+        ]
 )
+
 # Define the chain
 question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
+
 ### Combine the chains ###
 rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 
 ### Statefully manage chat history ###
 store = {}
 
-print ('------------------------------------------------------  ------------------- ----------------')
+print ('-------------------------------------------------------------------------------------------')
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in store:
         store[session_id] = ChatMessageHistory()
     return store[session_id]
 
-
 conversational_rag_chain = RunnableWithMessageHistory(
-rag_chain,
-get_session_history,
-input_messages_key="input",
-history_messages_key="chat_history",
-output_messages_key="answer",
+    rag_chain,
+    get_session_history,
+    input_messages_key="input",
+    history_messages_key="chat_history",
+    output_messages_key="answer"
 )
-# print ('------------------------------------------------------  ------------------- ----------------')
-# output = conversational_rag_chain.invoke(
-# {"input": "What is Task Decomposition?"},
-# config={
-#     "configurable": {"session_id": "abc123"}
-# },  # constructs a key "abc123" in `store`.
-# )["answer"]
-# print (output)
 
-# output = conversational_rag_chain.invoke(
-#     {"input": "What are common ways of doing it?"},
-#     config={"configurable": {"session_id": "abc123"}},
-# )["answer"]
-# print (output)
 # Define the FastAPI app
-
-
 from fastapi import FastAPI, HTTPException, Body
 from uuid import uuid4
 
@@ -161,7 +146,6 @@ async def chat(input: str = Body(..., embed=True), session_id: str = Body(defaul
     except Exception as e:
         # Handle errors gracefully
         raise HTTPException(status_code=500, detail=str(e))
-
 
 if __name__ == "__main__":
     uvicorn.run("test:app", port=8005, log_level="info")

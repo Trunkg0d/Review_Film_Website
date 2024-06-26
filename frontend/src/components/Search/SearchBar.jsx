@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './SearchBar.css';
 
-export const SearchBar = ({ setResults }) => {
+export const SearchBar = ({ setResults, setValueName }) => {
 
     const [input, setInput] = useState("");
 
@@ -23,8 +23,9 @@ export const SearchBar = ({ setResults }) => {
     }
 
     const handleChange = (value) => {
-        setInput(value)
-        fetchData(value)
+        setInput(value);
+        setValueName(value);
+        fetchData(value);
     }
 
     return (<div className="search">

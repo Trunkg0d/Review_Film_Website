@@ -70,6 +70,7 @@
 }
 
 .chatboxMessageWrapper.show {
+    transition: .8s;
     transform: scale(1);
 }
 

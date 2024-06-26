@@ -22,3 +22,12 @@
     background-color: var(--lowgray);
     border-radius: 10px;
 }
+
+.results-search .no-movie-found{
+    width: 100%;
+    height: 50px;
+    align-content: center;
+    padding: 3%;
+    text-shadow: none;
+    font-style: italic;
+}

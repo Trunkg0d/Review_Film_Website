@@ -5,6 +5,14 @@ import user_icon from '../assets/user.png';
 import email_icon from '../assets/email.png';
 import './personalPage.css';
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 function PPage() {
   const { user_id } = useParams();
   const [userInfo, setUserInfo] = useState({
@@ -15,6 +23,7 @@ function PPage() {
     role: 0,
     wish_list: []
   });
+  const [reviewsWithMovies, setReviewsWithMovies] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:8000/user/profile/${user_id}`)
@@ -25,6 +34,21 @@ function PPage() {
   }, [user_id]);
 
   const watchList = userInfo.wish_list;
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/review/user/${user_id}`)
+      .then(async (response) => {
+        const reviews = response.data;
+        const movieInfoPromises = reviews.map(review => 
+          axios.get(`http://localhost:8000/movie/${review.movie_id}`)
+            .then(movieResponse => ({ ...review, movie: movieResponse.data }))
+            .catch(error => ({ ...review, movie: null }))
+        );
+        const reviewsWithMoviesData = await Promise.all(movieInfoPromises);
+        setReviewsWithMovies(reviewsWithMoviesData);
+      })
+      .catch(error => console.log(error.message));
+  }, [user_id]);
 
   const handleImageUser = (imgPath) => {
     return (imgPath === null) ? user_icon : `http://localhost:8000/user/image/${imgPath}`;
@@ -66,7 +90,28 @@ function PPage() {
         </div>
         <div className="border-splitter"/>
         <div className="user-reviews">
-          
+        {
+            reviewsWithMovies.length > 0 ? (
+              reviewsWithMovies.map((review, i) => (
+                <div key={i} className="review-post-container">
+                  {review.movie && (<>
+                    <a href={`/movie/${review.movie_id}`}>
+                      <img src={getImageUrl(review.movie.poster_path)} alt={review.movie.title} className="movie-poster"/>
+                    </a>
+                    <div className="movie-info">
+                      <a href={`/movie/${review.movie_id}`} className="movie-title">
+                        <div>{review.movie.title}</div>
+                      </a>
+                      <div className="review-date">Date: {formatDate(review.created_at)}</div>
+                      <div className="review-content">{review.content}</div>
+                    </div></>
+                  )}
+                </div>
+              ))
+            ) : (
+              <></>
+            )
+          }
         </div>
       </div>
     </div>)}

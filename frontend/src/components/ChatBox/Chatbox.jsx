@@ -47,6 +47,7 @@ const ChatBox = () => {
 
         setMessages(prevMessages => [...prevMessages, newMessage]);
         setNewMessage(newMessage);
+        setTimeout(scrollBottom, 50);
         
         textareaRef.current.value = '';
         textareaRef.current.style.height = 'auto';

@@ -35,7 +35,8 @@ function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState([]);
+  const [valueName, setValueName] = useState('');
   const [userAvatar, setUserAvatar] = useState('');
 
   useEffect(() => {
@@ -87,8 +88,8 @@ function Header() {
         ))}
       </ul>
       <div className='search-container'>
-        <SearchBar setResults={setResults} />
-        <SearchResultsList results={results}/>
+        <SearchBar setResults={setResults} setValueName={setValueName}/>
+        <SearchResultsList results={results} valueName={valueName}/>
       </div>
       <div className="signin">
         {isLoggedIn ? (

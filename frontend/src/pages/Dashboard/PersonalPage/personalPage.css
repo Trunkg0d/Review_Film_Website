@@ -121,13 +121,15 @@
 }
 
 .user-watchlist .movie .movie-name {
-    align-self: center;
+    align-content: center;
     padding: 5%;
     color: white;
     font-size: 100%;
 }
 
 .user-watchlist .no-movie-added {
+    display: flex;
+    justify-content: center;
     padding: 5%;
     color: white;
     font-style: italic;
@@ -140,4 +142,61 @@
     border-radius: 15px;
     background-color: var(--primary);
     box-shadow: 0 0 10px var(--primary);
+}
+
+.user-database .user-reviews {
+    width: 70%;
+    margin: 1%;
+    max-height: 600px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.user-database .review-post-container {
+    min-width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 1% 0;
+}
+
+.user-reviews .review-post-container .movie-poster{
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+}
+
+.review-post-container .movie-info .movie-title{
+    width: 100%;
+    margin: 0;
+}
+.review-post-container .movie-info .movie-title:hover{
+    text-shadow: 0 0 20px var(--primary);
+}
+
+.user-reviews .review-post-container .movie-info{
+    width: 82%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 1%;
+}
+
+.user-reviews .review-post-container .review-date{
+    font-size: 90%;
+    margin: .5% 0;
+    font-style: italic;
+}
+
+.user-reviews .review-post-container .review-content{
+    width: 100%;
+    margin-right: 10px;
+    padding: 1%;
+    height: 178px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
 }

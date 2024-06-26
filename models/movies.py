@@ -73,7 +73,7 @@ class MovieUpdate(BaseModel):
     backdrop_path: Optional[str]
     poster_path: Optional[str]
     description: Optional[str]
-    release_date: datetime
+    release_date: str
     tags: Optional[List[str]]
     director: Optional[List[Celebrity]]
     language: Optional[str]

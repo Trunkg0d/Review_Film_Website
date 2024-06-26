@@ -15,6 +15,7 @@ import ChatBox from './components/ChatBox/Chatbox';
 import Page from './components/Page';
 import FilmConfig from './pages/FilmConfig';
 import NotFound from './pages/Errors/NotFound';
+import SearchPage from './components/Search/SearchPage';
 import { checkAndRemoveExpiredToken } from './utils.js';
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/user/profile/:user_id" element={<PPage />} />
         <Route path="/page/:pagenumber" element={<Page />} />
         <Route path="/admin_filmconfig/:id" element={<FilmConfig />}/>
+        <Route path="/search" element={<SearchPage />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,6 +1,6 @@
 // Movie.jsx
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Movie.css';
 import Reviews from '../../components/Review/Reviews';
@@ -135,7 +135,9 @@ const showWatchlistIcon = (movieId) => {
                 <div className="genres">
                   {
                     movie.tags && movie.tags.map((tag, i) => (
-                      <span key={i} className="genres__item">{tag}</span>
+                      <Link key={i} to={`/search?tag=${encodeURIComponent(tag)}`} className="genres__item">
+                        {tag}
+                      </Link>
                     ))
                   }
                 </div>

@@ -22,6 +22,7 @@
     object-fit: cover;
     border-radius: 50%;
     background-color: white;
+    transition: .5s;
 }
 .cover-container .avatar-img:hover {
     box-shadow: 0 0 20px white;
@@ -40,12 +41,16 @@
 
 .basic-info-container h1{
     color: white;
+    transition: .5s;
 }
 .basic-info-container h1:hover{
     border-left: 2px solid var(--primary);
     padding-left: 20px;
 }
 
+.basic-info-container text{
+    transition: .5s;
+}
 .basic-info-container text:hover{
     border-left: 2px solid var(--primary);
     padding-left: 20px;
@@ -62,6 +67,7 @@
     background-color: white;
     border-radius: 50%;
     border: 1px solid white;
+    transition: .5s;
 }
 .basic-info-container .email-contact:hover img{
     background-color: var(--primary);
@@ -158,7 +164,7 @@
     color: white;
     display: flex;
     flex-direction: row;
-    padding: 1% 0;
+    padding: 1% 1% 0 0;
 }
 
 .user-reviews .review-post-container .movie-poster{

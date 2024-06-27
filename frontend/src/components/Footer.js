@@ -42,7 +42,7 @@ function Footer() {
                         <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                             <h4>Contact Us</h4>
                                 <p>
-                                    Thành phố Hồ Chí Minh, Việt Nam<br />
+                                    Ho Chi Minh City, Viet Nam<br />
                                     <strong>Phone:</strong>+12 34567890 <br />
                                     <strong>Email:</strong> info@example.com <br />
                                 </p>

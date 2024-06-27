@@ -96,7 +96,7 @@ qa_prompt = ChatPromptTemplate.from_messages(
         ("system", system_prompt),
         MessagesPlaceholder("chat_history"),
         ("human", "{input}")
-        ]
+    ]
 )
 
 # Define the chain
@@ -134,13 +134,27 @@ async def chat(input: str = Body(..., embed=True), session_id: str = Body(defaul
     if not session_id:
         session_id = str(uuid4())
     try:
+        if input.strip().endswith("?") or input.strip().endswith("."):
+            query = input
+        else:
+            query = input + "?"
         # Invoke the conversational chain with the provided or generated session ID
-        output = conversational_rag_chain.invoke(
-            {"input": input},
+        response = conversational_rag_chain.invoke(
+            {"input": query},
             config={"configurable": {"session_id": session_id}}
         )["answer"]
+        # Get AI response
+        try:
+            response = response.split("Human:")[0].strip()
+        except:
+            pass
+        # Delete prefix
+        try:
+            response = response.split("Assistant:")[1].strip()
+        except:
+            pass
         # Return the answer and session ID
-        return {"session_id": session_id, "answer": output}
+        return {"session_id": session_id, "answer": response}
     except Exception as e:
         # Handle errors gracefully
         raise HTTPException(status_code=500, detail=str(e))

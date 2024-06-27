@@ -14,7 +14,6 @@ import os
 from configparser import ConfigParser
 from langchain.embeddings import HuggingFaceEmbeddings,HuggingFaceBgeEmbeddings
 import getpass
-import os
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -29,7 +28,6 @@ from langchain_community.embeddings.sentence_transformer import (
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEndpoint
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 login(token=os.environ["HUGGINGFACE_TOKEN"])

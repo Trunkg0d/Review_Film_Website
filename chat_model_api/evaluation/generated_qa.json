@@ -1,0 +1,802 @@
+[
+    {
+        "question": "What is the gender of the person with the id 666b0c2800105718d9a4b206?\n",
+        "answer": "Female"
+    },
+    {
+        "question": "Who was born on 1998-04-25 according to the context?\n",
+        "answer": "Ryo Hamanaka"
+    },
+    {
+        "question": "Who is the director of the movie 'Bac Nord'?\n",
+        "answer": "C\u00e9dric Jimenez"
+    },
+    {
+        "question": "Who is the director of Penoza: The Final Chapter?\n",
+        "answer": "Diederik Van Rooijen and Roxanne Stam"
+    },
+    {
+        "question": "Who was born on 1990-10-22?\n",
+        "answer": "Valentina Novakovic"
+    },
+    {
+        "question": "How many people are involved in the direction of the movie?\n",
+        "answer": "2"
+    },
+    {
+        "question": "Who is the director of Dune: Part Two?\n",
+        "answer": "Denis Villeneuve, Tam\u00e1s P\u00e9ter Chipie, Louis Clark, Toby Hefferman, Vera Janisch, George Max Trummler, and Tarik Afifi"
+    },
+    {
+        "question": "Who was born on 1991-06-28 according to the context?\n",
+        "answer": "Charlie Clapham"
+    },
+    {
+        "question": "Who is the only person in the context with a profile image?\n",
+        "answer": "Daniel Cormier"
+    },
+    {
+        "question": "Who is the only actor with a profile image?\n",
+        "answer": "Jay Hieron"
+    },
+    {
+        "question": "Who is the oldest actor in the cast of the show?\n",
+        "answer": "Sondra James"
+    },
+    {
+        "question": "Who is the director of the movie Land of Bad?\n",
+        "answer": "William Eubank and Jared Purrington"
+    },
+    {
+        "question": "Who is the oldest male actor in the list?\n",
+        "answer": "Wu Chao"
+    },
+    {
+        "question": "Who was born on 1985-02-13 according to the context?\n",
+        "answer": "Tracy Ifeachor"
+    },
+    {
+        "question": "Who is the only person with a profile image in the context?\n",
+        "answer": "Miodrag Rako\u010devi\u0107"
+    },
+    {
+        "question": "Who is the female actor born in 1974?\n",
+        "answer": "None"
+    },
+    {
+        "question": "Who was born on 1995-07-18?\n",
+        "answer": "Marial Bajma-Riva"
+    },
+    {
+        "question": "Who was born on 1994-10-15?\n",
+        "answer": "Ryota Tsuchihashi"
+    },
+    {
+        "question": "Who is the actor born in 1949-06-03?\n",
+        "answer": "John Rothman"
+    },
+    {
+        "question": "Who is the director of the movie 'The First Omen'?\n",
+        "answer": "Arkasha Stevenson"
+    },
+    {
+        "question": "Who is the actor born in 1967?\n",
+        "answer": "Bryan Callen"
+    },
+    {
+        "question": "Who was born on 1995-05-02 according to the context?\n",
+        "answer": "Shan Jingyao"
+    },
+    {
+        "question": "Who is the only actor in the context born in 1968?\n",
+        "answer": "Danielle Burgio"
+    },
+    {
+        "question": "Who is the actor born on 1988-04-02?\n",
+        "answer": "Jesse Plemons"
+    },
+    {
+        "question": "What is the name of the actor born on 1978-12-31?\n",
+        "answer": "Keeley Forsyth"
+    },
+    {
+        "question": "Who was born in 1982-09-04?\n",
+        "answer": "Alan Mehdizadeh"
+    },
+    {
+        "question": "Who is the director of Godzilla vs. Kong?\n",
+        "answer": "Adam Wingard"
+    },
+    {
+        "question": "Who was born in 1950-02-19?\n",
+        "answer": "Aus Greidanus"
+    },
+    {
+        "question": "What is the gender of the person with the id 666b0c2700105718d9a4b0b1?\n",
+        "answer": "Female"
+    },
+    {
+        "question": "Who was born in 1996-08-24 according to the context?\n",
+        "answer": "Li Yunrui"
+    },
+    {
+        "question": "Who is the youngest actor in the cast of Marvel's Runaways?\n",
+        "answer": "Ras-Samuel Welda'abzgi"
+    },
+    {
+        "question": "Who is the director of the movie Breathe?\n",
+        "answer": "Stefon Bristol"
+    },
+    {
+        "question": "Who was born on 1995-05-28?\n",
+        "answer": "Lukas Gage"
+    },
+    {
+        "question": "Who was born on 1988-08-06?\n",
+        "answer": "Dane DiLiegro"
+    },
+    {
+        "question": "Who was born on 1955-10-13?\n",
+        "answer": "Akiko Hitomi"
+    },
+    {
+        "question": "Who among the actors was born in 1978?\n",
+        "answer": "Tasneem Roc"
+    },
+    {
+        "question": "Who was born on 1986-10-06 according to the context?\n",
+        "answer": "Olivia Thirlby"
+    },
+    {
+        "question": "Who was born in 1990-09-23?\n",
+        "answer": "Chika Ikogwe"
+    },
+    {
+        "question": "Who is the only person in the context with a profile image but no birth year?\n",
+        "answer": "Roger Squitero"
+    },
+    {
+        "question": "Who is the only actor with a profile image?\n",
+        "answer": "Matthew Sim"
+    },
+    {
+        "question": "Who is the writer of the movie?\n",
+        "answer": "Shay Hatten"
+    },
+    {
+        "question": "Who is the actor with the earliest birthdate?\n",
+        "answer": "Oscar Isaac"
+    },
+    {
+        "question": "Who was born in 1984-09-23?\n",
+        "answer": "Kate French"
+    },
+    {
+        "question": "Who is the only female actor born in 1952?\n",
+        "answer": "Shohreh Aghdashloo"
+    },
+    {
+        "question": "Who is the director of the movie 'No Way Up'?\n",
+        "answer": "Claudio F\u00e4h"
+    },
+    {
+        "question": "Who was born in 1991 according to the context?\n",
+        "answer": "Amer El-Erwadi"
+    },
+    {
+        "question": "Who is the director of the movie Heart of the Hunter?\n",
+        "answer": "The directors of the movie Heart of the Hunter are Mandla Dube, De Villiers Fourie, and Monica Manaka."
+    },
+    {
+        "question": "Who is the actor born on 1982-10-10?\n",
+        "answer": "Dan Stevens"
+    },
+    {
+        "question": "Who is the director of the movie 'Wonka'?\n",
+        "answer": "Tom Rye"
+    },
+    {
+        "question": "Who was born on 1950-09-21 according to the context?\n",
+        "answer": "Bill Murray"
+    },
+    {
+        "question": "Who is the only person in the context with the job of 'Acting'?\n",
+        "answer": "Francesco Liotti"
+    },
+    {
+        "question": "Who was born on 1997-12-25 according to the context?\n",
+        "answer": "Charlee Fraser"
+    },
+    {
+        "question": "Who was born in 1952-11-14 according to the context?\n",
+        "answer": "Bill Farmer"
+    },
+    {
+        "question": "Who was born in 2007-10-03?\n",
+        "answer": "Jesse Schratz"
+    },
+    {
+        "question": "Who is the only actor with a profile image?\n",
+        "answer": "Emma Hindle"
+    },
+    {
+        "question": "Who is the only person in the context born in 1968?\n",
+        "answer": "Pat Kiernan"
+    },
+    {
+        "question": "What is the name of the person with the id 666b0c2800105718d9a4b12d?\n",
+        "answer": "Beau Karolos"
+    },
+    {
+        "question": "Who is the only person in the context with a profile image?\n",
+        "answer": "Michael Malvesti"
+    },
+    {
+        "question": "Who is the director of Godzilla x Kong: The New Empire?\n",
+        "answer": "Adam Wingard, Pier Glionna, Alessandro Ongaro, Shayla Girdler, Brian Avery Galligan"
+    },
+    {
+        "question": "Who is the youngest actor in the context?\n",
+        "answer": "Tatsuki Oguma"
+    },
+    {
+        "question": "Who is the actor born on 1981-07-04?\n",
+        "answer": "Tahar Rahim"
+    },
+    {
+        "question": "Who is the second actor in the list?\n",
+        "answer": "The second actor in the list is Gustave Die."
+    },
+    {
+        "question": "Who is the director of the movie Migration?\n",
+        "answer": "The directors of the movie Migration are Benjamin Renner and Guy-Laurent Homsy."
+    },
+    {
+        "question": "Who is the actor with the name 'Milo Ventimiglia' born in 1977?\n",
+        "answer": "Milo Ventimiglia was born in 1977."
+    },
+    {
+        "question": "Who is the director of the movie Creation of the Gods I: Kingdom of Storms?\n",
+        "answer": "Wuershan, Zhang Bowei"
+    },
+    {
+        "question": "Who was born in 1950 according to the context?\n",
+        "answer": "James Carroll Jordan"
+    },
+    {
+        "question": "Who was born in 1947-09-06 according to the context?\n",
+        "answer": "Keone Young"
+    },
+    {
+        "question": "Who is the director of The Adventures of Maid Marian?\n",
+        "answer": "Bill Thomas"
+    },
+    {
+        "question": "Who was born in 1942-06-28 according to the context?\n",
+        "answer": "Ray Iannicelli"
+    },
+    {
+        "question": "Who are the directors of the movie Abigail?\n",
+        "answer": "Matt Bettinelli-Olpin and Tyler Gillett"
+    },
+    {
+        "question": "Who is the director of the movie Hard Hit?\n",
+        "answer": "Kim Jun-sik"
+    },
+    {
+        "question": "Who was born on 1986-05-12?\n",
+        "answer": "Shota Taniguchi"
+    },
+    {
+        "question": "Who is the youngest person in the context?\n",
+        "answer": "Savannah La Rain, born 2005-01-09"
+    },
+    {
+        "question": "Who was born in 1955 and has the job of Acting?\n",
+        "answer": "Gedde Watanabe"
+    },
+    {
+        "question": "What is the name of the person born on April 10, 1988?\n",
+        "answer": "James Moontasri"
+    },
+    {
+        "question": "Who is the actor in the movie 'Stronger'?\n",
+        "answer": "Jake Gyllenhaal"
+    },
+    {
+        "question": "Who was born on 1982-03-16?\n",
+        "answer": "Dian Sastrowardoyo"
+    },
+    {
+        "question": "Who was born in 1986-05-07 according to the context?\n",
+        "answer": "Robbie Jarvis"
+    },
+    {
+        "question": "Who is the director of the movie Civil War?\n",
+        "answer": "The directors of the movie Civil War are Alex Garland, Amber Harley, Craig Comstock, Eric Heffron, Gregory Santoro, and Alex Martini."
+    },
+    {
+        "question": "Who is the director of the movie Damsel?\n",
+        "answer": "Juan Carlos Fresnadillo, Steven Hall, Phil Booth, and Margarida Meneses"
+    },
+    {
+        "question": "Who was born in 1973-02-26 according to the context?\n",
+        "answer": "Laurent Borel"
+    },
+    {
+        "question": "Who is the director of the movie Jade?\n",
+        "answer": "James Bamford"
+    },
+    {
+        "question": "Who was born on 1986-10-24?\n",
+        "answer": "Nobuhiko Okamoto"
+    },
+    {
+        "question": "Who is the director of The Roommate?\n",
+        "answer": "Pedro Pablo Ibarra"
+    },
+    {
+        "question": "Who was born on 1982-12-26?\n",
+        "answer": "Shun Oguri"
+    },
+    {
+        "question": "Who is the director of the movie After the Pandemic?\n",
+        "answer": "Richard Lowry"
+    },
+    {
+        "question": "Who is the director of Godzilla Minus One?\n",
+        "answer": "Takashi Yamazaki, Kohei Adachi, and Michael Arias"
+    },
+    {
+        "question": "Who was born on 1988-09-15 according to the context?\n",
+        "answer": "Han Pengyi"
+    },
+    {
+        "question": "Who is the director of Fast X?\n",
+        "answer": "Louis Leterrier"
+    },
+    {
+        "question": "Who was born in 1955 according to the context?\n",
+        "answer": "Vivienne Soan"
+    },
+    {
+        "question": "Who was born in 1950-12-10?\n",
+        "answer": "Gregg Berger"
+    },
+    {
+        "question": "Who is the director of the movie Oppenheimer?\n",
+        "answer": "Christopher Nolan"
+    },
+    {
+        "question": "Who is the director of the movie Poor Things?\n",
+        "answer": "The directors of the movie Poor Things are Yorgos Lanthimos, Farkas Esztella, Edoardo Petti, Roxana Szarisz, Dora Takacs, Dora Simko, Krisztina Bark\u00f3czy, and Hayley Williams."
+    },
+    {
+        "question": "Who is the director of the movie Damaged?\n",
+        "answer": "Terry McDonough, Stewart Hamilton, Sean Hind, Ciaron Kelly, Christian Otty, Aymeric Nicolet"
+    },
+    {
+        "question": "Who is the first actor in the list?\n",
+        "answer": "The first actor in the list is 'James Dean'."
+    },
+    {
+        "question": "Who is the actor born in 1962-04-23?\n",
+        "answer": "John Hannah"
+    },
+    {
+        "question": "How many people in the context have the job of 'Crew'?\n",
+        "answer": "2"
+    },
+    {
+        "question": "Who is the only male actor born in 1948?\n",
+        "answer": "Edgar Vivar"
+    },
+    {
+        "question": "Who is the director of The Beekeeper?\n",
+        "answer": "David Ayer, Mimi Brough, Matthew Vose Campbell, Philippa Howson, Cameron K. Morton, Jeremy Marinas, Vanluke Watson, Tom White, Kelly Maracin Krieg"
+    },
+    {
+        "question": "Who is the youngest actor in the list?\n",
+        "answer": "The youngest actor in the list is Gustav Borreman, born in None."
+    },
+    {
+        "question": "Who is the director of the movie The Wages of Fear?\n",
+        "answer": "Julien Leclercq"
+    },
+    {
+        "question": "Who is the male actor born in 1975?\n",
+        "answer": "Roger Craig Smith"
+    },
+    {
+        "question": "Who is the only person in the context with a known birthdate?\n",
+        "answer": "David Castillo"
+    },
+    {
+        "question": "Who is the actor with the name 'Stuart Martin' born in 1986?\n",
+        "answer": "Stuart Martin"
+    },
+    {
+        "question": "Who is the director of the movie 'Love, Divided'?\n",
+        "answer": "Patricia Font"
+    },
+    {
+        "question": "Who is the youngest male actor?\n",
+        "answer": "Yamato Aizawa"
+    },
+    {
+        "question": "Who is the only female actor born in 1968?\n",
+        "answer": "Jill Hennessy"
+    },
+    {
+        "question": "Who directed the movie Carmen 1945?\n",
+        "answer": "Hideo Gosha"
+    },
+    {
+        "question": "Who is the youngest actor in the cast?\n",
+        "answer": "Eduardo Ferr\u00e9s"
+    },
+    {
+        "question": "Who is the oldest actress in the context?\n",
+        "answer": "Eva Ras"
+    },
+    {
+        "question": "Who is the only actor in the context with a birth year provided?\n",
+        "answer": "Marianne Faithfull"
+    },
+    {
+        "question": "Who is the director of the movie The Three Musketeers: Milady?\n",
+        "answer": "Martin Bourboulon, Meryll Adjedj, Carole Amen, David Biet, Zo\u00e9 Chadeau, Juliette Cr\u00e9t\u00e9, Julien Dara, Neige de la Patelli\u00e8re, Mathis Dujardin"
+    },
+    {
+        "question": "Who was born in 2017 according to the context?\n",
+        "answer": "Lincoln Nakamura"
+    },
+    {
+        "question": "Who is the director of The Tearsmith?\n",
+        "answer": "Alessandro Genovesi"
+    },
+    {
+        "question": "Who was born in 1949-08-31 according to the context?\n",
+        "answer": "Stephen McKinley Henderson"
+    },
+    {
+        "question": "Who was born on 1983-03-02?\n",
+        "answer": "Lee Ha-nee"
+    },
+    {
+        "question": "Who is the actor born in 1965-11-26?\n",
+        "answer": "Scott Adsit"
+    },
+    {
+        "question": "Who is the director of the movie Outsource?\n",
+        "answer": "John Stephen Baltazar"
+    },
+    {
+        "question": "Who is the only male actor born in 1989?\n",
+        "answer": "Paul G. Raymond"
+    },
+    {
+        "question": "Who is the actor born in 1995-03-22?\n",
+        "answer": "Nick Robinson"
+    },
+    {
+        "question": "Who was born in 1962?\n",
+        "answer": "David Bedella"
+    },
+    {
+        "question": "Who was born on 1983-08-08?\n",
+        "answer": "Guy Burnet"
+    },
+    {
+        "question": "Who is the actor born on 1985-11-21?\n",
+        "answer": "Ronny Chieng"
+    },
+    {
+        "question": "Who was born on 1990-06-19 according to the context?\n",
+        "answer": "Jin Ha"
+    },
+    {
+        "question": "Who is the actor with the earliest birthdate?\n",
+        "answer": "Jeremy Irons"
+    },
+    {
+        "question": "Who is the director of Madame Web?\n",
+        "answer": "The directors of Madame Web are S.J. Clarkson, Darrin Prescott, Katie Valovcin, Andrew Stahl, and Cary Lee."
+    },
+    {
+        "question": "Who is the actor born on 1965-05-12?\n",
+        "answer": "Anthony Brandon Wong"
+    },
+    {
+        "question": "Who was born on 1970-10-08?\n",
+        "answer": "Matt Damon"
+    },
+    {
+        "question": "Who was born on 1981-03-11?\n",
+        "answer": "Matthias Schweigh\u00f6fer"
+    },
+    {
+        "question": "Who was born on October 29, 1968?\n",
+        "answer": "Sean Albertson"
+    },
+    {
+        "question": "Who was born in 1978-08-11 in the context?\n",
+        "answer": "Isy Suttie"
+    },
+    {
+        "question": "Who is the director of the movie Dune?\n",
+        "answer": "Denis Villeneuve"
+    },
+    {
+        "question": "Who is the director of Kung Fu Panda 4?\n",
+        "answer": "Stephanie Ma Stine and Mike Mitchell"
+    },
+    {
+        "question": "Who was born in 1985-11-21?\n",
+        "answer": "Ronny Chieng"
+    },
+    {
+        "question": "Who was born in 1977 according to the context?\n",
+        "answer": "Rob Delaney"
+    },
+    {
+        "question": "Who was born on 1982-11-10?\n",
+        "answer": "Heather Matarazzo"
+    },
+    {
+        "question": "Who is the actor born on 1973-09-12?\n",
+        "answer": "Paul Walker"
+    },
+    {
+        "question": "Who was born in 1995 and acts?\n",
+        "answer": "Shim Dal-gi and Oh Chae-eun"
+    },
+    {
+        "question": "Who was born in 1975-08-24?\n",
+        "answer": "James D'Arcy"
+    },
+    {
+        "question": "Who is the only actor born in 1996?\n",
+        "answer": "Anya Taylor-Joy"
+    },
+    {
+        "question": "Who is the only female in the cast?\n",
+        "answer": "Ken Zuraida"
+    },
+    {
+        "question": "What is the release date of Demon Slayer: Kimetsu no Yaiba -To the Hashira Training-?\n",
+        "answer": "2024-02-02T00:00:00"
+    },
+    {
+        "question": "How many people in the context have the job of acting?\n",
+        "answer": "13 people in the context have the job of acting."
+    },
+    {
+        "question": "Who is the actor born on 1980-12-16?\n",
+        "answer": "Alban Lenoir"
+    },
+    {
+        "question": "Who is the actor born on 1955-03-06?\n",
+        "answer": "James Saito"
+    },
+    {
+        "question": "Who was born in 1948 and is a female actor?\n",
+        "answer": "Souad Faress"
+    },
+    {
+        "question": "How many people in the context have the job of acting?\n",
+        "answer": "17 people in the context have the job of acting."
+    },
+    {
+        "question": "Who is the youngest male actor in the context?\n",
+        "answer": "Jason Fuchs"
+    },
+    {
+        "question": "What is the name of the actor born on August 10, 1971?\n",
+        "answer": "Justin Theroux"
+    },
+    {
+        "question": "Who was born on 1982-01-01?\n",
+        "answer": "Anne M\u00fcller"
+    },
+    {
+        "question": "Who is the male actor born in 1998?\n",
+        "answer": "Lelyn Mac"
+    },
+    {
+        "question": "Who is the director of the movie Love?\n",
+        "answer": "William Eubank"
+    },
+    {
+        "question": "Who is the actress born on 1981-05-04?\n",
+        "answer": "Cat Simmons"
+    },
+    {
+        "question": "Who is the actor born on 1957-04-09?\n",
+        "answer": "Kathryn Hunter"
+    },
+    {
+        "question": "Who is the director of Megamind vs. the Doom Syndicate?\n",
+        "answer": "Eric Fogel"
+    },
+    {
+        "question": "Who is the director of the movie Sri Asih?\n",
+        "answer": "Upi Avianto, David Marthwel Latuperissa, Iko Uwais, Plenthonk, Ade Aulia Rohman, Fahrizal, Tri Andi Ramadhan, Muhamad Hafiz"
+    },
+    {
+        "question": "Who was born on 1986-02-18?\n",
+        "answer": "Sakura Ando"
+    },
+    {
+        "question": "Who is the only person in the context with a job in sound?\n",
+        "answer": "Matthew Wood"
+    },
+    {
+        "question": "How many people in the context have the job of acting?\n",
+        "answer": "18 people in the context have the job of acting."
+    },
+    {
+        "question": "What is the name of the actor born on 1969-12-15?\n",
+        "answer": "Ralph Ineson"
+    },
+    {
+        "question": "Who is the director of Baghead?\n",
+        "answer": "Alberto Corredor, Oana Ene, Laura Mihartescu, Vera Schmidt"
+    },
+    {
+        "question": "Who is the actor that plays the character John Cena in the movie?\n",
+        "answer": "John Cena"
+    },
+    {
+        "question": "Who was born in 1992-10-23 according to the context?\n",
+        "answer": "Brett DelBuono"
+    },
+    {
+        "question": "Who was born on 1997-04-01?\n",
+        "answer": "Narana Erdyneeva"
+    },
+    {
+        "question": "How many actors have a profile image?\n",
+        "answer": "5 actors have a profile image."
+    },
+    {
+        "question": "Who was born in 1963-03-05 according to the context?\n",
+        "answer": "John Cenatiempo"
+    },
+    {
+        "question": "Who is the actor born in 1997?\n",
+        "answer": "Ras-Samuel Welda'abzgi"
+    },
+    {
+        "question": "Who was born in 1986-01-08?\n",
+        "answer": "Stuart Martin"
+    },
+    {
+        "question": "Who is the only person in the context with a profile image that is not a .jpg file?\n",
+        "answer": "Luis Alkmim"
+    },
+    {
+        "question": "Who is the actor born in 1958-09-23?\n",
+        "answer": "Pat Skipper"
+    },
+    {
+        "question": "Who is the director of the movie Joker?\n",
+        "answer": "Todd Phillips"
+    },
+    {
+        "question": "Who is the youngest actor in the cast of The Suicide Squad?\n",
+        "answer": "Pete Davidson"
+    },
+    {
+        "question": "Who is the director of the movie Wonka?\n",
+        "answer": "Paul King, Zoe Morgan, Aisling Hughes, Edward Ellis-Smith, Bridget Gonda"
+    },
+    {
+        "question": "Who is the only female actor in the list?\n",
+        "answer": "Kim Rosen"
+    },
+    {
+        "question": "Who is the youngest actor in the list?\n",
+        "answer": "Jefri Nichol"
+    },
+    {
+        "question": "Who is the director of the movie?\n",
+        "answer": "The context does not provide the name of the director."
+    },
+    {
+        "question": "Who is the director of Road House?\n",
+        "answer": "Doug Liman"
+    },
+    {
+        "question": "Who was born on 1960-02-25 according to the context?\n",
+        "answer": "Douglas Hodge"
+    },
+    {
+        "question": "Who is the youngest female actor born in March?\n",
+        "answer": "Aya Sakura"
+    },
+    {
+        "question": "Who was born on 1990-10-21 in the context?\n",
+        "answer": "Mathew Yanagiya"
+    },
+    {
+        "question": "Who is the actor born in 1960?\n",
+        "answer": "Affif Ben Badra"
+    },
+    {
+        "question": "Who was born in 1982-11-30?\n",
+        "answer": "Jung Ae-yeun"
+    },
+    {
+        "question": "Who is the actor born in 1950-02-19?\n",
+        "answer": "Aus Greidanus"
+    },
+    {
+        "question": "Who was born in 1993-01-02 according to the context?\n",
+        "answer": "Jourdy Pranata"
+    },
+    {
+        "question": "Who was born in 1986-06-15 according to the context?\n",
+        "answer": "Dann-Jaques Mouton"
+    },
+    {
+        "question": "Who is the director of Rebel Moon - Part Two: The Scargiver?\n",
+        "answer": "Zack Snyder, Eli Snyder, Misha Bukowski, Jon Recher, Jai James, and Kimi Webber"
+    },
+    {
+        "question": "Who is the actor born in 1980?\n",
+        "answer": "Jake Gyllenhaal"
+    },
+    {
+        "question": "Who is the only person with a profile image in the acting jobs?\n",
+        "answer": "Remy Germinario"
+    },
+    {
+        "question": "Who is the director of the movie 'Barbarian'?\n",
+        "answer": "Zach Cregger"
+    },
+    {
+        "question": "How many actors have a profile image?\n",
+        "answer": "None of the actors have a profile image."
+    },
+    {
+        "question": "Who was born on 1996-12-15?\n",
+        "answer": "Django Yamada"
+    },
+    {
+        "question": "Who is the director of Woody Woodpecker Goes to Camp?\n",
+        "answer": "Jonathan A. Rosenbaum"
+    },
+    {
+        "question": "Who is the director of Kingdom of the Planet of the Apes?\n",
+        "answer": "Wes Ball"
+    },
+    {
+        "question": "Who is the actor born on 1986-03-21?\n",
+        "answer": "Scott Eastwood"
+    },
+    {
+        "question": "Who is the director of Ghostbusters: Frozen Empire?\n",
+        "answer": "Gil Kenan"
+    },
+    {
+        "question": "Who was born in 1988-12-19 according to the context?\n",
+        "answer": "Ok Ja-yeon"
+    },
+    {
+        "question": "Who was born on 1993-05-17 according to the context?\n",
+        "answer": "Aren"
+    },
+    {
+        "question": "Who was born in 1987-06-30 according to the context?\n",
+        "answer": "GaTa"
+    },
+    {
+        "question": "Who was born in 1954-07-28 according to the context?\n",
+        "answer": "Craig Ng"
+    },
+    {
+        "question": "Who is the only person in the context with a profile image that contains the letter 'a'?\n",
+        "answer": "Evelyn Edwards"
+    }
+]

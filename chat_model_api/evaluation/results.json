@@ -1,0 +1,352 @@
+[
+    {
+        "question": "Who are the directors of the movie \"Abigail\"?\n",
+        "true_answer": "Matt Bettinelli-Olpin and Tyler Gillett",
+        "generated_answer": "The directors of the movie \"Abigail\" are Matt Bettinelli-Olpin and Tyler Gillett.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately identifies the directors of the movie \"Abigail\" as Matt Bettinelli-Olpin and Tyler Gillett, which matches the reference answer."
+    },
+    {
+        "question": "Who directed the 2023 film \"Godzilla Minus One\"?\n",
+        "true_answer": "Takashi Yamazaki, Kohei Adachi, and Michael Arias directed the 2023 film \"Godzilla Minus One\".",
+        "generated_answer": "The 2023 film \"Godzilla Minus One\" was directed by Takashi Yamazaki, Kohei Adachi, and Michael Arias.",
+        "eval_score_Llama-3-8B": 4,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately lists the names of the directors of the 2023 film \"Godzilla Minus One\", matching the reference answer. However, the response lacks proper punctuation and sentence structure."
+    },
+    {
+        "question": "Who plays the role of Vivi in the movie \"The Roommate\"?\n",
+        "true_answer": "Fiona Palomo plays the role of Vivi in the movie \"The Roommate\".",
+        "generated_answer": "Fiona Palomo plays the role of Vivi in the movie \"The Roommate\".",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately answers the question, providing the correct information about who plays the role of Vivi in the movie \"The Roommate\"."
+    },
+    {
+        "question": "Who directed the movie \"Oppenheimer\"?\n",
+        "true_answer": "Christopher Nolan, Jesse Carmona, Dixon McPhillips, Richard Molloy, Nilo Otero, Andrew Stahl, and Steve Gehrke directed the movie \"Oppenheimer\".",
+        "generated_answer": "The movie \"Oppenheimer\" was directed by Christopher Nolan, Jesse Carmona, Dixon McPhillips, Richard Molloy, Nilo Otero, Andrew Stahl, and Steve Gehrke.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately lists the directors of the movie \"Oppenheimer\" and matches the reference answer exactly."
+    },
+    {
+        "question": "Who directed Dune: Part Two?\n",
+        "true_answer": "Denis Villeneuve, TamÃ¡s PÃ©ter Chipie, Louis Clark, Toby Hefferman, Vera Janisch, George Max Trummler, and Tarik Afifi directed Dune: Part Two.",
+        "generated_answer": "Part Two was directed by Denis Villeneuve, Tamás Péter Chipie, Louis Clark, Toby Hefferman, Vera Janisch, George Max Trummler, and Tarik Afifi.",
+        "eval_score_Llama-3-8B": 4,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately lists the directors of Dune: Part Two, but it is not formatted as a single, coherent sentence. It is separated into individual names and no connecting words are used to make it a single statement."
+    },
+    {
+        "question": "Who is the director of the movie \"Road House\"?\n",
+        "true_answer": "Doug Liman",
+        "generated_answer": "Doug Liman is the director of the movie \"Road House\".",
+        "eval_score_Llama-3-8B": 3,
+        "eval_feedback_Llama-3-8B": "Feedback: The response states that Doug Liman is the director of the movie \"Road House\". The response is somewhat correct, accurate, and factual, as Doug Liman is indeed the director of the movie. However, the response should have only stated the name of the director, not provided a complete sentence"
+    },
+    {
+        "question": "Who is the director of the movie Jade?\n",
+        "true_answer": "James Bamford",
+        "generated_answer": "James Bamford is the director of the movie Jade.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately answers the question \"Who is the director of the movie Jade?\""
+    },
+    {
+        "question": "Who directed Willy Wonka?\n",
+        "true_answer": "Paul King, Zoe Morgan, Aisling Hughes, Edward Ellis-Smith, Bridget Gonda, and Annie Hitchcock directed Willy Wonka.",
+        "generated_answer": "The movie Willy Wonka was directed by Paul King, Zoe Morgan, Aisling Hughes, Edward Ellis-Smith, Bridget Gonda, and Annie Hitchcock.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response directly copied the reference answer, which is accurate and factual. However, it's important to note that this answer is incorrect, as Paul King, Zoe Morgan, Aisling Hughes, Edward Ellis-Smith, Bridget Gonda, and Annie Hitchcock did not direct Willy Wonka. The correct director is actually Mel Stuart."
+    },
+    {
+        "question": "Who directed the movie \"Poor Things\" (2023)?\n",
+        "true_answer": "Yorgos Lanthimos, Farkas Esztella, Edoardo Petti, Roxana Szarisz, Dora Takacs, Dora Simko, Krisztina BarkÃ³czy, and Hayley Williams directed the movie \"Poor Things\" (2023).",
+        "generated_answer": "Yorgos Lanthimos directed the movie \"Poor Things\" (2023).",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately identifies Yorgos Lanthimos as the director of the movie \"Poor Things\" (2023), and does not attempt to provide any additional or incorrect information."
+    },
+    {
+        "question": "Who is the female director of Sri Asih?\n",
+        "true_answer": "Upi Avianto",
+        "generated_answer": "Upi Avianto is the female director of Sri Asih.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately identifies the female director of Sri Asih, which matches the reference answer."
+    },
+    {
+        "question": "Who directed the movie \"Outsource\" (2022)?\n",
+        "true_answer": "John Stephen Baltazar",
+        "generated_answer": "The movie \"Outsource\" (2022) was directed by John Suits.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is not factual, indicating a mismatch between the provided answer and the actual information about the director of the movie \"Outsource\" (2022). It lacks accuracy and details, and there is no evidence that the information is trustworthy."
+    },
+    {
+        "question": "Who plays the role of the young ape in the movie Kingdom of the Planet of the Apes?\n",
+        "true_answer": "The young ape is played by Owen Teague.",
+        "generated_answer": "The young ape's role is played by Owen Teague.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately provides the correct answer, confirming that Owen Teague plays the young ape's role in the movie Kingdom of the Planet of the Apes."
+    },
+    {
+        "question": "Who is the female lead actor in the movie \"Love, Divided\"?\n",
+        "true_answer": "Aitana",
+        "generated_answer": "Nell Tiger Free",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response \"Nell Tiger Free\" is comprehsively incorrect, inaccurate, and not factual compared to the reference answer \"Aitana\". The response does not match the factual information provided in the reference answer."
+    },
+    {
+        "question": "Who directed The Beekeepers?\n",
+        "true_answer": "The Beekeepers was directed by David Ayer, Mimi Brough, Matthew Vose Campbell, Philippa Howson, Jeremy Marinas, Cameron K. Morton, Vanluke Watson, Tom White, and Kelly Maracin Krieg.",
+        "generated_answer": "The Beekeeper was directed by David Ayer, Mimi Brough, Matthew Vose Campbell, Philippa Howson, Jeremy Marinas, Cameron K. Morton, Vanluke Watson, Tom White, and Kelly Maracin Krieg.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is accurate and matches the reference answer, providing all the correct information."
+    },
+    {
+        "question": "Who voices Woody Woodpecker in the movie \"Woody Woodpecker Goes to Camp\"?\n",
+        "true_answer": "Eric Bauza voices Woody Woodpecker in the movie \"Woody Woodpecker Goes to Camp\".",
+        "generated_answer": "Eric Bauza voices Woody Woodpecker in the movie \"Woody Woodpecker Goes to Camp\".",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately answers the question by providing the correct person, Eric Bauza, who voices Woody Woodpecker in the movie \"Woody Woodpecker Goes to Camp\". The response is also identical to the reference answer, which indicates complete accuracy."
+    },
+    {
+        "question": "Who directed the movie \"Heart of the Hunter\"?\n",
+        "true_answer": "Mandla Dube, De Villiers Fourie, and Monica Manaka directed the movie \"Heart of the Hunter\".",
+        "generated_answer": "The movie \"Heart of the Hunter\" was directed by Mandla Dube, De Villiers Fourie, and Monica Manaka.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response matches the reference answer perfectly, the names are accurate and in the same order. This suggests that the response is not only correct but also precise."
+    },
+    {
+        "question": "Who directed the movie \"Argylle\"?\n",
+        "true_answer": "The movie \"Argylle\" was directed by Matthew Vaughn, Louis Clark, Guillermo Grispo, Toby Hefferman, Adam Kirley, Damien Walters, and Sarah Townsend.",
+        "generated_answer": "Matthew Vaughn, Louis Clark, Guillermo Grispo, Toby Hefferman, Damien Walters, and Sarah Townsend directed the movie \"Argylle\".",
+        "eval_score_Llama-3-8B": 4,
+        "eval_feedback_Llama-3-8B": "Feedback: The response lists five individuals as directors of the movie \"Argylle\", whereas the reference answer mentions six directors, including Adam Kirley. The omitted director is important to include for the response to be considered accurate."
+    },
+    {
+        "question": "Who directed the movie \"Damaged\"?\n",
+        "true_answer": "Terry McDonough, Stewart Hamilton, and Sean Hind directed the movie \"Damaged\".",
+        "generated_answer": "The movie \"Damaged\" does not exist in the provided context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is completely incorrect, inaccurate, and/or not factual, as the response states that \"Damaged\" does not exist in the provided context, which is unrelated to the correct answer."
+    },
+    {
+        "question": "Who is the director of the movie \"Damsel\"?\n",
+        "true_answer": "Juan Carlos Fresnadillo, Steven Hall, and Phil Booth are the directors of the movie \"Damsel\".",
+        "generated_answer": "The director of the movie \"Damsel\" is Juan Carlos Fresnadillo.",
+        "eval_score_Llama-3-8B": 3,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately identifies one of the directors, Juan Carlos Fresnadillo, but lacks other co-directors, Steven Hall and Phil Booth, as mentioned in the reference answer."
+    },
+    {
+        "question": "What genre is Madame Web?\n",
+        "true_answer": "Action, Fantasy.",
+        "generated_answer": "Madame Web is an Action Fantasy movie.",
+        "eval_score_Llama-3-8B": 4,
+        "eval_feedback_Llama-3-8B": "Feedback: The genre \"Action Fantasy\" contains some correct information from the reference answer \"Action, Fantasy\", but it is not entirely accurate. The response is missing the comma separation between the two genres."
+    },
+    {
+        "question": "Who are the directors of Kung Fu Panda 4?\n",
+        "true_answer": "Stephanie Ma Stine and Mike Mitchell",
+        "generated_answer": "The directors of Kung Fu Panda 4 are Stephanie Ma Stine and Mike Mitchell.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately lists the directors of Kung Fu Panda 4, matching the reference answer."
+    },
+    {
+        "question": "Who directed the movie \"The Adventures of Maid Marian\"?\n",
+        "true_answer": "Bill Thomas",
+        "generated_answer": "The movie \"The Adventures of Maid Marian\" was directed by Bill Thomas.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response correctly identifies the director of the movie \"The Adventures of Maid Marian\" as Bill Thomas, which is accurate and factual based on the reference answer."
+    },
+    {
+        "question": "Who acted in The Wages of Fear?\n",
+        "true_answer": "The Wages of Fear featured Franck Gastambide and Alban Lenoir in acting roles.",
+        "generated_answer": "The actors in The Wages of Fear are Yves Montand, Charles Vanel, Vera Clouzot, Peter van Eyck, and Emile Berry.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The actors listed in the response (Yves Montand, Charles Vanel, Vera Clouzot, Peter van Eyck, and Emile Berry) are not the actors mentioned in the reference answer. This suggests that the response is not accurate and is not based on factual information."
+    },
+    {
+        "question": "Who is the female lead actor in Penoza: The Final Chapter?\n",
+        "true_answer": "Monic Hendrickx plays the female lead role in Penoza: The Final Chapter.",
+        "generated_answer": "Not provided in the context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response does not provide the correct answer to the question, it simply states \"Not provided in the context\", which is neither accurate nor factual."
+    },
+    {
+        "question": "Which voice actor was born in 1985 of the movie Penoza: The Final Chapter?\n",
+        "true_answer": "Kengo Kawanishi",
+        "generated_answer": "The Final Chapter is not provided in the context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response does not provide any information or attempt to answer the question about the voice actor born in 1985 of the movie Penoza: The Final Chapter, due to the statement that the Final Chapter is not provided in the context. This response does not provide any factual information about the voice actor."
+    },
+    {
+        "question": "Who voices Megamind in the movie Megamind vs. the Doom Syndicate?\n",
+        "true_answer": "Keith Ferguson",
+        "generated_answer": "Keith Ferguson voices Megamind in the movie Megamind vs. the Doom Syndicate.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately provides the correct voice actor for Megamind in the movie Megamind vs. the Doom Syndicate."
+    },
+    {
+        "question": "Who plays the role of the mother in the movie \"Breathe\"?\n",
+        "true_answer": "Jennifer Hudson plays the role of the mother in the movie \"Breathe\".",
+        "generated_answer": "Sônia Braga, born on 1950-06-08, is the actress who plays the role of the mother in the movie \"Breathe\".",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response mentions the correct actress, Sônia Braga, but mistakes the movie title \"Breathe\" with another movie."
+    },
+    {
+        "question": "Who is the director named James Excell?\n",
+        "true_answer": "James Excell is a director.",
+        "generated_answer": "James Excell is not found in the provided context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is completely incorrect, inaccurate, and/or not factual, as it states James Excell is not found in the provided context, whereas the reference answer clearly states James Excell is a director."
+    },
+    {
+        "question": "Who directed the 2023 film 'The Three Musketeers: Milady'?\n",
+        "true_answer": "Martin Bourboulon, Meryll Adjedj, Carole Amen, David Biet directed the 2023 film 'The Three Musketeers: Milady'.",
+        "generated_answer": "Milady' was directed by Martin Bourboulon, Meryll Adjedj, Carole Amen, David Biet, Zoé Chadeau, Juliette Crété, Julien Dara, Neige de la Patellière, Mathis Dujardin, and Mathis Dujardin.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is incomplete and includes irrelevant information, as it lists multiple individuals who are likely producers or involved in the film's development, but does not accurately identify the director(s) mentioned in the reference answer. Only a few of these individuals are credited as directors in the reference answer."
+    },
+    {
+        "question": "Who is the director of The Tearsmith?\n",
+        "true_answer": "Alessandro Genovesi",
+        "generated_answer": "The directors of The Tearsmith are not provided in the context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is completely incorrect, inaccurate, and/or not factual."
+    },
+    {
+        "question": "Who is the director of the movie \"Alienoid\"?\n",
+        "true_answer": "Choi Dong-hoon and Hwang Jae-jin are the directors of the movie \"Alienoid\".",
+        "generated_answer": "I don't have information about a movie titled \"Alienoid\" in the provided context.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response acknowledges the lack of information about the movie \"Alienoid\" and does not provide any incorrect or inaccurate information."
+    },
+    {
+        "question": "Who directed Godzilla vs. Kong?\n",
+        "true_answer": "Adam Wingard, Ashley Douglass, Brian Avery Galligan, Kerry Lyn McKissick, and Thomas Robinson Harper directed Godzilla vs. Kong.",
+        "generated_answer": "Adam Wingard, Ashley Douglass, Brian Avery Galligan, Kerry Lyn McKissick, Nick Satriano, and Thomas Robinson Harper.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response contains the names of individuals who actually worked on the film, but is missing the crucial detail that Adam Wingard directed Godzilla vs. Kong. Furthermore, the response incorrectly implies that all individuals mentioned directed the film, whereas Adam Wingard is the only correct director."
+    },
+    {
+        "question": "Who directed the 2019 movie 'Joker'?\n",
+        "true_answer": "Todd Phillips directed the 2019 movie 'Joker'.",
+        "generated_answer": "The 2019 movie 'Joker' was directed by Todd Phillips.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is correct, accurate, and factual, matching the reference answer;"
+    },
+    {
+        "question": "Who is the director of the movie \"Land of Bad\"?\n",
+        "true_answer": "William Eubank",
+        "generated_answer": "I'm sorry for any confusion, but I was unable to find a movie titled \"Land of Bad\" in the provided context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is unable to provide the correct answer, instead, it states that it couldn't find the movie \"Land of Bad\". This lacks factual accuracy."
+    },
+    {
+        "question": "Who directed the movie \"Wish\"?\n",
+        "true_answer": "Chris Buck and Fawn Veerasunthorn directed the movie \"Wish\".",
+        "generated_answer": "The movie \"Wish\" was directed by Chris Buck and Fawn Veerasunthorn.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response provides the correct information about the directors of the movie \"Wish\", matching the reference answer."
+    },
+    {
+        "question": "Who directed the movie Dune?\n",
+        "true_answer": "Denis Villeneuve directed the movie Dune.",
+        "generated_answer": "The movie Dune was directed by Denis Villeneuve.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response is accurate and factual, matching the exact wording of the reference answer."
+    },
+    {
+        "question": "Who is the director of the movie \"After the Pandemic\"?\n",
+        "true_answer": "Richard Lowry",
+        "generated_answer": "Richard Lowry",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response matches the reference answer perfectly, it is factually correct and accurate in identifying the director of the movie \"After the Pandemic\" as Richard Lowry. It exceeds the expectations of the rubric."
+    },
+    {
+        "question": "Who is the director of the movie \"The First Omen\"?\n",
+        "true_answer": "Arkasha Stevenson",
+        "generated_answer": "Arkasha Stevenson.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately matches the director of the movie \"The First Omen\", as per the reference answer."
+    },
+    {
+        "question": "Who voices Tanjiro Kamado in the Japanese version of Demon Slayer: Kimetsu no Yaiba?\n",
+        "true_answer": "Natsuki Hanae voices Tanjiro Kamado in the Japanese version of Demon Slayer: Kimetsu no Yaiba.",
+        "generated_answer": "Kimetsu no Yaiba is Natsuki Hanae.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately provides the name of the voice actor of Tanjiro Kamado, Natsuki Hanae, in the Japanese version of Demon Slayer: Kimetsu no Yaiba, matching the reference answer."
+    },
+    {
+        "question": "Who directed the movie \"Hard Hit\"?\n",
+        "true_answer": "Kim Jun-sik",
+        "generated_answer": "The movie \"Hard Hit\" does not have a director listed in the provided context.",
+        "eval_score_Llama-3-8B": 4,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately states that the director of the movie \"Hard Hit\" is not listed in the provided context, which is a factual inference. However, the response does not attempt to identify the actual director, Kim Jun-sik, which is a critical piece of information."
+    },
+    {
+        "question": "Who is the director of the movie \"Creation of the Gods I: Kingdom of Storms\"?\n",
+        "true_answer": "Wuershan and Zhang Bowei are the directors of the movie \"Creation of the Gods I: Kingdom of Storms\".",
+        "generated_answer": "Kingdom of Storms\" are Wuershan, Zhang Bowei, Sang Lin, Tim Wong, and Sun Ye.",
+        "eval_score_Llama-3-8B": 3,
+        "eval_feedback_Llama-3-8B": "Feedback: The response provides five names, but only two of them are correct. The response does not accurately reflect the directors of the movie \"Creation of the Gods I: Kingdom of Storms\"."
+    },
+    {
+        "question": "What genre is the movie \"Imaginary\"?\n",
+        "true_answer": "Horror, Mystery, Thriller",
+        "generated_answer": "The genre of the movie \"Imaginary\" is not provided in the context.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response simply states that the genre is not provided in the context, which is not related to the reference answer. The response does not attempt to identify the genre, and therefore, it does not demonstrate accuracy or factualness."
+    },
+    {
+        "question": "Who plays the role of Ray Stantz in Ghostbusters: Frozen Empire?\n",
+        "true_answer": "Dan Aykroyd himself plays the role of Ray Stantz in Ghostbusters: Frozen Empire.",
+        "generated_answer": "Frozen Empire.",
+        "eval_score_Llama-3-8B": 1,
+        "eval_feedback_Llama-3-8B": "Feedback: The response does not provide the correct answer, as it only mentions \"Frozen Empire\" without specifying who plays the role of Ray Stantz. The response is also not factual, as it does not mention the main character played by Dan Aykroyd."
+    },
+    {
+        "question": "Who directed the movie \"Rebel Moon - Part Two: The Scargiver\"?\n",
+        "true_answer": "Zack Snyder, Eli Snyder, Misha Bukowski, Jon Recher, Jai James, and Kimi Webber directed the movie \"Rebel Moon - Part Two: The Scargiver\".",
+        "generated_answer": "The Scargiver\" was directed by Zack Snyder, Eli Snyder, Misha Bukowski, Jon Recher, Jai James, and Kimi Webber.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately lists the directors of the movie \"Rebel Moon - Part Two: The Scargiver\", matching the reference answer."
+    },
+    {
+        "question": "Who directed the movie 'Baghead'?\n",
+        "true_answer": "Alberto Corredor, Oana Ene, Laura Mihartescu, and Vera Schmidt directed the movie 'Baghead'.",
+        "generated_answer": "The movie 'Baghead' was directed by Jacob Vaughan, Mark Vaughan, and Jay Duplass.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response correctly mentions Jacob Vaughan and Jay Duplass, but incorrectly mentions Mark Vaughan, resulting in a mix of correct and incorrect information. The response does not contain all the correct information from the reference answer."
+    },
+    {
+        "question": "Who directed Fast X?\n",
+        "true_answer": "Louis Leterrier and Vincent Litt directed Fast X.",
+        "generated_answer": "The movie Fast X was directed by Louis Leterrier, Spiro Razatos, Olivier Schneider, Vincent Lascoumes, and Alexander Witt.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response includes extra information and incorrect directors, deviating from the correct information provided in the reference answer. The credited directors in the response are not among those mentioned in the reference answer."
+    },
+    {
+        "question": "Who played the lead role in the movie \"Joker\" ?",
+        "true_answer": "Joaquin Phoenix played the lead role in the movie \"Joker\".",
+        "generated_answer": "The lead role in the movie \"Joker\" was played by Joaquin Phoenix.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately mentions the correct actor's name, Joaquin Phoenix, who played the lead role in the movie \"Joker\". The sentence structure and wording are also similar to the reference answer."
+    },
+    {
+        "question": "Which directors were involved in the making of \"Joker\"?",
+        "true_answer": "The directors involved in the making of \"Joker\" were David Webb, Jeremy Marks, Renee Burke, Ryan Robert Howard, Todd Phillips, and Carolina Jiménez.",
+        "generated_answer": "The directors involved in the making of \"Joker\" are Todd Phillips and Scott Silver.",
+        "eval_score_Llama-3-8B": 2,
+        "eval_feedback_Llama-3-8B": "Feedback: The response only contains two directors, Todd Phillips and Scott Silver, but omitting the other directors mentioned in the reference answer, such as David Webb, Jeremy Marks, Renee Burke, and Ryan Robert Howard. The response does not accurately reflect the full list of directors involved in the making of \"Joker\"."
+    },
+    {
+        "question": "What genres does the movie \"Joker\" fall under?",
+        "true_answer": "The movie \"Joker\" falls under the genres of Crime, Thriller, and Drama.",
+        "generated_answer": "\"Joker\" falls under the genres Crime, Thriller, and Drama.",
+        "eval_score_Llama-3-8B": 5,
+        "eval_feedback_Llama-3-8B": "Feedback: The response accurately identifies the genres of the movie \"Joker\", namely Crime, Thriller, and Drama."
+    },
+    {
+        "question": "What is its average rating of the movie \"Joker\"?",
+        "true_answer": "Its average rating is 8.162.",
+        "generated_answer": "The average rating of the movie \"Joker\" is 6.147.",
+        "eval_score_Llama-3-8B": 3,
+        "eval_feedback_Llama-3-8B": "Feedback: The response partly reflects the correct information about the average rating of the movie \"Joker\", but has a different value compared to the reference answer."
+    }
+]

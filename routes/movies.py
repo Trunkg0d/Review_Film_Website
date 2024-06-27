@@ -5,6 +5,7 @@ from database.connection import Database
 from fastapi import APIRouter, Depends, HTTPException, status
 from models.movies import Movie, MovieUpdate, MovieResponse
 from models.celebrities import Celebrity
+import datetime
 from models.users import User
 
 movie_router = APIRouter(
@@ -87,9 +88,33 @@ async def retrieve_movie(id: PydanticObjectId) -> MovieResponse:
 
 # Create a new movie
 @movie_router.post("/new", response_model=dict)
-async def create_movie(body: Movie, user: str = Depends(authenticate)) -> dict:
-    body.creator = user
-    await movie_database.save(body)
+async def create_movie(body: MovieUpdate, user: str = Depends(authenticate)) -> dict:
+    # body.creator = user
+    user_info = await User.find_one(User.email == user)
+    if user_info.role != 1:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Forbidden"
+        )
+
+    director_id = [item.id for item in body.director]
+    actors_id = [item.id for item in body.actors]
+
+    new_movie = Movie(
+    title=body.title,
+    backdrop_path=body.backdrop_path,
+    poster_path=body.poster_path,
+    description=body.description,
+    release_date=datetime.datetime.strptime(body.release_date, "%Y-%m-%d"),
+    tags=body.tags,
+    director=director_id,
+    language=body.language,
+    runtime=body.runtime,
+    average_rating=body.average_rating,
+    actors=actors_id)
+
+
+    await movie_database.save(new_movie)
     return {
         "message": "Movie created successfully"
     }
@@ -110,7 +135,7 @@ async def update_movie(id: PydanticObjectId, body: MovieUpdate, user: str = Depe
     backdrop_path=body.backdrop_path,
     poster_path=body.poster_path,
     description=body.description,
-    release_date=body.release_date,
+    release_date=datetime.datetime.strptime(body.release_date, "%Y-%m-%d"),
     tags=body.tags,
     director=director_id,
     language=body.language,

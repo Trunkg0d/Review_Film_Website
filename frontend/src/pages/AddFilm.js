@@ -1,19 +1,18 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import UploadModal from '../components/Upload/Upload'; 
+import UploadModal from '../components/Upload/Upload';
 import './FilmConfig.css';
 
-
-function FilmConfig() {
-    const { id } = useParams();
+function AddFilm() {
     const navigate = useNavigate();
     const [movie, setMovie] = useState({
+        // movie_id: '',
         title: '',
         backdrop_path: '',
         poster_path: '',
         description: '',
-        release_date: '',
+        release_date: '2024-02-27T00:00:00',
         language: '',
         tags: [],
         runtime: '',
@@ -21,7 +20,6 @@ function FilmConfig() {
         actors: [],
         director: []
     });
-    const [originalMovie, setOriginalMovie] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedActors, setSelectedActors] = useState([]);
@@ -29,22 +27,6 @@ function FilmConfig() {
     const [directorSearchResults, setDirectorSearchResults] = useState([]);
     const [selectedDirectors, setSelectedDirectors] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-    const fetchData = useCallback(() => {
-        axios.get(`http://localhost:8000/movie/${id}`)
-            .then(response => {
-                setMovie(response.data);
-                setOriginalMovie(response.data);
-                setSelectedActors(response.data.actors || []);
-                setSelectedDirectors(response.data.director || []);
-            })
-            .catch(error => console.log(error.message));
-    }, [id]);
-
-    useEffect(() => {
-        fetchData();
-    }, [fetchData]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -57,34 +39,16 @@ function FilmConfig() {
     const token = localStorage.getItem('accessToken');
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/movie/${id}`, { ...movie, actors: selectedActors, director: selectedDirectors }, {
+        axios.post(`http://localhost:8000/movie/new`, { ...movie, actors: selectedActors, director: selectedDirectors }, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                alert('Movie updated successfully!');
+                alert('Movie added successfully!');
+                navigate('/'); // Redirect to movies list after addition
             })
             .catch(error => console.log(error.message));
-    };
-
-    const handleReset = () => {
-        setMovie(originalMovie);
-        setSelectedActors(originalMovie.actors || []);
-        setSelectedDirectors(originalMovie.director || []);
-    };
-
-    const handleDelete = () => {
-        axios.delete(`http://localhost:8000/movie/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-        .then(response => {
-            alert('Movie deleted successfully!');
-            navigate('/'); // Redirect to movies list after deletion
-        })
-        .catch(error => console.log(error.message));
     };
 
     const handleSearchChange = (e) => {
@@ -129,32 +93,38 @@ function FilmConfig() {
         setSelectedDirectors(prevDirectors => prevDirectors.filter(director => director._id !== directorId));
     };
 
-    
-  // UploadModal function
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCastImg = (profile_image, gender) => {
-    return profile_image ? `https://image.tmdb.org/t/p/w200${profile_image}` : 
-    ((gender === 'Male') ? `https://i.pinimg.com/564x/47/3e/84/473e84e35274f087695236414ff8df3b.jpg` : 
-    `https://i.pinimg.com/564x/1b/2e/31/1b2e314e767a957a44ed8f992c6d9098.jpg`);
-  }
+    const handleCastImg = (profile_image, gender) => {
+        return profile_image ? `https://image.tmdb.org/t/p/w200${profile_image}` : 
+        ((gender === 'Male') ? `https://i.pinimg.com/564x/47/3e/84/473e84e35274f087695236414ff8df3b.jpg` : 
+        `https://i.pinimg.com/564x/1b/2e/31/1b2e314e767a957a44ed8f992c6d9098.jpg`);
+    };
 
     return (
         <section id="film-config" className="film-config">
             <div className="backdrop-container">
-                {/* <h2>{"Movie Backdrop"}</h2> */}
-                <img src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} alt={movie.title} className="movie-backdrop" />
+                <img 
+                    src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : 
+                    'https://static.vecteezy.com/system/resources/previews/045/368/271/non_2x/a-blue-and-white-background-with-the-words-written-in-white-the-background-has-a-wave-like-pattern-giving-it-a-modern-and-artistic-feel-vector.jpg'} 
+                    alt={movie.title} 
+                    className="movie-backdrop" 
+                />
             </div>
-            <div className="config-container">            
+            <div className="config-container">
                 <div className="image-section">
-                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="movie-poster" />
+                    <img 
+                        src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 
+                        'https://st.depositphotos.com/7916244/58857/v/450/depositphotos_588574612-stock-illustration-movie-poster-design-template-background.jpg'} 
+                        alt={movie.title} 
+                        className="movie-poster" 
+                    />
                     <div className="movie-info">
                         <h2>{movie.title}</h2>
                         <p><strong>Description:</strong> {movie.description}</p>
@@ -184,7 +154,7 @@ function FilmConfig() {
                         </div>
                         <div className="form-group">
                             <label>Release Date:</label>
-                            <input type="date" name="release_date" value={movie.release_date.split('T')[0]} onChange={handleChange} />
+                            <input type="date" name="release_date" value={movie.release_date} onChange={handleChange} />
                         </div>
                         <div className="form-group">
                             <label>Language:</label>
@@ -262,9 +232,7 @@ function FilmConfig() {
                             <label>Average Rating:</label>
                             <input type="number" step="0.1" name="average_rating" value={movie.average_rating} onChange={handleChange} />
                         </div>
-                        <button type="submit" className="submit-button">Update Movie</button>
-                        <button type="button" className="reset-button" onClick={handleReset}>Reset</button>
-                        <button type="button" className="delete-button" onClick={handleDelete}>Delete Movie</button>
+                        <button type="submit" className="submit-button">Add Movie</button>
                     </form>
                 </div>
             </div>
@@ -272,4 +240,4 @@ function FilmConfig() {
     );
 }
 
-export default FilmConfig;
+export default AddFilm;

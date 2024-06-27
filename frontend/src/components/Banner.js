@@ -35,7 +35,7 @@ function Banner() {
     return () => clearInterval(interval); // Clean up on component unmount
   }, [movies]);
 
-  const bannerMovie = movies[bannerMovieIndex];
+  const bannerMovie = movies[17];
   return (
     (bannerMovie && // Only render banner if there is a banner movie
     <div 

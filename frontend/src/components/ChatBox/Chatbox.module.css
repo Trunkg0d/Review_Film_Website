@@ -60,7 +60,7 @@
     position: absolute;
     bottom: calc(100% + 1rem);
     right: 60px;
-    width: 350px;
+    width: 300px;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .5);
@@ -79,7 +79,7 @@
     align-items: center;
     justify-content: space-between;
     background: var(--primary);
-    padding: .75rem 1.5rem;
+    padding: .5rem 1rem;
 }
 
 .chatboxMessageProfile {
@@ -108,15 +108,16 @@
 
 .chatboxMessageContent {
     background-color: var(--grey);
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     grid-row-gap: 1rem;
-    max-height: 400px;
+    max-height: 250px;
     overflow-y: auto;
 }
 
 .chatboxMessageItem {
+    font-size: 80%;
     width: 90%;
     padding: 1rem;
 }

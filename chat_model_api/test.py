@@ -153,6 +153,11 @@ async def chat(input: str = Body(..., embed=True), session_id: str = Body(defaul
             response = response.split("Assistant:")[1].strip()
         except:
             pass
+        # Another prefix
+        try:
+            response = response.split("AI:")[1].strip()
+        except:
+            pass
         # Return the answer and session ID
         return {"session_id": session_id, "answer": response}
     except Exception as e:

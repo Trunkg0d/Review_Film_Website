@@ -11,6 +11,8 @@ from typing import Optional, List
 from beanie import PydanticObjectId
 from models.movies import MovieResponse, Movie
 from routes.movies import retrieve_movie_for_wishlist
+from models.reviews import Review
+from routes.reviews import get_review_of_user
 import aiofiles
 from pathlib import Path
 import string
@@ -44,6 +46,7 @@ class CheckUsernameRequest(BaseModel):
 
 user_database = Database(User)
 movie_database = Database(Movie)
+review_database = Database(Review)
 hash_password = HashPassword()
 
 
@@ -300,3 +303,20 @@ async def get_user_info(id: PydanticObjectId) -> dict:
     return res
     
     
+@user_router.delete("/delete", response_model=dict)
+async def delete_user(user: str = Depends(authenticate)) -> dict:
+    user_info = await User.find_one(User.email == user)
+    list_review = await get_review_of_user(user_info.id)
+    for review in list_review:
+        await review_database.delete(review.id)
+
+    if not user_info:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    await user_database.delete(user_info.id)
+    return {
+        "message": "User deleted successfully."
+    }
+

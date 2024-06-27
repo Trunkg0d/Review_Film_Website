@@ -114,8 +114,17 @@ class UpdateReviewRequest(BaseModel):
 @review_router.put("/content/{id}", response_model=Review)
 async def update_review(id: PydanticObjectId, request: UpdateReviewRequest,
                         user: str = Depends(authenticate)) -> Review:
+    
     new_content = request.content
     review = await review_database.get(id)
+    # check if user
+    user_info = await User.find_one(User.email == user)
+    if user_info.role == 0:
+        if review.user_id != user_info.id:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="User don't have enough permission to edit other review."
+            )
     if not review:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

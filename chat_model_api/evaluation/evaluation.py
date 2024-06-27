@@ -19,7 +19,7 @@ from langchain.schema import SystemMessage
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 
 load_dotenv()
-login(token=os.environ["HUGGINGFACE_TOKEN_V2"])
+login(token=os.environ["HUGGINGFACE_TOKEN"])
 
 # Read qa data from file
 with open('filter_generated_qa.json', 'r') as f:

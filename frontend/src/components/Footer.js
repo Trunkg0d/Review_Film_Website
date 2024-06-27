@@ -3,11 +3,11 @@ import './Footer.css';
 
 function Footer() {
     const members = [
-        'Shin Yong Wook',
-        'Kim Min Seok',
-        'Park Seung Hwan',
-        'Lee Seung Hyun',
-        'Jung Ji Hoon',
+        '21120157 - Lê Phạm Hoàng Trung',
+        '21120205 - Nguyễn Tạ Bảo',
+        '21120415 - Trần Ngọc Bảo',
+        '21120527 - Nguyễn Thế Phong',
+        '21120554 - Lê Văn Tấn',
     ];
     return (
         <footer id="footer" className="footer">

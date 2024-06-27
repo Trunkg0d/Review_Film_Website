@@ -15,22 +15,16 @@ function Header() {
     },
     {
       _id: 2,
-      link: '#schedule',
-      name: 'schedule',
+      link: '#popular',
+      name: 'popular',
       active: false
     },
     {
       _id: 3,
-      link: '#trend',
-      name: 'trend',
+      link: '#footer',
+      name: 'about us',
       active: false
     },
-    {
-      _id: 4,
-      link: '#blog',
-      name: 'blog',
-      active: false
-    }
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,7 +72,7 @@ function Header() {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <a href="/">Morevie <i className="fa-solid fa-film"></i></a>
+        <a href="/">Morevie</a>
       </div>
       <ul className="nav">
         {navListData.map(({ _id, link, name, active }) => (

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './Chatbox.module.css';
 import useChatbox from './eventHandler';
+import typing from '../assets/typing.gif';
 
 const ChatBox = () => {
     const { isChatboxVisible, toggleChatbox, textareaRef } = useChatbox();
@@ -63,7 +64,7 @@ const ChatBox = () => {
         };
 
         setMessages(prevMessages => [...prevMessages, newMessage]);
-        setIsTyping(false);  // Reset typing indicator
+        setIsTyping(false);
         setTimeout(scrollBottom, 50);
     };
 
@@ -72,7 +73,7 @@ const ChatBox = () => {
             const token = localStorage.getItem('accessToken');
             const lastMessage = newMessage.text;
 
-            setIsTyping(true);  // Show typing indicator
+            setIsTyping(true);
 
             axios.post('http://localhost:8000/chatbot/chat', {
                 content: lastMessage
@@ -134,9 +135,10 @@ const ChatBox = () => {
                         </div>
                     ))}
                     {isTyping && (
-                        <div className={`${styles.chatboxMessageItem} ${styles.receive}`}>
+                        <img src={typing} alt="" className={styles.typingProcess}/>
+                        /*<div className={`${styles.chatboxMessageItem} ${styles.receive}`}>
                             <span className={styles.chatboxMessageItemText}>...</span>
-                        </div>
+                        </div>*/
                     )}
                 </div>
                 <div className={styles.chatboxMessageBottom}>

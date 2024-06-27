@@ -135,6 +135,10 @@
     box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .2);
 }
 
+.typingProcess {
+    width: 30%;
+}
+
 .chatboxMessageItemTime {
     float: right;
     font-size: .75rem;

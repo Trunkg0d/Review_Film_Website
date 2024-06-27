@@ -4,11 +4,35 @@
     margin-top: 2rem;
 }
 
+.search-page .search-header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-page .search-header-container .search-icon{
+    margin-right: 2%;
+    width: 3.5%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--primary);
+    transition: transform .3s;
+}
+.search-page .search-header-container .search-icon:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--primary);
+}
+
 .search-page .genre-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
+    padding: 1%;
+    width: 85%;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
 }
 
 .search-page .genre-tags button {
@@ -17,6 +41,9 @@
     border-radius: 20px;
     background-color: #eee;
     cursor: pointer;
+}
+.search-page .genre-tags button:hover {
+    box-shadow: 0 0 8px white;
 }
 
 .search-page .genre-tags button.selected {

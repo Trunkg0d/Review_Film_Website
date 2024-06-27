@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import './SearchPage.css';
+import search_icon from '../assets/search.png';
 
 function SearchPage() {
   const [movies, setMovies] = useState([]);
@@ -34,7 +35,6 @@ function SearchPage() {
   useEffect(() => {
     if (selectedTag) {
       setSelectedGenres(prev => [...prev, selectedTag]);
-      handleSearch();
     }
   }, [selectedTag]);
 
@@ -54,23 +54,25 @@ function SearchPage() {
 
   return (
     <div className="search-page">
-      <div className="genre-tags">
-        {genres.map((genre, index) => (
-          <button 
-            key={index} 
-            className={selectedGenres.includes(genre) ? 'selected' : ''}
-            onClick={() => handleGenreClick(genre)}
-          >
-            {genre}
-          </button>
-        ))}
+      <div className="search-header-container">
+        <div className="genre-tags">
+          {genres.map((genre, index) => (
+            <button 
+              key={index} 
+              className={selectedGenres.includes(genre) ? 'selected' : ''}
+              onClick={() => handleGenreClick(genre)}
+            >
+              {genre}
+            </button>
+          ))}
+        </div>
+        <img src={search_icon} className='search-icon' onClick={handleSearch} alt=''/>
       </div>
-      <button onClick={handleSearch}>Find</button>
       <div className="movie-results">
         {filteredMovies.length > 0 ? (filteredMovies.map((movie, index) => (
           <div key={index} className="movie">
             <Link to={`/movie/${movie.movie_id}`} className="movie-link">
-              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
               <h3>{movie.title}</h3>
             </Link>
             <p>{movie.tags.join(', ')}</p>

@@ -120,29 +120,29 @@ function SafetySetting() {
     <div className="wrapper">
       <div className="sidebar">
         <div className="sidebar-container">
-          <h4 className="sidebar-title">Quản Lý Tài Khoản</h4>
+          <h4 className="sidebar-title">Account Management</h4>
           <ul className="menu-list">
             <li className="menu-item">
-              <a href="dashboard" className="link">Thông tin tài khoản</a>
+              <a href="dashboard" className="link">Account Information</a>
             </li>
             <li className="menu-item menu-active">
-              <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
+              <a href="safetySettings" className="link">Account Security Setting</a>
             </li>
             <li className="menu-item">
-              <a href={`profile/${userInfo.user_id}`} className="link">Trang cá nhân</a>
+              <a href={`profile/${userInfo.user_id}`} className="link">Profile</a>
             </li>
             <li className="menu-item logout">
-              <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>
+              <a href="logout" className="link" onClick={handleLogout}>Log Out</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="content-container">
         <div className="account-info">
-          <div className="content-title">Thiết Lập An Toàn Tài Khoản</div>
+          <div className="content-title">Account Security Setting</div>
           <div className="account-content-container">
             <div className="account-avatar-container">
-              Chọn để thay đổi ảnh đại diện!
+              Click to change the profile picture!
               <img src={handleImageUser(userInfo.img)} alt="" className="account-avatar-profile-change" 
                 onClick={openUploadModal}/>
             </div>
@@ -157,7 +157,7 @@ function SafetySetting() {
                         <input 
                           type="text" 
                           onChange={(e) => handleInputChange(e, field)}
-                          placeholder={"Nhập " + field + ' mới'}
+                          placeholder={"Input new " + field}
                           className="account-info-input"
                         />
                       </>

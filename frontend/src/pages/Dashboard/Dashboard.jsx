@@ -52,27 +52,27 @@ function Dashboard() {
     <div className="wrapper">
       <div className="sidebar">
         <div className="sidebar-container">
-          <h4 className="sidebar-title">Quản Lý Tài Khoản</h4>
+          <h4 className="sidebar-title">Account Management</h4>
           <ul className="menu-list">
             <li className="menu-item menu-active">
-              <a href="dashboard" className="link">Thông tin tài khoản</a>
+              <a href="dashboard" className="link">Account Information</a>
             </li>
             <li className="menu-item">
-              <a href="safetySettings" className="link">Thiết lập an toàn tài khoản</a>
+              <a href="safetySettings" className="link">Account Security Setting</a>
             </li>
             <li className="menu-item">
-              <a href={`profile/${userInfo.user_id}`} className="link">Trang cá nhân</a>
+              <a href={`profile/${userInfo.user_id}`} className="link">Profile</a>
             </li>
             <li className="menu-item logout">
-              <a href="logout" className="link" onClick={handleLogout}>Đăng xuất tài khoản</a>
+              <a href="logout" className="link" onClick={handleLogout}>Log Out</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="content-container">
         <div className="account-info">
-          <div className="content-title">Thông Tin Tài Khoản</div>
-          <div className="sub-title">Thông tin cơ bản</div>
+          <div className="content-title">Account Information</div>
+          <div className="sub-title">Basic Information</div>
           <div className="account-content-container">
             <div className="account-avatar-container">
               <img
@@ -95,9 +95,9 @@ function Dashboard() {
                 <span className="account-info-value">{userInfo.email}</span>
               </div>
               <div className="account-info-item">
-                <span className="account-info-label">Vai trò</span>
+                <span className="account-info-label">Role</span>
                 {userInfo.role === 0 ? (
-                  <span className="account-info-value">Người dùng</span>
+                  <span className="account-info-value">User</span>
                 ) : (
                   <span className="account-info-value">Admin</span>
                 )}

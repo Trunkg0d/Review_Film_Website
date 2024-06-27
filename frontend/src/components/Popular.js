@@ -32,7 +32,7 @@ function Popular() {
             .then(response => {
                 const totalMovies = response.data; // Adjust this according to your API response
 
-                setNumOfPage(Math.floor(totalMovies / 12));
+                setNumOfPage(Math.ceil(totalMovies / 12));
 
             })
             .catch(error => console.log(error.message));

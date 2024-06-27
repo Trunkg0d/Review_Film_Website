@@ -221,7 +221,8 @@ async def get_image(filename: str):
     return FileResponse(file_location)
 
     
-    
+class UserWishListUpdate(BaseModel):
+    wish_list: Optional[List[PydanticObjectId]]
 @user_router.post("/wish_list/{id}/add")
 async def add_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticate)):
     user_info = await User.find_one(User.email == user)
@@ -234,13 +235,17 @@ async def add_to_wishlist(id: PydanticObjectId, user : str = Depends(authenticat
         )
     if id not in user_info.wish_list:
         user_info.wish_list.append(id)
-    new_info = UserUpdate(
-        fullname=user_info.fullname,
-        username=user_info.username,
-        password=user_info.password,
-        email=user_info.email,
-        img=user_info.img,
-        role=user_info.role
+    # new_info = UserUpdate(
+    #     fullname=user_info.fullname,
+    #     username=user_info.username,
+    #     password=user_info.password,
+    #     email=user_info.email,
+    #     img=user_info.img,
+    #     wish_list=user_info.wish_list,
+    #     role=user_info.role
+    # )
+    new_info = UserWishListUpdate(
+        wish_list = user_info.wish_list
     )
     update_user = await user_database.update(user_info.id, new_info)
     return update_user
@@ -257,13 +262,8 @@ async def remove_to_wishlist(id: PydanticObjectId, user : str = Depends(authenti
         )
     if id in user_info.wish_list:
         user_info.wish_list.remove(id)
-    new_info = UserUpdate(
-        fullname=user_info.fullname,
-        username=user_info.username,
-        password=user_info.password,
-        email=user_info.email,
-        img=user_info.img,
-        role=user_info.role
+    new_info = UserWishListUpdate(
+        wish_list = user_info.wish_list
     )
     update_user = await user_database.update(user_info.id, new_info)
     return update_user

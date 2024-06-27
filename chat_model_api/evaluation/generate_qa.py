@@ -8,7 +8,7 @@ from langchain_core.documents import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from huggingface_hub import InferenceClient
 load_dotenv()
-login(token=os.environ["HUGGINGFACE_TOKEN_V2"])
+login(token=os.environ["HUGGINGFACE_TOKEN"])
 
 # Read data from file
 file_name = "data.json"
